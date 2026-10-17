@@ -30,14 +30,20 @@ export function buildSeries(items: NormalizedItem[], now: Date, days = SERIES_DA
   return series;
 }
 
-// Cambio porcentual de la última semana frente a la anterior. Determinista, sin IA.
-// Si la semana anterior está vacía se toma 1 como base; sin señal suficiente devuelve null.
+// Suavizado: se suma esta cantidad a la semana anterior para que pasar de 1 a 9 menciones
+// no cuente como +800% y gane a temas con cientos de menciones.
+const SMOOTHING = 5;
+
+// Cambio porcentual suavizado de la última semana frente a la anterior. Determinista, sin IA.
+// Sin señal suficiente devuelve null.
 export function velocity(series: SeriesPoint[]): number | null {
   if (series.length < 14) return null;
-  const sum = (pts: SeriesPoint[]) => pts.reduce((s, p) => s + p.count, 0);
-  const last = sum(series.slice(-7));
-  const prev = sum(series.slice(-14, -7));
+  const last = recentMentions(series, 7);
+  const prev = recentMentions(series, 14) - last;
   if (last + prev < MIN_SIGNAL) return null;
-  const base = Math.max(prev, 1);
-  return Math.round(((last - base) / base) * 1000) / 10;
+  return Math.round(((last - prev) / (prev + SMOOTHING)) * 1000) / 10;
+}
+
+export function recentMentions(series: SeriesPoint[], days: number): number {
+  return series.slice(-days).reduce((s, p) => s + p.count, 0);
 }

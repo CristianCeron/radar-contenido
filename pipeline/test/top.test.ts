@@ -25,6 +25,17 @@ describe("selección del top 10", () => {
     expect(top.map((x) => x.id)).toEqual(["negocio", "medio"]);
   });
 
+  it("excluye temas con muy pocas menciones recientes", () => {
+    const top = selectTop(
+      [
+        { ...t("ruido", 500, 0.9), recentMentions: 4 },
+        { ...t("solido", 120, 0.8), recentMentions: 40 },
+      ],
+      { minRecentMentions: 8 },
+    );
+    expect(top.map((x) => x.id)).toEqual(["solido"]);
+  });
+
   it("excluye temas sin velocidad (sin historia)", () => {
     const top = selectTop([t("nuevo", null, 0.9), t("ok", 10, 0.9)]);
     expect(top.map((x) => x.id)).toEqual(["ok"]);

@@ -14,7 +14,7 @@ import { selectTop, topicRelevance } from "./top.js";
 import { assignTopics } from "./topics.js";
 import type { SourceResult } from "./sources/types.js";
 import { errorMessage, windowStart } from "./sources/types.js";
-import { buildSeries, velocity } from "./velocity.js";
+import { buildSeries, recentMentions, velocity } from "./velocity.js";
 
 const SOURCES: Source[] = ["hackernews", "arxiv", "youtube", "prensa"];
 
@@ -28,6 +28,7 @@ export interface RadarDeps {
   profiles: Profile[];
   limitUsd: number;
   concurrency?: number;
+  minRecentMentions?: number;
   log?: (msg: string) => void;
 }
 
@@ -70,7 +71,7 @@ async function collect(deps: RadarDeps, log: (m: string) => void): Promise<Colle
 
 async function buildRadar(deps: RadarDeps, sink: CostSink): Promise<Omit<Radar, "cost">> {
   const log = deps.log ?? console.log;
-  const pool = deps.concurrency ?? 4;
+  const pool = deps.concurrency ?? 2;
   const { fast, writer } = deps.makeLLMs(sink);
   const { primary, fallback } = deps.makeClassifiers(fast, sink);
 
@@ -94,11 +95,12 @@ async function buildRadar(deps: RadarDeps, sink: CostSink): Promise<Omit<Radar, 
       layers: presentLayers(counts),
       stage: assignStage({ layers: counts, velocity: vel }),
       executiveRelevance: Math.round(topicRelevance(g.items.map((i) => i.id), classifications) * 100) / 100,
+      recentMentions: recentMentions(series, 14),
     };
   });
 
   // Se piden más candidatos que 10: los que no logren una explicación con evidencia se descartan.
-  const ranked = selectTop(candidates, { limit: 15 });
+  const ranked = selectTop(candidates, { limit: 15, minRecentMentions: deps.minRecentMentions ?? 8 });
   const explained = await mapPool(ranked, pool, async (c) => {
     try {
       const res = await explainTopic(

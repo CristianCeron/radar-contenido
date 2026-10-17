@@ -76,6 +76,7 @@ function deps(dir: string, over: Partial<RadarDeps> = {}): RadarDeps {
     makeClassifiers: (fast) => ({ primary: createLLMClassifier(fast), fallback: createLLMClassifier(fast) }),
     profiles: loadProfiles(),
     limitUsd: 1,
+    minRecentMentions: 0,
     log: () => {},
     ...over,
   };

@@ -61,7 +61,8 @@ const MergeSchema = z.object({
 });
 
 const LABEL_SYSTEM = `Asignas un tema a cada pieza de contenido sobre inteligencia artificial.
-- El tema es una etiqueta corta en español (2 a 4 palabras), lo bastante amplia para agrupar varias piezas: "Agentes de IA", "Modelos de video", "Regulación de IA".
+- El tema es una etiqueta corta en español (2 a 4 palabras) que nombra algo concreto: una tecnología, un tipo de producto, una práctica o un hecho del sector. Ejemplos: "Agentes de IA", "Modelos de video", "Regulación de IA", "Gafas con IA", "Seguridad de modelos".
+- Evita categorías genéricas que sirven para cualquier pieza, como "Experiencias con IA", "Fundamentos de IA", "Noticias de IA", "Profesionales de IA" o "IA en general". Si una pieza no encaja en un tema concreto, usa el más cercano.
 - Reutiliza una etiqueta existente cuando la pieza encaje en ella.
 - Si la pieza no trata de inteligencia artificial, devuelve topic: null.
 - Usa exactamente el id recibido.`;

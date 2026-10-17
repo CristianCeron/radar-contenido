@@ -35,19 +35,26 @@ describe("series de tiempo", () => {
 });
 
 describe("velocidad", () => {
+  // Velocidad suavizada: (última semana - anterior) / (anterior + 5).
   it("crecimiento: compara la última semana con la anterior", () => {
-    const items = [...Array(6)].map((_, i) => at(i % 7)).concat([at(8), at(10)]);
-    expect(velocity(buildSeries(items, now))).toBeCloseTo(200);
+    const items = [...Array(60)].map((_, i) => at(i % 7)).concat([...Array(20)].map((_, i) => at(7 + (i % 7))));
+    expect(velocity(buildSeries(items, now))).toBeCloseTo(160);
   });
 
   it("caída: velocidad negativa", () => {
     const items = [at(1), at(2), at(3)].concat([...Array(6)].map(() => at(9)));
-    expect(velocity(buildSeries(items, now))).toBeCloseTo(-50);
+    expect(velocity(buildSeries(items, now))).toBeCloseTo(-27.3);
   });
 
-  it("tema nuevo sin semana anterior crece desde una base de 1", () => {
+  it("tema nuevo sin semana anterior crece, pero sin dispararse", () => {
     const items = [at(0), at(1), at(2)];
-    expect(velocity(buildSeries(items, now))).toBeCloseTo(200);
+    expect(velocity(buildSeries(items, now))).toBeCloseTo(60);
+  });
+
+  it("pocas menciones no producen velocidades gigantes", () => {
+    const items = [...Array(9)].map((_, i) => at(i % 7)).concat([at(9)]);
+    // Sin suavizado sería +800%.
+    expect(velocity(buildSeries(items, now))).toBeCloseTo(133.3);
   });
 
   it("sin historia la velocidad es nula, no un error", () => {

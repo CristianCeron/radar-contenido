@@ -101,6 +101,12 @@ describe("asignación de temas", () => {
     expect(groups[0].items).toHaveLength(3);
   });
 
+  it("pide temas concretos y no categorías genéricas", async () => {
+    const llm = fakeLLM((req) => (req.label === "temas-etiquetado" ? { items: [] } : { merges: [] }));
+    await assignTopics([items[0]], llm);
+    expect(llm.requests[0].system).toMatch(/Evita categorías genéricas/);
+  });
+
   it("ignora ids que el modelo inventa", async () => {
     const llm = fakeLLM((req) =>
       req.label === "temas-etiquetado" ? { items: [{ id: "999", topic: "Agentes de IA" }] } : { merges: [] },

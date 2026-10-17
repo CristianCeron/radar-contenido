@@ -76,7 +76,7 @@ export async function fetchArxiv(opts: ArxivOptions = {}): Promise<SourceResult>
 
   // arXiv responde 503 con frecuencia y pide esperar unos segundos entre llamadas.
   const retries = opts.retries ?? 3;
-  const delay = opts.retryDelayMs ?? 5000;
+  const delay = opts.retryDelayMs ?? 15000;
   try {
     let res: Response | undefined;
     for (let attempt = 0; attempt <= retries; attempt++) {

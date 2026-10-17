@@ -3,6 +3,7 @@ import { createJevClassifier } from "../src/classify/jev.js";
 import { createLLMClassifier } from "../src/classify/fallback.js";
 import { classifyWithFallback, type Classifier } from "../src/classify/index.js";
 import { ClassificationSchema, type NormalizedItem } from "../src/schema.js";
+import { CostLimitExceeded } from "../src/cost.js";
 import { fakeFetch } from "./helpers.js";
 import { fakeLLM } from "./fake-llm.js";
 
@@ -132,6 +133,13 @@ describe("clasificación con respaldo", () => {
     const primary: Classifier = { name: "jev", classify: () => new Promise(() => {}) };
     const out = await classifyWithFallback(items, { primary, fallback: okFallback, timeoutMs: 20 });
     expect(out.get("yt:1")?.usedFallback).toBe(true);
+  });
+
+  it("si se supera el tope de costo no usa el respaldo y detiene la corrida", async () => {
+    const primary: Classifier = { name: "jev", classify: async () => Promise.reject(new CostLimitExceeded(2, 1)) };
+    const fallback = { ...okFallback, classify: vi.fn(okFallback.classify) };
+    await expect(classifyWithFallback(items, { primary, fallback })).rejects.toBeInstanceOf(CostLimitExceeded);
+    expect(fallback.classify).not.toHaveBeenCalled();
   });
 
   it("completa con el respaldo los ítems que JEV no devolvió", async () => {

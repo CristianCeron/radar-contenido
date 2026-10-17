@@ -1,4 +1,5 @@
 import type { Classification, NormalizedItem } from "../schema.js";
+import { CostLimitExceeded } from "../cost.js";
 import { errorMessage } from "../sources/types.js";
 
 export type RawClassification = Omit<Classification, "usedFallback">;
@@ -47,6 +48,8 @@ export async function classifyWithFallback(
     try {
       primaryResult = await withTimeout(primary.classify(batch), timeoutMs, primary.name);
     } catch (err) {
+      // Superar el tope de costo detiene la corrida; no se compensa con el respaldo.
+      if (err instanceof CostLimitExceeded) throw err;
       log(`Clasificador ${primary.name} falló (${errorMessage(err)}); se usa el respaldo ${fallback.name}`);
     }
     for (const [id, c] of primaryResult) out.set(id, { ...c, usedFallback: false });

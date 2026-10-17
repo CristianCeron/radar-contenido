@@ -77,8 +77,9 @@ export function isGenericLabel(label: string): boolean {
 // Respuestas que significan "ningún tema" y nunca deben convertirse en un tema.
 const NOT_A_TOPIC = /^(null|none|n\/a|ninguno|ninguna|otro|otros|otra|sin tema|no aplica)$/i;
 
-const TaxonomySchema = z.object({ topics: z.array(z.string()) });
-const PillarTaxonomySchema = z.object({ topics: z.array(z.object({ label: z.string(), pilar: z.string() })) });
+// El tope de elementos evita respuestas que se repiten hasta cortarse.
+const TaxonomySchema = z.object({ topics: z.array(z.string()).max(48) });
+const PillarTaxonomySchema = z.object({ topics: z.array(z.object({ label: z.string(), pilar: z.string() })).max(48) });
 
 const taxonomySystem = (tema: string, pilares?: string[]) => `Recibes una muestra de títulos de piezas recientes sobre ${tema} (foros, expertos, investigación, YouTube y prensa de negocios).
 ${
@@ -105,6 +106,8 @@ export interface AssignOptions {
   tema?: string;
   // Pilares de la temática: los temas se proponen dentro de ellos.
   pilares?: string[];
+  // Modelo que propone la lista de temas; por defecto, el mismo que etiqueta.
+  taxonomyLlm?: LLM;
   log?: (msg: string) => void;
 }
 
@@ -170,11 +173,23 @@ export async function assignTopics(items: NormalizedItem[], llm: LLM, opts: Assi
     label: "temas-taxonomia",
     system: taxonomySystem(tema, opts.pilares),
     prompt: `Títulos:\n${sample.map((it) => `- ${it.title}`).join("\n")}`,
-    maxTokens: 6000,
+    maxTokens: 8000,
   };
-  const proposed: Proposed[] = opts.pilares?.length
-    ? (await llm.json({ ...request, schema: PillarTaxonomySchema })).topics
-    : (await llm.json({ ...request, schema: TaxonomySchema })).topics.map((label) => ({ label }));
+  // La lista la propone el modelo indicado (por defecto, el mismo que etiqueta). Es una sola llamada,
+  // así que se reintenta una vez si la respuesta llega cortada o inválida.
+  const proposer = opts.taxonomyLlm ?? llm;
+  const propose = async (): Promise<Proposed[]> =>
+    opts.pilares?.length
+      ? (await proposer.json({ ...request, schema: PillarTaxonomySchema })).topics
+      : (await proposer.json({ ...request, schema: TaxonomySchema })).topics.map((label) => ({ label }));
+  let proposed: Proposed[];
+  try {
+    proposed = await propose();
+  } catch (err) {
+    if (err instanceof CostLimitExceeded) throw err;
+    log(`La propuesta de temas falló (${errorMessage(err)}); se reintenta una vez`);
+    proposed = await propose();
+  }
   const entries = cleanTaxonomy(proposed, opts.pilares);
   const taxonomy = entries.map((e) => e.label);
   const pilarOf = new Map(entries.map((e) => [e.label, e.pilar]));

@@ -164,3 +164,18 @@ describe("temas por pilar", () => {
     expect(groups.find((g) => g.label === "Modelos de video")?.pilar).toBeUndefined();
   });
 });
+
+describe("propuesta de temas robusta", () => {
+  it("usa el modelo indicado para proponer la lista y reintenta una vez si falla", async () => {
+    let attempts = 0;
+    const proposer = fakeLLM(() => {
+      if (attempts++ === 0) throw new Error("respuesta cortada");
+      return { topics: ["Agentes de IA", "Modelos de video"] };
+    }, "modelo-redactor");
+    const labeler = standardLLM();
+    const groups = await assignTopics(items, labeler, { taxonomyLlm: proposer, log: () => {} });
+    expect(attempts).toBe(2);
+    expect(labeler.requests.some((r) => r.label === "temas-taxonomia")).toBe(false);
+    expect(groups.length).toBe(2);
+  });
+});

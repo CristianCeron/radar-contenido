@@ -29,7 +29,7 @@ export function SiteHeader() {
     <header className="bg-ink">
       <div className="mx-auto flex max-w-[1280px] items-center justify-between gap-4 px-4 py-4 sm:px-8">
         <Logo />
-        <nav aria-label="Principal" className="flex gap-5 text-[15px] sm:gap-7">
+        <nav aria-label="Principal" className="hidden gap-7 text-[15px] sm:flex">
           {NAV.map((n) => {
             const active = n.href === "/radar" ? path === "/radar" || path.startsWith("/tema") : false;
             return (

@@ -3,21 +3,20 @@ import { readFileSync } from "node:fs";
 import { renderToStaticMarkup } from "react-dom/server";
 import { RadarSchema } from "pipeline/schema";
 import { RadarMarket } from "../components/RadarMarket";
-import { isStale, formatUsd, formatVelocity } from "../lib/format";
+import { isStale, formatUsd, formatVelocity, mentions14 } from "../lib/format";
 
 const radar = RadarSchema.parse(JSON.parse(readFileSync(new URL("./fixtures/radar-real.json", import.meta.url), "utf8")));
 const fresh = new Date(new Date(radar.generatedAt).getTime() + 2 * 3600_000);
 const old = new Date(new Date(radar.generatedAt).getTime() + 3 * 86400_000);
 
-function render(now: Date) {
-  return renderToStaticMarkup(<RadarMarket radar={radar} now={now} />);
+function render(now: Date, initialPilar?: string) {
+  return renderToStaticMarkup(<RadarMarket radar={radar} now={now} initialPilar={initialPilar} />);
 }
 
-describe("página principal tipo mercado", () => {
+describe("página del radar", () => {
   it("muestra 10 filas con tema, etapa, variación y mini gráfico", () => {
     const html = render(fresh);
-    const rows = html.match(/data-testid="topic-row"/g) ?? [];
-    expect(rows).toHaveLength(10);
+    expect(html.match(/data-testid="topic-row"/g)).toHaveLength(10);
     for (const t of radar.topics) {
       expect(html).toContain(t.label);
       expect(html).toContain(`href="/tema/${t.id}"`);
@@ -25,6 +24,12 @@ describe("página principal tipo mercado", () => {
     expect(html.match(/data-testid="sparkline"/g)).toHaveLength(10);
     expect(html).toContain(formatVelocity(radar.topics[0].velocity));
     expect(html).toMatch(/Pico|Creciendo|Emergente|Saturado/);
+  });
+
+  it("muestra las menciones de 14 días de cada tema", () => {
+    const html = render(fresh);
+    const t = radar.topics[4];
+    expect(html).toContain(`${mentions14(t.series)} menciones`);
   });
 
   it("muestra la fecha de los datos y el costo de la última corrida", () => {
@@ -36,6 +41,25 @@ describe("página principal tipo mercado", () => {
   it("muestra el estado de cada fuente", () => {
     const html = render(fresh);
     for (const s of ["Hacker News", "arXiv", "YouTube", "Prensa"]) expect(html).toContain(s);
+  });
+
+  it("ofrece un filtro por cada pilar de la Inmersión, con Todos activo", () => {
+    const html = render(fresh);
+    expect(html).toMatch(/aria-pressed="true"[^>]*>Todos</);
+    for (const p of ["Liderazgo y mentalidad", "Growth", "Fundraising", "IA aplicada al negocio"]) expect(html).toContain(`>${p}<`);
+  });
+
+  it("si un pilar no tiene temas muestra el estado vacío", () => {
+    const html = render(fresh, "Fundraising");
+    expect(html).not.toContain('data-testid="topic-row"');
+    expect(html).toContain("Ningún tema de Fundraising entró al top 10 esta semana.");
+    expect(html).toContain("Ver todos los temas");
+  });
+
+  it("filtra por pilar", () => {
+    const html = render(fresh, "Growth");
+    const growth = radar.topics.filter((t) => t.pilar === "Growth");
+    expect(html.match(/data-testid="topic-row"/g)).toHaveLength(growth.length);
   });
 
   it("sin datos antiguos no muestra el aviso", () => {
@@ -63,11 +87,11 @@ describe("formato", () => {
   });
 });
 
-describe("pilar en la portada", () => {
+describe("pilar en el radar", () => {
   it("muestra el pilar de cada tema cuando existe", () => {
     const conPilar = { ...radar, topics: radar.topics.map((t, i) => ({ ...t, pilar: i === 0 ? "Ventas" : undefined })) };
     const html = renderToStaticMarkup(<RadarMarket radar={conPilar} now={fresh} />);
-    expect(html).toContain('data-testid="pilar"');
+    expect(html.match(/data-testid="pilar"/g)).toHaveLength(1);
     expect(html).toContain("Ventas");
   });
 });

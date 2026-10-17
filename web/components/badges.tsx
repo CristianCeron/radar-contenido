@@ -68,7 +68,7 @@ const DOT_CLASS: Record<ChipState, string> = { ok: "bg-ok", ultimo_guardado: "bg
 // Verde: al día. Amarillo: se usa el último guardado. Violeta: fuente caída.
 export function SourceChips({ sources }: { sources: SourceStatus[] }) {
   return (
-    <ul aria-label="Estado de las fuentes" className="flex flex-wrap gap-2">
+    <ul aria-label="Estado de las fuentes" className="-mx-4 flex gap-2 overflow-x-auto px-4 sm:mx-0 sm:flex-wrap sm:px-0">
       {sources.map((s) => {
         const state = chipState(s);
         const detail = state === "ok" ? String(s.items) : sourceStatusText(s);
@@ -76,7 +76,7 @@ export function SourceChips({ sources }: { sources: SourceStatus[] }) {
           <li
             key={s.source}
             data-status={state}
-            className={`inline-flex items-center gap-2 rounded-full border px-3.5 py-2 text-[13px] ${CHIP_CLASS[state]}`}
+            className={`inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-full border px-3.5 py-2 text-[13px] ${CHIP_CLASS[state]}`}
           >
             <span aria-hidden className={`h-[7px] w-[7px] rounded-full ${DOT_CLASS[state]}`} />
             {SOURCE_LABEL[s.source]} · {detail}

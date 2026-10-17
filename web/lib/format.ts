@@ -7,6 +7,11 @@ export function formatDate(iso: string): string {
   return new Intl.DateTimeFormat("es-CO", { dateStyle: "long", timeZone: TZ }).format(new Date(iso));
 }
 
+// "17 de octubre", sin el año, para chips y avisos.
+export function formatDay(iso: string): string {
+  return new Intl.DateTimeFormat("es-CO", { day: "numeric", month: "long", timeZone: TZ }).format(new Date(iso));
+}
+
 export function formatDateTime(iso: string): string {
   return new Intl.DateTimeFormat("es-CO", { dateStyle: "long", timeStyle: "short", timeZone: TZ }).format(new Date(iso));
 }

@@ -1,22 +1,79 @@
 @import "tailwindcss";
 
-:root {
-  --bg: #0b0d10;
-  --panel: #111418;
-  --line: #1f242b;
-  --text: #e8eaed;
-  --muted: #8b939e;
-  --up: #34d399;
-  --down: #f87171;
+/* Tokens del diseño Radar 30X. Tailwind los expone como clases: bg-ink, text-accent, etc. */
+@theme {
+  --color-ink: #0a0a0a;
+  --color-ink-2: #161614;
+  --color-ink-3: #1a1a18;
+  --color-ink-line: #2a2925;
+  --color-ink-line-2: #262522;
+  --color-accent: #ff6a2b;
+  --color-accent-hover: #ff8a57;
+  --color-paper: #f4f3ef;
+  --color-paper-2: #fafafa;
+  --color-line: #ecebe4;
+  --color-line-2: #d9d5cb;
+  --color-muted: #868073;
+  --color-muted-2: #6b665b;
+  --color-soft: #c9c5bb;
+  --color-body: #3b3833;
+  --color-up-bg: #ffe6da;
+  --color-up-text: #9a3300;
+  --color-down-bg: #ece8ff;
+  --color-down-text: #4a3ab0;
+  --color-down-line: #7b6be6;
+  --color-ok: #9bd36a;
+  --color-cache: #f5e06b;
+  --color-fail: #9c8cff;
+  --color-stage-creciendo: #ffd2bc;
+  --color-stage-saturado: #e4deff;
+  --color-stage-saturado-text: #3d2e99;
+
+  --font-sans: var(--font-inter-tight), system-ui, sans-serif;
+  --font-serif: var(--font-instrument-serif), Georgia, serif;
 }
 
 html {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
+}
+
+/* Una palabra por título va en Instrument Serif itálica. */
+.serif {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+}
+
+@keyframes shimmer {
+  0% { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+.sk {
+  border-radius: 10px;
+  background: linear-gradient(90deg, #1e1e1c 0%, #2c2b27 50%, #1e1e1c 100%);
+  background-size: 800px 100%;
+  animation: shimmer 1.4s linear infinite;
+}
+
+.sk-light {
+  border-radius: 10px;
+  background: linear-gradient(90deg, #ecebe4 0%, #f7f6f2 50%, #ecebe4 100%);
+  background-size: 800px 100%;
+  animation: shimmer 1.4s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sk,
+  .sk-light,
+  .animate-spin {
+    animation: none;
+  }
 }

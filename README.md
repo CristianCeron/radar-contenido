@@ -89,17 +89,40 @@ RADAR_TEMA=ia npm run pipeline
 Ese radar se escribe en `web/public/data/radar-ia.json` y usa su propia caché, así que no pisa el
 radar publicado.
 
+## Costos y operación
+
+| Concepto | Valor |
+|---|---|
+| Costo por corrida | Entre USD 0,67 y 0,84 (70 a 120 llamadas a Gemini, 9 a 18 minutos) |
+| Costo mensual con una corrida diaria | Unos USD 20 a 25, más centavos por los briefs en vivo |
+| Tope de costo por corrida | USD 1,50 (`RUN_COST_LIMIT_USD`); si se supera, no se publica nada y queda el radar anterior |
+| Fuentes sin costo | Hacker News, arXiv, RSS y YouTube (cupo gratis de 10.000 unidades al día; una corrida usa unas 800) |
+| Infraestructura | GitHub Actions (corrida diaria) y Vercel Hobby (página); ambos gratis |
+
+- **Quién paga hoy:** los modelos se pagan con los créditos de la prueba gratuita de Google Cloud
+  (Gemini por Agent Platform). Cuando venzan, hay que activar la facturación en Google Cloud (unos USD
+  20 a 25 al mes) o pasar a Claude con `LLM_PROVIDER=anthropic`.
+- **Si una fuente falla o agota su cupo**, el radar usa su último resultado guardado y la página lo
+  indica con su fecha.
+- **Mantenimiento:** los feeds RSS pueden cambiar de dirección; están en el archivo de tema y se
+  reemplazan sin tocar código. Los perfiles de marca tienen una lista `porValidar` para que el
+  equipo de 30X confirme datos.
+- **Límites conocidos:** el ranking mide crecimiento en las fuentes que lee, no el desempeño real de
+  las publicaciones; LinkedIn, Instagram y TikTok solo entran por el sensor humano; el brief en vivo
+  tarda entre 10 y 13 segundos.
+
 ## Pruebas
 
 ```bash
 npm test
 ```
 
-Corre las pruebas del pipeline y de la web con vitest. No llaman a ningún servicio real: usan
-respuestas grabadas en `pipeline/test/fixtures`.
+Corre las pruebas del pipeline y de la web con vitest (175 en total). No llaman a ningún servicio
+real: usan respuestas grabadas en `pipeline/test/fixtures`.
 
 ## Documentos
 
 - [Spec](spec-radar-contenido.md)
+- [Verificación contra la spec](docs/verificacion-spec.md)
 - [Cómo obtener las claves](docs/claves.md)
 - [Sensor humano](docs/sensor-humano.md)

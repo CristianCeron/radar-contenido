@@ -1,0 +1,78 @@
+{
+  "hits": [
+    {
+      "_tags": [
+        "story",
+        "author_paraphern",
+        "story_50127659",
+        "show_hn"
+      ],
+      "author": "paraphern",
+      "created_at": "2026-10-17T03:33:00Z",
+      "created_at_i": 1792207980,
+      "num_comments": 0,
+      "objectID": "50127659",
+      "points": 1,
+      "story_id": 50127659,
+      "title": "Show HN: AI agent follows instructions you never approved",
+      "updated_at": "2026-10-17T03:37:51Z",
+      "url": "https://github.com/Paraphern/rugsnare/blob/main/docs/blog/2026-10-17-mcp-contract-drift.md"
+    },
+    {
+      "_tags": [
+        "story",
+        "author_junegunn",
+        "story_50126880"
+      ],
+      "author": "junegunn",
+      "created_at": "2026-10-17T01:19:22Z",
+      "created_at_i": 1792199962,
+      "num_comments": 0,
+      "objectID": "50126880",
+      "points": 3,
+      "story_id": 50126880,
+      "title": "Using fzf with AI coding agents",
+      "updated_at": "2026-10-17T02:21:07Z",
+      "url": "https://junegunn.github.io/fzf/tips/using-fzf-with-ai-agents/"
+    },
+    {
+      "_tags": [
+        "story",
+        "author_bennialencar",
+        "story_50126612"
+      ],
+      "author": "bennialencar",
+      "children": [
+        50126654,
+        50126619
+      ],
+      "created_at": "2026-10-17T00:37:16Z",
+      "created_at_i": 1792197436,
+      "num_comments": 0,
+      "objectID": "50126612",
+      "points": 3,
+      "story_id": 50126612,
+      "title": "Agent Cyber Sentinel: Zero-trust runtime security shield for AI agents",
+      "updated_at": "2026-10-17T01:01:36Z",
+      "url": "https://github.com/BenniAlencar/agent-cyber-sentinel"
+    },
+    {
+      "author": "anon",
+      "created_at": "2026-10-12T15:00:00Z",
+      "created_at_i": 1791817200,
+      "num_comments": 42,
+      "objectID": "50000001",
+      "points": 88,
+      "story_id": 50000001,
+      "title": "Ask HN: Who is running AI agents in production?",
+      "url": null,
+      "_tags": [
+        "story",
+        "ask_hn"
+      ]
+    }
+  ],
+  "nbPages": 1,
+  "page": 0,
+  "hitsPerPage": 4
+}

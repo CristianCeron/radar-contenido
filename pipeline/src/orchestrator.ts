@@ -9,9 +9,9 @@ import { buildChannels, explainTopic } from "./explain.js";
 import type { CostSink, LLM } from "./llm/types.js";
 import { mapPool } from "./pool.js";
 import { RadarSchema, type Brief, type NormalizedItem, type Radar, type Source, type SourceStatus, type Topic } from "./schema.js";
-import { assignStage, layerCounts, presentLayers } from "./stage.js";
+import { assignStage, layerCounts, presentLayers, PRODUCTION_STAGE_CONFIG } from "./stage.js";
 import { selectTop, topicRelevance } from "./top.js";
-import { assignTopics } from "./topics.js";
+import { assignTopics, isGenericLabel } from "./topics.js";
 import type { SourceResult } from "./sources/types.js";
 import { errorMessage, windowStart } from "./sources/types.js";
 import { buildSeries, recentMentions, velocity } from "./velocity.js";
@@ -84,7 +84,9 @@ async function buildRadar(deps: RadarDeps, sink: CostSink): Promise<Omit<Radar, 
   const groups = await assignTopics(items, fast, { concurrency: pool, log });
   log(`Temas: ${groups.length}`);
 
-  const candidates = groups.map((g) => {
+  const specific = groups.filter((g) => !isGenericLabel(g.label));
+  if (specific.length < groups.length) log(`Temas genéricos descartados: ${groups.length - specific.length}`);
+  const candidates = specific.map((g) => {
     const series = buildSeries(g.items, deps.now);
     const counts = layerCounts(g.items);
     const vel = velocity(series);
@@ -92,8 +94,8 @@ async function buildRadar(deps: RadarDeps, sink: CostSink): Promise<Omit<Radar, 
       group: g,
       series,
       velocity: vel,
-      layers: presentLayers(counts),
-      stage: assignStage({ layers: counts, velocity: vel }),
+      layers: presentLayers(counts, PRODUCTION_STAGE_CONFIG.minLayerMentions),
+      stage: assignStage({ layers: counts, velocity: vel }, PRODUCTION_STAGE_CONFIG),
       executiveRelevance: Math.round(topicRelevance(g.items.map((i) => i.id), classifications) * 100) / 100,
       recentMentions: recentMentions(series, 14),
     };

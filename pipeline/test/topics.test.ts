@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { assignTopics, labelKey } from "../src/topics.js";
+import { assignTopics, isGenericLabel, labelKey } from "../src/topics.js";
 import type { NormalizedItem } from "../src/schema.js";
 import { fakeLLM } from "./fake-llm.js";
 
@@ -99,6 +99,15 @@ describe("asignación de temas", () => {
     });
     const groups = await assignTopics(items, llm, { batchSize: 2, log: () => {} });
     expect(groups[0].items).toHaveLength(3);
+  });
+
+  it("reconoce etiquetas genéricas que no sirven como tema", () => {
+    for (const g of ["Uso de IA", "Fundamentos de IA", "Profesionales de IA", "Experiencias con IA", "Noticias de IA", "IA en general", "Herramientas de IA"]) {
+      expect(isGenericLabel(g)).toBe(true);
+    }
+    for (const ok of ["Agentes de IA", "Regulación de IA", "Seguridad con IA", "Robots con IA", "Modelos de video"]) {
+      expect(isGenericLabel(ok)).toBe(false);
+    }
   });
 
   it("pide temas concretos y no categorías genéricas", async () => {

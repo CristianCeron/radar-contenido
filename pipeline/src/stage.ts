@@ -3,8 +3,9 @@ import { LAYER_BY_SOURCE, type Layer, type NormalizedItem, type Stage } from "./
 export type LayerCounts = Record<Layer, number>;
 
 export interface StageConfig {
-  // Menciones mínimas para considerar que un tema está presente en una capa.
-  minLayerMentions: number;
+  // Menciones mínimas para considerar que un tema está presente en una capa: un número para todas
+  // o uno por capa (por ejemplo, exigir varias notas de prensa antes de llamar pico a un tema).
+  minLayerMentions: number | LayerCounts;
   // Por debajo de esta velocidad, un tema que ya llegó a prensa ejecutiva está saturado.
   saturationVelocity: number;
 }
@@ -26,8 +27,14 @@ export function layerCounts(items: NormalizedItem[]): LayerCounts {
 }
 
 export function presentLayers(counts: LayerCounts, minMentions = DEFAULT_STAGE_CONFIG.minLayerMentions): Layer[] {
-  return LAYER_ORDER.filter((l) => counts[l] >= minMentions);
+  const min = (l: Layer) => (typeof minMentions === "number" ? minMentions : minMentions[l]);
+  return LAYER_ORDER.filter((l) => counts[l] >= Math.max(1, min(l)));
 }
+
+// Umbrales usados en las corridas reales: una sola nota de prensa o un solo video no definen la etapa.
+export const PRODUCTION_STAGE_CONFIG: Partial<StageConfig> = {
+  minLayerMentions: { origen: 1, difusion: 2, audiencia_ejecutiva: 3 },
+};
 
 // Etapa según las capas donde aparece el tema y su velocidad:
 // solo origen = emergente; llega a difusión = creciendo; llega a prensa ejecutiva = pico;

@@ -21,6 +21,13 @@ describe("regla de etapa", () => {
     });
   }
 
+  it("una sola nota de prensa no basta para llamar pico a un tema", () => {
+    const realistic = { minLayerMentions: { origen: 1, difusion: 2, audiencia_ejecutiva: 3 } };
+    expect(assignStage({ layers: L(40, 6, 1), velocity: 120 }, realistic)).toBe("creciendo");
+    expect(assignStage({ layers: L(40, 6, 3), velocity: 120 }, realistic)).toBe("pico");
+    expect(assignStage({ layers: L(12, 1, 0), velocity: 120 }, realistic)).toBe("emergente");
+  });
+
   it("los umbrales son configurables", () => {
     // Con mínimo de 3 menciones por capa, 2 en difusión no cuentan: queda emergente.
     expect(assignStage({ layers: L(10, 2, 0), velocity: 50 }, { minLayerMentions: 3 })).toBe("emergente");

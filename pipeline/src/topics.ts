@@ -52,6 +52,27 @@ export function labelKey(label: string): string {
   return [...new Set(tokens)].sort().join(" ");
 }
 
+// Etiquetas que el modelo a veces devuelve aunque se le pida evitarlas: agrupan cualquier cosa
+// y no le dicen nada a un equipo de contenido, así que no entran al top.
+const GENERIC_LABELS = [
+  "Uso de IA",
+  "Fundamentos de IA",
+  "Profesionales de IA",
+  "Experiencias con IA",
+  "Noticias de IA",
+  "IA en general",
+  "Inteligencia artificial",
+  "Herramientas de IA",
+  "Aplicaciones de IA",
+  "Tendencias de IA",
+  "Futuro de la IA",
+];
+const GENERIC_KEYS = new Set(GENERIC_LABELS.map(labelKey));
+
+export function isGenericLabel(label: string): boolean {
+  return GENERIC_KEYS.has(labelKey(label));
+}
+
 const LabelSchema = z.object({
   items: z.array(z.object({ id: z.string(), topic: z.string().nullable() })),
 });

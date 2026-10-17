@@ -26,6 +26,11 @@ export function isStale(generatedAt: string, now: Date): boolean {
   return now.getTime() - new Date(generatedAt).getTime() > STALE_HOURS * 3600_000;
 }
 
+// Menciones de las últimas dos semanas, la columna "Menciones 14 d" del radar.
+export function mentions14(series: { count: number }[]): number {
+  return series.slice(-14).reduce((s, p) => s + p.count, 0);
+}
+
 export const STAGE_LABEL: Record<Stage, string> = {
   emergente: "Emergente",
   creciendo: "Creciendo",
@@ -44,9 +49,9 @@ export const SOURCE_LABEL: Record<Source, string> = {
   hackernews: "Hacker News",
   arxiv: "arXiv",
   youtube: "YouTube",
-  prensa: "Prensa",
+  prensa: "Prensa de negocios",
   equipo: "Aportes del equipo",
-  expertos: "Expertos",
+  expertos: "Newsletters de expertos",
 };
 
 export function sourceStatusText(s: SourceStatus): string {

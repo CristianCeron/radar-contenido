@@ -1,7 +1,7 @@
 # Verificación contra la spec
 
 Revisión punto por punto de [spec-radar-contenido.md](../spec-radar-contenido.md) contra el producto
-publicado en https://radar-contenido-kappa.vercel.app, el 17 de octubre de 2026.
+publicado en https://radar-contenido-kappa.vercel.app, el 17 de octubre de 2026. Actualizada después del cambio de foco a crecimiento de empresas.
 
 Leyenda: **Cumple**, **Parcial** (funciona con una limitación conocida), **Pendiente** (depende de
 una acción fuera del código).
@@ -10,9 +10,9 @@ una acción fuera del código).
 
 | Punto | Estado | Evidencia |
 |---|---|---|
-| Cuatro fuentes públicas en tres capas | Cumple | La portada muestra Hacker News, arXiv, YouTube y Prensa con su estado. La última corrida leyó 1.588, 300, 378 y 95 piezas. |
-| Sensor humano | Parcial | Adaptador, pruebas y guía listos ([docs/sensor-humano.md](sensor-humano.md)). Falta crear el formulario y cargar `SENSOR_SHEET_CSV_URL`; sin eso la fuente no aparece y el radar corre igual. |
-| Agrupación por tema y top 10 | Cumple | 40 temas agrupados con lista cerrada; la portada muestra 10 filas ordenadas por puntaje. |
+| Fuentes públicas en tres capas | Cumple | La portada muestra Hacker News, arXiv, expertos, YouTube, prensa y aportes del equipo con su estado. La última corrida leyó 426 piezas de Hacker News, 80 de arXiv, 57 de expertos, 118 de prensa y 3 del equipo; YouTube usó el último resultado guardado porque se agotó su cupo diario, y la página lo indica. |
+| Sensor humano | Cumple | Formulario publicado, hoja como CSV y secreto en GitHub. La corrida actual leyó 3 aportes de prueba y aparecen como "aportes del equipo" sin enlaces. |
+| Agrupación por tema y top 10 | Cumple | 30 temas dentro de los pilares de la Inmersión 30X; el top 10 cubre 7 de los 8 pilares, con máximo dos por pilar. |
 | Etapa por capas y velocidad | Cumple | La corrida actual tiene temas en pico, creciendo y emergente. "Pico" exige al menos 3 notas de prensa. |
 | Curva de 30 días | Cumple | Mini gráfico en cada fila y gráfico completo en el detalle. |
 | Canales y medios que hablan del tema | Cumple | Sección "Quiénes hablan de él" en el detalle. |
@@ -22,7 +22,7 @@ una acción fuera del código).
 | Brief por tema y perfil | Cumple | Ángulo, formato, gancho y oportunidad ligada a un producto real de la marca; se valida que producto y formato existan en el perfil. |
 | Página pública interactiva | Cumple | Lista tipo mercado, detalle por tema y selector de perfil. El diseño visual final queda para después, por decisión del equipo. |
 | Actualización automática diaria | Cumple | Flujo de GitHub Actions a las 5:00 a. m. hora Colombia, con caché de fuentes. Ver nota sobre la primera ejecución. |
-| Fecha y costo visibles | Cumple | "Datos del 17 de octubre de 2026" y "Costo de la última corrida: USD 0,82". |
+| Fecha y costo visibles | Cumple | "Datos del 17 de octubre de 2026 a las 4:02 p. m." y el costo de la corrida (USD 0,67). |
 | URL desplegada | Cumple | https://radar-contenido-kappa.vercel.app |
 | Repositorio público con documentación | Cumple | https://github.com/CristianCeron/radar-contenido con README, spec, plan y guías. |
 | Video pitch de 3 minutos | Pendiente | Falta grabarlo. |

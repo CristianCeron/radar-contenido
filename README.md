@@ -4,6 +4,8 @@ Detecta qué temas de IA están despegando, explica por qué con evidencia enlaz
 briefs de contenido para una marca concreta. Prototipo para el reto "Radar de contenido" del
 Hackathon 30X, con dos perfiles: 30X y Andrés Bilbao.
 
+**Demo:** https://radar-contenido-kappa.vercel.app
+
 Hoy los equipos de media pagan servicios de scraping que traen datos pero no explican por qué algo
 funcionó ni si encaja con su audiencia. El radar usa solo fuentes oficiales y públicas, muestra la
 evidencia de cada afirmación y entrega un brief listo para producir.

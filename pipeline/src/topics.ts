@@ -77,6 +77,8 @@ const LabelSchema = z.object({
   items: z.array(z.object({ id: z.string(), topic: z.string().nullable() })),
 });
 
+const MAX_MERGE_LABELS = 200;
+
 const MergeSchema = z.object({
   merges: z.array(z.object({ canonical: z.string(), aliases: z.array(z.string()) })),
 });
@@ -155,13 +157,18 @@ export async function assignTopics(items: NormalizedItem[], llm: LLM, opts: Assi
   const canonicalByKey = new Map<string, { key: string; label: string }>();
   const uniqueKeys = new Set([...known].map(labelKey));
   if (uniqueKeys.size > 1) {
+    // Con miles de piezas hay cientos de etiquetas; se mandan las más usadas, que son las que pueden
+    // llegar al top, para que la respuesta quepa y no llegue cortada.
+    const uses = new Map<string, number>();
+    for (const l of labelOf.values()) uses.set(l, (uses.get(l) ?? 0) + 1);
+    const forMerge = [...uses].sort((a, b) => b[1] - a[1]).slice(0, MAX_MERGE_LABELS).map(([l]) => l);
     try {
       const { merges } = await llm.json({
         label: "temas-fusion",
         system: MERGE_SYSTEM,
-        prompt: [...known].join("\n"),
+        prompt: forMerge.join("\n"),
         schema: MergeSchema,
-        maxTokens: 8000,
+        maxTokens: 32000,
       });
       for (const m of merges) {
         const target = { key: labelKey(m.canonical), label: m.canonical };

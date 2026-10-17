@@ -116,6 +116,22 @@ describe("asignación de temas", () => {
     expect(llm.requests[0].system).toMatch(/Evita categorías genéricas/);
   });
 
+  it("a la fusión le manda las etiquetas más usadas primero y con un tope", async () => {
+    const many = Array.from({ length: 400 }, (_, i) => item(`m${i}`, `Pieza ${i}`));
+    const llm = fakeLLM((req) => {
+      if (req.label !== "temas-etiquetado") return { merges: [] };
+      const ids = [...req.prompt.matchAll(/"id":"(\w+)"/g)].map((m) => m[1]);
+      // m0..m9 comparten etiqueta; el resto tiene una etiqueta única cada uno.
+      return { items: ids.map((id) => ({ id, topic: Number(id.slice(1)) < 10 ? "Agentes de IA" : `Tema raro ${id}` })) };
+    });
+    await assignTopics(many, llm, { batchSize: 100 });
+    const merge = llm.requests.find((r) => r.label === "temas-fusion")!;
+    const lines = merge.prompt.split("\n").filter(Boolean);
+    expect(lines[0]).toBe("Agentes de IA");
+    expect(lines.length).toBeLessThanOrEqual(250);
+    expect(merge.maxTokens).toBeGreaterThanOrEqual(30000);
+  });
+
   it("ignora ids que el modelo inventa", async () => {
     const llm = fakeLLM((req) =>
       req.label === "temas-etiquetado" ? { items: [{ id: "999", topic: "Agentes de IA" }] } : { merges: [] },

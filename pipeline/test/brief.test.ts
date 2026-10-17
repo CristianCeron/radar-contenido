@@ -84,6 +84,12 @@ describe("generador de brief", () => {
     await expect(generateBrief(topic, p30x, { llm, now })).rejects.toThrow();
   });
 
+  it("prohíbe al modelo inventar cifras que no están en la evidencia", async () => {
+    const llm = fakeLLM(answerFromPrompt);
+    await generateBrief(topic, p30x, { llm, now });
+    expect(llm.requests[0].system).toMatch(/No inventes cifras/);
+  });
+
   it("incluye la etapa y la explicación del tema en el pedido", async () => {
     const llm = fakeLLM(answerFromPrompt);
     await generateBrief(topic, p30x as Profile, { llm, now });

@@ -52,6 +52,7 @@ Con un tema en tendencia y el perfil de la marca, propones UNA pieza de contenid
 - format: uno de los formatos de la marca, copiado tal cual.
 - hook: la primera línea o los primeros 3 segundos, en la voz de la marca.
 - opportunity.product: uno de los productos de la marca, copiado tal cual; opportunity.rationale: en una oración, cómo la pieza lleva a ese producto sin sonar a venta forzada.
+No inventes cifras, porcentajes, estudios ni casos: usa solo los datos que aparecen en "Por qué crece" o en las piezas. Si no hay cifras, escribe sin cifras.
 Escribe en español neutro con tuteo. Sin guion largo. Respeta lo que la marca evita.`;
 
 function buildPrompt(topic: BriefTopic, profile: Profile): string {

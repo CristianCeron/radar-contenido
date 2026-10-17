@@ -3,12 +3,13 @@
   "private": true,
   "version": "0.1.0",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "next dev --webpack",
+    "build": "next build --webpack",
     "start": "next start",
     "test": "vitest run"
   },
   "dependencies": {
+    "dotenv": "^18.0.8",
     "next": "^16.4.2",
     "pipeline": "*",
     "react": "^19.3.1",

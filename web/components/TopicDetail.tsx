@@ -1,4 +1,5 @@
 import type { Radar, Topic } from "pipeline/schema";
+import { BriefPanel } from "./BriefPanel";
 import { GrowthChart } from "./GrowthChart";
 import { HOOK_LABEL, SOURCE_LABEL, STAGE_HINT, STAGE_LABEL, formatVelocity } from "../lib/format";
 
@@ -93,40 +94,7 @@ export function TopicDetail({ topic, radar }: { topic: Topic; radar: Radar }) {
         </Section>
 
         <Section id="briefs" title="Qué publicar: brief por marca">
-          <div className="grid gap-4 sm:grid-cols-2">
-            {radar.profiles.map((profile) => {
-              const b = topic.briefs[profile.id];
-              return (
-                <article key={profile.id} className="rounded-lg border border-[var(--line)] p-4">
-                  <h3 className="font-semibold">{profile.nombre}</h3>
-                  {b ? (
-                    <dl className="mt-2 space-y-2 text-sm">
-                      <div>
-                        <dt className="text-[var(--muted)]">Ángulo</dt>
-                        <dd>{b.angle}</dd>
-                      </div>
-                      <div>
-                        <dt className="text-[var(--muted)]">Formato</dt>
-                        <dd>{b.format}</dd>
-                      </div>
-                      <div>
-                        <dt className="text-[var(--muted)]">Gancho</dt>
-                        <dd>{b.hook}</dd>
-                      </div>
-                      <div>
-                        <dt className="text-[var(--muted)]">Oportunidad</dt>
-                        <dd>
-                          {b.opportunity.product}: {b.opportunity.rationale}
-                        </dd>
-                      </div>
-                    </dl>
-                  ) : (
-                    <p className="mt-2 text-sm text-[var(--muted)]">No hay brief disponible para este tema.</p>
-                  )}
-                </article>
-              );
-            })}
-          </div>
+          <BriefPanel topicId={topic.id} profiles={radar.profiles} briefs={topic.briefs} />
         </Section>
       </div>
     </main>

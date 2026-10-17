@@ -9,7 +9,7 @@ import { fetchArxiv } from "../src/sources/arxiv.js";
 import { fetchYouTube } from "../src/sources/youtube.js";
 import { fetchPress } from "../src/sources/rss.js";
 import { createLLMClassifier } from "../src/classify/fallback.js";
-import { loadProfiles } from "../src/brief.js";
+import { loadProfiles } from "../src/profiles.js";
 import type { JsonRequest } from "../src/llm/types.js";
 import { fakeFetch, fixture } from "./helpers.js";
 import { fakeLLM } from "./fake-llm.js";

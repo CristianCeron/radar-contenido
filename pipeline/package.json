@@ -23,6 +23,7 @@
   "exports": {
     "./schema": "./src/schema.ts",
     "./brief": "./src/brief.ts",
-    "./llm": "./src/llm/index.ts"
+    "./llm": "./src/llm/index.ts",
+    "./perfiles/*": "./config/perfiles/*"
   }
 }

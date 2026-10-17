@@ -1,5 +1,5 @@
 import { fileURLToPath } from "node:url";
-import { loadProfiles } from "./brief.js";
+import { loadProfiles } from "./profiles.js";
 import { createJevClassifier } from "./classify/jev.js";
 import { createLLMClassifier } from "./classify/fallback.js";
 import { createLLM } from "./llm/index.js";

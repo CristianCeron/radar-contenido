@@ -1,5 +1,6 @@
 import { describe, it, expect } from "vitest";
-import { generateBrief, loadProfiles, ProfileSchema, type Profile } from "../src/brief.js";
+import { generateBrief, ProfileSchema, type Profile } from "../src/brief.js";
+import { loadProfiles } from "../src/profiles.js";
 import { BriefSchema } from "../src/schema.js";
 import type { JsonRequest } from "../src/llm/types.js";
 import { fakeLLM } from "./fake-llm.js";

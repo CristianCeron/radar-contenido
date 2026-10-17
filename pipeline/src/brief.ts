@@ -1,4 +1,3 @@
-import { readdirSync, readFileSync } from "node:fs";
 import { z } from "zod";
 import type { Brief, Stage, Topic } from "./schema.js";
 import type { LLM } from "./llm/types.js";
@@ -21,15 +20,6 @@ export const ProfileSchema = z.object({
   porValidar: z.array(z.string()).default([]),
 });
 export type Profile = z.infer<typeof ProfileSchema>;
-
-const PROFILES_DIR = new URL("../config/perfiles/", import.meta.url);
-
-export function loadProfiles(dir: URL = PROFILES_DIR): Profile[] {
-  return readdirSync(dir)
-    .filter((f) => f.endsWith(".json"))
-    .sort()
-    .map((f) => ProfileSchema.parse(JSON.parse(readFileSync(new URL(f, dir), "utf8"))));
-}
 
 export interface BriefTopic {
   label: string;

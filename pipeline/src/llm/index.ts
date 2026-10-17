@@ -4,7 +4,8 @@ import type { CostSink, LLM } from "./types.js";
 
 export type { CostSink, CostEntry, JsonRequest, LLM } from "./types.js";
 
-export type LLMRole = "fast" | "writer";
+// live: brief en vivo desde la página; necesita responder en pocos segundos.
+export type LLMRole = "fast" | "writer" | "live";
 
 function envPrice(name: string): { input: number; output: number } | undefined {
   const raw = process.env[name];
@@ -21,14 +22,18 @@ export function createLLM(role: LLMRole, onCost?: CostSink): LLM {
   const fast = role === "fast";
 
   if (provider === "gemini") {
-    const model = fast ? process.env.GEMINI_MODEL_FAST : process.env.GEMINI_MODEL_WRITER;
+    const model = fast
+      ? process.env.GEMINI_MODEL_FAST
+      : role === "live"
+        ? process.env.GEMINI_MODEL_LIVE || process.env.GEMINI_MODEL_WRITER
+        : process.env.GEMINI_MODEL_WRITER;
     if (!model) throw new Error(`Falta ${fast ? "GEMINI_MODEL_FAST" : "GEMINI_MODEL_WRITER"} en el .env`);
     const backend = process.env.GEMINI_BACKEND || "aistudio";
     if (backend !== "aistudio" && backend !== "vertex") throw new Error(`GEMINI_BACKEND no soportado: ${backend}`);
     return createGeminiLLM({
       model,
       backend,
-      price: envPrice(fast ? "GEMINI_PRICE_FAST" : "GEMINI_PRICE_WRITER"),
+      price: envPrice(fast ? "GEMINI_PRICE_FAST" : role === "live" ? "GEMINI_PRICE_LIVE" : "GEMINI_PRICE_WRITER"),
       onCost,
     });
   }

@@ -136,6 +136,18 @@ describe("selección de proveedor", () => {
     }
   });
 
+  it("el modo en vivo usa su propio modelo y si no hay, el redactor", () => {
+    process.env.LLM_PROVIDER = "gemini";
+    process.env.GEMINI_MODEL_WRITER = "gemini-redactor";
+    try {
+      expect(createLLM("live").model).toBe("gemini-redactor");
+      process.env.GEMINI_MODEL_LIVE = "gemini-rapido-vivo";
+      expect(createLLM("live").model).toBe("gemini-rapido-vivo");
+    } finally {
+      for (const k of ["LLM_PROVIDER", "GEMINI_MODEL_WRITER", "GEMINI_MODEL_LIVE"]) delete process.env[k];
+    }
+  });
+
   it("rechaza un proveedor desconocido", () => {
     process.env.LLM_PROVIDER = "otro";
     try {

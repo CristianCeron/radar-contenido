@@ -1,0 +1,9 @@
+{
+  "kind": "youtube#videoListResponse",
+  "etag": "fixture",
+  "items": [
+    { "kind": "youtube#video", "etag": "b1", "id": "vid00000001", "statistics": { "viewCount": "48210", "likeCount": "2100", "favoriteCount": "0", "commentCount": "312" } },
+    { "kind": "youtube#video", "etag": "b2", "id": "vid00000002", "statistics": { "viewCount": "1203450", "likeCount": "45000", "favoriteCount": "0", "commentCount": "2890" } }
+  ],
+  "pageInfo": { "totalResults": 2, "resultsPerPage": 2 }
+}

@@ -1,0 +1,39 @@
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "fixture",
+  "nextPageToken": "CAIQAA",
+  "regionCode": "CO",
+  "pageInfo": { "totalResults": 1000000, "resultsPerPage": 2 },
+  "items": [
+    {
+      "kind": "youtube#searchResult",
+      "etag": "a1",
+      "id": { "kind": "youtube#video", "videoId": "vid00000001" },
+      "snippet": {
+        "publishedAt": "2026-10-14T15:00:12Z",
+        "channelId": "UCcanal0000000000000001",
+        "title": "Cómo crear un agente de IA para tu empresa (sin programar)",
+        "description": "Paso a paso para montar tu primer agente.",
+        "thumbnails": { "default": { "url": "https://i.ytimg.com/vi/vid00000001/default.jpg", "width": 120, "height": 90 } },
+        "channelTitle": "Canal IA Negocios",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-10-14T15:00:12Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "a2",
+      "id": { "kind": "youtube#video", "videoId": "vid00000002" },
+      "snippet": {
+        "publishedAt": "2026-10-10T09:30:00Z",
+        "channelId": "UCcanal0000000000000002",
+        "title": "AI agents explained in 10 minutes",
+        "description": "What agents are and why everyone is talking about them.",
+        "thumbnails": { "default": { "url": "https://i.ytimg.com/vi/vid00000002/default.jpg", "width": 120, "height": 90 } },
+        "channelTitle": "Tech Explained",
+        "liveBroadcastContent": "none",
+        "publishTime": "2026-10-10T09:30:00Z"
+      }
+    }
+  ]
+}

@@ -9,6 +9,7 @@ export interface TopicGroup {
   id: string;
   label: string;
   items: NormalizedItem[];
+  pilar?: string;
 }
 
 const STOPWORDS = new Set([
@@ -77,10 +78,17 @@ export function isGenericLabel(label: string): boolean {
 const NOT_A_TOPIC = /^(null|none|n\/a|ninguno|ninguna|otro|otros|otra|sin tema|no aplica)$/i;
 
 const TaxonomySchema = z.object({ topics: z.array(z.string()) });
+const PillarTaxonomySchema = z.object({ topics: z.array(z.object({ label: z.string(), pilar: z.string() })) });
 
-const taxonomySystem = (tema: string) => `Recibes una muestra de títulos de piezas recientes sobre ${tema} (foros técnicos, investigación, YouTube y prensa de negocios).
-Propón entre 25 y 40 temas que agrupen esas piezas, pensando en un equipo de contenido que le habla a ejecutivos de Latinoamérica.
-- Cada tema es una etiqueta corta en español (2 a 4 palabras) que nombra algo concreto: una tecnología, un tipo de producto, una práctica o un hecho del sector. Ejemplos: "Agentes de IA", "Modelos de video", "Regulación de IA", "Gafas con IA", "Seguridad de modelos".
+const taxonomySystem = (tema: string, pilares?: string[]) => `Recibes una muestra de títulos de piezas recientes sobre ${tema} (foros, expertos, investigación, YouTube y prensa de negocios).
+${
+  pilares?.length
+    ? `Organiza los temas por pilar. Pilares: ${pilares.join("; ")}.
+Propón entre 3 y 5 temas por pilar, cada uno con el nombre exacto de su pilar.`
+    : "Propón entre 25 y 40 temas que agrupen esas piezas."
+}
+Piensa en un equipo de contenido que le habla a founders y ejecutivos de Latinoamérica.
+- Cada tema es una etiqueta corta en español (2 a 4 palabras) que nombra algo concreto: una práctica, una tecnología, un tipo de producto o un hecho del sector. Ejemplos: "Sistemas de ventas B2B", "Contratación de líderes", "Rondas de inversión en Latinoamérica", "Agentes de IA", "Regulación de IA".
 - Evita categorías genéricas que sirven para cualquier pieza, como "Experiencias con IA", "Fundamentos de IA", "Noticias de IA", "Profesionales de IA" o "IA en general".
 - No repitas el mismo tema con otras palabras.`;
 
@@ -95,6 +103,8 @@ export interface AssignOptions {
   sampleSize?: number;
   // Tema que rastrea el radar; por defecto, inteligencia artificial.
   tema?: string;
+  // Pilares de la temática: los temas se proponen dentro de ellos.
+  pilares?: string[];
   log?: (msg: string) => void;
 }
 
@@ -125,16 +135,23 @@ function spanishScore(label: string): number {
   return (/\bIA\b/.test(label) ? 2 : 0) + (/\b(de|del|para|con)\b|ción|[áéíóúñ]/i.test(label) ? 1 : 0);
 }
 
+interface Proposed {
+  label: string;
+  pilar?: string;
+}
+
 // Limpia la lista propuesta: sin vacíos, sin "ninguno", sin genéricos y sin repetidos por clave.
-function cleanTaxonomy(topics: string[]): string[] {
-  const byKey = new Map<string, string>();
+// Un pilar que no está en la lista del tema se descarta (el tema queda sin pilar).
+function cleanTaxonomy(topics: Proposed[], pilares?: string[]): Proposed[] {
+  const byKey = new Map<string, Proposed>();
   for (const raw of topics) {
-    const label = raw.trim().replace(/\s+/g, " ");
+    const label = raw.label.trim().replace(/\s+/g, " ");
     const key = labelKey(label);
     if (!label || !key || NOT_A_TOPIC.test(label) || isGenericLabel(label)) continue;
+    const pilar = raw.pilar && pilares?.includes(raw.pilar.trim()) ? raw.pilar.trim() : undefined;
     const current = byKey.get(key);
-    if (!current || spanishScore(label) > spanishScore(current)) {
-      byKey.set(key, label.charAt(0).toUpperCase() + label.slice(1));
+    if (!current || spanishScore(label) > spanishScore(current.label)) {
+      byKey.set(key, { label: label.charAt(0).toUpperCase() + label.slice(1), pilar: pilar ?? current?.pilar });
     }
   }
   return [...byKey.values()];
@@ -149,14 +166,18 @@ export async function assignTopics(items: NormalizedItem[], llm: LLM, opts: Assi
   if (items.length === 0) return [];
 
   const sample = sampleForTaxonomy(items, opts.sampleSize ?? 300);
-  const proposed = await llm.json({
+  const request = {
     label: "temas-taxonomia",
-    system: taxonomySystem(tema),
+    system: taxonomySystem(tema, opts.pilares),
     prompt: `Títulos:\n${sample.map((it) => `- ${it.title}`).join("\n")}`,
-    schema: TaxonomySchema,
-    maxTokens: 4000,
-  });
-  const taxonomy = cleanTaxonomy(proposed.topics);
+    maxTokens: 6000,
+  };
+  const proposed: Proposed[] = opts.pilares?.length
+    ? (await llm.json({ ...request, schema: PillarTaxonomySchema })).topics
+    : (await llm.json({ ...request, schema: TaxonomySchema })).topics.map((label) => ({ label }));
+  const entries = cleanTaxonomy(proposed, opts.pilares);
+  const taxonomy = entries.map((e) => e.label);
+  const pilarOf = new Map(entries.map((e) => [e.label, e.pilar]));
   if (taxonomy.length === 0) throw new Error("El modelo no propuso temas utilizables");
 
   // El modelo responde el número del tema: es corto y robusto. Un número fuera de la lista se descarta.
@@ -191,5 +212,5 @@ export async function assignTopics(items: NormalizedItem[], llm: LLM, opts: Assi
     }
   });
 
-  return [...groups].map(([label, groupItems]) => ({ id: slug(label), label, items: groupItems }));
+  return [...groups].map(([label, groupItems]) => ({ id: slug(label), label, items: groupItems, pilar: pilarOf.get(label) }));
 }

@@ -25,6 +25,9 @@ export const TemaSchema = z.object({
   // Feeds de prensa propios del tema. Si no se definen, se usan los de config/feeds.json.
   prensa: z.array(FeedSchema).optional(),
   filtroPrensa: z.object({ siglas: z.array(z.string()), terminos: z.array(z.string()) }),
+  // Pilares de la temática: los temas se proponen dentro de ellos y el top tiene cupo por pilar.
+  pilares: z.array(z.string()).optional(),
+  maxPorPilar: z.number().int().min(1).optional(),
 });
 export type Tema = z.infer<typeof TemaSchema>;
 

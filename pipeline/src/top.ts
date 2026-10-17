@@ -5,6 +5,8 @@ export interface Rankable {
   executiveRelevance: number;
   // Menciones de las últimas dos semanas, para descartar temas con muy poco volumen.
   recentMentions?: number;
+  // Pilar del tema (por ejemplo "Ventas"); sirve para que ningún pilar se coma el top.
+  pilar?: string;
 }
 
 export interface TopConfig {
@@ -13,6 +15,8 @@ export interface TopConfig {
   minRelevance: number;
   // Temas con menos menciones recientes que esto son ruido aunque su velocidad sea alta.
   minRecentMentions: number;
+  // Máximo de temas del mismo pilar en el top. Sin valor, no hay cupo.
+  maxPerPilar?: number;
 }
 
 export const DEFAULT_TOP_CONFIG: TopConfig = { limit: 10, minRelevance: 0.3, minRecentMentions: 0 };
@@ -30,10 +34,22 @@ export function topicRelevance(itemIds: string[], classifications: Map<string, C
 
 export function selectTop<T extends Rankable>(topics: T[], config: Partial<TopConfig> = {}): (T & { score: number })[] {
   const cfg = { ...DEFAULT_TOP_CONFIG, ...config };
-  return topics
+  const ranked = topics
     .filter((t) => t.velocity !== null && t.executiveRelevance >= cfg.minRelevance)
     .filter((t) => (t.recentMentions ?? Infinity) >= cfg.minRecentMentions)
     .map((t) => ({ ...t, score: topicScore(t) }))
-    .sort((a, b) => b.score - a.score)
-    .slice(0, cfg.limit);
+    .sort((a, b) => b.score - a.score);
+
+  const perPilar = new Map<string, number>();
+  const top: (T & { score: number })[] = [];
+  for (const t of ranked) {
+    if (top.length >= cfg.limit) break;
+    if (cfg.maxPerPilar && t.pilar) {
+      const n = perPilar.get(t.pilar) ?? 0;
+      if (n >= cfg.maxPerPilar) continue;
+      perPilar.set(t.pilar, n + 1);
+    }
+    top.push(t);
+  }
+  return top;
 }

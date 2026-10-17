@@ -32,6 +32,9 @@ export interface RadarDeps {
   minRecentMentions?: number;
   // Nombre del tema que rastrea el radar (config/tema.json).
   tema?: string;
+  // Pilares de la temática y cupo de temas por pilar en el top.
+  pilares?: string[];
+  maxPorPilar?: number;
   log?: (msg: string) => void;
 }
 
@@ -84,7 +87,7 @@ async function buildRadar(deps: RadarDeps, sink: CostSink): Promise<Omit<Radar, 
   const classifications = await classifyWithFallback(items, { primary, fallback, log, concurrency: pool });
   log(`Clasificados: ${classifications.size}`);
 
-  const groups = await assignTopics(items, fast, { concurrency: pool, log, tema: deps.tema });
+  const groups = await assignTopics(items, fast, { concurrency: pool, log, tema: deps.tema, pilares: deps.pilares });
   log(`Temas: ${groups.length}`);
 
   const specific = groups.filter((g) => !isGenericLabel(g.label));
@@ -101,11 +104,12 @@ async function buildRadar(deps: RadarDeps, sink: CostSink): Promise<Omit<Radar, 
       stage: assignStage({ layers: counts, velocity: vel }, PRODUCTION_STAGE_CONFIG),
       executiveRelevance: Math.round(topicRelevance(g.items.map((i) => i.id), classifications) * 100) / 100,
       recentMentions: recentMentions(series, 14),
+      pilar: g.pilar,
     };
   });
 
   // Se piden más candidatos que 10: los que no logren una explicación con evidencia se descartan.
-  const ranked = selectTop(candidates, { limit: 15, minRecentMentions: deps.minRecentMentions ?? 8 });
+  const ranked = selectTop(candidates, { limit: 15, minRecentMentions: deps.minRecentMentions ?? 8, maxPerPilar: deps.maxPorPilar });
   const explained = await mapPool(ranked, pool, async (c) => {
     try {
       const res = await explainTopic(
@@ -144,6 +148,7 @@ async function buildRadar(deps: RadarDeps, sink: CostSink): Promise<Omit<Radar, 
     return {
       id: t.group.id,
       label: t.group.label,
+      pilar: t.pilar,
       stage: t.stage,
       velocity: t.velocity,
       executiveRelevance: t.executiveRelevance,

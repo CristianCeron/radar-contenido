@@ -29,6 +29,7 @@ export function TopicDetail({ topic, radar }: { topic: Topic; radar: Radar }) {
       <header className="mt-4 mb-6">
         <h1 className="text-3xl font-semibold tracking-tight">{topic.label}</h1>
         <p className="mt-2 text-sm text-[var(--muted)]">
+          {topic.pilar && <span className="mr-2 font-medium text-[var(--text)]">Pilar: {topic.pilar} ·</span>}
           {STAGE_LABEL[topic.stage]}: {STAGE_HINT[topic.stage]}
         </p>
         <p className="mt-3 flex flex-wrap gap-x-6 gap-y-1 text-sm">

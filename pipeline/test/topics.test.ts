@@ -141,3 +141,26 @@ describe("asignación de temas", () => {
     }
   });
 });
+
+describe("temas por pilar", () => {
+  const pilares = ["Ventas", "Equipos y talento", "IA aplicada"];
+
+  it("propone temas dentro de cada pilar y cada grupo conserva su pilar", async () => {
+    const llm = fakeLLM((req) => {
+      if (req.label === "temas-taxonomia") {
+        return {
+          topics: [
+            { label: "Agentes de IA", pilar: "IA aplicada" },
+            { label: "Modelos de video", pilar: "Pilar inventado" },
+          ],
+        };
+      }
+      return standardLLM().json(req);
+    });
+    const groups = await assignTopics(items, llm, { pilares });
+    expect(llm.requests[0].system).toContain("Equipos y talento");
+    expect(llm.requests[0].system).toMatch(/por pilar/i);
+    expect(groups.find((g) => g.label === "Agentes de IA")?.pilar).toBe("IA aplicada");
+    expect(groups.find((g) => g.label === "Modelos de video")?.pilar).toBeUndefined();
+  });
+});

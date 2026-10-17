@@ -91,7 +91,14 @@ export function RadarMarket({ radar, now }: { radar: Radar; now: Date }) {
                   <span className="text-sm tabular-nums text-[var(--muted)]">{i + 1}</span>
                   <span className="min-w-0">
                     <span className="block truncate font-medium">{t.label}</span>
-                    <span className="block text-xs text-[var(--muted)]">{recent} menciones en 14 días</span>
+                    <span className="block text-xs text-[var(--muted)]">
+                      {t.pilar && (
+                        <span data-testid="pilar" className="mr-2 text-[var(--text)]/80">
+                          {t.pilar} ·
+                        </span>
+                      )}
+                      {recent} menciones en 14 días
+                    </span>
                   </span>
                   <span className="md:order-none">
                     <StageBadge stage={t.stage} />

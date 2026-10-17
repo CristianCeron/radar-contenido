@@ -57,3 +57,17 @@ describe("selección del top 10", () => {
     expect(topicRelevance(["x"], classes)).toBe(0);
   });
 });
+
+describe("cupo por pilar", () => {
+  it("no deja que un pilar se coma el top", () => {
+    const topics = [
+      { ...t("ia1", 900, 0.9), pilar: "IA aplicada" },
+      { ...t("ia2", 800, 0.9), pilar: "IA aplicada" },
+      { ...t("ia3", 700, 0.9), pilar: "IA aplicada" },
+      { ...t("ventas", 100, 0.8), pilar: "Ventas" },
+      { ...t("libre", 50, 0.8) },
+    ];
+    const top = selectTop(topics, { maxPerPilar: 2 });
+    expect(top.map((x) => x.id)).toEqual(["ia1", "ia2", "ventas", "libre"]);
+  });
+});

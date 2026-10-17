@@ -24,6 +24,8 @@ export async function runPipeline(opts: PipelineOptions = {}) {
   const result = await runRadar({
     now,
     tema: tema.nombre,
+    pilares: tema.pilares,
+    maxPorPilar: tema.maxPorPilar,
     sources: {
       ...sourcesFor(tema, now),
       // Sensor humano: solo si hay hoja configurada.

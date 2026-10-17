@@ -62,3 +62,12 @@ describe("formato", () => {
     expect(isStale(t.toISOString(), new Date("2026-10-18T19:00:00Z"))).toBe(true);
   });
 });
+
+describe("pilar en la portada", () => {
+  it("muestra el pilar de cada tema cuando existe", () => {
+    const conPilar = { ...radar, topics: radar.topics.map((t, i) => ({ ...t, pilar: i === 0 ? "Ventas" : undefined })) };
+    const html = renderToStaticMarkup(<RadarMarket radar={conPilar} now={fresh} />);
+    expect(html).toContain('data-testid="pilar"');
+    expect(html).toContain("Ventas");
+  });
+});

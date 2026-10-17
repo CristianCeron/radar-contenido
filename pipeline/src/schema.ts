@@ -121,6 +121,8 @@ export const TopicSchema = z.object({
   id: z.string().min(1),
   label: z.string().min(1),
   stage: StageSchema,
+  // Pilar del tema dentro de la temática de la marca (por ejemplo "Ventas"), si el tema define pilares.
+  pilar: z.string().optional(),
   // Cambio porcentual de la última semana frente a la anterior. Null si no hay historia.
   velocity: z.number().nullable(),
   executiveRelevance: z.number().min(0).max(1),

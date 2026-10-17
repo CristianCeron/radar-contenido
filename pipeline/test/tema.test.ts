@@ -102,3 +102,17 @@ describe("tema crecimiento de empresas", () => {
     expect(Object.keys(sourcesFor(tema, now))).not.toContain("expertos");
   });
 });
+
+describe("pilares del tema crecimiento", () => {
+  afterEach(() => {
+    delete process.env.RADAR_TEMA;
+  });
+
+  it("trae los ocho pilares de la Inmersión y un cupo de 2 por pilar", () => {
+    process.env.RADAR_TEMA = "crecimiento";
+    const tema = loadTema();
+    expect(tema.pilares).toHaveLength(8);
+    expect(tema.pilares).toContain("IA aplicada al negocio");
+    expect(tema.maxPorPilar).toBe(2);
+  });
+});

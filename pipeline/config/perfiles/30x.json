@@ -1,0 +1,80 @@
+{
+  "id": "30x",
+  "nombre": "30X",
+  "quienEs": "Escuela de negocios latinoamericana de educación ejecutiva que se presenta como alternativa práctica al MBA. Combina inmersiones presenciales de 3 días, programas online en vivo y una comunidad de founders y C-Level, con fuerte énfasis en IA aplicada a estrategia, ventas, growth y operaciones. Sus formadores operan empresas reales en Latinoamérica: por founders, para founders.",
+  "audiencia": "Founders, CEOs, C-Level, dueños de empresa y líderes con equipo a cargo en Latinoamérica, además de equipos corporativos completos (junta, ventas, legal, growth, producto, tecnología).",
+  "voz": {
+    "tono": "Directo, ejecutivo y orientado a resultados, con tuteo y llamados a la acción claros. Ambicioso pero práctico: aprender haciendo, cero teoría académica.",
+    "rasgos": [
+      "Frases cortas e imperativas, del estilo \"Deja de improvisar con IA. Empieza a dirigir.\"",
+      "Tuteo y mezcla natural de términos en inglés de negocios: growth, founders, playbook, networking",
+      "Promesa concreta y medible: plazos en semanas, horas recuperadas, ROI defendible ante la junta",
+      "Credibilidad por operadores: casos de empresas reales de la región y mentores con cargos reales",
+      "Contraste entre práctica y teoría: conocimiento aplicado, no teoría"
+    ],
+    "evitar": [
+      "Tono académico o teórico sin aplicación inmediata",
+      "Hype de IA sin ROI ni caso de negocio",
+      "Mensajes genéricos sin cifra, plazo o resultado concreto",
+      "Registro formal de usted o corporativo rígido",
+      "Cualquier mensaje que pueda leerse como pedir trabajo sin pago o aprovecharse de talento joven"
+    ]
+  },
+  "formatos": [
+    "carrusel de Instagram",
+    "reel o video corto vertical",
+    "clase gratis en vivo por Zoom",
+    "live mentoring",
+    "publicación en colaboración con un mentor"
+  ],
+  "productos": [
+    {
+      "nombre": "AI for Executives",
+      "descripcion": "Programa online sin código de 8 semanas para C-Level y líderes: pasar de herramientas sueltas a una estrategia de IA con adopción y ROI.",
+      "url": "https://30x.com/ai-for-executives"
+    },
+    {
+      "nombre": "AI Second Brain",
+      "descripcion": "Programa virtual de 3 semanas para instalar un segundo cerebro de IA sobre tus propios datos. Promete recuperar hasta 40 horas a la semana.",
+      "url": "https://30x.com/ai-second-brain"
+    },
+    {
+      "nombre": "Inmersión Ejecutiva Presencial",
+      "descripcion": "3 días presenciales para founders y ejecutivos: dirección, growth, equipos, ventas e IA, marketing y networking.",
+      "url": "https://30x.com/inmersivo"
+    },
+    {
+      "nombre": "Planes Corporativos de IA",
+      "descripcion": "Programa B2B de IA para toda la organización: diagnóstico, propuesta a medida y cohortes por área.",
+      "url": "https://30x.com/planes-corporativos-old"
+    },
+    {
+      "nombre": "Multipliers",
+      "descripcion": "Membresía de 12 meses para founders y directivos que quieren escalar: inmersiones ilimitadas, estratega mensual y mastermind trimestral.",
+      "url": "https://30x.com/multipliers"
+    },
+    {
+      "nombre": "Clases gratis en vivo",
+      "descripcion": "Calendario público de mentorías y webinars gratuitos por Zoom. Sirve para captar audiencia antes de vender un programa.",
+      "url": "https://luma.com/crece30X"
+    }
+  ],
+  "fuentes": [
+    "https://30x.com",
+    "https://30x.com/programas",
+    "https://30x.com/inmersivo",
+    "https://30x.com/ai-for-executives",
+    "https://30x.com/ai-second-brain",
+    "https://30x.com/multipliers",
+    "https://30x.com/planes-corporativos-old",
+    "https://luma.com/crece30X",
+    "https://www.instagram.com/crece30x/",
+    "https://www.youtube.com/@crece30x"
+  ],
+  "porValidar": [
+    "La URL de Planes Corporativos termina en -old; confirmar la página vigente.",
+    "Contenido real del canal de YouTube @crece30x (no se pudo revisar).",
+    "Cifras de alumnos no coinciden entre el sitio y la bio de Instagram; no se usan en los briefs.",
+    "La lista de cosas a evitar es una inferencia de tono, no una guía publicada por la marca."
+  ]
+}

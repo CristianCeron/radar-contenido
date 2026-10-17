@@ -1,0 +1,68 @@
+{
+  "id": "andres-bilbao",
+  "nombre": "Andrés Bilbao",
+  "quienEs": "Emprendedor e inversionista ángel, cofundador de Rappi y cofundador y CEO de 30X. Como creador de contenido educa a founders y ejecutivos sobre emprendimiento, escalamiento, ventas, fundraising e implementación de IA, desde su experiencia como operador.",
+  "audiencia": "Founders, emprendedores en etapa temprana, ejecutivos y líderes corporativos de Latinoamérica que quieren crecer su empresa y adoptar IA. En video corto también llega a jóvenes profesionales interesados en emprender.",
+  "voz": {
+    "tono": "Mentor directo y pragmático que habla en primera persona desde la experiencia de haber construido empresas. Semiformal y cercano, educativo, con ganchos provocadores y humor ligero en video corto.",
+    "rasgos": [
+      "Autoridad de operador: anécdotas y lecciones de construir y escalar empresas e invertir en startups",
+      "Ganchos fuertes al inicio: una cita provocadora o una brecha del tipo \"si eres ejecutivo y todavía no entiendes...\"",
+      "Párrafos cortos, mucho espacio en blanco y viñetas para el valor técnico",
+      "Temas técnicos de IA traducidos a lenguaje de ejecutivo, con demos concretas",
+      "Cierra reconociendo al equipo o a otros líderes y deja recursos en los comentarios"
+    ],
+    "evitar": [
+      "Mensajes que puedan leerse como pedir trabajo sin pago",
+      "Tono condescendiente con el talento joven",
+      "Hype vacío de IA sin aplicación concreta para el negocio",
+      "Trends de baile o contenido sin valor educativo",
+      "Promoción de programas sin aportar valor antes"
+    ]
+  },
+  "formatos": [
+    "reel o video corto vertical",
+    "post largo de LinkedIn con historia y lección",
+    "post de LinkedIn con viñetas sobre IA",
+    "carrusel de Instagram",
+    "workshop o keynote con demo en vivo"
+  ],
+  "productos": [
+    {
+      "nombre": "Inmersión Ejecutiva 30X",
+      "descripcion": "Programa presencial de 3 días donde participa como mentor. Es el enlace principal de su perfil de Instagram.",
+      "url": "https://30x.com/inmersivo"
+    },
+    {
+      "nombre": "AI for Executives",
+      "descripcion": "Programa online de 30X de 8 semanas para que líderes pasen de herramientas sueltas a una estrategia de IA con ROI.",
+      "url": "https://30x.com/ai-for-executives"
+    },
+    {
+      "nombre": "Fundraising Fundamentals",
+      "descripcion": "Programa de fundamentos de fundraising para founders en etapa temprana donde aparece como speaker.",
+      "url": "https://30x.com/fundraising-fundamentals"
+    },
+    {
+      "nombre": "30X Next",
+      "descripcion": "Programa de IA y emprendimiento para jóvenes de 13 a 18 años donde figura como mentor fundador.",
+      "url": "https://30x.com/next"
+    }
+  ],
+  "fuentes": [
+    "https://www.instagram.com/andresbilbao/",
+    "https://www.larepublica.co/empresas/los-creadores-de-contenido-mas-influeyentes-de-linkedin-4437437",
+    "https://andresospina.co/lideres-tech-latam/andres-bilbao/",
+    "https://luma.com/crece30x-tt35",
+    "https://30x.com/inmersivo",
+    "https://30x.com/fundraising-fundamentals",
+    "https://30x.com/next",
+    "https://www.portafolio.co/negocios/empresas/los-secretos-de-andres-bilbao-mas-alla-de-rappi-asi-es-su-nuevo-proyecto-494364"
+  ],
+  "porValidar": [
+    "Estado actual de su cuenta de LinkedIn (no se pudo abrir sin sesión; una fuente dice que la cerró).",
+    "Presencia en TikTok (el perfil no cargó).",
+    "No está confirmado que él dicte AI for Executives; se incluye como producto de IA de 30X que puede recomendar.",
+    "La lista de cosas a evitar es una inferencia de tono, no una guía publicada."
+  ]
+}

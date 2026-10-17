@@ -44,7 +44,7 @@ export function TopicDetail({ topic, radar }: { topic: Topic; radar: Radar }) {
   const team = topic.channels.filter((c) => c.source === "equipo").reduce((s, c) => s + c.count, 0);
 
   return (
-    <main className="mx-auto flex max-w-[1280px] flex-col gap-5 px-4 pt-6 pb-24 sm:px-8 sm:pt-8">
+    <main className="panel-in mx-auto flex max-w-[1280px] flex-col gap-5 px-4 pt-6 pb-24 sm:px-8 sm:pt-8">
       <Link href="/radar" className="inline-flex min-h-11 items-center gap-2 self-start text-[15px] text-muted-2 hover:text-ink">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden="true">
           <path d="M19 12H5M11 6l-6 6 6 6" />

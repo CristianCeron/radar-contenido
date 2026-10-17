@@ -31,7 +31,7 @@ describe("página del brief", () => {
     expect(html).toContain(esc(b.format));
     expect(html).toContain(esc(b.opportunity.product));
     expect(html).toContain(esc(b.opportunity.rationale));
-    expect(html).toContain("Del radar diario");
+    expect(html).toContain("Del radar de la mañana");
     expect(html).toMatch(/aria-pressed="true"[^>]*>Andrés Bilbao/);
   });
 

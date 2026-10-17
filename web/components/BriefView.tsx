@@ -51,7 +51,7 @@ function Status({ shown, loading }: { shown: ShownBrief; loading: boolean }) {
       }`}
     >
       <span className={`h-[7px] w-[7px] rounded-full ${fallback ? "bg-cache" : "bg-ok"}`} />
-      Del radar diario
+      Del radar de la mañana
     </span>
   );
 }

@@ -489,15 +489,13 @@ function IaConIntencion() {
   );
 }
 
-// Vista previa del formulario: es un dibujo, no un formulario. El envío real es en Google Forms.
-function FakeField({ label, placeholder }: { label: string; placeholder: string }) {
-  return (
-    <div className="flex flex-col gap-1.5">
-      <span className="text-sm font-medium">{label}</span>
-      <span className="rounded-[14px] border border-line-2 bg-paper-2 px-4 py-3.5 text-[15px] text-muted">{placeholder}</span>
-    </div>
-  );
-}
+// Campos del formulario de Google del sensor. Con ellos el formulario de la página abre Google Forms
+// con lo que la persona escribió ya puesto; el envío se confirma allá.
+const SENSOR_LINK_FIELD = "entry.862709636";
+const SENSOR_DESC_FIELD = "entry.489513849";
+
+const field =
+  "rounded-[14px] border border-line-2 bg-paper-2 px-4 py-3.5 text-[15px] text-ink outline-none placeholder:text-muted focus:border-ink";
 
 function Sensor() {
   return (
@@ -518,16 +516,40 @@ function Sensor() {
             Reportar una publicación
           </a>
         </div>
-        <div
-          aria-hidden="true"
+        <form
+          action={SENSOR_FORM}
+          method="get"
+          target="_blank"
+          aria-labelledby="sensor-titulo"
           className="hidden min-w-0 flex-[0_1_380px] flex-col gap-[18px] rounded-[32px] bg-white p-7 shadow-[0_24px_60px_rgba(10,10,10,.08)] sm:flex"
         >
-          <span className="text-lg font-semibold">Reportar una publicación</span>
-          <FakeField label="Enlace de la publicación" placeholder="https://www.linkedin.com/posts/..." />
-          <FakeField label="¿De qué trata? (opcional)" placeholder="Ej.: cómo armar un equipo de ventas" />
-          <span className="rounded-full bg-accent p-3.5 text-center font-semibold text-ink">Enviar</span>
-          <span className="text-[13px] text-muted-2">No guardamos tu correo. El enlace solo se usa para no contar dos veces lo mismo.</span>
-        </div>
+          <span id="sensor-titulo" className="text-lg font-semibold">
+            Reportar una publicación
+          </span>
+          <input type="hidden" name="usp" value="pp_url" />
+          <div className="flex flex-col gap-1.5">
+            <label htmlFor="sensor-link" className="text-sm font-medium">
+              Enlace de la publicación
+            </label>
+            <input id="sensor-link" name={SENSOR_LINK_FIELD} type="url" required placeholder="https://www.linkedin.com/posts/..." className={field} />
+          </div>
+          <div className="flex flex-col gap-1.5">
+            <label htmlFor="sensor-desc" className="text-sm font-medium">
+              ¿De qué trata? (opcional)
+            </label>
+            <input id="sensor-desc" name={SENSOR_DESC_FIELD} type="text" placeholder="Ej.: cómo armar un equipo de ventas" className={field} />
+          </div>
+          <button
+            type="submit"
+            className="cursor-pointer rounded-full border-0 bg-accent p-3.5 text-base font-semibold text-ink transition-colors hover:bg-accent-hover"
+          >
+            Enviar
+          </button>
+          <span className="text-[13px] text-muted-2">
+            Se abre Google Forms con tus datos para confirmar. No guardamos tu correo y el enlace solo se usa para no contar dos veces lo
+            mismo.
+          </span>
+        </form>
       </div>
     </section>
   );

@@ -46,10 +46,16 @@ describe("landing", () => {
     expect(html).toContain(`>${radar.topics.length}<`);
   });
 
-  it("enlaza el formulario del sensor sin un formulario falso en la página", () => {
-    expect(html).toContain("docs.google.com/forms");
-    expect(html).not.toContain("<input");
-    expect(html).not.toContain("<form");
+  it("el formulario del sensor abre Google Forms con el enlace y la descripción ya puestos", () => {
+    expect(html).toMatch(/<form[^>]*action="https:\/\/docs\.google\.com\/forms\/d\/e\/[^"]+\/viewform"/);
+    expect(html).toMatch(/<form[^>]*method="get"/);
+    expect(html).toMatch(/<form[^>]*target="_blank"/);
+    const link = html.match(/<input[^>]*name="entry\.862709636"[^>]*>/)?.[0] ?? "";
+    expect(link).toContain('type="url"');
+    expect(link).toContain("required");
+    expect(html).toMatch(/<input[^>]*name="entry\.489513849"/);
+    expect(html).toContain('name="usp" value="pp_url"');
+    expect(html).toContain('for="sensor-link"');
   });
 
   it("no usa la raya larga", () => {

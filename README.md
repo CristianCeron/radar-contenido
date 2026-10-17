@@ -70,6 +70,20 @@ npm run pipeline   # corre el radar y escribe web/public/data/radar.json
 npm run dev        # abre la página en http://localhost:3000
 ```
 
+## Cambiar de tema
+
+Hoy el radar rastrea inteligencia artificial, que es lo que más vende 30X. El tema no está en el
+código: las búsquedas por fuente y el filtro de prensa viven en
+[pipeline/config/tema.json](pipeline/config/tema.json). Para rastrear otro tema se crea un archivo en
+`pipeline/config/temas/` y se corre con `RADAR_TEMA`. Hay uno de ejemplo para la voz de Andrés:
+
+```bash
+RADAR_TEMA=emprendimiento npm run pipeline
+```
+
+Ese radar se escribe en `web/public/data/radar-emprendimiento.json` y usa su propia caché, así que
+no pisa el radar publicado.
+
 ## Pruebas
 
 ```bash

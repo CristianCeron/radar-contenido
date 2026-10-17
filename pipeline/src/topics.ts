@@ -78,21 +78,23 @@ const NOT_A_TOPIC = /^(null|none|n\/a|ninguno|ninguna|otro|otros|otra|sin tema|n
 
 const TaxonomySchema = z.object({ topics: z.array(z.string()) });
 
-const TAXONOMY_SYSTEM = `Recibes una muestra de títulos de piezas recientes sobre inteligencia artificial (foros técnicos, investigación, YouTube y prensa de negocios).
+const taxonomySystem = (tema: string) => `Recibes una muestra de títulos de piezas recientes sobre ${tema} (foros técnicos, investigación, YouTube y prensa de negocios).
 Propón entre 25 y 40 temas que agrupen esas piezas, pensando en un equipo de contenido que le habla a ejecutivos de Latinoamérica.
 - Cada tema es una etiqueta corta en español (2 a 4 palabras) que nombra algo concreto: una tecnología, un tipo de producto, una práctica o un hecho del sector. Ejemplos: "Agentes de IA", "Modelos de video", "Regulación de IA", "Gafas con IA", "Seguridad de modelos".
 - Evita categorías genéricas que sirven para cualquier pieza, como "Experiencias con IA", "Fundamentos de IA", "Noticias de IA", "Profesionales de IA" o "IA en general".
 - No repitas el mismo tema con otras palabras.`;
 
-const LABEL_SYSTEM = `Asignas a cada pieza de contenido uno de los temas de la lista numerada recibida.
+const labelSystem = (tema: string) => `Asignas a cada pieza de contenido uno de los temas de la lista numerada recibida.
 - En topic devuelve el número del tema que mejor la describa.
-- Si la pieza no trata de inteligencia artificial o no encaja en ningún tema, devuelve topic: 0.
+- Si la pieza no trata de ${tema} o no encaja en ningún tema, devuelve topic: 0.
 - Usa exactamente el id recibido y clasifica todas las piezas.`;
 
 export interface AssignOptions {
   concurrency?: number;
   batchSize?: number;
   sampleSize?: number;
+  // Tema que rastrea el radar; por defecto, inteligencia artificial.
+  tema?: string;
   log?: (msg: string) => void;
 }
 
@@ -143,12 +145,13 @@ function cleanTaxonomy(topics: string[]): string[] {
 export async function assignTopics(items: NormalizedItem[], llm: LLM, opts: AssignOptions = {}): Promise<TopicGroup[]> {
   const batchSize = opts.batchSize ?? 80;
   const log = opts.log ?? console.warn;
+  const tema = opts.tema ?? "inteligencia artificial";
   if (items.length === 0) return [];
 
   const sample = sampleForTaxonomy(items, opts.sampleSize ?? 300);
   const proposed = await llm.json({
     label: "temas-taxonomia",
-    system: TAXONOMY_SYSTEM,
+    system: taxonomySystem(tema),
     prompt: `Títulos:\n${sample.map((it) => `- ${it.title}`).join("\n")}`,
     schema: TaxonomySchema,
     maxTokens: 4000,
@@ -170,7 +173,7 @@ export async function assignTopics(items: NormalizedItem[], llm: LLM, opts: Assi
     try {
       const result = await llm.json({
         label: "temas-etiquetado",
-        system: LABEL_SYSTEM,
+        system: labelSystem(tema),
         prompt: `Temas posibles:\n${list}\n\nPiezas:\n${listing}`,
         schema: LabelSchema,
         maxTokens: 500 + batch.length * 40,

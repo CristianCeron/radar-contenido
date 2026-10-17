@@ -11,6 +11,8 @@ export interface Feed {
 
 export interface PressOptions extends SourceOptions {
   feeds?: Feed[];
+  // Qué notas cuentan para el tema. Por defecto, las que hablan de IA.
+  matches?: (text: string) => boolean;
 }
 
 // Las siglas "IA" y "AI" se exigen en mayúsculas para no confundirlas con palabras comunes.
@@ -80,6 +82,7 @@ export async function fetchPress(opts: PressOptions = {}): Promise<SourceResult>
   const now = opts.now ?? new Date();
   const since = windowStart(now).getTime();
   const feeds = opts.feeds ?? loadFeeds();
+  const matches = opts.matches ?? isAboutAI;
   const items: NormalizedItem[] = [];
   const failures: string[] = [];
 
@@ -90,7 +93,7 @@ export async function fetchPress(opts: PressOptions = {}): Promise<SourceResult>
       const parsed = parseFeed(await res.text(), feed.outlet);
       for (const item of parsed) {
         const t = new Date(item.publishedAt).getTime();
-        if (t >= since && t <= now.getTime() + 86400_000 && isAboutAI(`${item.title} ${item.summary ?? ""}`)) {
+        if (t >= since && t <= now.getTime() + 86400_000 && matches(`${item.title} ${item.summary ?? ""}`)) {
           items.push(item);
         }
       }

@@ -4,11 +4,8 @@ import { createJevClassifier } from "./classify/jev.js";
 import { createLLMClassifier } from "./classify/fallback.js";
 import { createLLM } from "./llm/index.js";
 import { runRadar } from "./orchestrator.js";
-import { fetchArxiv } from "./sources/arxiv.js";
-import { fetchHackerNews } from "./sources/hn.js";
-import { fetchPress } from "./sources/rss.js";
-import { fetchYouTube } from "./sources/youtube.js";
 import { fetchSensor } from "./sources/sensor.js";
+import { loadTema, sourcesFor } from "./tema.js";
 
 const ROOT = new URL("../../", import.meta.url);
 
@@ -21,18 +18,20 @@ export interface PipelineOptions {
 // Corrida real con las claves del entorno. Escribe web/public/data/radar.json.
 export async function runPipeline(opts: PipelineOptions = {}) {
   const now = opts.now ?? new Date();
+  // El tema sale de config/tema.json, o de config/temas/<RADAR_TEMA>.json si se define.
+  const tema = loadTema();
+  const variant = process.env.RADAR_TEMA;
   const result = await runRadar({
     now,
+    tema: tema.nombre,
     sources: {
-      hackernews: () => fetchHackerNews({ now, hitsPerPage: 300 }),
-      arxiv: () => fetchArxiv({ now, maxResults: 300 }),
-      youtube: () => fetchYouTube({ now }),
-      prensa: () => fetchPress({ now }),
+      ...sourcesFor(tema, now),
       // Sensor humano: solo si hay hoja configurada.
       ...(process.env.SENSOR_SHEET_CSV_URL ? { equipo: () => fetchSensor({ now }) } : {}),
     },
-    cacheDir: opts.cacheDir ?? fileURLToPath(new URL("pipeline/.cache/", ROOT)),
-    outputPath: opts.outputPath ?? fileURLToPath(new URL("web/public/data/radar.json", ROOT)),
+    // Otro tema usa su propia caché y su propio archivo, para no pisar el radar publicado.
+    cacheDir: opts.cacheDir ?? fileURLToPath(new URL(`pipeline/.cache/${variant ? `${variant}/` : ""}`, ROOT)),
+    outputPath: opts.outputPath ?? fileURLToPath(new URL(`web/public/data/radar${variant ? `-${variant}` : ""}.json`, ROOT)),
     makeLLMs: (sink) => ({ fast: createLLM("fast", sink), writer: createLLM("writer", sink) }),
     makeClassifiers: (fast, sink) => ({ primary: createJevClassifier({ onCost: sink }), fallback: createLLMClassifier(fast) }),
     profiles: loadProfiles(),

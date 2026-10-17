@@ -1,0 +1,33 @@
+{
+  "_nota": "Tema de ejemplo para la voz de Andrés Bilbao. Se usa con RADAR_TEMA=emprendimiento. No tiene categorías de arXiv porque la investigación académica no aporta en temas de negocio.",
+  "nombre": "emprendimiento y fundraising en Latinoamérica",
+  "hackernews": ["startup funding", "venture capital", "fundraising", "founders", "SaaS growth", "Y Combinator"],
+  "youtube": [
+    "emprendimiento Latinoamérica",
+    "cómo levantar capital startup",
+    "fundraising startups",
+    "ventas B2B",
+    "escalar una empresa",
+    "liderazgo de equipos"
+  ],
+  "arxiv": [],
+  "filtroPrensa": {
+    "siglas": ["VC", "SaaS", "B2B"],
+    "terminos": [
+      "emprendimiento",
+      "emprendedor",
+      "emprendedores",
+      "startup",
+      "startups",
+      "ronda de inversión",
+      "levantar capital",
+      "capital de riesgo",
+      "venture capital",
+      "fundraising",
+      "inversionistas",
+      "unicornio",
+      "fundador",
+      "fundadores"
+    ]
+  }
+}

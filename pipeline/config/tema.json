@@ -1,0 +1,32 @@
+{
+  "_nota": "Tema que rastrea el radar. Para rastrear otro, crea un archivo en config/temas/ y corre con RADAR_TEMA=<nombre del archivo>.",
+  "nombre": "inteligencia artificial",
+  "hackernews": ["AI", "LLM", "AI agents", "GPT", "Claude", "OpenAI", "machine learning"],
+  "youtube": [
+    "inteligencia artificial empresas",
+    "agentes de IA",
+    "IA para ejecutivos",
+    "ChatGPT negocios",
+    "AI agents",
+    "Claude AI",
+    "automatización con IA",
+    "IA generativa"
+  ],
+  "arxiv": ["cs.AI", "cs.CL", "cs.LG", "cs.MA"],
+  "filtroPrensa": {
+    "siglas": ["IA", "AI", "LLM", "GPT"],
+    "terminos": [
+      "inteligencia artificial",
+      "artificial intelligence",
+      "machine learning",
+      "aprendizaje automático",
+      "aprendizaje automatico",
+      "ChatGPT",
+      "OpenAI",
+      "Anthropic",
+      "Claude",
+      "Gemini",
+      "Copilot"
+    ]
+  }
+}

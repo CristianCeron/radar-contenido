@@ -30,6 +30,8 @@ export interface RadarDeps {
   limitUsd: number;
   concurrency?: number;
   minRecentMentions?: number;
+  // Nombre del tema que rastrea el radar (config/tema.json).
+  tema?: string;
   log?: (msg: string) => void;
 }
 
@@ -82,7 +84,7 @@ async function buildRadar(deps: RadarDeps, sink: CostSink): Promise<Omit<Radar, 
   const classifications = await classifyWithFallback(items, { primary, fallback, log, concurrency: pool });
   log(`Clasificados: ${classifications.size}`);
 
-  const groups = await assignTopics(items, fast, { concurrency: pool, log });
+  const groups = await assignTopics(items, fast, { concurrency: pool, log, tema: deps.tema });
   log(`Temas: ${groups.length}`);
 
   const specific = groups.filter((g) => !isGenericLabel(g.label));

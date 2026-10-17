@@ -100,7 +100,8 @@ describe("pasos de la bienvenida", () => {
   });
 
   it("no usa la raya larga", () => {
-    for (const n of [1, 2, 3]) expect(render(n)).not.toContain("—");
+    const raya = String.fromCharCode(0x2014);
+    for (const n of [1, 2, 3]) expect(render(n)).not.toContain(raya);
   });
 });
 

@@ -3,7 +3,7 @@ import { readFileSync } from "node:fs";
 import { renderToStaticMarkup } from "react-dom/server";
 import { RadarSchema } from "pipeline/schema";
 import { Landing } from "../components/Landing";
-import { latamDots, radarBlips, highlightTopics } from "../lib/landing";
+import { calloutPosition, latamDots, radarBlips, highlightTopics } from "../lib/landing";
 import { PILARES } from "../lib/pilares";
 import { SOURCE_LABEL, formatUsd, formatVelocity } from "../lib/format";
 
@@ -53,7 +53,7 @@ describe("landing", () => {
   });
 
   it("no usa la raya larga", () => {
-    expect(html).not.toContain("—");
+    expect(html).not.toContain(String.fromCharCode(0x2014));
   });
 });
 
@@ -85,6 +85,16 @@ describe("dibujo del radar", () => {
       const early = t.stage === "emergente" || t.stage === "creciendo";
       expect(b.hot).toBe(early && (t.velocity ?? 0) > 0);
     });
+  });
+
+  it("la etiqueta del tema destacado queda debajo de su punto y crece hacia afuera, lejos del eje", () => {
+    const right = calloutPosition({ x: 70.9, y: 10.6 });
+    expect(right.left).toBeCloseTo(70.9 - 2, 1);
+    expect(right.top).toBeCloseTo(10.6 + 2, 1);
+    expect(right.right).toBeUndefined();
+    const left = calloutPosition({ x: 20, y: 60 });
+    expect(left.right).toBeCloseTo(100 - 20 - 2, 1);
+    expect(left.left).toBeUndefined();
   });
 
   it("los destacados son los dos que más suben y el que más cae", () => {

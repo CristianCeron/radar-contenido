@@ -65,6 +65,15 @@ export function radarBlips(topics: Topic[]): Blip[] {
   });
 }
 
+// La etiqueta del tema destacado va justo debajo de su punto y crece hacia el borde exterior, así
+// no tapa el punto ni las etiquetas de etapa que están junto al eje.
+const CALLOUT_GAP = 2;
+
+export function calloutPosition(p: Point): { top: number; left?: number; right?: number } {
+  const top = p.y + CALLOUT_GAP;
+  return p.x > 50 ? { top, left: p.x - CALLOUT_GAP } : { top, right: 100 - p.x - CALLOUT_GAP };
+}
+
 // Los dos temas que más suben y el que más cae, para mostrar que el radar ordena en ambos sentidos.
 export function highlightTopics(topics: Topic[]): Topic[] {
   const sorted = [...topics].sort((a, b) => (b.velocity ?? 0) - (a.velocity ?? 0));

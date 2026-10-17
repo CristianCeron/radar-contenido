@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Radar, Stage } from "pipeline/schema";
 import { PILARES } from "../lib/pilares";
 import { SOURCE_LABEL, STAGE_LABEL, formatDay, formatUsd, formatVelocity } from "../lib/format";
-import { highlightTopics, latamDots, noiseBars, radarBlips } from "../lib/landing";
+import { calloutPosition, highlightTopics, latamDots, noiseBars, radarBlips } from "../lib/landing";
 
 const SENSOR_FORM = "https://docs.google.com/forms/d/e/1FAIpQLSehFGUxekxuljgYgcL7jlAKifhhVffUJs7zl6C-zHaR2vw0Bw/viewform";
 const REPO = "https://github.com/CristianCeron/radar-contenido";
@@ -45,6 +45,7 @@ function blipColor(stage: Stage, hot: boolean): string {
 function HeroRadar({ radar }: { radar: Radar }) {
   const blips = radarBlips(radar.topics);
   const top = highlightTopics(radar.topics)[0];
+  const callout = top ? calloutPosition(blips[radar.topics.indexOf(top)]) : null;
   const rings = [89.3, 67.9, 46.4, 25];
   const labels: [Stage, number][] = [["emergente", 6.4], ["creciendo", 17.1], ["pico", 27.9], ["saturado", 38.6]];
   return (
@@ -79,7 +80,7 @@ function HeroRadar({ radar }: { radar: Radar }) {
       {labels.map(([s, top]) => (
         <span
           key={s}
-          className="absolute left-[51%] hidden text-[11px] tracking-[.06em] text-muted uppercase sm:block"
+          className="absolute right-[51%] hidden text-[11px] tracking-[.06em] text-muted uppercase sm:block"
           style={{ top: `${top}%` }}
         >
           {STAGE_LABEL[s]}
@@ -95,8 +96,15 @@ function HeroRadar({ radar }: { radar: Radar }) {
           style={{ left: `${b.x.toFixed(2)}%`, top: `${b.y.toFixed(2)}%` }}
         />
       ))}
-      {top && (
-        <div className="absolute top-[9.3%] left-[60.7%] hidden flex-col gap-0.5 rounded-[14px] bg-white px-3.5 py-2.5 text-[13px] text-ink shadow-[0_10px_30px_rgba(0,0,0,.4)] sm:flex">
+      {top && callout && (
+        <div
+          className="absolute hidden flex-col gap-0.5 rounded-[14px] bg-white px-3.5 whitespace-nowrap py-2.5 text-[13px] text-ink shadow-[0_10px_30px_rgba(0,0,0,.4)] sm:flex"
+          style={{
+            top: `${callout.top.toFixed(2)}%`,
+            left: callout.left === undefined ? undefined : `${callout.left.toFixed(2)}%`,
+            right: callout.right === undefined ? undefined : `${callout.right.toFixed(2)}%`,
+          }}
+        >
           <span className="font-semibold">{top.label}</span>
           <span className="font-semibold text-[#c2410c]">
             {(top.velocity ?? 0) >= 0 ? "▲" : "▼"} {formatVelocity(top.velocity)} · {STAGE_LABEL[top.stage]}
@@ -150,7 +158,7 @@ function Hero({ radar }: { radar: Radar }) {
       <div className="border-t border-[#1f1f1d]">
         <div className={`${wrap} flex flex-col gap-3 py-5 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-10 sm:gap-y-5 sm:py-7`}>
           <span className="text-xs tracking-[.08em] text-muted uppercase sm:text-[13px]">Solo fuentes oficiales</span>
-          <div className="flex flex-[1_1_600px] flex-wrap items-baseline gap-x-5 gap-y-2.5 sm:gap-x-10 sm:gap-y-4">
+          <div className="flex flex-wrap items-baseline sm:flex-[1_1_600px] gap-x-5 gap-y-2.5 sm:gap-x-10 sm:gap-y-4">
             {radar.sources.map((s) => (
               <span
                 key={s.source}
@@ -560,7 +568,7 @@ function Impacto({ radar }: { radar: Radar }) {
         </h2>
         <dl className="m-0 grid grid-cols-2 gap-x-4 gap-y-7 border-t border-ink-line-2 pt-7 sm:grid-cols-[repeat(auto-fit,minmax(220px,1fr))] sm:gap-x-6 sm:gap-y-10 sm:pt-10">
           {cifras.map((c) => (
-            <div key={c.label} className="flex flex-col-reverse gap-1.5 sm:gap-2.5">
+            <div key={c.label} className="flex flex-col-reverse justify-end gap-1.5 sm:gap-2.5">
               <dt className="text-sm text-soft sm:text-[17px]">{c.label}</dt>
               <dd className={`m-0 text-5xl leading-none font-semibold tracking-[-0.04em] sm:text-7xl ${c.accent ? "text-accent" : ""}`}>
                 {c.value}

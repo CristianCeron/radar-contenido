@@ -21,7 +21,7 @@ const ETAPAS: { stage: Stage; badge: string; layers: number; text: [string, stri
   { stage: "emergente", badge: "bg-accent text-ink", layers: 1, text: ["Solo en foros y expertos.", " Llegas primero."] },
   { stage: "creciendo", badge: "bg-stage-creciendo text-ink", layers: 2, text: ["Ya está en YouTube.", " Buen momento."] },
   { stage: "pico", badge: "bg-ink text-white", layers: 3, text: ["Llegó a la prensa.", " Necesitas un ángulo propio."] },
-  { stage: "saturado", badge: "bg-stage-saturado text-stage-saturado-text", layers: 3, text: ["Todos hablan de él", " y va cayendo."] },
+  { stage: "saturado", badge: "bg-stage-saturado text-stage-saturado-text", layers: 3, text: ["Todos hablan de él y va cayendo.", ""] },
 ];
 
 interface WelcomeStepsProps {

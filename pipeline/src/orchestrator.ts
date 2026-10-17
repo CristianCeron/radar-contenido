@@ -130,7 +130,7 @@ async function buildRadar(deps: RadarDeps, sink: CostSink): Promise<Omit<Radar, 
   const briefs = await mapPool(jobs, pool, async ({ t, p }) => {
     try {
       const brief = await generateBrief(
-        { label: t.group.label, stage: t.stage, velocity: t.velocity, explanation: t.explanation, topPieces: t.topPieces },
+        { label: t.group.label, pilar: t.pilar, stage: t.stage, velocity: t.velocity, explanation: t.explanation, topPieces: t.topPieces },
         p,
         { llm: writer, now: deps.now },
       );

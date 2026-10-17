@@ -57,6 +57,16 @@
       "nombre": "Clases gratis en vivo",
       "descripcion": "Calendario público de mentorías y webinars gratuitos por Zoom. Sirve para captar audiencia antes de vender un programa.",
       "url": "https://luma.com/crece30X"
+    },
+    {
+      "nombre": "Programas online de ventas y growth",
+      "descripcion": "Catálogo de programas online de 30X como Sales Machine, AI Sales, LinkedIn Sales, Growth Rockstar y Xtreme Growth, para sistematizar ventas y crecimiento.",
+      "url": "https://30x.com/programas"
+    },
+    {
+      "nombre": "Fundraising Fundamentals",
+      "descripcion": "Fundamentos de levantamiento de capital para founders en etapa temprana, con deck, pitch y resumen ejecutivo como entregables.",
+      "url": "https://30x.com/fundraising-fundamentals"
     }
   ],
   "fuentes": [
@@ -69,7 +79,8 @@
     "https://30x.com/planes-corporativos-old",
     "https://luma.com/crece30X",
     "https://www.instagram.com/crece30x/",
-    "https://www.youtube.com/@crece30x"
+    "https://www.youtube.com/@crece30x",
+    "https://30x.com/fundraising-fundamentals"
   ],
   "porValidar": [
     "La URL de Planes Corporativos termina en -old; confirmar la página vigente.",

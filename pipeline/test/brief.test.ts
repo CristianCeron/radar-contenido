@@ -98,3 +98,13 @@ describe("generador de brief", () => {
     expect(llm.requests[0].prompt).toContain(topic.explanation.text);
   });
 });
+
+describe("producto según el pilar", () => {
+  it("le pasa el pilar al modelo y le pide elegir el producto según el pilar", async () => {
+    const llm = fakeLLM(answerFromPrompt);
+    const p30x = loadProfiles().find((p) => p.id === "30x")!;
+    await generateBrief({ ...topic, pilar: "Ventas" }, p30x, { llm, now });
+    expect(llm.requests[0].prompt).toContain("Pilar: Ventas");
+    expect(llm.requests[0].system).toMatch(/según el pilar/);
+  });
+});

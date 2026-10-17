@@ -11,16 +11,16 @@ describe("tema configurable", () => {
     delete process.env.RADAR_TEMA;
   });
 
-  it("por defecto el tema es inteligencia artificial, con las mismas búsquedas de siempre", () => {
-    const tema = loadTema();
+  it("el tema de IA conserva las búsquedas de siempre", () => {
+    const tema = loadTema("ia");
     expect(tema.nombre).toBe("inteligencia artificial");
     expect(tema.hackernews).toContain("AI agents");
     expect(tema.youtube).toContain("agentes de IA");
     expect(tema.arxiv).toEqual(["cs.AI", "cs.CL", "cs.LG", "cs.MA"]);
   });
 
-  it("el filtro de prensa del tema por defecto se comporta igual que el de IA", () => {
-    const matches = buildPressFilter(loadTema());
+  it("el filtro de prensa del tema de IA se comporta igual que el de siempre", () => {
+    const matches = buildPressFilter(loadTema("ia"));
     for (const text of [
       "Meta presenta nuevos modelos de inteligencia artificial",
       "Crédito para IA se encarece",
@@ -49,8 +49,7 @@ describe("tema configurable", () => {
     process.env.RADAR_TEMA = "emprendimiento";
     const sources = sourcesFor(loadTema(), now);
     expect(Object.keys(sources).sort()).toEqual(["hackernews", "prensa", "youtube"]);
-    delete process.env.RADAR_TEMA;
-    expect(Object.keys(sourcesFor(loadTema(), now)).sort()).toEqual(["arxiv", "hackernews", "prensa", "youtube"]);
+    expect(Object.keys(sourcesFor(loadTema("ia"), now)).sort()).toEqual(["arxiv", "hackernews", "prensa", "youtube"]);
   });
 
   it("la agrupación de temas usa el nombre del tema en sus instrucciones", async () => {
@@ -71,13 +70,12 @@ describe("tema configurable", () => {
   });
 });
 
-describe("tema crecimiento de empresas", () => {
+describe("tema por defecto: crecimiento de empresas", () => {
   afterEach(() => {
     delete process.env.RADAR_TEMA;
   });
 
   it("tiene audiencia de founders, expertos en origen y un arXiv pequeño", () => {
-    process.env.RADAR_TEMA = "crecimiento";
     const tema = loadTema();
     expect(tema.nombre).toMatch(/crecimiento/i);
     expect(tema.audiencia).toMatch(/founder/i);
@@ -88,15 +86,14 @@ describe("tema crecimiento de empresas", () => {
   });
 
   it("el filtro de prensa del tema reconoce notas de negocio", () => {
-    process.env.RADAR_TEMA = "crecimiento";
     const matches = buildPressFilter(loadTema());
     expect(matches("Cómo construir un equipo de ventas B2B que escale")).toBe(true);
     expect(matches("Startup mexicana levanta ronda Serie B para expandirse a Colombia")).toBe(true);
     expect(matches("Resultados del partido de fútbol del domingo")).toBe(false);
   });
 
-  it("el tema por defecto conserva su audiencia y no consulta expertos", () => {
-    const tema = loadTema();
+  it("el tema de IA conserva su audiencia y no consulta expertos", () => {
+    const tema = loadTema("ia");
     expect(tema.expertos).toEqual([]);
     expect(tema.audiencia).toMatch(/IA/);
     expect(Object.keys(sourcesFor(tema, now))).not.toContain("expertos");
@@ -109,7 +106,6 @@ describe("pilares del tema crecimiento", () => {
   });
 
   it("trae los ocho pilares de la Inmersión y un cupo de 2 por pilar", () => {
-    process.env.RADAR_TEMA = "crecimiento";
     const tema = loadTema();
     expect(tema.pilares).toHaveLength(8);
     expect(tema.pilares).toContain("IA aplicada al negocio");

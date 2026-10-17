@@ -1,32 +1,165 @@
 {
-  "_nota": "Tema que rastrea el radar. Para rastrear otro, crea un archivo en config/temas/ y corre con RADAR_TEMA=<nombre del archivo>.",
-  "nombre": "inteligencia artificial",
-  "hackernews": ["AI", "LLM", "AI agents", "GPT", "Claude", "OpenAI", "machine learning"],
-  "youtube": [
-    "inteligencia artificial empresas",
-    "agentes de IA",
-    "IA para ejecutivos",
-    "ChatGPT negocios",
-    "AI agents",
-    "Claude AI",
-    "automatización con IA",
-    "IA generativa"
+  "_nota": "Tema por defecto del radar, basado en los pilares de la Inmersión 30X (https://30x.com/inmersivo30x). Para rastrear otro tema, crea un archivo en config/temas/ y corre con RADAR_TEMA=<nombre>. Hay uno de IA (RADAR_TEMA=ia) y uno de emprendimiento (RADAR_TEMA=emprendimiento).",
+  "nombre": "crecimiento de empresas",
+  "audiencia": "founders, CEOs y ejecutivos de Latinoamérica que quieren escalar su empresa sin que dependa del fundador",
+  "hackernews": [
+    "startup growth",
+    "B2B sales",
+    "hiring",
+    "founder",
+    "fundraising",
+    "go-to-market",
+    "startup marketing",
+    "AI startup"
   ],
-  "arxiv": ["cs.AI", "cs.CL", "cs.LG", "cs.MA"],
+  "youtube": [
+    "cómo escalar una empresa",
+    "sistema de ventas B2B",
+    "liderazgo de equipos empresa",
+    "growth marketing estrategia",
+    "contratar líderes startup",
+    "expansión internacional empresa Latinoamérica",
+    "levantar capital startup Latinoamérica",
+    "inteligencia artificial para empresas"
+  ],
+  "arxiv": [
+    "cs.AI",
+    "econ.GN"
+  ],
+  "arxivMax": 80,
+  "expertos": [
+    {
+      "outlet": "Lenny's Newsletter",
+      "url": "https://www.lennysnewsletter.com/feed"
+    },
+    {
+      "outlet": "Y Combinator",
+      "url": "https://www.ycombinator.com/blog/rss"
+    },
+    {
+      "outlet": "MIT Sloan Management Review",
+      "url": "https://sloanreview.mit.edu/feed/"
+    },
+    {
+      "outlet": "Tom Tunguz",
+      "url": "https://tomtunguz.com/index.xml"
+    },
+    {
+      "outlet": "Not Boring",
+      "url": "https://www.notboring.co/feed"
+    },
+    {
+      "outlet": "Sifted",
+      "url": "https://sifted.eu/feed"
+    },
+    {
+      "outlet": "SaaS Letter",
+      "url": "https://www.saasletter.com/feed"
+    }
+  ],
+  "prensa": [
+    {
+      "outlet": "Portafolio Negocios",
+      "url": "https://www.portafolio.co/rss/negocios.xml"
+    },
+    {
+      "outlet": "Portafolio Economía",
+      "url": "https://www.portafolio.co/rss/economia.xml"
+    },
+    {
+      "outlet": "La República Empresas",
+      "url": "https://www.larepublica.co/rss/empresas"
+    },
+    {
+      "outlet": "Expansión Empresas",
+      "url": "https://www.expansion.com/rss/empresas.xml"
+    },
+    {
+      "outlet": "El Tiempo Economía",
+      "url": "https://www.eltiempo.com/rss/economia.xml"
+    },
+    {
+      "outlet": "Semana Economía",
+      "url": "https://www.semana.com/arc/outboundfeeds/rss/category/economia/"
+    },
+    {
+      "outlet": "Infobae Economía",
+      "url": "https://www.infobae.com/arc/outboundfeeds/rss/category/economia/"
+    },
+    {
+      "outlet": "LatamList",
+      "url": "https://latamlist.com/feed/"
+    },
+    {
+      "outlet": "Contxto",
+      "url": "https://contxto.com/es/feed/"
+    },
+    {
+      "outlet": "Entrepreneur en Español",
+      "url": "https://www.entrepreneur.com/es/feed"
+    },
+    {
+      "outlet": "McKinsey Insights",
+      "url": "https://www.mckinsey.com/insights/rss"
+    }
+  ],
   "filtroPrensa": {
-    "siglas": ["IA", "AI", "LLM", "GPT"],
+    "siglas": [
+      "IA",
+      "AI",
+      "CEO",
+      "B2B",
+      "SaaS",
+      "VC",
+      "pymes",
+      "pyme"
+    ],
     "terminos": [
+      "emprendimiento",
+      "emprendedor",
+      "emprendedores",
+      "startup",
+      "startups",
+      "fundador",
+      "fundadores",
+      "escalar",
+      "crecimiento",
+      "growth",
+      "ventas",
+      "comercial",
+      "clientes",
+      "liderazgo",
+      "líderes",
+      "equipo",
+      "equipos",
+      "talento",
+      "contratación",
+      "cultura organizacional",
+      "marketing",
+      "marca",
+      "expansión",
+      "internacionalización",
+      "ronda de inversión",
+      "levantar capital",
+      "capital de riesgo",
+      "venture capital",
+      "fundraising",
+      "inversionistas",
+      "productividad",
+      "estrategia",
       "inteligencia artificial",
-      "artificial intelligence",
-      "machine learning",
-      "aprendizaje automático",
-      "aprendizaje automatico",
-      "ChatGPT",
-      "OpenAI",
-      "Anthropic",
-      "Claude",
-      "Gemini",
-      "Copilot"
+      "transformación digital"
     ]
-  }
+  },
+  "pilares": [
+    "Liderazgo y mentalidad",
+    "Growth",
+    "Equipos y talento",
+    "Ventas",
+    "Marketing",
+    "Expansión internacional",
+    "Fundraising",
+    "IA aplicada al negocio"
+  ],
+  "maxPorPilar": 2
 }

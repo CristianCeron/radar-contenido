@@ -23,6 +23,7 @@ export type Profile = z.infer<typeof ProfileSchema>;
 
 export interface BriefTopic {
   label: string;
+  pilar?: string;
   stage: Stage;
   velocity: number | null;
   explanation: Topic["explanation"];
@@ -41,7 +42,7 @@ Con un tema en tendencia y el perfil de la marca, propones UNA pieza de contenid
 - angle: el ángulo en una oración, escrito para esa audiencia.
 - format: uno de los formatos de la marca, copiado tal cual.
 - hook: la primera línea o los primeros 3 segundos, en la voz de la marca.
-- opportunity.product: uno de los productos de la marca, copiado tal cual; opportunity.rationale: en una oración, cómo la pieza lleva a ese producto sin sonar a venta forzada.
+- opportunity.product: uno de los productos de la marca, copiado tal cual, elegido según el pilar del tema (un programa de IA solo si el tema es principalmente de IA); opportunity.rationale: en una oración, cómo la pieza lleva a ese producto sin sonar a venta forzada.
 No inventes cifras, porcentajes, estudios ni casos: usa solo los datos que aparecen en "Por qué crece" o en las piezas. Si no hay cifras, escribe sin cifras.
 Escribe en español neutro con tuteo. Sin guion largo. Respeta lo que la marca evita.`;
 
@@ -65,6 +66,7 @@ function buildPrompt(topic: BriefTopic, profile: Profile): string {
     `Formatos de la marca: ${profile.formatos.join(" | ")}`,
     ``,
     `Tema: ${topic.label}`,
+    ...(topic.pilar ? [`Pilar: ${topic.pilar}`] : []),
     `Etapa: ${topic.stage}. ${STAGE_GUIDE[topic.stage]}`,
     `Velocidad semanal: ${topic.velocity ?? "sin dato"}%`,
     `Por qué crece: ${topic.explanation.text}`,

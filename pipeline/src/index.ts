@@ -32,7 +32,7 @@ export async function runPipeline(opts: PipelineOptions = {}) {
       ...(process.env.SENSOR_SHEET_CSV_URL ? { equipo: () => fetchSensor({ now }) } : {}),
     },
     // Otro tema usa su propia caché y su propio archivo, para no pisar el radar publicado.
-    cacheDir: opts.cacheDir ?? fileURLToPath(new URL(`pipeline/.cache/${variant ? `${variant}/` : ""}`, ROOT)),
+    cacheDir: opts.cacheDir ?? fileURLToPath(new URL(`pipeline/.cache/${variant ?? "principal"}/`, ROOT)),
     outputPath: opts.outputPath ?? fileURLToPath(new URL(`web/public/data/radar${variant ? `-${variant}` : ""}.json`, ROOT)),
     makeLLMs: (sink) => ({ fast: createLLM("fast", sink), writer: createLLM("writer", sink) }),
     makeClassifiers: (fast, sink) => ({

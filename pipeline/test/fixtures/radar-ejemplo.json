@@ -1,0 +1,395 @@
+{
+  "generatedAt": "2026-10-16T06:12:00.000Z",
+  "windowDays": 30,
+  "cost": {
+    "totalUsd": 0.18,
+    "limitUsd": 1,
+    "calls": 42
+  },
+  "sources": [
+    {
+      "source": "hackernews",
+      "status": "ok",
+      "fetchedAt": "2026-10-16T06:00:00.000Z",
+      "items": 320
+    },
+    {
+      "source": "arxiv",
+      "status": "ok",
+      "fetchedAt": "2026-10-16T06:00:05.000Z",
+      "items": 210
+    },
+    {
+      "source": "youtube",
+      "status": "cupo_agotado",
+      "fetchedAt": "2026-10-15T06:00:00.000Z",
+      "items": 80
+    },
+    {
+      "source": "prensa",
+      "status": "ok",
+      "fetchedAt": "2026-10-16T06:00:09.000Z",
+      "items": 64
+    }
+  ],
+  "profiles": [
+    {
+      "id": "30x",
+      "nombre": "30X"
+    },
+    {
+      "id": "andres-bilbao",
+      "nombre": "Andrés Bilbao"
+    }
+  ],
+  "topics": [
+    {
+      "id": "agentes-de-ia",
+      "label": "Agentes de IA",
+      "stage": "creciendo",
+      "velocity": 64,
+      "executiveRelevance": 0.86,
+      "score": 55.04,
+      "layers": [
+        "origen",
+        "difusion"
+      ],
+      "series": [
+        {
+          "date": "2026-09-17",
+          "count": 4
+        },
+        {
+          "date": "2026-09-18",
+          "count": 5
+        },
+        {
+          "date": "2026-09-19",
+          "count": 5
+        },
+        {
+          "date": "2026-09-20",
+          "count": 6
+        },
+        {
+          "date": "2026-09-21",
+          "count": 6
+        },
+        {
+          "date": "2026-09-22",
+          "count": 7
+        },
+        {
+          "date": "2026-09-23",
+          "count": 8
+        },
+        {
+          "date": "2026-09-24",
+          "count": 8
+        },
+        {
+          "date": "2026-09-25",
+          "count": 9
+        },
+        {
+          "date": "2026-09-26",
+          "count": 9
+        },
+        {
+          "date": "2026-09-27",
+          "count": 10
+        },
+        {
+          "date": "2026-09-28",
+          "count": 11
+        },
+        {
+          "date": "2026-09-29",
+          "count": 11
+        },
+        {
+          "date": "2026-09-30",
+          "count": 12
+        },
+        {
+          "date": "2026-10-01",
+          "count": 12
+        },
+        {
+          "date": "2026-10-02",
+          "count": 13
+        },
+        {
+          "date": "2026-10-03",
+          "count": 14
+        },
+        {
+          "date": "2026-10-04",
+          "count": 14
+        },
+        {
+          "date": "2026-10-05",
+          "count": 15
+        },
+        {
+          "date": "2026-10-06",
+          "count": 15
+        },
+        {
+          "date": "2026-10-07",
+          "count": 16
+        },
+        {
+          "date": "2026-10-08",
+          "count": 17
+        },
+        {
+          "date": "2026-10-09",
+          "count": 17
+        },
+        {
+          "date": "2026-10-10",
+          "count": 20
+        },
+        {
+          "date": "2026-10-11",
+          "count": 22
+        },
+        {
+          "date": "2026-10-12",
+          "count": 25
+        },
+        {
+          "date": "2026-10-13",
+          "count": 28
+        },
+        {
+          "date": "2026-10-14",
+          "count": 30
+        },
+        {
+          "date": "2026-10-15",
+          "count": 33
+        },
+        {
+          "date": "2026-10-16",
+          "count": 35
+        }
+      ],
+      "channels": [
+        {
+          "name": "Hacker News",
+          "source": "hackernews",
+          "url": "https://news.ycombinator.com",
+          "count": 38
+        },
+        {
+          "name": "Canal de ejemplo",
+          "source": "youtube",
+          "url": "https://www.youtube.com/@ejemplo",
+          "count": 6
+        }
+      ],
+      "topPieces": [
+        {
+          "title": "Cómo montar un agente que responde correos",
+          "url": "https://www.youtube.com/watch?v=ejemplo1",
+          "source": "youtube",
+          "outlet": "Canal de ejemplo",
+          "hook": "tutorial",
+          "format": "video largo",
+          "analysis": "Promete un resultado concreto en el título y lo muestra en los primeros 20 segundos."
+        }
+      ],
+      "explanation": {
+        "text": "Las empresas pasaron de probar chatbots a pedir agentes que ejecutan tareas. En Hacker News se duplicaron los hilos sobre agentes en producción y en YouTube crecen los tutoriales paso a paso.",
+        "evidence": [
+          {
+            "title": "Ask HN: ¿Quién usa agentes en producción?",
+            "url": "https://news.ycombinator.com/item?id=1000001"
+          },
+          {
+            "title": "Cómo montar un agente que responde correos",
+            "url": "https://www.youtube.com/watch?v=ejemplo1"
+          }
+        ]
+      },
+      "briefs": {
+        "30x": {
+          "profileId": "30x",
+          "angle": "Qué tareas de tu equipo ya puede hacer un agente esta semana",
+          "format": "carrusel de Instagram",
+          "hook": "3 tareas que tu equipo hace a mano y un agente ya resuelve",
+          "opportunity": {
+            "product": "AI for Executives",
+            "rationale": "Muestra el caso práctico y lleva al programa para implementarlo con ROI."
+          },
+          "generatedAt": "2026-10-16T06:10:00.000Z"
+        },
+        "andres-bilbao": {
+          "profileId": "andres-bilbao",
+          "angle": "Lo que aprendí delegando trabajo real a un agente",
+          "format": "reel",
+          "hook": "Le di a un agente una tarea de mi equipo. Esto pasó.",
+          "opportunity": {
+            "product": "Inmersión Ejecutiva 30X",
+            "rationale": "La historia en primera persona abre la conversación y la inmersión da el método."
+          },
+          "generatedAt": "2026-10-16T06:10:00.000Z"
+        }
+      }
+    },
+    {
+      "id": "modelos-pequenos",
+      "label": "Modelos pequeños en el dispositivo",
+      "stage": "emergente",
+      "velocity": 120,
+      "executiveRelevance": 0.52,
+      "score": 62.4,
+      "layers": [
+        "origen"
+      ],
+      "series": [
+        {
+          "date": "2026-09-17",
+          "count": 0
+        },
+        {
+          "date": "2026-09-18",
+          "count": 0
+        },
+        {
+          "date": "2026-09-19",
+          "count": 0
+        },
+        {
+          "date": "2026-09-20",
+          "count": 0
+        },
+        {
+          "date": "2026-09-21",
+          "count": 0
+        },
+        {
+          "date": "2026-09-22",
+          "count": 0
+        },
+        {
+          "date": "2026-09-23",
+          "count": 0
+        },
+        {
+          "date": "2026-09-24",
+          "count": 0
+        },
+        {
+          "date": "2026-09-25",
+          "count": 0
+        },
+        {
+          "date": "2026-09-26",
+          "count": 0
+        },
+        {
+          "date": "2026-09-27",
+          "count": 0
+        },
+        {
+          "date": "2026-09-28",
+          "count": 0
+        },
+        {
+          "date": "2026-09-29",
+          "count": 0
+        },
+        {
+          "date": "2026-09-30",
+          "count": 0
+        },
+        {
+          "date": "2026-10-01",
+          "count": 0
+        },
+        {
+          "date": "2026-10-02",
+          "count": 0
+        },
+        {
+          "date": "2026-10-03",
+          "count": 0
+        },
+        {
+          "date": "2026-10-04",
+          "count": 0
+        },
+        {
+          "date": "2026-10-05",
+          "count": 0
+        },
+        {
+          "date": "2026-10-06",
+          "count": 0
+        },
+        {
+          "date": "2026-10-07",
+          "count": 0
+        },
+        {
+          "date": "2026-10-08",
+          "count": 2
+        },
+        {
+          "date": "2026-10-09",
+          "count": 3
+        },
+        {
+          "date": "2026-10-10",
+          "count": 5
+        },
+        {
+          "date": "2026-10-11",
+          "count": 6
+        },
+        {
+          "date": "2026-10-12",
+          "count": 8
+        },
+        {
+          "date": "2026-10-13",
+          "count": 9
+        },
+        {
+          "date": "2026-10-14",
+          "count": 11
+        },
+        {
+          "date": "2026-10-15",
+          "count": 12
+        },
+        {
+          "date": "2026-10-16",
+          "count": 14
+        }
+      ],
+      "channels": [
+        {
+          "name": "arXiv",
+          "source": "arxiv",
+          "url": "https://arxiv.org",
+          "count": 14
+        }
+      ],
+      "topPieces": [],
+      "explanation": {
+        "text": "Aparecen varios artículos sobre modelos que corren en el teléfono sin nube. Aún no llegan a YouTube ni a prensa: es una señal temprana.",
+        "evidence": [
+          {
+            "title": "Artículo de ejemplo en arXiv",
+            "url": "https://arxiv.org/abs/2610.00001"
+          }
+        ]
+      },
+      "briefs": {}
+    }
+  ]
+}

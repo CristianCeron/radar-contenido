@@ -208,6 +208,34 @@ describe("orquestador", () => {
     expect(readFileSync(join(dir, "radar.json"), "utf8")).toBe('{"anterior":true}');
   });
 
+  it("consulta todas las fuentes que recibe, incluida la de expertos", async () => {
+    const res = await runRadar(
+      deps(dir, {
+        sources: {
+          ...deps(dir).sources,
+          expertos: async () => ({
+            status: "ok",
+            items: [
+              {
+                id: "expertos:1",
+                source: "expertos" as const,
+                layer: "origen" as const,
+                title: "How AI agents change B2B sales",
+                url: "https://www.lennysnewsletter.com/p/agents-sales",
+                outlet: "Lenny's Newsletter",
+                publishedAt: "2026-10-15T12:00:00.000Z",
+                metrics: {},
+              },
+            ],
+          }),
+        },
+      }),
+    );
+    expect(res.status).toBe("ok");
+    const radar = RadarSchema.parse(JSON.parse(readFileSync(join(dir, "radar.json"), "utf8")));
+    expect(radar.sources.find((s) => s.source === "expertos")).toMatchObject({ status: "ok", items: 1 });
+  });
+
   it("guarda en caché el resultado de cada fuente que funcionó", async () => {
     await runRadar(deps(dir));
     for (const s of ["hackernews", "arxiv", "youtube", "prensa"]) expect(existsSync(join(dir, "cache", `${s}.json`))).toBe(true);

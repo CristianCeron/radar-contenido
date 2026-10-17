@@ -16,7 +16,7 @@ import type { SourceResult } from "./sources/types.js";
 import { errorMessage, windowStart } from "./sources/types.js";
 import { buildSeries, recentMentions, velocity } from "./velocity.js";
 
-const SOURCES: Source[] = ["hackernews", "arxiv", "youtube", "prensa", "equipo"];
+const SOURCES: Source[] = ["hackernews", "arxiv", "expertos", "youtube", "prensa", "equipo"];
 
 export interface RadarDeps {
   now: Date;

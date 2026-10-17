@@ -40,6 +40,14 @@ describe("adaptador Gemini", () => {
     expect(body.generationConfig.responseJsonSchema.properties).toHaveProperty("angle");
   });
 
+  it("con backend vertex llama a Agent Platform con la misma clave", async () => {
+    const { fn, calls } = recordingFetch([{ body: geminiResponse('{"angle":"a","score":1}') }]);
+    const llm = createGeminiLLM({ model: "gemini-test", apiKey: "k", fetch: fn, backend: "vertex" });
+    await llm.json({ label: "x", system: "s", prompt: "p", schema });
+    expect(calls[0].url).toBe("https://aiplatform.googleapis.com/v1/publishers/google/models/gemini-test:generateContent");
+    expect((calls[0].init.headers as Record<string, string>)["x-goog-api-key"]).toBe("k");
+  });
+
   it("reporta el costo según tokens y la tabla de precios", async () => {
     const { fn } = recordingFetch([{ body: geminiResponse('{"angle":"a","score":1}') }]);
     const costs: number[] = [];
@@ -94,6 +102,26 @@ describe("selección de proveedor", () => {
       delete process.env.LLM_PROVIDER;
       delete process.env.GEMINI_MODEL_FAST;
       delete process.env.GEMINI_MODEL_WRITER;
+    }
+  });
+
+  it("lee el backend de GEMINI_BACKEND", async () => {
+    process.env.LLM_PROVIDER = "gemini";
+    process.env.GEMINI_BACKEND = "vertex";
+    process.env.GEMINI_MODEL_FAST = "gemini-rapido";
+    process.env.GEMINI_API_KEY = "k";
+    const calls: string[] = [];
+    const original = globalThis.fetch;
+    globalThis.fetch = (async (url: string) => {
+      calls.push(url);
+      return new Response(JSON.stringify(geminiResponse('{"angle":"a","score":1}')));
+    }) as unknown as typeof fetch;
+    try {
+      await createLLM("fast").json({ label: "x", system: "s", prompt: "p", schema });
+      expect(calls[0]).toContain("aiplatform.googleapis.com");
+    } finally {
+      globalThis.fetch = original;
+      for (const k of ["LLM_PROVIDER", "GEMINI_BACKEND", "GEMINI_MODEL_FAST", "GEMINI_API_KEY"]) delete process.env[k];
     }
   });
 

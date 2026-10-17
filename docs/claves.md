@@ -18,9 +18,18 @@ Una búsqueda cuesta 100 unidades; con 8 búsquedas por corrida sobra cupo.
 2. "Get API key" > "Create API key" y elige el proyecto de Google Cloud.
 3. Pega el valor en `GEMINI_API_KEY`.
 
-Usa el nivel gratuito, que no pide tarjeta. Si el proyecto tiene créditos de la prueba gratuita de
-Google Cloud, lo que pase del nivel gratuito se descuenta de esos créditos. El pipeline espera y
-reintenta cuando el nivel gratuito responde que se alcanzó el límite de llamadas por minuto.
+Con `GEMINI_BACKEND=aistudio` usa el nivel gratuito, que no pide tarjeta. Ojo: si el proyecto tiene
+facturación activa, AI Studio deja de dar nivel gratuito y cobra de un saldo prepagado propio; los
+créditos de la prueba gratuita de Google Cloud no aplican ahí. Para el nivel gratuito, crea la clave
+en un proyecto sin facturación (por ejemplo "Default Gemini Project"). El pipeline espera y reintenta
+cuando el nivel gratuito responde que se alcanzó el límite de llamadas por minuto.
+
+### Variante con créditos de Google Cloud (`GEMINI_BACKEND=vertex`)
+Agent Platform (antes Vertex AI) sí consume los créditos de la prueba gratuita.
+1. En Google Cloud, "APIs y servicios" > "Credenciales" > "Crear credenciales" > "Clave de API".
+   Restringe la clave a Generative Language API y Agent Platform API, y vincúlala a una cuenta de servicio.
+2. En "IAM y administración" > "IAM", dale a esa cuenta de servicio el rol "Usuario de Vertex AI".
+3. Pega la clave en `GEMINI_API_KEY` y pon `GEMINI_BACKEND=vertex`.
 
 ## 3. Anthropic (opcional, modo calidad)
 Recomendado para explicaciones y briefs más precisos. Requiere saldo prepagado.

@@ -1,10 +1,18 @@
 import { z } from "zod";
 import type { CostSink, JsonRequest, LLM } from "./types.js";
 
-const API = "https://generativelanguage.googleapis.com/v1beta/models";
+// aistudio: Gemini API (nivel gratuito o saldo prepagado de AI Studio).
+// vertex: Agent Platform de Google Cloud; consume los créditos de la cuenta de facturación.
+const ENDPOINTS = {
+  aistudio: "https://generativelanguage.googleapis.com/v1beta/models",
+  vertex: "https://aiplatform.googleapis.com/v1/publishers/google/models",
+};
+
+export type GeminiBackend = keyof typeof ENDPOINTS;
 
 export interface GeminiLLMOptions {
   model: string;
+  backend?: GeminiBackend;
   apiKey?: string;
   fetch?: typeof fetch;
   // Dólares por millón de tokens. Sin precio se asume el nivel gratuito (costo 0).
@@ -51,7 +59,7 @@ export function createGeminiLLM(opts: GeminiLLMOptions): LLM {
 
       let res: Response | undefined;
       for (let attempt = 0; attempt <= maxRetries; attempt++) {
-        res = await doFetch(`${API}/${opts.model}:generateContent`, {
+        res = await doFetch(`${ENDPOINTS[opts.backend ?? "aistudio"]}/${opts.model}:generateContent`, {
           method: "POST",
           headers: { "x-goog-api-key": apiKey, "Content-Type": "application/json" },
           body,

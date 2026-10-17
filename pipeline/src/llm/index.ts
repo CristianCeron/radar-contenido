@@ -23,7 +23,14 @@ export function createLLM(role: LLMRole, onCost?: CostSink): LLM {
   if (provider === "gemini") {
     const model = fast ? process.env.GEMINI_MODEL_FAST : process.env.GEMINI_MODEL_WRITER;
     if (!model) throw new Error(`Falta ${fast ? "GEMINI_MODEL_FAST" : "GEMINI_MODEL_WRITER"} en el .env`);
-    return createGeminiLLM({ model, price: envPrice(fast ? "GEMINI_PRICE_FAST" : "GEMINI_PRICE_WRITER"), onCost });
+    const backend = process.env.GEMINI_BACKEND || "aistudio";
+    if (backend !== "aistudio" && backend !== "vertex") throw new Error(`GEMINI_BACKEND no soportado: ${backend}`);
+    return createGeminiLLM({
+      model,
+      backend,
+      price: envPrice(fast ? "GEMINI_PRICE_FAST" : "GEMINI_PRICE_WRITER"),
+      onCost,
+    });
   }
 
   if (provider === "anthropic") {

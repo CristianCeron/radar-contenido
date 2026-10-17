@@ -66,8 +66,14 @@ export async function classifyWithFallback(
     const missing = batch.filter((it) => !out.has(it.id));
     if (missing.length === 0) return;
     if (primaryResult.size > 0) log(`${missing.length} ítems sin respuesta de ${primary.name}; se usa el respaldo ${fallback.name}`);
-    const fb = await fallback.classify(missing);
-    for (const [id, c] of fb) out.set(id, { ...c, usedFallback: true });
+    try {
+      const fb = await fallback.classify(missing);
+      for (const [id, c] of fb) out.set(id, { ...c, usedFallback: true });
+    } catch (err) {
+      // Un lote sin clasificar no detiene la corrida: esos ítems quedan sin relevancia.
+      if (err instanceof CostLimitExceeded) throw err;
+      log(`Respaldo ${fallback.name} falló en un lote de ${missing.length} ítems: ${errorMessage(err)}`);
+    }
   });
   return out;
 }

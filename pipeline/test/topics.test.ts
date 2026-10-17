@@ -89,6 +89,18 @@ describe("asignación de temas", () => {
     expect(labeling[1].prompt).toContain("Agentes de IA");
   });
 
+  it("si un lote de etiquetado falla, sigue con los demás", async () => {
+    let n = 0;
+    const llm = fakeLLM((req) => {
+      if (req.label !== "temas-etiquetado") return { merges: [] };
+      if (n++ === 1) throw new Error("conexión cortada");
+      const ids = [...req.prompt.matchAll(/"id":"(\w+)"/g)].map((m) => m[1]);
+      return { items: ids.map((id) => ({ id, topic: "Agentes de IA" })) };
+    });
+    const groups = await assignTopics(items, llm, { batchSize: 2, log: () => {} });
+    expect(groups[0].items).toHaveLength(3);
+  });
+
   it("ignora ids que el modelo inventa", async () => {
     const llm = fakeLLM((req) =>
       req.label === "temas-etiquetado" ? { items: [{ id: "999", topic: "Agentes de IA" }] } : { merges: [] },

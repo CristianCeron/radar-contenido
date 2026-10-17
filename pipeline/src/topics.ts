@@ -2,6 +2,8 @@ import { z } from "zod";
 import type { NormalizedItem } from "./schema.js";
 import type { LLM } from "./llm/types.js";
 import { mapPool } from "./pool.js";
+import { CostLimitExceeded } from "./cost.js";
+import { errorMessage } from "./sources/types.js";
 
 export interface TopicGroup {
   id: string;
@@ -71,6 +73,7 @@ Para cada grupo devuelve la etiqueta canónica en español y sus alias. Si no ha
 export interface AssignOptions {
   concurrency?: number;
   batchSize?: number;
+  log?: (msg: string) => void;
 }
 
 function mostCommonLabel(labels: string[]): string {
@@ -88,6 +91,7 @@ function mostCommonLabel(labels: string[]): string {
 // Etiqueta los ítems por lotes con un modelo barato y agrupa por clave canónica.
 export async function assignTopics(items: NormalizedItem[], llm: LLM, opts: AssignOptions = {}): Promise<TopicGroup[]> {
   const batchSize = opts.batchSize ?? 80;
+  const log = opts.log ?? console.warn;
   const byId = new Map(items.map((i) => [i.id, i]));
   const labelOf = new Map<string, string>();
   const known = new Set<string>();
@@ -99,13 +103,21 @@ export async function assignTopics(items: NormalizedItem[], llm: LLM, opts: Assi
     const listing = batch.map((it) => JSON.stringify({ id: it.id, titulo: it.title })).join("\n");
     const shown = [...known].slice(-200);
     const existing = shown.length ? `Etiquetas ya usadas: ${shown.join(" | ")}\n\n` : "";
-    const result = await llm.json({
-      label: "temas-etiquetado",
-      system: LABEL_SYSTEM,
-      prompt: `${existing}Piezas:\n${listing}`,
-      schema: LabelSchema,
-      maxTokens: 400 + batch.length * 40,
-    });
+    let result: z.infer<typeof LabelSchema>;
+    try {
+      result = await llm.json({
+        label: "temas-etiquetado",
+        system: LABEL_SYSTEM,
+        prompt: `${existing}Piezas:\n${listing}`,
+        schema: LabelSchema,
+        maxTokens: 400 + batch.length * 40,
+      });
+    } catch (err) {
+      // Un lote sin etiquetar no detiene la corrida: esos ítems quedan fuera de los temas.
+      if (err instanceof CostLimitExceeded) throw err;
+      log(`Etiquetado falló en un lote de ${batch.length} ítems: ${errorMessage(err)}`);
+      return;
+    }
     for (const { id, topic } of result.items) {
       if (!topic || !byId.has(id)) continue;
       labelOf.set(id, topic.trim());
@@ -121,16 +133,22 @@ export async function assignTopics(items: NormalizedItem[], llm: LLM, opts: Assi
   const canonicalByKey = new Map<string, { key: string; label: string }>();
   const uniqueKeys = new Set([...known].map(labelKey));
   if (uniqueKeys.size > 1) {
-    const { merges } = await llm.json({
-      label: "temas-fusion",
-      system: MERGE_SYSTEM,
-      prompt: [...known].join("\n"),
-      schema: MergeSchema,
-      maxTokens: 8000,
-    });
-    for (const m of merges) {
-      const target = { key: labelKey(m.canonical), label: m.canonical };
-      for (const alias of [m.canonical, ...m.aliases]) canonicalByKey.set(labelKey(alias), target);
+    try {
+      const { merges } = await llm.json({
+        label: "temas-fusion",
+        system: MERGE_SYSTEM,
+        prompt: [...known].join("\n"),
+        schema: MergeSchema,
+        maxTokens: 8000,
+      });
+      for (const m of merges) {
+        const target = { key: labelKey(m.canonical), label: m.canonical };
+        for (const alias of [m.canonical, ...m.aliases]) canonicalByKey.set(labelKey(alias), target);
+      }
+    } catch (err) {
+      // Sin fusión se conserva la agrupación por clave determinista.
+      if (err instanceof CostLimitExceeded) throw err;
+      log(`Fusión de temas falló: ${errorMessage(err)}`);
     }
   }
 

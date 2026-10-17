@@ -72,6 +72,17 @@ describe("adaptador Gemini", () => {
     expect(calls).toHaveLength(2);
   });
 
+  it("reintenta cuando se corta la conexión", async () => {
+    let n = 0;
+    const fn = (async () => {
+      if (n++ === 0) throw new TypeError("fetch failed");
+      return new Response(JSON.stringify(geminiResponse('{"angle":"a","score":1}')));
+    }) as unknown as typeof fetch;
+    const llm = createGeminiLLM({ model: "gemini-test", apiKey: "k", fetch: fn, retryDelayMs: 1 });
+    await expect(llm.json({ label: "x", system: "s", prompt: "p", schema })).resolves.toEqual({ angle: "a", score: 1 });
+    expect(n).toBe(2);
+  });
+
   it("lanza error si la respuesta no cumple el esquema", async () => {
     const { fn } = recordingFetch([{ body: geminiResponse('{"angle":"a"}') }]);
     const llm = createGeminiLLM({ model: "gemini-test", apiKey: "k", fetch: fn });

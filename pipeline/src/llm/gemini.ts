@@ -59,12 +59,17 @@ export function createGeminiLLM(opts: GeminiLLMOptions): LLM {
 
       let res: Response | undefined;
       for (let attempt = 0; attempt <= maxRetries; attempt++) {
-        res = await doFetch(`${ENDPOINTS[opts.backend ?? "aistudio"]}/${opts.model}:generateContent`, {
-          method: "POST",
-          headers: { "x-goog-api-key": apiKey, "Content-Type": "application/json" },
-          body,
-        });
-        if (!RETRYABLE.has(res.status) || attempt === maxRetries) break;
+        try {
+          res = await doFetch(`${ENDPOINTS[opts.backend ?? "aistudio"]}/${opts.model}:generateContent`, {
+            method: "POST",
+            headers: { "x-goog-api-key": apiKey, "Content-Type": "application/json" },
+            body,
+          });
+          if (!RETRYABLE.has(res.status) || attempt === maxRetries) break;
+        } catch (err) {
+          // Error de red (conexión cortada, DNS): se reintenta igual que un 503.
+          if (attempt === maxRetries) throw err;
+        }
         await new Promise((r) => setTimeout(r, retryDelayMs * 2 ** attempt));
       }
       if (!res!.ok) throw new Error(`Gemini respondió ${res!.status} (${req.label}): ${(await res!.text()).slice(0, 200)}`);

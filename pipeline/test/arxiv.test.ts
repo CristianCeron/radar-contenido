@@ -36,6 +36,15 @@ describe("fuente arXiv", () => {
     expect(url).toMatch(/submittedDate:\[\d{12} TO \d{12}\]/);
   });
 
+  it("reintenta cuando arXiv responde 503", async () => {
+    let n = 0;
+    const f = fakeFetch(() => (n++ === 0 ? { status: 503, body: "ocupado" } : { body: fixture("arxiv-query.xml") }));
+    const res = await fetchArxiv({ fetch: f, now, retryDelayMs: 1 });
+    expect(res.status).toBe("ok");
+    expect(res.items).toHaveLength(3);
+    expect(f.calls).toHaveLength(2);
+  });
+
   it("un XML mal formado produce un error controlado", async () => {
     const f = fakeFetch(() => ({ body: "<feed><entry><title>roto</entry>" }));
     const res = await fetchArxiv({ fetch: f, now });

@@ -142,6 +142,20 @@ describe("clasificación con respaldo", () => {
     expect(fallback.classify).not.toHaveBeenCalled();
   });
 
+  it("si el respaldo también falla en un lote, sigue con los demás", async () => {
+    const primary: Classifier = { name: "jev", classify: async () => Promise.reject(new Error("sin saldo")) };
+    let n = 0;
+    const flaky: Classifier = {
+      name: "respaldo",
+      classify: async (batch) => {
+        if (n++ === 0) throw new Error("conexión cortada");
+        return okFallback.classify(batch);
+      },
+    };
+    const out = await classifyWithFallback(items, { primary, fallback: flaky, batchSize: 1, log: () => {} });
+    expect(out.size).toBe(1);
+  });
+
   it("completa con el respaldo los ítems que JEV no devolvió", async () => {
     const primary: Classifier = {
       name: "jev",

@@ -9,6 +9,8 @@ export const DEFAULT_ARXIV_CATEGORIES = ["cs.AI", "cs.CL", "cs.LG", "cs.MA"];
 export interface ArxivOptions extends SourceOptions {
   categories?: string[];
   maxResults?: number;
+  retries?: number;
+  retryDelayMs?: number;
 }
 
 interface AtomLink {
@@ -72,10 +74,22 @@ export async function fetchArxiv(opts: ArxivOptions = {}): Promise<SourceResult>
     max_results: String(opts.maxResults ?? 500),
   });
 
+  // arXiv responde 503 con frecuencia y pide esperar unos segundos entre llamadas.
+  const retries = opts.retries ?? 3;
+  const delay = opts.retryDelayMs ?? 5000;
   try {
-    const res = await doFetch(`${ENDPOINT}?${params}`);
-    if (!res.ok) throw new Error(`arXiv respondió ${res.status}`);
-    return { status: "ok", items: parseArxiv(await res.text()) };
+    let res: Response | undefined;
+    for (let attempt = 0; attempt <= retries; attempt++) {
+      try {
+        res = await doFetch(`${ENDPOINT}?${params}`);
+        if (res.ok || ![429, 500, 502, 503].includes(res.status) || attempt === retries) break;
+      } catch (err) {
+        if (attempt === retries) throw err;
+      }
+      await new Promise((r) => setTimeout(r, delay * (attempt + 1)));
+    }
+    if (!res!.ok) throw new Error(`arXiv respondió ${res!.status}`);
+    return { status: "ok", items: parseArxiv(await res!.text()) };
   } catch (err) {
     return { status: "error", items: [], error: errorMessage(err) };
   }

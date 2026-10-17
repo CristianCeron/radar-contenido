@@ -80,7 +80,7 @@ async function buildRadar(deps: RadarDeps, sink: CostSink): Promise<Omit<Radar, 
   const classifications = await classifyWithFallback(items, { primary, fallback, log, concurrency: pool });
   log(`Clasificados: ${classifications.size}`);
 
-  const groups = await assignTopics(items, fast, { concurrency: pool });
+  const groups = await assignTopics(items, fast, { concurrency: pool, log });
   log(`Temas: ${groups.length}`);
 
   const candidates = groups.map((g) => {

@@ -117,6 +117,16 @@ describe("aportes del equipo en la explicación", () => {
     expect(await explainTopic({ ...topic, items: [sensor] }, { llm, classifications })).toBeNull();
   });
 
+  it("los aportes del equipo siempre se muestran aunque el tema tenga muchos canales", () => {
+    const many = Array.from({ length: 15 }, (_, i) =>
+      item(`c${i}`, { source: "youtube", outlet: `Canal ${i}`, url: `https://www.youtube.com/watch?v=${i}` }),
+    );
+    const doubled = many.flatMap((it) => [it, { ...it, id: `${it.id}b`, url: `${it.url}b` }]);
+    const ch = buildChannels([...doubled, sensor], 10);
+    expect(ch.some((c) => c.source === "equipo")).toBe(true);
+    expect(ch.filter((c) => c.source !== "equipo")).toHaveLength(10);
+  });
+
   it("los canales del equipo no llevan enlace", () => {
     const ch = buildChannels([sensor]);
     expect(ch[0]).toMatchObject({ name: "LinkedIn, aportes del equipo", source: "equipo", count: 1 });

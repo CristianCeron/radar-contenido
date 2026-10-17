@@ -51,7 +51,10 @@ export function buildChannels(items: NormalizedItem[], limit = 10): Channel[] {
       counts.set(key, ch);
     }
   }
-  return [...counts.values()].sort((a, b) => b.count - a.count).slice(0, limit);
+  const sorted = [...counts.values()].sort((a, b) => b.count - a.count);
+  // Los aportes del equipo siempre se muestran: son la señal que el equipo de media quiere ver.
+  const team = sorted.filter((c) => c.source === "equipo");
+  return [...sorted.filter((c) => c.source !== "equipo").slice(0, limit), ...team];
 }
 
 const ExplainSchema = z.object({

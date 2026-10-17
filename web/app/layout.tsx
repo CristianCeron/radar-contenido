@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { ReactNode } from "react";
 import { Inter_Tight, Instrument_Serif } from "next/font/google";
+import { SiteFooter } from "../components/SiteFooter";
 import { SiteHeader } from "../components/SiteHeader";
 import { WelcomeModal } from "../components/WelcomeModal";
 import { loadRadar } from "../lib/radar";
@@ -20,6 +21,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body>
         <SiteHeader />
         {children}
+        <SiteFooter />
         <WelcomeModal profiles={radar.profiles} topicCount={radar.topics.length} />
       </body>
     </html>

@@ -5,7 +5,6 @@ import { SOURCE_LABEL, STAGE_LABEL, formatDay, formatUsd, formatVelocity } from 
 import { calloutPosition, highlightTopics, latamDots, noiseBars, radarBlips } from "../lib/landing";
 
 const SENSOR_FORM = "https://docs.google.com/forms/d/e/1FAIpQLSehFGUxekxuljgYgcL7jlAKifhhVffUJs7zl6C-zHaR2vw0Bw/viewform";
-const REPO = "https://github.com/CristianCeron/radar-contenido";
 
 const PILAR_ICON: Record<string, string> = {
   "Liderazgo y mentalidad": "M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.4 6.8 19.1l1-5.8L3.5 9.2l5.9-.9z",
@@ -622,33 +621,6 @@ function Cierre() {
   );
 }
 
-function Pie() {
-  const links = [
-    { href: `${REPO}/blob/main/spec-radar-contenido.md`, label: "Metodología" },
-    { href: REPO, label: "Repositorio" },
-    { href: SENSOR_FORM, label: "Formulario del sensor" },
-  ];
-  return (
-    <footer className="bg-ink text-soft">
-      <div className={`${wrap} flex flex-col gap-3.5 py-7 text-sm sm:flex-row sm:flex-wrap sm:items-center sm:justify-between sm:gap-5 sm:py-10 sm:text-[15px]`}>
-        <span>
-          <span className="font-semibold text-white">
-            Radar <span className="text-accent">30X</span>
-          </span>{" "}
-          · Hackathon 30X
-        </span>
-        <nav aria-label="Pie de página" className="flex flex-wrap gap-x-5 sm:gap-x-7">
-          {links.map((l) => (
-            <a key={l.label} href={l.href} className="inline-flex min-h-11 items-center text-soft transition-colors hover:text-white">
-              {l.label}
-            </a>
-          ))}
-        </nav>
-      </div>
-    </footer>
-  );
-}
-
 // Landing: cuenta el problema, cómo funciona el radar y lleva a /radar. Las cifras salen del
 // radar.json de la última corrida, nunca de valores fijos.
 export function Landing({ radar }: { radar: Radar }) {
@@ -661,7 +633,6 @@ export function Landing({ radar }: { radar: Radar }) {
       <Sensor />
       <Impacto radar={radar} />
       <Cierre />
-      <Pie />
     </main>
   );
 }

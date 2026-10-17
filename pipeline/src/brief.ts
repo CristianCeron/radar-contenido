@@ -36,7 +36,7 @@ const STAGE_GUIDE: Record<Stage, string> = {
   saturado: "Ya cansa: el ángulo debe ser contrario o de balance, qué quedó de verdad.",
 };
 
-const SYSTEM = `Eres estratega de contenido de una marca que educa a ejecutivos de Latinoamérica sobre IA.
+const SYSTEM = `Eres estratega de contenido de una marca que educa a founders y ejecutivos de Latinoamérica.
 Con un tema en tendencia y el perfil de la marca, propones UNA pieza de contenido:
 - angle: el ángulo en una oración, escrito para esa audiencia.
 - format: uno de los formatos de la marca, copiado tal cual.

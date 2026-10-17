@@ -166,3 +166,20 @@ describe("clasificación con respaldo", () => {
     expect(out.get("arxiv:2")?.usedFallback).toBe(true);
   });
 });
+
+describe("audiencia configurable en la clasificación", () => {
+  it("JEV y el respaldo miden la relevancia para la audiencia del tema", async () => {
+    let sent: Record<string, any> = {};
+    const fetchImpl = (async (_url: string, init?: RequestInit) => {
+      sent = JSON.parse(String(init?.body));
+      return new Response(JSON.stringify(jevAnswer("x")), { status: 200 });
+    }) as typeof fetch;
+    const audiencia = "founders de Latinoamérica que quieren escalar su empresa";
+    await createJevClassifier({ apiKey: "k", fetch: fetchImpl, audiencia }).classify([items[0]]);
+    expect(sent.questions.executive_relevance.instructions).toContain(audiencia);
+
+    const llm = fakeLLM(() => ({ items: [] }));
+    await createLLMClassifier(llm, audiencia).classify([items[0]]);
+    expect(llm.requests[0].system).toContain(audiencia);
+  });
+});

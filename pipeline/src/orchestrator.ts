@@ -110,7 +110,7 @@ async function buildRadar(deps: RadarDeps, sink: CostSink): Promise<Omit<Radar, 
     try {
       const res = await explainTopic(
         { label: c.group.label, stage: c.stage, velocity: c.velocity, items: c.group.items },
-        { llm: writer, classifications },
+        { llm: writer, classifications, tema: deps.tema },
       );
       if (!res) log(`Sin evidencia enlazada, se descarta: ${c.group.label}`);
       return res ? { ...c, ...res } : null;

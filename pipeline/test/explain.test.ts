@@ -136,3 +136,12 @@ describe("quiénes hablan del tema", () => {
     expect(channels.map((c) => c.name)).toEqual(expect.arrayContaining(["Hacker News", "Portafolio"]));
   });
 });
+
+describe("explicación según el tema", () => {
+  it("el analista habla del tema configurado, no siempre de IA", async () => {
+    const llm = fakeLLM(() => ({ text: "x", evidenceIds: ["e1"], pieces: [] }));
+    await explainTopic(topic, { llm, classifications, tema: "crecimiento de empresas" });
+    expect(llm.requests[0].system).toContain("crecimiento de empresas");
+    expect(llm.requests[0].system).not.toMatch(/tendencias de IA/);
+  });
+});

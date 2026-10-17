@@ -1,7 +1,7 @@
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { XMLParser, XMLValidator } from "fast-xml-parser";
-import type { NormalizedItem } from "../schema.js";
+import { LAYER_BY_SOURCE, type NormalizedItem } from "../schema.js";
 import { errorMessage, windowStart, type SourceOptions, type SourceResult } from "./types.js";
 
 export interface Feed {
@@ -13,6 +13,8 @@ export interface PressOptions extends SourceOptions {
   feeds?: Feed[];
   // Qué notas cuentan para el tema. Por defecto, las que hablan de IA.
   matches?: (text: string) => boolean;
+  // "prensa" (audiencia ejecutiva) o "expertos" (newsletters, capa origen).
+  source?: "prensa" | "expertos";
 }
 
 // Las siglas "IA" y "AI" se exigen en mayúsculas para no confundirlas con palabras comunes.
@@ -48,7 +50,7 @@ function linkOf(entry: Record<string, unknown>): string {
 }
 
 // Lee RSS 2.0 y Atom. El autor de la nota no se guarda: es un dato personal.
-export function parseFeed(xml: string, outlet: string): NormalizedItem[] {
+export function parseFeed(xml: string, outlet: string, source: "prensa" | "expertos" = "prensa"): NormalizedItem[] {
   const valid = XMLValidator.validate(xml);
   if (valid !== true) throw new Error(`Feed mal formado: ${valid.err.msg}`);
   const parser = new XMLParser({ ignoreAttributes: false, isArray: (n) => n === "item" || n === "entry" });
@@ -63,9 +65,9 @@ export function parseFeed(xml: string, outlet: string): NormalizedItem[] {
     if (!title || !/^https?:\/\//.test(url) || Number.isNaN(date.getTime())) continue;
     const summary = stripHtml(text(entry.description ?? entry.summary)).slice(0, 500);
     items.push({
-      id: `prensa:${createHash("sha1").update(url).digest("hex").slice(0, 16)}`,
-      source: "prensa",
-      layer: "audiencia_ejecutiva",
+      id: `${source}:${createHash("sha1").update(url).digest("hex").slice(0, 16)}`,
+      source,
+      layer: LAYER_BY_SOURCE[source],
       title,
       url,
       outlet,
@@ -90,7 +92,7 @@ export async function fetchPress(opts: PressOptions = {}): Promise<SourceResult>
     try {
       const res = await doFetch(feed.url, { headers: { "User-Agent": "radar-contenido/0.1" } });
       if (!res.ok) throw new Error(`respondió ${res.status}`);
-      const parsed = parseFeed(await res.text(), feed.outlet);
+      const parsed = parseFeed(await res.text(), feed.outlet, opts.source ?? "prensa");
       for (const item of parsed) {
         const t = new Date(item.publishedAt).getTime();
         if (t >= since && t <= now.getTime() + 86400_000 && matches(`${item.title} ${item.summary ?? ""}`)) {

@@ -2,7 +2,7 @@ import { z } from "zod";
 import { HookTypeSchema } from "../schema.js";
 import type { LLM } from "../llm/types.js";
 import type { Classifier, RawClassification } from "./index.js";
-import { HOOK_CRITERIA, KIND_CRITERIA, RELEVANCE_LEVELS } from "./questions.js";
+import { DEFAULT_AUDIENCIA, HOOK_CRITERIA, KIND_CRITERIA, RELEVANCE_LEVELS } from "./questions.js";
 
 const BatchSchema = z.object({
   items: z.array(
@@ -15,7 +15,7 @@ const BatchSchema = z.object({
   ),
 });
 
-const SYSTEM = `Clasificas piezas de contenido sobre inteligencia artificial para un radar de contenido dirigido a ejecutivos de Latinoamérica.
+const system = (audiencia: string) => `Clasificas piezas de contenido para un radar de contenido dirigido a ${audiencia}.
 Para cada pieza devuelve:
 - executiveRelevance: número de 0 a 1. Guía: ${RELEVANCE_LEVELS.map((l, i) => `${(i / (RELEVANCE_LEVELS.length - 1)).toFixed(2)} = ${l}`).join("; ")}.
 - kind: ${Object.entries(KIND_CRITERIA).map(([k, v]) => `"${k}" (${v})`).join(" o ")}.
@@ -23,7 +23,7 @@ Para cada pieza devuelve:
 Usa exactamente el id recibido. Clasifica todas las piezas.`;
 
 // Respaldo del clasificador: un modelo de lenguaje barato que clasifica un lote por llamada.
-export function createLLMClassifier(llm: LLM): Classifier {
+export function createLLMClassifier(llm: LLM, audiencia = DEFAULT_AUDIENCIA): Classifier {
   return {
     name: `llm:${llm.model}`,
     async classify(items) {
@@ -32,7 +32,7 @@ export function createLLMClassifier(llm: LLM): Classifier {
         .join("\n");
       const result = await llm.json({
         label: "clasificacion-respaldo",
-        system: SYSTEM,
+        system: system(audiencia),
         prompt: `Piezas (una por línea, en JSON):\n${listing}`,
         schema: BatchSchema,
         maxTokens: 500 + items.length * 120,

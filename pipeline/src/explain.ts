@@ -11,6 +11,7 @@ const DEFAULT_FORMAT: Record<Source, string> = {
   arxiv: "artículo académico",
   prensa: "nota de prensa",
   equipo: "publicación en redes",
+  expertos: "newsletter de experto",
 };
 
 const OUTLET_URL: Record<string, string> = {
@@ -59,7 +60,7 @@ const ExplainSchema = z.object({
   pieces: z.array(z.object({ id: z.string(), format: z.string(), analysis: z.string() })),
 });
 
-const SYSTEM = `Eres analista de tendencias de IA para equipos de contenido que le hablan a ejecutivos de Latinoamérica.
+const system = (tema: string) => `Eres analista de tendencias de ${tema} para equipos de contenido que le hablan a founders y ejecutivos de Latinoamérica.
 Explica por qué un tema está creciendo usando SOLO la evidencia recibida. No inventes datos, cifras ni fuentes.
 - text: 2 o 3 oraciones en español neutro, directas y concretas. Sin guion largo, sin frases de relleno.
 - evidenceIds: las refs (e1, e2...) de la evidencia que respalda la explicación. Al menos una.
@@ -76,6 +77,8 @@ export interface ExplainOptions {
   llm: LLM;
   classifications: Map<string, Classification>;
   maxEvidence?: number;
+  // Tema que rastrea el radar; por defecto, inteligencia artificial.
+  tema?: string;
 }
 
 export interface ExplainResult {
@@ -115,7 +118,7 @@ export async function explainTopic(topic: ExplainInput, opts: ExplainOptions): P
 
   const result = await opts.llm.json({
     label: "explicacion",
-    system: SYSTEM,
+    system: system(opts.tema ?? "inteligencia artificial"),
     prompt: [
       `Tema: ${topic.label}\nEtapa: ${topic.stage}\nVelocidad semanal: ${topic.velocity ?? "sin dato"}%`,
       `Evidencia:\n${lines.join("\n")}`,

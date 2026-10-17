@@ -65,3 +65,15 @@ describe("fuente prensa ejecutiva por RSS", () => {
     expect(res.items).toEqual([]);
   });
 });
+
+describe("newsletters de expertos", () => {
+  it("las notas de expertos entran en la capa origen como fuente expertos", async () => {
+    const f = fakeFetch(() => ({ body: fixture("rss-portafolio.xml") }));
+    const res = await fetchPress({ fetch: f, now, feeds, source: "expertos", matches: () => true });
+    expect(res.items).toHaveLength(4);
+    for (const it of res.items) {
+      expect(it).toMatchObject({ source: "expertos", layer: "origen" });
+      expect(it.id.startsWith("expertos:")).toBe(true);
+    }
+  });
+});

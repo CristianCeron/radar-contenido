@@ -34,7 +34,7 @@ export const STAGE_LABEL: Record<Stage, string> = {
 };
 
 export const STAGE_HINT: Record<Stage, string> = {
-  emergente: "Solo aparece donde nacen los temas (foros técnicos e investigación).",
+  emergente: "Solo aparece donde nacen los temas (foros de founders, expertos e investigación).",
   creciendo: "Ya llegó a YouTube: se está difundiendo.",
   pico: "Ya llegó a la prensa de negocios: todos hablan de él.",
   saturado: "Está en prensa pero cayendo: llega tarde.",
@@ -46,6 +46,7 @@ export const SOURCE_LABEL: Record<Source, string> = {
   youtube: "YouTube",
   prensa: "Prensa",
   equipo: "Aportes del equipo",
+  expertos: "Expertos",
 };
 
 export function sourceStatusText(s: SourceStatus): string {

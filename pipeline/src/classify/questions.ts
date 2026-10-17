@@ -1,5 +1,7 @@
 import type { HookType } from "../schema.js";
 
+export const DEFAULT_AUDIENCIA = "ejecutivos de Latinoamérica que están aprendiendo a usar IA en su empresa";
+
 // Niveles de relevancia para ejecutivos, de menor a mayor. El índice es el puntaje.
 export const RELEVANCE_LEVELS = [
   "nula: solo le interesa a investigadores o ingenieros",

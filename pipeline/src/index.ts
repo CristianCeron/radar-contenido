@@ -33,7 +33,10 @@ export async function runPipeline(opts: PipelineOptions = {}) {
     cacheDir: opts.cacheDir ?? fileURLToPath(new URL(`pipeline/.cache/${variant ? `${variant}/` : ""}`, ROOT)),
     outputPath: opts.outputPath ?? fileURLToPath(new URL(`web/public/data/radar${variant ? `-${variant}` : ""}.json`, ROOT)),
     makeLLMs: (sink) => ({ fast: createLLM("fast", sink), writer: createLLM("writer", sink) }),
-    makeClassifiers: (fast, sink) => ({ primary: createJevClassifier({ onCost: sink }), fallback: createLLMClassifier(fast) }),
+    makeClassifiers: (fast, sink) => ({
+      primary: createJevClassifier({ onCost: sink, audiencia: tema.audiencia }),
+      fallback: createLLMClassifier(fast, tema.audiencia),
+    }),
     profiles: loadProfiles(),
     limitUsd: Number(process.env.RUN_COST_LIMIT_USD ?? "1"),
   });

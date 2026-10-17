@@ -1,7 +1,7 @@
 import { HookTypeSchema, type NormalizedItem } from "../schema.js";
 import type { CostSink } from "../llm/types.js";
 import type { Classifier, RawClassification } from "./index.js";
-import { HOOK_CRITERIA, KIND_CRITERIA, RELEVANCE_LEVELS } from "./questions.js";
+import { DEFAULT_AUDIENCIA, HOOK_CRITERIA, KIND_CRITERIA, RELEVANCE_LEVELS } from "./questions.js";
 
 // JEV (TypeSafe AI) es un modelo de decisión, no generativo: recibe un estado y preguntas
 // tipadas y devuelve respuestas con probabilidades. Eden AI lo expone en un endpoint alfa.
@@ -13,6 +13,7 @@ export interface JevOptions {
   fetch?: typeof fetch;
   concurrency?: number;
   onCost?: CostSink;
+  audiencia?: string;
 }
 
 interface JevResponse {
@@ -25,11 +26,10 @@ interface JevResponse {
   cost?: number;
 }
 
-const QUESTIONS = {
+const questions = (audiencia: string) => ({
   executive_relevance: {
     type: "score",
-    instructions:
-      "Qué tan relevante es esta pieza para un ejecutivo de Latinoamérica que está aprendiendo a usar IA en su empresa",
+    instructions: `Qué tan relevante es esta pieza para ${audiencia}`,
     criteria: RELEVANCE_LEVELS,
   },
   kind: {
@@ -42,7 +42,7 @@ const QUESTIONS = {
     instructions: "¿Qué tipo de gancho usa el título para captar atención?",
     criteria: HOOK_CRITERIA,
   },
-};
+});
 
 export function createJevClassifier(opts: JevOptions = {}): Classifier {
   const apiKey = opts.apiKey ?? process.env.EDENAI_API_KEY ?? "";
@@ -58,7 +58,7 @@ export function createJevClassifier(opts: JevOptions = {}): Classifier {
       body: JSON.stringify({
         model,
         state: { title: item.title, summary: item.summary?.slice(0, 600) ?? "", source: item.outlet },
-        questions: QUESTIONS,
+        questions: questions(opts.audiencia ?? DEFAULT_AUDIENCIA),
       }),
     });
     if (!res.ok) throw new Error(`Eden AI respondió ${res.status}`);

@@ -10,11 +10,20 @@ import type { SourceResult } from "./sources/types.js";
 
 // El tema que rastrea el radar vive en configuración: búsquedas por fuente y el filtro de prensa.
 // Cambiar de tema es cambiar un archivo, no el código.
+const FeedSchema = z.object({ outlet: z.string().min(1), url: z.url() });
+
 export const TemaSchema = z.object({
   nombre: z.string().min(1),
+  // Para quién se mide la relevancia de cada pieza.
+  audiencia: z.string().default("ejecutivos de Latinoamérica que están aprendiendo a usar IA en su empresa"),
   hackernews: z.array(z.string()).min(1),
   youtube: z.array(z.string()).min(1),
   arxiv: z.array(z.string()),
+  arxivMax: z.number().int().min(1).default(300),
+  // Newsletters y blogs de expertos (capa origen). Vacío: no se consultan.
+  expertos: z.array(FeedSchema).default([]),
+  // Feeds de prensa propios del tema. Si no se definen, se usan los de config/feeds.json.
+  prensa: z.array(FeedSchema).optional(),
   filtroPrensa: z.object({ siglas: z.array(z.string()), terminos: z.array(z.string()) }),
 });
 export type Tema = z.infer<typeof TemaSchema>;
@@ -46,8 +55,12 @@ export function sourcesFor(tema: Tema, now: Date): Partial<Record<Source, () => 
   const matches = buildPressFilter(tema);
   return {
     hackernews: () => fetchHackerNews({ now, hitsPerPage: 300, queries: tema.hackernews }),
-    ...(tema.arxiv.length ? { arxiv: () => fetchArxiv({ now, maxResults: 300, categories: tema.arxiv }) } : {}),
+    ...(tema.arxiv.length ? { arxiv: () => fetchArxiv({ now, maxResults: tema.arxivMax, categories: tema.arxiv }) } : {}),
     youtube: () => fetchYouTube({ now, queries: tema.youtube }),
-    prensa: () => fetchPress({ now, matches }),
+    prensa: () => fetchPress({ now, matches, feeds: tema.prensa }),
+    // Las newsletters de expertos son del tema por definición: no pasan por el filtro.
+    ...(tema.expertos.length
+      ? { expertos: () => fetchPress({ now, feeds: tema.expertos, source: "expertos", matches: () => true }) }
+      : {}),
   };
 }

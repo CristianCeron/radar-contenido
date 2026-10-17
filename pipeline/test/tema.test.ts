@@ -70,3 +70,35 @@ describe("tema configurable", () => {
     expect(llm.requests[0].system).not.toContain("inteligencia artificial");
   });
 });
+
+describe("tema crecimiento de empresas", () => {
+  afterEach(() => {
+    delete process.env.RADAR_TEMA;
+  });
+
+  it("tiene audiencia de founders, expertos en origen y un arXiv pequeño", () => {
+    process.env.RADAR_TEMA = "crecimiento";
+    const tema = loadTema();
+    expect(tema.nombre).toMatch(/crecimiento/i);
+    expect(tema.audiencia).toMatch(/founder/i);
+    expect(tema.expertos.length).toBeGreaterThan(3);
+    expect(tema.arxiv).toEqual(["cs.AI", "econ.GN"]);
+    expect(tema.arxivMax).toBeLessThanOrEqual(100);
+    expect(Object.keys(sourcesFor(tema, now)).sort()).toEqual(["arxiv", "expertos", "hackernews", "prensa", "youtube"]);
+  });
+
+  it("el filtro de prensa del tema reconoce notas de negocio", () => {
+    process.env.RADAR_TEMA = "crecimiento";
+    const matches = buildPressFilter(loadTema());
+    expect(matches("Cómo construir un equipo de ventas B2B que escale")).toBe(true);
+    expect(matches("Startup mexicana levanta ronda Serie B para expandirse a Colombia")).toBe(true);
+    expect(matches("Resultados del partido de fútbol del domingo")).toBe(false);
+  });
+
+  it("el tema por defecto conserva su audiencia y no consulta expertos", () => {
+    const tema = loadTema();
+    expect(tema.expertos).toEqual([]);
+    expect(tema.audiencia).toMatch(/IA/);
+    expect(Object.keys(sourcesFor(tema, now))).not.toContain("expertos");
+  });
+});

@@ -1,6 +1,8 @@
 # Radar de contenido
 
-Detecta qué temas de IA están despegando, explica por qué con evidencia enlazada y los convierte en
+Detecta qué temas de crecimiento de empresas están despegando, organizados por los pilares de la
+Inmersión 30X (liderazgo, growth, equipos, ventas, marketing, expansión, fundraising e IA aplicada),
+explica por qué con evidencia enlazada y los convierte en
 briefs de contenido para una marca concreta. Prototipo para el reto "Radar de contenido" del
 Hackathon 30X, con dos perfiles: 30X y Andrés Bilbao.
 
@@ -12,13 +14,16 @@ evidencia de cada afirmación y entrega un brief listo para producir.
 
 ## Qué hace
 
-- **Recolecta** cada madrugada lo publicado en los últimos 30 días en cuatro fuentes oficiales,
-  ordenadas en tres capas: origen (Hacker News y arXiv), difusión (YouTube) y audiencia ejecutiva
-  (prensa de negocios y consultoras por RSS). Se suma un **sensor humano**: el equipo pega enlaces
-  de LinkedIn, Instagram o TikTok en un formulario.
-- **Agrupa** las piezas por tema, mide la velocidad (última semana contra la anterior) y asigna la
-  etapa según las capas a las que ya llegó: emergente, creciendo, pico o saturado.
-- **Selecciona** el top 10 por velocidad y relevancia para ejecutivos de Latinoamérica.
+- **Recolecta** cada madrugada lo publicado en los últimos 30 días en fuentes oficiales, ordenadas
+  en tres capas: origen (Hacker News, newsletters de expertos en growth, ventas y liderazgo, y un
+  arXiv reducido a IA y economía), difusión (YouTube) y audiencia ejecutiva (prensa de negocios,
+  medios de startups de Latinoamérica y consultoras por RSS). Se suma un **sensor humano**: el
+  equipo pega enlaces de LinkedIn, Instagram o TikTok en un formulario.
+- **Agrupa** las piezas en temas dentro de cada pilar de la Inmersión, mide la velocidad (última
+  semana contra la anterior) y asigna la etapa según las capas a las que ya llegó: emergente,
+  creciendo, pico o saturado.
+- **Selecciona** el top 10 por velocidad y relevancia para founders y ejecutivos de Latinoamérica,
+  con máximo dos temas por pilar para que la IA, de la que todos hablan, no se coma el ranking.
 - **Explica** por qué crece cada tema, solo con la evidencia recolectada. Una explicación sin
   evidencia enlazada no se muestra.
 - **Genera briefs** por marca (ángulo, formato, gancho y oportunidad ligada a un producto) y uno
@@ -72,17 +77,17 @@ npm run dev        # abre la página en http://localhost:3000
 
 ## Cambiar de tema
 
-Hoy el radar rastrea inteligencia artificial, que es lo que más vende 30X. El tema no está en el
-código: las búsquedas por fuente y el filtro de prensa viven en
-[pipeline/config/tema.json](pipeline/config/tema.json). Para rastrear otro tema se crea un archivo en
-`pipeline/config/temas/` y se corre con `RADAR_TEMA`. Hay uno de ejemplo para la voz de Andrés:
+El tema no está en el código. Las búsquedas por fuente, los feeds, el filtro de prensa, la
+audiencia y los pilares viven en [pipeline/config/tema.json](pipeline/config/tema.json), que hoy es
+"crecimiento de empresas". Para rastrear otro tema se crea un archivo en `pipeline/config/temas/` y
+se corre con `RADAR_TEMA`. Hay dos de ejemplo: solo IA y emprendimiento.
 
 ```bash
-RADAR_TEMA=emprendimiento npm run pipeline
+RADAR_TEMA=ia npm run pipeline
 ```
 
-Ese radar se escribe en `web/public/data/radar-emprendimiento.json` y usa su propia caché, así que
-no pisa el radar publicado.
+Ese radar se escribe en `web/public/data/radar-ia.json` y usa su propia caché, así que no pisa el
+radar publicado.
 
 ## Pruebas
 

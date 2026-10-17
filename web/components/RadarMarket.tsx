@@ -35,8 +35,8 @@ export function RadarMarket({ radar, now }: { radar: Radar; now: Date }) {
   return (
     <main className="mx-auto max-w-6xl px-4 py-8 sm:py-12">
       <header className="mb-8">
-        <p className="text-xs font-semibold uppercase tracking-widest text-[var(--muted)]">Radar de contenido · IA</p>
-        <h1 className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">Los temas de IA que despegan esta semana</h1>
+        <p className="text-xs font-semibold uppercase tracking-widest text-[var(--muted)]">Radar de contenido · 30X</p>
+        <h1 className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">Lo que está despegando para escalar empresas esta semana</h1>
         <p className="mt-3 max-w-2xl text-[var(--muted)]">
           Qué está creciendo, en qué etapa va y por qué, con la evidencia enlazada. Ordenado por velocidad y relevancia
           para ejecutivos de Latinoamérica.
@@ -122,7 +122,7 @@ export function RadarMarket({ radar, now }: { radar: Radar; now: Date }) {
       </div>
 
       <footer className="mt-6 text-xs leading-relaxed text-[var(--muted)]">
-        Fuentes públicas y oficiales: Hacker News, arXiv, YouTube y prensa de negocios por RSS. Sin scraping de redes
+        Fuentes públicas y oficiales: Hacker News, newsletters de expertos, arXiv, YouTube, prensa de negocios y aportes del equipo. Sin scraping de redes
         sociales ni datos personales. "Semana" compara las menciones de los últimos 7 días con los 7 anteriores.
       </footer>
     </main>

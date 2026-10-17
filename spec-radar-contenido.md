@@ -1,21 +1,22 @@
 # Spec: radar-contenido
 
 ## Overview
-Radar de contenido que detecta qué temas de IA están despegando, explica por qué y los convierte en oportunidades de contenido ajustadas a una marca concreta.
+Radar de contenido que detecta qué temas de crecimiento de empresas están despegando, explica por qué y los convierte en oportunidades de contenido ajustadas a una marca concreta. Los temas se organizan por los pilares de la Inmersión 30X, el programa insignia de la marca: liderazgo y mentalidad, growth, equipos y talento, ventas, marketing, expansión internacional, fundraising e IA aplicada al negocio. La IA es un pilar más, no el centro, porque es el tema del que todos hablan y no diferencia.
 
 Nace del reto "Radar de contenido" del Hackathon 30X. Hoy el equipo de media depende de servicios de scraping pagos que traen datos, pero no explican por qué algo funcionó ni si encaja con la audiencia. La v1 se entrega como prototipo funcional el domingo 18 de octubre a las 11:00 am.
 
 ## Usuarios objetivo
-Equipo de contenido de una marca que debe decidir qué producir esta semana. En la v1 son dos perfiles: 30X y la voz personal de Andrés Bilbao, ambos dirigidos a ejecutivos y equipos de Latinoamérica que aprenden IA.
+Equipo de contenido de una marca que debe decidir qué producir esta semana. En la v1 son dos perfiles: 30X y la voz personal de Andrés Bilbao, ambos dirigidos a founders, CEOs y ejecutivos de Latinoamérica que quieren escalar su empresa sin que dependa del fundador.
 
 ## Alcance v1
 Incluye:
-- Cuatro fuentes públicas en tres capas: origen (Hacker News y arXiv), difusión (YouTube) y audiencia ejecutiva (prensa de negocios y blogs de consultoras por RSS).
+- Fuentes públicas en tres capas: origen (Hacker News, newsletters de expertos en growth, ventas y liderazgo por RSS, y arXiv reducido a IA y economía), difusión (YouTube) y audiencia ejecutiva (prensa de negocios, medios de startups de Latinoamérica y consultoras por RSS).
+- Tema configurable: las búsquedas, los feeds, el filtro de prensa, la audiencia y los pilares viven en un archivo de configuración. El tema por defecto es crecimiento de empresas; hay uno solo de IA y uno de emprendimiento como alternativas.
 - Sensor humano: el equipo reporta publicaciones que ve en LinkedIn, Instagram, TikTok o Facebook mediante un formulario de Google que alimenta una hoja de cálculo. Cada reporte suma una mención al tema (LinkedIn cuenta en la capa de audiencia ejecutiva; Instagram, TikTok y Facebook en la de difusión). El radar nunca abre esas plataformas. Basta con pegar el enlace: la plataforma se deduce del enlace y el tema se toma de la descripción opcional que escriba la persona o, si no la hay, de las palabras del enlace (LinkedIn) o del servicio oficial oEmbed (TikTok y YouTube). Para Instagram y Facebook la descripción es necesaria.
-- Agrupación por tema y un top 10 de temas que más crecen en la semana.
+- Agrupación por tema dentro de cada pilar y un top 10 de temas que más crecen en la semana, con máximo dos temas por pilar para que ninguno se coma el ranking.
 - Para cada tema: etapa (emergente, creciendo, pico o saturado) definida por en qué capas aparece y a qué velocidad crece; curva de crecimiento de los últimos 30 días; qué canales y medios públicos hablan de él; cómo lo hacen (gancho y formato) en las piezas principales; y el porqué con evidencia enlazada.
-- Perfiles de marca (30X y Andrés Bilbao) con quién es, audiencia, voz, formatos y productos. Para cada tema y perfil, un brief con ángulo, formato, gancho y oportunidad de negocio ligada a un producto de la marca.
-- Página pública interactiva con vista tipo mercado: lista de temas con su variación, gráfico de crecimiento, detalle por tema y selector de perfil.
+- Perfiles de marca (30X y Andrés Bilbao) con quién es, audiencia, voz, formatos y productos. Para cada tema y perfil, un brief con ángulo, formato, gancho y oportunidad de negocio ligada a un producto de la marca, elegido según el pilar del tema.
+- Página pública interactiva con vista tipo mercado: lista de temas con su pilar y su variación, gráfico de crecimiento, detalle por tema y selector de perfil.
 - Actualización automática diaria de los datos, de modo que la página siempre tenga información reciente.
 - Fecha de los datos y costo de la última corrida visibles en la página.
 - Entregables del hackatón: URL desplegada, repositorio público con documentación y video pitch de 3 minutos.
@@ -25,9 +26,9 @@ No incluye, por decisión permanente:
 - Datos personales de ninguna clase.
 
 ## Comportamiento
-1. Cada madrugada el sistema recolecta las publicaciones recientes de las cuatro fuentes y los reportes del sensor humano de los últimos 30 días, y guarda un resultado con su fecha.
-2. Agrupa las publicaciones por tema, calcula su velocidad de crecimiento y asigna la etapa según las capas en las que aparece.
-3. Selecciona el top 10 por velocidad y por relevancia para ejecutivos.
+1. Cada madrugada el sistema recolecta las publicaciones recientes de las fuentes del tema y los reportes del sensor humano de los últimos 30 días, y guarda un resultado con su fecha.
+2. Propone los temas dentro de cada pilar, agrupa las publicaciones, calcula su velocidad de crecimiento y asigna la etapa según las capas en las que aparece.
+3. Selecciona el top 10 por velocidad y por relevancia para la audiencia, con máximo dos temas por pilar.
 4. Para cada tema redacta el porqué con evidencia enlazada y analiza el gancho y el formato de las piezas principales.
 5. Al abrir la página, la persona ve el top 10 con su variación y su gráfico de crecimiento. Al abrir un tema ve quiénes hablan de él, cómo lo hacen y por qué está creciendo.
 6. Al cambiar de perfil, el sistema genera en vivo el brief de ese tema para esa marca en pocos segundos.

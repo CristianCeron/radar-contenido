@@ -1,0 +1,65 @@
+# Corre el radar cada madrugada y guarda el nuevo radar.json en el repositorio.
+# Vercel vuelve a desplegar la página al ver el commit. Las claves viven en los secretos del repositorio.
+name: Radar diario
+
+on:
+  schedule:
+    # 10:00 UTC = 5:00 a. m. en Colombia.
+    - cron: "0 10 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: radar-diario
+  cancel-in-progress: false
+
+jobs:
+  radar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      # Último resultado bueno de cada fuente, para usarlo si una falla o agota su cupo.
+      - uses: actions/cache@v4
+        with:
+          path: pipeline/.cache
+          key: radar-fuentes-${{ github.run_id }}
+          restore-keys: radar-fuentes-
+
+      - run: npm ci
+
+      - name: Correr el radar
+        run: npm run pipeline
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          EDENAI_API_KEY: ${{ secrets.EDENAI_API_KEY }}
+          SENSOR_SHEET_CSV_URL: ${{ secrets.SENSOR_SHEET_CSV_URL }}
+          LLM_PROVIDER: gemini
+          GEMINI_BACKEND: vertex
+          GEMINI_MODEL_FAST: gemini-2.5-flash-lite
+          GEMINI_MODEL_WRITER: gemini-2.5-pro
+          GEMINI_PRICE_FAST: "0.10,0.40"
+          GEMINI_PRICE_WRITER: "1.25,10"
+          EDENAI_MODEL: typesafe/jev-latest
+          RUN_COST_LIMIT_USD: "1.50"
+
+      - name: Guardar el nuevo radar
+        run: |
+          if git diff --quiet -- web/public/data/radar.json; then
+            echo "El radar no cambió."
+            exit 0
+          fi
+          git config user.name "radar-bot"
+          git config user.email "radar-bot@users.noreply.github.com"
+          git add web/public/data/radar.json
+          git commit -m "chore: radar diario $(date -u +%Y-%m-%d)"
+          git push

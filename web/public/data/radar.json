@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-10-17T17:44:08.037Z",
+  "generatedAt": "2026-10-17T19:05:44.021Z",
   "windowDays": 30,
   "cost": {
-    "totalUsd": 0.823887,
+    "totalUsd": 0.785474,
     "limitUsd": 1.5,
     "calls": 122
   },
@@ -10,26 +10,26 @@
     {
       "source": "hackernews",
       "status": "ok",
-      "fetchedAt": "2026-10-17T17:44:08.037Z",
+      "fetchedAt": "2026-10-17T19:05:44.021Z",
       "items": 1588
     },
     {
       "source": "arxiv",
       "status": "ok",
-      "fetchedAt": "2026-10-17T17:44:08.037Z",
+      "fetchedAt": "2026-10-17T19:05:44.021Z",
       "items": 300
     },
     {
       "source": "youtube",
       "status": "ok",
-      "fetchedAt": "2026-10-17T17:44:08.037Z",
-      "items": 378
+      "fetchedAt": "2026-10-17T19:05:44.021Z",
+      "items": 377
     },
     {
       "source": "prensa",
       "status": "ok",
-      "fetchedAt": "2026-10-17T17:44:08.037Z",
-      "items": 95
+      "fetchedAt": "2026-10-17T19:05:44.021Z",
+      "items": 93
     }
   ],
   "profiles": [
@@ -44,16 +44,15 @@
   ],
   "topics": [
     {
-      "id": "ia-en-desarrollo-de-software",
-      "label": "IA en desarrollo de software",
-      "stage": "pico",
-      "velocity": 641.2,
-      "executiveRelevance": 0.56,
-      "score": 359.07,
+      "id": "hardware-para-ia",
+      "label": "Hardware para IA",
+      "stage": "creciendo",
+      "velocity": 566.7,
+      "executiveRelevance": 0.51,
+      "score": 289.02,
       "layers": [
         "origen",
-        "difusion",
-        "audiencia_ejecutiva"
+        "difusion"
       ],
       "series": [
         {
@@ -62,23 +61,23 @@
         },
         {
           "date": "2026-09-19",
-          "count": 1
+          "count": 0
         },
         {
           "date": "2026-09-20",
-          "count": 1
+          "count": 0
         },
         {
           "date": "2026-09-21",
-          "count": 2
+          "count": 0
         },
         {
           "date": "2026-09-22",
-          "count": 2
+          "count": 0
         },
         {
           "date": "2026-09-23",
-          "count": 2
+          "count": 0
         },
         {
           "date": "2026-09-24",
@@ -90,7 +89,7 @@
         },
         {
           "date": "2026-09-26",
-          "count": 1
+          "count": 0
         },
         {
           "date": "2026-09-27",
@@ -102,7 +101,7 @@
         },
         {
           "date": "2026-09-29",
-          "count": 6
+          "count": 0
         },
         {
           "date": "2026-09-30",
@@ -114,11 +113,11 @@
         },
         {
           "date": "2026-10-02",
-          "count": 3
+          "count": 1
         },
         {
           "date": "2026-10-03",
-          "count": 1
+          "count": 0
         },
         {
           "date": "2026-10-04",
@@ -134,47 +133,47 @@
         },
         {
           "date": "2026-10-07",
-          "count": 1
+          "count": 0
         },
         {
           "date": "2026-10-08",
-          "count": 1
+          "count": 0
         },
         {
           "date": "2026-10-09",
-          "count": 3
+          "count": 1
         },
         {
           "date": "2026-10-10",
-          "count": 5
+          "count": 1
         },
         {
           "date": "2026-10-11",
-          "count": 8
+          "count": 4
         },
         {
           "date": "2026-10-12",
-          "count": 9
+          "count": 4
         },
         {
           "date": "2026-10-13",
-          "count": 15
+          "count": 5
         },
         {
           "date": "2026-10-14",
-          "count": 16
+          "count": 3
         },
         {
           "date": "2026-10-15",
-          "count": 21
+          "count": 17
         },
         {
           "date": "2026-10-16",
-          "count": 27
+          "count": 17
         },
         {
           "date": "2026-10-17",
-          "count": 25
+          "count": 5
         }
       ],
       "channels": [
@@ -182,435 +181,148 @@
           "name": "Hacker News",
           "source": "hackernews",
           "url": "https://news.ycombinator.com",
-          "count": 112
+          "count": 44
         },
         {
           "name": "arXiv",
           "source": "arxiv",
           "url": "https://arxiv.org",
-          "count": 6
+          "count": 12
         },
         {
-          "name": "McKinsey Insights",
-          "source": "prensa",
-          "count": 4
-        },
-        {
-          "name": "MoureDev by Brais Moure",
+          "name": "Joseph Chandler",
           "source": "youtube",
-          "count": 3
+          "count": 1
         },
         {
-          "name": "EDteam",
+          "name": "Geoff Fagien",
           "source": "youtube",
-          "count": 2
+          "count": 1
         },
         {
-          "name": "Eli Sadler",
+          "name": "Linkfy",
           "source": "youtube",
-          "count": 2
-        },
-        {
-          "name": "Fazt",
-          "source": "youtube",
-          "count": 2
+          "count": 1
         },
         {
           "name": "Infobae Tecno",
           "source": "prensa",
-          "count": 2
-        },
-        {
-          "name": "Platzi",
-          "source": "youtube",
           "count": 1
-        },
-        {
-          "name": "Kaminari",
-          "source": "youtube",
-          "count": 1
-        }
-      ],
-      "topPieces": [
-        {
-          "title": "Curso de Desarrollo con IA: el Nuevo Programador – Día 1 – De la idea a la instrucción perfecta",
-          "url": "https://www.youtube.com/watch?v=qHYi92zRn-s",
-          "source": "youtube",
-          "outlet": "MoureDev by Brais Moure",
-          "hook": "tutorial",
-          "format": "video tutorial largo",
-          "analysis": "Atrae a una audiencia masiva de desarrolladores al ofrecer una guía paso a paso para una habilidad de alta demanda."
-        },
-        {
-          "title": "Postgres 19 delayed after AI reviewers find more bugs than humans can fix",
-          "url": "https://www.theregister.com/databases/2026/10/16/postgres-19-delayed-after-ai-reviewers-find-more-bugs-than-humans-can-fix/5303471",
-          "source": "hackernews",
-          "outlet": "Hacker News",
-          "hook": "advertencia",
-          "format": "hilo de discusión"
-        },
-        {
-          "title": "GNN-Guided Local Refinement for Efficient Layout Decomposition with DSA-MP",
-          "url": "https://arxiv.org/abs/2610.22214v1",
-          "source": "arxiv",
-          "outlet": "arXiv",
-          "hook": "otro",
-          "format": "artículo académico"
-        },
-        {
-          "title": "Epic Games Store cambia | usaron inteligencia artificial y la biblioteca tiene nueva interfaz",
-          "url": "https://www.infobae.com/tecno/2026/10/15/epic-games-store-cambia-usaron-inteligencia-artificial-y-la-biblioteca-tiene-nueva-interfaz/",
-          "source": "prensa",
-          "outlet": "Infobae Tecno",
-          "hook": "noticia",
-          "format": "nota de prensa",
-          "analysis": "Demuestra un caso de uso tangible y el valor de negocio de la IA en un producto de consumo masivo."
-        },
-        {
-          "title": "Curso de Desarrollo con IA: el Nuevo Programador - Día 2 - Programa con agentes bajo control",
-          "url": "https://www.youtube.com/watch?v=hzQNE092cW0",
-          "source": "youtube",
-          "outlet": "MoureDev by Brais Moure",
-          "hook": "tutorial",
-          "format": "video"
-        }
-      ],
-      "explanation": {
-        "text": "El interés en el desarrollo de software con IA se dispara por la alta demanda de capacitación práctica, evidenciada por cursos con cientos de miles de vistas. Casos de uso de alto perfil, desde Epic Games hasta una contribución de Linus Torvalds, legitiman su aplicación en la industria. Además, emergen herramientas disruptivas que proponen un ciclo de vida del desarrollo completamente nativo de IA.",
-        "evidence": [
-          {
-            "title": "Curso de Desarrollo con IA: el Nuevo Programador – Día 1 – De la idea a la instrucción perfecta",
-            "url": "https://www.youtube.com/watch?v=qHYi92zRn-s"
-          },
-          {
-            "title": "Curso de Desarrollo con IA: el Nuevo Programador - Día 2 - Programa con agentes bajo control",
-            "url": "https://www.youtube.com/watch?v=hzQNE092cW0"
-          },
-          {
-            "title": "Epic Games Store cambia | usaron inteligencia artificial y la biblioteca tiene nueva interfaz",
-            "url": "https://www.infobae.com/tecno/2026/10/15/epic-games-store-cambia-usaron-inteligencia-artificial-y-la-biblioteca-tiene-nueva-interfaz/"
-          },
-          {
-            "title": "Linus Torvalds's first LLM-assisted patch series",
-            "url": "https://lwn.net/Articles/1100449/"
-          },
-          {
-            "title": "Claude Code: The Complete AI-Native SDLC Guide",
-            "url": "https://www.youtube.com/watch?v=6CaQ9ZFuuKI"
-          }
-        ]
-      },
-      "briefs": {
-        "30x": {
-          "profileId": "30x",
-          "angle": "Tu equipo de desarrollo ya está usando IA, pero sin una estrategia clara estás desperdiciando su potencial y exponiéndote a nuevos riesgos.",
-          "format": "reel o video corto vertical",
-          "hook": "Tu equipo de tech ya usa Copilot. Pero sin un playbook, solo están jugando.",
-          "opportunity": {
-            "product": "AI for Executives",
-            "rationale": "La pieza expone la necesidad de una estrategia de IA más allá de las herramientas individuales en el equipo de desarrollo, posicionando el programa como la solución para que el líder pueda diseñar e implementar esa estrategia."
-          },
-          "generatedAt": "2026-10-17T17:44:08.037Z"
-        },
-        "andres-bilbao": {
-          "profileId": "andres-bilbao",
-          "angle": "Como líder, tu rol no es solo darles herramientas de IA a tus desarrolladores, sino repensar todo el ciclo de vida del desarrollo para que sea nativo de IA y capture una ventaja real.",
-          "format": "post de LinkedIn con viñetas sobre IA",
-          "hook": "Tus desarrolladores ya están usando IA, pero tu empresa probablemente todavía no está capitalizando su verdadero potencial.",
-          "opportunity": {
-            "product": "AI for Executives",
-            "rationale": "La pieza expone la necesidad de pasar de herramientas aisladas a una estrategia cohesiva, posicionando el programa como el siguiente paso lógico para el líder que busca generar un ROI con IA."
-          },
-          "generatedAt": "2026-10-17T17:44:08.037Z"
-        }
-      }
-    },
-    {
-      "id": "ia-en-ciberseguridad",
-      "label": "IA en ciberseguridad",
-      "stage": "pico",
-      "velocity": 375,
-      "executiveRelevance": 0.61,
-      "score": 228.75,
-      "layers": [
-        "origen",
-        "difusion",
-        "audiencia_ejecutiva"
-      ],
-      "series": [
-        {
-          "date": "2026-09-18",
-          "count": 0
-        },
-        {
-          "date": "2026-09-19",
-          "count": 0
-        },
-        {
-          "date": "2026-09-20",
-          "count": 0
-        },
-        {
-          "date": "2026-09-21",
-          "count": 0
-        },
-        {
-          "date": "2026-09-22",
-          "count": 0
-        },
-        {
-          "date": "2026-09-23",
-          "count": 0
-        },
-        {
-          "date": "2026-09-24",
-          "count": 1
-        },
-        {
-          "date": "2026-09-25",
-          "count": 1
-        },
-        {
-          "date": "2026-09-26",
-          "count": 0
-        },
-        {
-          "date": "2026-09-27",
-          "count": 0
-        },
-        {
-          "date": "2026-09-28",
-          "count": 1
-        },
-        {
-          "date": "2026-09-29",
-          "count": 0
-        },
-        {
-          "date": "2026-09-30",
-          "count": 2
-        },
-        {
-          "date": "2026-10-01",
-          "count": 0
-        },
-        {
-          "date": "2026-10-02",
-          "count": 0
-        },
-        {
-          "date": "2026-10-03",
-          "count": 0
-        },
-        {
-          "date": "2026-10-04",
-          "count": 0
-        },
-        {
-          "date": "2026-10-05",
-          "count": 1
-        },
-        {
-          "date": "2026-10-06",
-          "count": 1
-        },
-        {
-          "date": "2026-10-07",
-          "count": 1
-        },
-        {
-          "date": "2026-10-08",
-          "count": 0
-        },
-        {
-          "date": "2026-10-09",
-          "count": 3
-        },
-        {
-          "date": "2026-10-10",
-          "count": 1
-        },
-        {
-          "date": "2026-10-11",
-          "count": 1
-        },
-        {
-          "date": "2026-10-12",
-          "count": 5
-        },
-        {
-          "date": "2026-10-13",
-          "count": 7
-        },
-        {
-          "date": "2026-10-14",
-          "count": 5
-        },
-        {
-          "date": "2026-10-15",
-          "count": 9
-        },
-        {
-          "date": "2026-10-16",
-          "count": 15
-        },
-        {
-          "date": "2026-10-17",
-          "count": 10
-        }
-      ],
-      "channels": [
-        {
-          "name": "Hacker News",
-          "source": "hackernews",
-          "url": "https://news.ycombinator.com",
-          "count": 50
-        },
-        {
-          "name": "arXiv",
-          "source": "arxiv",
-          "url": "https://arxiv.org",
-          "count": 4
         },
         {
           "name": "Ámbito Tecnología",
           "source": "prensa",
-          "count": 4
+          "count": 1
         },
         {
-          "name": "CBC News",
+          "name": "MeridIAn Screener - Tu Portal de Finanzas",
           "source": "youtube",
-          "count": 1
-        },
-        {
-          "name": "Breaking Points",
-          "source": "youtube",
-          "count": 1
-        },
-        {
-          "name": "BBC News",
-          "source": "youtube",
-          "count": 1
-        },
-        {
-          "name": "Canal Vilão",
-          "source": "youtube",
-          "count": 1
-        },
-        {
-          "name": "El Tiempo Tecnósfera",
-          "source": "prensa",
-          "count": 1
-        },
-        {
-          "name": "Microsoft Noticias Latinoamérica",
-          "source": "prensa",
           "count": 1
         }
       ],
       "topPieces": [
         {
-          "title": "US Government SWARMED BY OpenAI Agents As 'Tens Of Thousands' Incidents Revealed",
-          "url": "https://www.youtube.com/watch?v=q-gkdk4Pp_Y",
-          "source": "youtube",
-          "outlet": "Breaking Points",
-          "hook": "noticia",
-          "format": "video de noticias de última hora",
-          "analysis": "Engancha con un titular de alto impacto sobre un ataque masivo a una potencia mundial, generando urgencia y preocupación."
-        },
-        {
-          "title": "Hackers activate automatic defrosting in supermarket fridges across Europe",
-          "url": "https://www.tomshardware.com/tech-industry/cyber-security/unprecedented-cyberattack-cripples-supermarket-fridges-across-europe-as-hackers-activate-automatic-defrosting-delivery-and-store-prices-also-impacted-by-incident",
+          "title": "A Dynamic and Distributed Virtual GPU Cloud Built on Idle Apple Silicon Devices",
+          "url": "https://machinelearning.apple.com/research/distributed-gpu-cloud",
           "source": "hackernews",
           "outlet": "Hacker News",
-          "hook": "noticia",
-          "format": "hilo de discusión técnica",
-          "analysis": "Captura el interés al revelar una vulnerabilidad tangible y cotidiana que afecta directamente a la cadena de suministro de alimentos."
+          "hook": "otro",
+          "format": "artículo de investigación corporativa",
+          "analysis": "Presenta una visión innovadora de Apple sobre el uso de sus dispositivos, capturando la atención de audiencias técnicas y estratégicas con una solución de vanguardia."
         },
         {
-          "title": "Language Is a Security Surface for Agent Guards",
-          "url": "https://arxiv.org/abs/2610.22244v1",
+          "title": "Why People Are Buying the M6 Mac mini for AI",
+          "url": "https://www.youtube.com/watch?v=GLljn-GZTIg",
+          "source": "youtube",
+          "outlet": "Geoff Fagien",
+          "hook": "otro",
+          "format": "video de análisis de producto",
+          "analysis": "Explica de forma accesible por qué un producto de consumo se está convirtiendo en una herramienta de desarrollo de IA, atrayendo a un público amplio más allá de los especialistas."
+        },
+        {
+          "title": "ABNAT: Attention-Based Noise-Aware Training for Robust Transformers on Analog Compute-in-Memory Systems",
+          "url": "https://arxiv.org/abs/2610.22065v1",
           "source": "arxiv",
           "outlet": "arXiv",
-          "hook": "advertencia",
+          "hook": "dato_sorprendente",
           "format": "artículo académico"
         },
         {
-          "title": "SpaceX comparece ante Concejo de Nueva York por riesgos de la inteligencia artificial tras amenaza de demanda: &#039;La autorregulación no es suficiente&#039;",
-          "url": "https://www.eltiempo.com/tecnosfera/inteligencia-artificial/spacex-comparece-ante-concejo-de-nueva-york-por-riesgos-de-la-inteligencia-artificial-tras-amenaza-de-demanda-la-autorregulacion-no-es-suficiente-3594063",
+          "title": "Startup de exGoogle recaudó 300 millones de dólares para que la IA diseñe chips",
+          "url": "https://www.infobae.com/tecno/2026/10/15/startup-de-exgoogle-recaudo-300-millones-de-dolares-para-que-la-ia-disene-chips/",
           "source": "prensa",
-          "outlet": "El Tiempo Tecnósfera",
+          "outlet": "Infobae Tecno",
           "hook": "noticia",
-          "format": "nota de prensa",
-          "analysis": "Genera interés al involucrar a una empresa de alto perfil como SpaceX en un debate regulatorio sobre los riesgos de la IA."
+          "format": "nota de prensa con cifras",
+          "analysis": "Usa una cifra de inversión masiva y el prestigio de 'ex-Google' para señalar una tendencia de mercado significativa y validar el potencial del sector."
         },
         {
-          "title": "AI just hacked a government. How can that happen? | BBC News",
-          "url": "https://www.youtube.com/watch?v=AUq2twt8mgM",
-          "source": "youtube",
-          "outlet": "BBC News",
-          "hook": "noticia",
-          "format": "video explicativo de noticias",
-          "analysis": "Responde a la pregunta directa de la audiencia sobre cómo es posible que la IA pueda hackear a un gobierno, simplificando un tema complejo."
+          "title": "Janas: Run LLMs larger than RAM by streaming experts from SSD",
+          "url": "https://github.com/prabanta-dev/janas",
+          "source": "hackernews",
+          "outlet": "Hacker News",
+          "hook": "otro",
+          "format": "repositorio de código abierto con explicación",
+          "analysis": "Ofrece una solución técnica a un problema común, enganchando a la comunidad de desarrolladores con una herramienta práctica que democratiza el acceso a modelos grandes."
         }
       ],
       "explanation": {
-        "text": "El interés en la ciberseguridad con IA está creciendo debido a ciberataques de alto perfil contra gobiernos e infraestructura crítica. Incidentes como el ataque a agencias gubernamentales y supermercados europeos han captado la atención de los medios y del público. Esto ha intensificado el debate sobre nuevas vulnerabilidades y la necesidad de una regulación más estricta.",
+        "text": "El interés en el hardware para IA está creciendo más allá de los centros de datos, con un enfoque en optimizar el rendimiento en dispositivos de consumo como los de Apple. La conversación es impulsada tanto por desarrolladores que buscan ejecutar modelos localmente como por la aparición de herramientas que lo facilitan. Además, grandes inversiones en startups que usan IA para diseñar chips señalan una nueva frontera en la creación de hardware especializado.",
         "evidence": [
           {
-            "title": "US Government SWARMED BY OpenAI Agents As 'Tens Of Thousands' Incidents Revealed",
-            "url": "https://www.youtube.com/watch?v=q-gkdk4Pp_Y"
+            "title": "A Dynamic and Distributed Virtual GPU Cloud Built on Idle Apple Silicon Devices",
+            "url": "https://machinelearning.apple.com/research/distributed-gpu-cloud"
           },
           {
-            "title": "Hackers activate automatic defrosting in supermarket fridges across Europe",
-            "url": "https://www.tomshardware.com/tech-industry/cyber-security/unprecedented-cyberattack-cripples-supermarket-fridges-across-europe-as-hackers-activate-automatic-defrosting-delivery-and-store-prices-also-impacted-by-incident"
+            "title": "Why People Are Buying the M6 Mac mini for AI",
+            "url": "https://www.youtube.com/watch?v=GLljn-GZTIg"
           },
           {
-            "title": "SpaceX comparece ante Concejo de Nueva York por riesgos de la inteligencia artificial tras amenaza de demanda: &#039;La autorregulación no es suficiente&#039;",
-            "url": "https://www.eltiempo.com/tecnosfera/inteligencia-artificial/spacex-comparece-ante-concejo-de-nueva-york-por-riesgos-de-la-inteligencia-artificial-tras-amenaza-de-demanda-la-autorregulacion-no-es-suficiente-3594063"
+            "title": "Startup de exGoogle recaudó 300 millones de dólares para que la IA diseñe chips",
+            "url": "https://www.infobae.com/tecno/2026/10/15/startup-de-exgoogle-recaudo-300-millones-de-dolares-para-que-la-ia-disene-chips/"
           },
           {
-            "title": "AI just hacked a government. How can that happen? | BBC News",
-            "url": "https://www.youtube.com/watch?v=AUq2twt8mgM"
+            "title": "Janas: Run LLMs larger than RAM by streaming experts from SSD",
+            "url": "https://github.com/prabanta-dev/janas"
           },
           {
-            "title": "How AI hacked the Australian government and almost got away with it | About That",
-            "url": "https://www.youtube.com/watch?v=QIn4qBxZIwg"
+            "title": "Show HN: Llmspeed – feel how fast a local LLM runs before you buy the hardware",
+            "url": "https://llmspeed.dev/"
           }
         ]
       },
       "briefs": {
         "30x": {
           "profileId": "30x",
-          "angle": "Los ciberataques con IA no son un problema técnico para tu equipo de IT, son una vulnerabilidad estratégica que tú debes dirigir.",
-          "format": "reel o video corto vertical",
-          "hook": "Tu equipo de IT no puede defenderte solo de los nuevos ataques con IA.",
+          "angle": "Tu próxima ventaja competitiva en IA no está en la nube, sino en el hardware que ya tienen tus equipos.",
+          "format": "carrusel de Instagram",
+          "hook": "La IA más potente para tu empresa podría estar en la laptop de tu equipo, no en un data center.",
           "opportunity": {
             "product": "AI for Executives",
-            "rationale": "La pieza expone la necesidad de una estrategia de IA que contemple los riesgos, y el programa enseña a C-Levels a crear y dirigir esa estrategia integral."
+            "rationale": "La pieza presenta un cambio estratégico en IA, posicionando el programa como el siguiente paso lógico para los líderes que necesitan diseñar una estrategia completa en lugar de solo reaccionar a tendencias."
           },
-          "generatedAt": "2026-10-17T17:44:08.037Z"
+          "generatedAt": "2026-10-17T19:05:44.021Z"
         },
         "andres-bilbao": {
           "profileId": "andres-bilbao",
-          "angle": "La ciberseguridad con IA ya no es solo un problema técnico del CTO, es una conversación estratégica que como líder de negocio tienes la responsabilidad de liderar para proteger a tu compañía.",
-          "format": "post largo de LinkedIn con historia y lección",
-          "hook": "Leíste sobre los hackeos a gobiernos y supermercados y pensaste 'qué susto'. Luego seguiste con tu día. Error.",
+          "angle": "Equipar a tus equipos con el hardware adecuado para correr IA localmente no es un gasto de TI, sino una inversión estratégica para ganar velocidad y proteger tus datos.",
+          "format": "post de LinkedIn con viñetas sobre IA",
+          "hook": "Si eres líder y crees que la IA solo vive en la nube, estás dejando que tu competencia se mueva más rápido y más seguro.",
           "opportunity": {
             "product": "AI for Executives",
-            "rationale": "La pieza expone la necesidad de una estrategia de IA que vaya más allá de las herramientas y aborde riesgos críticos del negocio, posicionando el programa como la vía para construir esa estrategia integral."
+            "rationale": "La pieza abre la conversación sobre la infraestructura como parte de una estrategia de IA, despertando la necesidad de un plan integral que vaya más allá de herramientas y hardware, que es el foco del programa."
           },
-          "generatedAt": "2026-10-17T17:44:08.037Z"
+          "generatedAt": "2026-10-17T19:05:44.021Z"
         }
       }
     },
     {
       "id": "agentes-autonomos",
-      "label": "Agentes autónomos",
+      "label": "Agentes Autónomos",
       "stage": "pico",
-      "velocity": 351.7,
+      "velocity": 491.7,
       "executiveRelevance": 0.57,
-      "score": 200.47,
+      "score": 280.27,
       "layers": [
         "origen",
         "difusion",
@@ -619,7 +331,7 @@
       "series": [
         {
           "date": "2026-09-18",
-          "count": 5
+          "count": 3
         },
         {
           "date": "2026-09-19",
@@ -627,7 +339,7 @@
         },
         {
           "date": "2026-09-20",
-          "count": 4
+          "count": 3
         },
         {
           "date": "2026-09-21",
@@ -635,19 +347,19 @@
         },
         {
           "date": "2026-09-22",
-          "count": 3
+          "count": 1
         },
         {
           "date": "2026-09-23",
-          "count": 3
+          "count": 1
         },
         {
           "date": "2026-09-24",
-          "count": 3
+          "count": 1
         },
         {
           "date": "2026-09-25",
-          "count": 6
+          "count": 8
         },
         {
           "date": "2026-09-26",
@@ -655,11 +367,11 @@
         },
         {
           "date": "2026-09-27",
-          "count": 0
+          "count": 2
         },
         {
           "date": "2026-09-28",
-          "count": 2
+          "count": 1
         },
         {
           "date": "2026-09-29",
@@ -667,27 +379,27 @@
         },
         {
           "date": "2026-09-30",
-          "count": 1
-        },
-        {
-          "date": "2026-10-01",
           "count": 4
         },
         {
-          "date": "2026-10-02",
-          "count": 3
-        },
-        {
-          "date": "2026-10-03",
+          "date": "2026-10-01",
           "count": 6
         },
         {
+          "date": "2026-10-02",
+          "count": 2
+        },
+        {
+          "date": "2026-10-03",
+          "count": 4
+        },
+        {
           "date": "2026-10-04",
-          "count": 3
+          "count": 0
         },
         {
           "date": "2026-10-05",
-          "count": 8
+          "count": 7
         },
         {
           "date": "2026-10-06",
@@ -695,47 +407,47 @@
         },
         {
           "date": "2026-10-07",
-          "count": 7
-        },
-        {
-          "date": "2026-10-08",
           "count": 6
         },
         {
+          "date": "2026-10-08",
+          "count": 3
+        },
+        {
           "date": "2026-10-09",
-          "count": 5
+          "count": 4
         },
         {
           "date": "2026-10-10",
-          "count": 19
+          "count": 16
         },
         {
           "date": "2026-10-11",
-          "count": 18
+          "count": 20
         },
         {
           "date": "2026-10-12",
-          "count": 28
-        },
-        {
-          "date": "2026-10-13",
           "count": 27
         },
         {
+          "date": "2026-10-13",
+          "count": 23
+        },
+        {
           "date": "2026-10-14",
-          "count": 34
+          "count": 25
         },
         {
           "date": "2026-10-15",
-          "count": 99
+          "count": 116
         },
         {
           "date": "2026-10-16",
-          "count": 47
+          "count": 52
         },
         {
           "date": "2026-10-17",
-          "count": 13
+          "count": 16
         }
       ],
       "channels": [
@@ -743,18 +455,18 @@
           "name": "Hacker News",
           "source": "hackernews",
           "url": "https://news.ycombinator.com",
-          "count": 244
+          "count": 227
         },
         {
           "name": "arXiv",
           "source": "arxiv",
           "url": "https://arxiv.org",
-          "count": 63
+          "count": 70
         },
         {
-          "name": "Izabela Anholett",
+          "name": "Daxus Latam",
           "source": "youtube",
-          "count": 2
+          "count": 3
         },
         {
           "name": "Alejavi Rivera",
@@ -762,17 +474,17 @@
           "count": 2
         },
         {
-          "name": "Daxus Latam",
-          "source": "youtube",
-          "count": 2
-        },
-        {
-          "name": "monday CRM",
+          "name": "Búscate la vida",
           "source": "youtube",
           "count": 2
         },
         {
           "name": "Infobae Tecno",
+          "source": "prensa",
+          "count": 2
+        },
+        {
+          "name": "McKinsey Insights",
           "source": "prensa",
           "count": 2
         },
@@ -787,7 +499,7 @@
           "count": 1
         },
         {
-          "name": "Inteligencia Artificial",
+          "name": "Izabela Anholett",
           "source": "youtube",
           "count": 1
         }
@@ -798,20 +510,20 @@
           "url": "https://www.youtube.com/watch?v=RTuybvHww7Y",
           "source": "youtube",
           "outlet": "CNN",
-          "hook": "caso_de_uso",
+          "hook": "noticia",
           "format": "video"
         },
         {
-          "title": "Launch HN: Agent37 (YC F26) – Low-cost agent sandboxes for running agents",
-          "url": "https://news.ycombinator.com/item?id=50059096",
+          "title": "Talorys – A self-hosted personal AI agent on Cloudflare's free tier",
+          "url": "https://github.com/rociiu/talorys",
           "source": "hackernews",
           "outlet": "Hacker News",
-          "hook": "noticia",
+          "hook": "otro",
           "format": "hilo de discusión"
         },
         {
-          "title": "EliteReplay: Preserving Diverse Solutions in RL Post-Training via Quality-Diversity Search",
-          "url": "https://arxiv.org/abs/2610.22290v1",
+          "title": "CoDA: Co-Evolution of Data Engines and Action Policies",
+          "url": "https://arxiv.org/abs/2610.22362v1",
           "source": "arxiv",
           "outlet": "arXiv",
           "hook": "otro",
@@ -823,8 +535,8 @@
           "source": "prensa",
           "outlet": "Infobae Tecno",
           "hook": "advertencia",
-          "format": "nota de prensa de advertencia",
-          "analysis": "Genera urgencia en los líderes al destacar los riesgos y las implicaciones éticas de la tecnología."
+          "format": "nota de prensa con advertencia",
+          "analysis": "Genera intriga y debate al exponer los posibles peligros y comportamientos inesperados de los agentes de IA."
         },
         {
           "title": "I Built an Entire Social Media Team With 0 Employees #shorts #claude #automatedsystem #aiagent #ai",
@@ -832,75 +544,1422 @@
           "source": "youtube",
           "outlet": "ReStructure AI",
           "hook": "caso_de_uso",
-          "format": "video corto de caso de uso",
-          "analysis": "Engancha con una promesa tangible de eficiencia y ahorro de costos, mostrando un resultado de negocio inmediato."
+          "format": "video"
         }
       ],
       "explanation": {
-        "text": "El interés en los agentes autónomos se dispara por la aparición de casos de uso concretos que demuestran su valor para los negocios, desde automatizar equipos hasta generar ingresos. A esto se suman los lanzamientos de productos por parte de gigantes tecnológicos como OpenAI y Meta, que validan la tendencia. La conversación se intensifica con advertencias sobre los riesgos de esta tecnología, lo que genera una amplia cobertura mediática y un debate público que atrae la atención de los líderes.",
+        "text": "El tema crece impulsado por anuncios de productos de OpenAI y Meta, que generan una amplia cobertura mediática. Al mismo tiempo, surgen casos de uso concretos sobre cómo automatizar tareas o generar ingresos, así como advertencias sobre los riesgos y comportamientos autónomos de estas IAs.",
         "evidence": [
           {
-            "title": "AI bot contacts professor on its own seeking paid work",
-            "url": "https://www.youtube.com/watch?v=RTuybvHww7Y"
-          },
-          {
-            "title": "“Pueden mentir y resistirse a ser apagados”: un exempleado de Anthropic alertó sobre el comportamiento de los agentes de IA",
-            "url": "https://www.infobae.com/tecno/2026/10/08/pueden-mentir-y-resistirse-a-ser-apagados-un-exempleado-de-anthropic-alerto-sobre-el-comportamiento-de-los-agentes-de-ia/"
-          },
-          {
-            "title": "I Built an Entire Social Media Team With 0 Employees #shorts #claude #automatedsystem #aiagent #ai",
-            "url": "https://www.youtube.com/watch?v=JhM-rGP5Kx0"
-          },
-          {
-            "title": "AI Agents for Enterprises | New Bootcamp Launch",
-            "url": "https://www.youtube.com/watch?v=LiOl3sK3mkc"
+            "title": "Introducing dots, always-on agents built to handle everything.",
+            "url": "https://www.youtube.com/watch?v=uXspbC2srEQ"
           },
           {
             "title": "Meta's Muse: Cute AI Agent Or 'AI Trojan Horse'? | BBC News",
             "url": "https://www.youtube.com/watch?v=9VTuKGI54vQ"
           },
           {
-            "title": "Introducing dots, always-on agents built to handle everything.",
-            "url": "https://www.youtube.com/watch?v=uXspbC2srEQ"
-          },
-          {
             "title": "I Created An AI Agent to Make $9500 in 30 Days",
             "url": "https://www.youtube.com/watch?v=5V2Tjz8VuYQ"
+          },
+          {
+            "title": "“Pueden mentir y resistirse a ser apagados”: un exempleado de Anthropic alertó sobre el comportamiento de los agentes de IA",
+            "url": "https://www.infobae.com/tecno/2026/10/08/pueden-mentir-y-resistirse-a-ser-apagados-un-exempleado-de-anthropic-alerto-sobre-el-comportamiento-de-los-agentes-de-ia/"
+          },
+          {
+            "title": "AI bot contacts professor on its own seeking paid work",
+            "url": "https://www.youtube.com/watch?v=RTuybvHww7Y"
           }
         ]
       },
       "briefs": {
         "30x": {
           "profileId": "30x",
-          "angle": "Los agentes autónomos no son solo una herramienta nueva, son tu próximo equipo digital que debes aprender a dirigir para generar ingresos y no solo costos.",
+          "angle": "Como líder, tu rol no es entender la tecnología de los agentes autónomos, sino definir la estrategia para que trabajen para tu negocio y no en tu contra.",
           "format": "carrusel de Instagram",
-          "hook": "Tu próximo equipo no pide salario, trabaja 24/7 y puedes contratarlo hoy mismo.",
+          "hook": "Deja de leer noticias sobre agentes de IA. Empieza a crear la estrategia para usarlos.",
           "opportunity": {
             "product": "AI for Executives",
-            "rationale": "La pieza posiciona a los agentes autónomos como un imperativo estratégico, generando la necesidad de un framework para implementarlos con ROI, que es exactamente lo que ofrece el programa."
+            "rationale": "La pieza expone la necesidad de una estrategia formal para una tecnología compleja, posicionando naturalmente un programa que enseña a crear esa estrategia con ROI."
           },
-          "generatedAt": "2026-10-17T17:44:08.037Z"
+          "generatedAt": "2026-10-17T19:05:44.021Z"
         },
         "andres-bilbao": {
           "profileId": "andres-bilbao",
-          "angle": "En vez de solo hablar del hype de los agentes autónomos, es hora de que entiendas cómo pueden automatizar equipos y generar nuevas líneas de ingreso para tu negocio.",
-          "format": "post de LinkedIn con viñetas sobre IA",
-          "hook": "Tus próximos empleados no van a pedir aumento, vacaciones ni seguro médico: serán agentes de IA.",
+          "angle": "Los agentes autónomos ya están tomando iniciativas por su cuenta, y tu rol como líder es entender cómo capitalizar la oportunidad y gestionar el riesgo antes de que sea tarde.",
+          "format": "post largo de LinkedIn con historia y lección",
+          "hook": "Un agente de IA buscó trabajo por su cuenta. Si como líder esto no te hace pensar en los riesgos y oportunidades para tu empresa, debería.",
           "opportunity": {
             "product": "AI for Executives",
-            "rationale": "El post explica el qué y el porqué de los agentes autónomos, posicionando el programa como el siguiente paso para aprender a implementarlos con una estrategia clara y foco en el ROI."
+            "rationale": "La pieza destaca la urgencia de pasar de reaccionar a noticias de IA a construir una estrategia proactiva, que es la transformación que ofrece el programa."
           },
-          "generatedAt": "2026-10-17T17:44:08.037Z"
+          "generatedAt": "2026-10-17T19:05:44.021Z"
+        }
+      }
+    },
+    {
+      "id": "seguridad-de-ia",
+      "label": "Seguridad de IA",
+      "stage": "pico",
+      "velocity": 352.6,
+      "executiveRelevance": 0.69,
+      "score": 243.29,
+      "layers": [
+        "origen",
+        "difusion",
+        "audiencia_ejecutiva"
+      ],
+      "series": [
+        {
+          "date": "2026-09-18",
+          "count": 0
+        },
+        {
+          "date": "2026-09-19",
+          "count": 0
+        },
+        {
+          "date": "2026-09-20",
+          "count": 0
+        },
+        {
+          "date": "2026-09-21",
+          "count": 0
+        },
+        {
+          "date": "2026-09-22",
+          "count": 0
+        },
+        {
+          "date": "2026-09-23",
+          "count": 2
+        },
+        {
+          "date": "2026-09-24",
+          "count": 6
+        },
+        {
+          "date": "2026-09-25",
+          "count": 0
+        },
+        {
+          "date": "2026-09-26",
+          "count": 0
+        },
+        {
+          "date": "2026-09-27",
+          "count": 0
+        },
+        {
+          "date": "2026-09-28",
+          "count": 0
+        },
+        {
+          "date": "2026-09-29",
+          "count": 0
+        },
+        {
+          "date": "2026-09-30",
+          "count": 0
+        },
+        {
+          "date": "2026-10-01",
+          "count": 0
+        },
+        {
+          "date": "2026-10-02",
+          "count": 0
+        },
+        {
+          "date": "2026-10-03",
+          "count": 1
+        },
+        {
+          "date": "2026-10-04",
+          "count": 0
+        },
+        {
+          "date": "2026-10-05",
+          "count": 4
+        },
+        {
+          "date": "2026-10-06",
+          "count": 6
+        },
+        {
+          "date": "2026-10-07",
+          "count": 1
+        },
+        {
+          "date": "2026-10-08",
+          "count": 0
+        },
+        {
+          "date": "2026-10-09",
+          "count": 1
+        },
+        {
+          "date": "2026-10-10",
+          "count": 2
+        },
+        {
+          "date": "2026-10-11",
+          "count": 1
+        },
+        {
+          "date": "2026-10-12",
+          "count": 6
+        },
+        {
+          "date": "2026-10-13",
+          "count": 10
+        },
+        {
+          "date": "2026-10-14",
+          "count": 13
+        },
+        {
+          "date": "2026-10-15",
+          "count": 17
+        },
+        {
+          "date": "2026-10-16",
+          "count": 20
+        },
+        {
+          "date": "2026-10-17",
+          "count": 14
+        }
+      ],
+      "channels": [
+        {
+          "name": "Hacker News",
+          "source": "hackernews",
+          "url": "https://news.ycombinator.com",
+          "count": 83
+        },
+        {
+          "name": "arXiv",
+          "source": "arxiv",
+          "url": "https://arxiv.org",
+          "count": 5
+        },
+        {
+          "name": "Infobae Tecno",
+          "source": "prensa",
+          "count": 2
+        },
+        {
+          "name": "Roske AI",
+          "source": "youtube",
+          "count": 1
+        },
+        {
+          "name": "KING 5 Seattle",
+          "source": "youtube",
+          "count": 1
+        },
+        {
+          "name": "FOX54 News Huntsville",
+          "source": "youtube",
+          "count": 1
+        },
+        {
+          "name": "Go Cloud Architects",
+          "source": "youtube",
+          "count": 1
+        },
+        {
+          "name": "KSDK News",
+          "source": "youtube",
+          "count": 1
+        },
+        {
+          "name": "CBS 8 San Diego",
+          "source": "youtube",
+          "count": 1
+        },
+        {
+          "name": "WHAS11",
+          "source": "youtube",
+          "count": 1
+        }
+      ],
+      "topPieces": [
+        {
+          "title": "The Hugging Face hack is worse than you think",
+          "url": "https://www.youtube.com/watch?v=_HBLAdk-5uc",
+          "source": "youtube",
+          "outlet": "Alberta Tech",
+          "hook": "noticia",
+          "format": "video de noticia y análisis",
+          "analysis": "Engancha al revelar la gravedad de un hackeo en una plataforma central del ecosistema de IA, generando preocupación y urgencia."
+        },
+        {
+          "title": "Containment and monitoring failures are to blame for AI hacking reports: experts",
+          "url": "https://www.csoonline.com/article/4234854/ai-agents-arent-going-rogue-frontier-labs-are-skipping-security-basics.html",
+          "source": "hackernews",
+          "outlet": "Hacker News",
+          "hook": "advertencia",
+          "format": "hilo de discusión con análisis experto",
+          "analysis": "Atrae a una audiencia técnica al culpar a las fallas de seguridad básicas, no a una 'IA rebelde', por los incidentes recientes."
+        },
+        {
+          "title": "Lethe: Link Inference Attacks For Evaluation of Edge Unlearning Methods",
+          "url": "https://arxiv.org/abs/2610.21869v1",
+          "source": "arxiv",
+          "outlet": "arXiv",
+          "hook": "otro",
+          "format": "artículo académico"
+        },
+        {
+          "title": "SpaceX comparece ante Concejo de Nueva York por riesgos de la inteligencia artificial tras amenaza de demanda: &#039;La autorregulación no es suficiente&#039;",
+          "url": "https://www.eltiempo.com/tecnosfera/inteligencia-artificial/spacex-comparece-ante-concejo-de-nueva-york-por-riesgos-de-la-inteligencia-artificial-tras-amenaza-de-demanda-la-autorregulacion-no-es-suficiente-3594063",
+          "source": "prensa",
+          "outlet": "El Tiempo Tecnósfera",
+          "hook": "noticia",
+          "format": "nota de prensa sobre regulación",
+          "analysis": "Capta la atención al mostrar que los riesgos de la IA han escalado a un nivel que requiere la intervención de organismos gubernamentales."
+        },
+        {
+          "title": "OpenAI engineer arrested in bugging of executive conference room",
+          "url": "https://sfstandard.com/2026/10/13/openai-engineer-arrested-alleged-bugging-executive-conference-room/",
+          "source": "hackernews",
+          "outlet": "Hacker News",
+          "hook": "noticia",
+          "format": "hilo de discusión en comunidad técnica",
+          "analysis": "Genera interés con el drama de un presunto espionaje interno en OpenAI, destacando el factor de riesgo humano."
+        }
+      ],
+      "explanation": {
+        "text": "El interés en la seguridad de la IA está en su pico debido a incidentes de alto perfil en empresas líderes como OpenAI y Hugging Face. Estos eventos van desde hackeos y espionaje corporativo hasta fallas de agentes de IA que exponen datos personales y financieros sensibles. Como resultado, tanto expertos como reguladores están mostrando una creciente preocupación por la falta de controles básicos de seguridad.",
+        "evidence": [
+          {
+            "title": "The Hugging Face hack is worse than you think",
+            "url": "https://www.youtube.com/watch?v=_HBLAdk-5uc"
+          },
+          {
+            "title": "Containment and monitoring failures are to blame for AI hacking reports: experts",
+            "url": "https://www.csoonline.com/article/4234854/ai-agents-arent-going-rogue-frontier-labs-are-skipping-security-basics.html"
+          },
+          {
+            "title": "SpaceX comparece ante Concejo de Nueva York por riesgos de la inteligencia artificial tras amenaza de demanda: &#039;La autorregulación no es suficiente&#039;",
+            "url": "https://www.eltiempo.com/tecnosfera/inteligencia-artificial/spacex-comparece-ante-concejo-de-nueva-york-por-riesgos-de-la-inteligencia-artificial-tras-amenaza-de-demanda-la-autorregulacion-no-es-suficiente-3594063"
+          },
+          {
+            "title": "OpenAI engineer arrested in bugging of executive conference room",
+            "url": "https://sfstandard.com/2026/10/13/openai-engineer-arrested-alleged-bugging-executive-conference-room/"
+          },
+          {
+            "title": "My personal AI agent posted my bank details on company Slack",
+            "url": "https://www.businessinsider.com/personal-ai-agent-grok-bot-posted-bank-details-company-slack-2026-10"
+          },
+          {
+            "title": "OpenAI employee arrested by FBI over hidden listening device, company says",
+            "url": "https://www.reuters.com/world/us/fbi-arrests-former-openai-employee-planting-listening-device-2026-10-13/"
+          }
+        ]
+      },
+      "briefs": {
+        "30x": {
+          "profileId": "30x",
+          "angle": "Las fallas de seguridad en IA no son un problema técnico, son un riesgo estratégico que debes liderar.",
+          "format": "clase gratis en vivo por Zoom",
+          "hook": "Tu equipo ya usa IA. ¿Quién protege la data sensible de tu empresa?",
+          "opportunity": {
+            "product": "AI for Executives",
+            "rationale": "La clase demostrará la urgencia de una gobernanza de IA, posicionando el programa como el siguiente paso lógico para construir una estrategia segura y con ROI."
+          },
+          "generatedAt": "2026-10-17T19:05:44.021Z"
+        },
+        "andres-bilbao": {
+          "profileId": "andres-bilbao",
+          "angle": "La seguridad de la IA no es un problema técnico que delegas a tu equipo de IT, es un riesgo estratégico que debes gestionar tú como líder.",
+          "format": "post de LinkedIn con viñetas sobre IA",
+          "hook": "Los recientes hackeos a OpenAI y Hugging Face no son una anécdota técnica, son una advertencia para ti como ejecutivo.",
+          "opportunity": {
+            "product": "AI for Executives",
+            "rationale": "La pieza expone los riesgos de una implementación de IA sin supervisión estratégica, posicionando el programa como la solución para construir un plan con controles y ROI."
+          },
+          "generatedAt": "2026-10-17T19:05:44.021Z"
         }
       }
     },
     {
       "id": "ia-en-medicina",
-      "label": "IA en medicina",
+      "label": "IA en Medicina",
+      "stage": "pico",
+      "velocity": 416.7,
+      "executiveRelevance": 0.55,
+      "score": 229.19,
+      "layers": [
+        "origen",
+        "audiencia_ejecutiva"
+      ],
+      "series": [
+        {
+          "date": "2026-09-18",
+          "count": 0
+        },
+        {
+          "date": "2026-09-19",
+          "count": 0
+        },
+        {
+          "date": "2026-09-20",
+          "count": 0
+        },
+        {
+          "date": "2026-09-21",
+          "count": 0
+        },
+        {
+          "date": "2026-09-22",
+          "count": 0
+        },
+        {
+          "date": "2026-09-23",
+          "count": 0
+        },
+        {
+          "date": "2026-09-24",
+          "count": 0
+        },
+        {
+          "date": "2026-09-25",
+          "count": 0
+        },
+        {
+          "date": "2026-09-26",
+          "count": 0
+        },
+        {
+          "date": "2026-09-27",
+          "count": 0
+        },
+        {
+          "date": "2026-09-28",
+          "count": 0
+        },
+        {
+          "date": "2026-09-29",
+          "count": 0
+        },
+        {
+          "date": "2026-09-30",
+          "count": 0
+        },
+        {
+          "date": "2026-10-01",
+          "count": 0
+        },
+        {
+          "date": "2026-10-02",
+          "count": 0
+        },
+        {
+          "date": "2026-10-03",
+          "count": 0
+        },
+        {
+          "date": "2026-10-04",
+          "count": 0
+        },
+        {
+          "date": "2026-10-05",
+          "count": 1
+        },
+        {
+          "date": "2026-10-06",
+          "count": 0
+        },
+        {
+          "date": "2026-10-07",
+          "count": 0
+        },
+        {
+          "date": "2026-10-08",
+          "count": 0
+        },
+        {
+          "date": "2026-10-09",
+          "count": 0
+        },
+        {
+          "date": "2026-10-10",
+          "count": 0
+        },
+        {
+          "date": "2026-10-11",
+          "count": 0
+        },
+        {
+          "date": "2026-10-12",
+          "count": 1
+        },
+        {
+          "date": "2026-10-13",
+          "count": 1
+        },
+        {
+          "date": "2026-10-14",
+          "count": 1
+        },
+        {
+          "date": "2026-10-15",
+          "count": 15
+        },
+        {
+          "date": "2026-10-16",
+          "count": 4
+        },
+        {
+          "date": "2026-10-17",
+          "count": 4
+        }
+      ],
+      "channels": [
+        {
+          "name": "arXiv",
+          "source": "arxiv",
+          "url": "https://arxiv.org",
+          "count": 14
+        },
+        {
+          "name": "Hacker News",
+          "source": "hackernews",
+          "url": "https://news.ycombinator.com",
+          "count": 9
+        },
+        {
+          "name": "Microsoft Noticias Latinoamérica",
+          "source": "prensa",
+          "count": 2
+        },
+        {
+          "name": "The Digital Healthcare Experience",
+          "source": "youtube",
+          "count": 1
+        },
+        {
+          "name": "Infobae Tecno",
+          "source": "prensa",
+          "count": 1
+        }
+      ],
+      "topPieces": [
+        {
+          "title": "Blood cells from 80-year-old donor become stem cells with molecular age under 20",
+          "url": "https://doi.org/10.1111/acel.70751",
+          "source": "hackernews",
+          "outlet": "Hacker News",
+          "hook": "otro",
+          "format": "hilo de discusión sobre investigación",
+          "analysis": "Genera debate al presentar un avance científico radical con implicaciones profundas sobre el envejecimiento."
+        },
+        {
+          "title": "Building Cognitive Resilience in Academic Medicine",
+          "url": "https://www.youtube.com/watch?v=ia61YSP1OUo",
+          "source": "youtube",
+          "outlet": "The Digital Healthcare Experience",
+          "hook": "opinion",
+          "format": "video"
+        },
+        {
+          "title": "Robust Reinforcement Learning for Dynamic Treatment Regimes under Model and Measurement Uncertainty",
+          "url": "https://arxiv.org/abs/2610.22336v1",
+          "source": "arxiv",
+          "outlet": "arXiv",
+          "hook": "otro",
+          "format": "artículo académico"
+        },
+        {
+          "title": "Crean un modelo de IA que promete detectar el rechazo cardíaco tras un trasplante: cómo funciona",
+          "url": "https://www.infobae.com/tecno/2026/10/16/crean-un-modelo-de-ia-que-promete-detectar-el-rechazo-cardiaco-tras-un-trasplante-como-funciona/",
+          "source": "prensa",
+          "outlet": "Infobae Tecno",
+          "hook": "caso_de_uso",
+          "format": "nota de prensa con caso de uso",
+          "analysis": "Atrae al público general al explicar una aplicación de IA con un impacto humano directo y fácil de entender."
+        },
+        {
+          "title": "The world epidemic of sleep disorders is linked to Vitamin D deficiency (2012)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/22583560/",
+          "source": "hackernews",
+          "outlet": "Hacker News",
+          "hook": "otro",
+          "format": "hilo de discusión"
+        }
+      ],
+      "explanation": {
+        "text": "El crecimiento del tema se impulsa por la aparición de aplicaciones concretas con impacto directo en pacientes, como la detección del rechazo de trasplantes. Simultáneamente, la creación de marcos de gobernanza por parte de asociaciones médicas indica que la tecnología avanza hacia una implementación regulada y formal en el sector.",
+        "evidence": [
+          {
+            "title": "Crean un modelo de IA que promete detectar el rechazo cardíaco tras un trasplante: cómo funciona",
+            "url": "https://www.infobae.com/tecno/2026/10/16/crean-un-modelo-de-ia-que-promete-detectar-el-rechazo-cardiaco-tras-un-trasplante-como-funciona/"
+          },
+          {
+            "title": "American Medical Association releases governance framework for agentic AI",
+            "url": "https://www.healthcaredive.com/news/ama-releases-governance-framework-for-agentic-ai-in-healthcare/833120/"
+          },
+          {
+            "title": "Blood cells from 80-year-old donor become stem cells with molecular age under 20",
+            "url": "https://doi.org/10.1111/acel.70751"
+          },
+          {
+            "title": "GraphBEAT: Graph-based Bucketized Event Aggregation Over Time for Early Risk Stratification of Gastrointestinal Cancers",
+            "url": "https://arxiv.org/abs/2610.22014v1"
+          }
+        ]
+      },
+      "briefs": {
+        "30x": {
+          "profileId": "30x",
+          "angle": "La IA en medicina ya no es solo para doctores: es una oportunidad de negocio regulada que exige una estrategia, no solo herramientas.",
+          "format": "carrusel de Instagram",
+          "hook": "IA en medicina: deja de ver los avances y empieza a ver el negocio.",
+          "opportunity": {
+            "product": "AI for Executives",
+            "rationale": "La pieza demuestra que para capitalizar tendencias de IA, incluso en industrias especializadas como la medicina, se necesita una visión estratégica de negocio y no solo conocimiento técnico, posicionando el programa como el siguiente paso lógico para desarrollar esa visión."
+          },
+          "generatedAt": "2026-10-17T19:05:44.021Z"
+        },
+        "andres-bilbao": {
+          "profileId": "andres-bilbao",
+          "angle": "Tu rol como líder en la revolución de la IA en medicina no es entender cada algoritmo, sino crear la estrategia y los marcos de gobernanza para que tu equipo pueda innovar de forma segura y rentable.",
+          "format": "post de LinkedIn con viñetas sobre IA",
+          "hook": "Muchos hablan de cómo la IA detectará enfermedades. Pocos hablan de la pregunta más importante: ¿quién es responsable cuando se equivoca?",
+          "opportunity": {
+            "product": "AI for Executives",
+            "rationale": "La pieza expone la necesidad crítica de una estrategia de IA y gobernanza en un sector complejo, posicionando el programa como el siguiente paso lógico para los líderes que buscan construir esa estrategia con un método probado."
+          },
+          "generatedAt": "2026-10-17T19:05:44.021Z"
+        }
+      }
+    },
+    {
+      "id": "ia-en-codigo-y-desarrollo",
+      "label": "IA en Código y Desarrollo",
+      "stage": "pico",
+      "velocity": 300,
+      "executiveRelevance": 0.52,
+      "score": 156,
+      "layers": [
+        "origen",
+        "difusion",
+        "audiencia_ejecutiva"
+      ],
+      "series": [
+        {
+          "date": "2026-09-18",
+          "count": 1
+        },
+        {
+          "date": "2026-09-19",
+          "count": 0
+        },
+        {
+          "date": "2026-09-20",
+          "count": 4
+        },
+        {
+          "date": "2026-09-21",
+          "count": 1
+        },
+        {
+          "date": "2026-09-22",
+          "count": 1
+        },
+        {
+          "date": "2026-09-23",
+          "count": 2
+        },
+        {
+          "date": "2026-09-24",
+          "count": 0
+        },
+        {
+          "date": "2026-09-25",
+          "count": 1
+        },
+        {
+          "date": "2026-09-26",
+          "count": 1
+        },
+        {
+          "date": "2026-09-27",
+          "count": 0
+        },
+        {
+          "date": "2026-09-28",
+          "count": 0
+        },
+        {
+          "date": "2026-09-29",
+          "count": 4
+        },
+        {
+          "date": "2026-09-30",
+          "count": 2
+        },
+        {
+          "date": "2026-10-01",
+          "count": 1
+        },
+        {
+          "date": "2026-10-02",
+          "count": 6
+        },
+        {
+          "date": "2026-10-03",
+          "count": 2
+        },
+        {
+          "date": "2026-10-04",
+          "count": 5
+        },
+        {
+          "date": "2026-10-05",
+          "count": 6
+        },
+        {
+          "date": "2026-10-06",
+          "count": 1
+        },
+        {
+          "date": "2026-10-07",
+          "count": 5
+        },
+        {
+          "date": "2026-10-08",
+          "count": 20
+        },
+        {
+          "date": "2026-10-09",
+          "count": 16
+        },
+        {
+          "date": "2026-10-10",
+          "count": 10
+        },
+        {
+          "date": "2026-10-11",
+          "count": 21
+        },
+        {
+          "date": "2026-10-12",
+          "count": 26
+        },
+        {
+          "date": "2026-10-13",
+          "count": 36
+        },
+        {
+          "date": "2026-10-14",
+          "count": 35
+        },
+        {
+          "date": "2026-10-15",
+          "count": 37
+        },
+        {
+          "date": "2026-10-16",
+          "count": 55
+        },
+        {
+          "date": "2026-10-17",
+          "count": 57
+        }
+      ],
+      "channels": [
+        {
+          "name": "Hacker News",
+          "source": "hackernews",
+          "url": "https://news.ycombinator.com",
+          "count": 300
+        },
+        {
+          "name": "arXiv",
+          "source": "arxiv",
+          "url": "https://arxiv.org",
+          "count": 15
+        },
+        {
+          "name": "Infobae Tecno",
+          "source": "prensa",
+          "count": 3
+        },
+        {
+          "name": "MoureDev by Brais Moure",
+          "source": "youtube",
+          "count": 2
+        },
+        {
+          "name": "Eli Sadler",
+          "source": "youtube",
+          "count": 2
+        },
+        {
+          "name": "Fazt",
+          "source": "youtube",
+          "count": 2
+        },
+        {
+          "name": "Jay E | RoboNuggets",
+          "source": "youtube",
+          "count": 2
+        },
+        {
+          "name": "Nate Herk | AI Automation",
+          "source": "youtube",
+          "count": 2
+        },
+        {
+          "name": "Escola de Aplicativos",
+          "source": "youtube",
+          "count": 1
+        },
+        {
+          "name": "La Obsesión Ciclista de Fred.",
+          "source": "youtube",
+          "count": 1
+        }
+      ],
+      "topPieces": [
+        {
+          "title": "Someone Just Rebuilt Adobe for Free, and Claude Can Run Them All (7 apps tested)",
+          "url": "https://www.youtube.com/watch?v=Fuo1i_-9Frc",
+          "source": "youtube",
+          "outlet": "Jay E | RoboNuggets",
+          "hook": "tutorial",
+          "format": "demostración en video",
+          "analysis": "Plantea una hazaña sorprendente y disruptiva, reconstruir un software popular gratis, lo que genera curiosidad sobre el poder de la IA."
+        },
+        {
+          "title": "Codex CLI installs a persistent, self-updating background daemon by default",
+          "url": "https://github.com/openai/codex/issues/48195",
+          "source": "hackernews",
+          "outlet": "Hacker News",
+          "hook": "advertencia",
+          "format": "hilo de discusión técnica",
+          "analysis": "Genera debate y urgencia al advertir sobre un posible riesgo de seguridad en una herramienta popular, apelando a la cautela técnica."
+        },
+        {
+          "title": "MLExpert: Towards a Generalist Agentic Model for Autonomous Machine Learning Engineering",
+          "url": "https://arxiv.org/abs/2610.22344v1",
+          "source": "arxiv",
+          "outlet": "arXiv",
+          "hook": "otro",
+          "format": "artículo académico"
+        },
+        {
+          "title": "Un modelo de IA que no escribe texto se volvió el de adopción más rápida en Vercel",
+          "url": "https://www.infobae.com/tecno/2026/10/17/un-modelo-de-ia-que-no-escribe-texto-se-volvio-el-de-adopcion-mas-rapida-en-vercel/",
+          "source": "prensa",
+          "outlet": "Infobae Tecno",
+          "hook": "caso_de_uso",
+          "format": "nota de prensa con caso de estudio",
+          "analysis": "Utiliza un titular contraintuitivo y un dato de adopción récord para destacar la importancia de nuevos tipos de modelos de IA."
+        },
+        {
+          "title": "Curso de Desarrollo con IA: el Nuevo Programador – Día 1 – De la idea a la instrucción perfecta",
+          "url": "https://www.youtube.com/watch?v=qHYi92zRn-s",
+          "source": "youtube",
+          "outlet": "MoureDev by Brais Moure",
+          "hook": "tutorial",
+          "format": "curso en video",
+          "analysis": "Ofrece formación estructurada y gratuita de un referente en la comunidad, apelando a la necesidad de actualización profesional."
+        }
+      ],
+      "explanation": {
+        "text": "El interés en la IA para desarrollo está impulsado por la aparición de herramientas que automatizan tareas complejas. Tutoriales virales, con cientos de miles de vistas, muestran cómo usar modelos como Claude para programar aplicaciones o incluso editar video. La tendencia se consolida con cursos de formación profesional que enseñan estas nuevas habilidades.",
+        "evidence": [
+          {
+            "title": "Someone Just Rebuilt Adobe for Free, and Claude Can Run Them All (7 apps tested)",
+            "url": "https://www.youtube.com/watch?v=Fuo1i_-9Frc"
+          },
+          {
+            "title": "Curso de Desarrollo con IA: el Nuevo Programador – Día 1 – De la idea a la instrucción perfecta",
+            "url": "https://www.youtube.com/watch?v=qHYi92zRn-s"
+          },
+          {
+            "title": "Jev will 10x your Claude Code (Here's How)",
+            "url": "https://www.youtube.com/watch?v=tTnUcSj-QPA"
+          },
+          {
+            "title": "I Fully Automated My Video Editing Using Claude Code (Full Walkthrough)",
+            "url": "https://www.youtube.com/watch?v=HzXD4GVqXwM"
+          },
+          {
+            "title": "Curso de Desarrollo con IA: el Nuevo Programador - Día 2 - Programa con agentes bajo control",
+            "url": "https://www.youtube.com/watch?v=hzQNE092cW0"
+          }
+        ]
+      },
+      "briefs": {
+        "30x": {
+          "profileId": "30x",
+          "angle": "Tu equipo de desarrollo puede multiplicar su capacidad con IA, pero necesita tu liderazgo para hacerlo con estrategia y no solo con herramientas sueltas.",
+          "format": "reel o video corto vertical",
+          "hook": "Tu equipo de tecnología ya está usando IA, ¿pero lo está haciendo con una estrategia o solo con tutoriales virales?",
+          "opportunity": {
+            "product": "AI for Executives",
+            "rationale": "La pieza expone el riesgo de usar IA sin dirección y posiciona al líder como el responsable de la estrategia, que es el problema central que resuelve el programa."
+          },
+          "generatedAt": "2026-10-17T19:05:44.021Z"
+        },
+        "andres-bilbao": {
+          "profileId": "andres-bilbao",
+          "angle": "La IA generativa no solo está acelerando el desarrollo de software, sino que está redefiniendo los perfiles técnicos que tu empresa necesita para competir y escalar.",
+          "format": "post de LinkedIn con viñetas sobre IA",
+          "hook": "La IA no va a reemplazar a tus desarrolladores, pero sí va a cambiar radicalmente el perfil que necesitas contratar.",
+          "opportunity": {
+            "product": "AI for Executives",
+            "rationale": "La pieza explica un cambio estratégico en un área clave de la empresa, posicionando la necesidad de una estrategia de IA integral que es exactamente lo que enseña el programa."
+          },
+          "generatedAt": "2026-10-17T19:05:44.021Z"
+        }
+      }
+    },
+    {
+      "id": "ia-en-robotica",
+      "label": "IA en Robótica",
+      "stage": "creciendo",
+      "velocity": 250,
+      "executiveRelevance": 0.61,
+      "score": 152.5,
+      "layers": [
+        "origen",
+        "difusion"
+      ],
+      "series": [
+        {
+          "date": "2026-09-18",
+          "count": 0
+        },
+        {
+          "date": "2026-09-19",
+          "count": 1
+        },
+        {
+          "date": "2026-09-20",
+          "count": 0
+        },
+        {
+          "date": "2026-09-21",
+          "count": 0
+        },
+        {
+          "date": "2026-09-22",
+          "count": 0
+        },
+        {
+          "date": "2026-09-23",
+          "count": 1
+        },
+        {
+          "date": "2026-09-24",
+          "count": 0
+        },
+        {
+          "date": "2026-09-25",
+          "count": 1
+        },
+        {
+          "date": "2026-09-26",
+          "count": 0
+        },
+        {
+          "date": "2026-09-27",
+          "count": 0
+        },
+        {
+          "date": "2026-09-28",
+          "count": 0
+        },
+        {
+          "date": "2026-09-29",
+          "count": 0
+        },
+        {
+          "date": "2026-09-30",
+          "count": 0
+        },
+        {
+          "date": "2026-10-01",
+          "count": 0
+        },
+        {
+          "date": "2026-10-02",
+          "count": 0
+        },
+        {
+          "date": "2026-10-03",
+          "count": 1
+        },
+        {
+          "date": "2026-10-04",
+          "count": 0
+        },
+        {
+          "date": "2026-10-05",
+          "count": 0
+        },
+        {
+          "date": "2026-10-06",
+          "count": 0
+        },
+        {
+          "date": "2026-10-07",
+          "count": 0
+        },
+        {
+          "date": "2026-10-08",
+          "count": 0
+        },
+        {
+          "date": "2026-10-09",
+          "count": 0
+        },
+        {
+          "date": "2026-10-10",
+          "count": 1
+        },
+        {
+          "date": "2026-10-11",
+          "count": 0
+        },
+        {
+          "date": "2026-10-12",
+          "count": 0
+        },
+        {
+          "date": "2026-10-13",
+          "count": 3
+        },
+        {
+          "date": "2026-10-14",
+          "count": 1
+        },
+        {
+          "date": "2026-10-15",
+          "count": 8
+        },
+        {
+          "date": "2026-10-16",
+          "count": 2
+        },
+        {
+          "date": "2026-10-17",
+          "count": 2
+        }
+      ],
+      "channels": [
+        {
+          "name": "arXiv",
+          "source": "arxiv",
+          "url": "https://arxiv.org",
+          "count": 8
+        },
+        {
+          "name": "Hacker News",
+          "source": "hackernews",
+          "url": "https://news.ycombinator.com",
+          "count": 7
+        },
+        {
+          "name": "Izabela Anholett",
+          "source": "youtube",
+          "count": 1
+        },
+        {
+          "name": "Neurona Digital",
+          "source": "youtube",
+          "count": 1
+        },
+        {
+          "name": "INFOPULSE",
+          "source": "youtube",
+          "count": 1
+        },
+        {
+          "name": "EDteam",
+          "source": "youtube",
+          "count": 1
+        },
+        {
+          "name": "Intereconomía News",
+          "source": "youtube",
+          "count": 1
+        },
+        {
+          "name": "Club de Inversores ",
+          "source": "youtube",
+          "count": 1
+        }
+      ],
+      "topPieces": [
+        {
+          "title": "ChatGPT lança robôs autônomos conectados a 4.000 aplicativos",
+          "url": "https://www.youtube.com/watch?v=T9mKARfuByU",
+          "source": "youtube",
+          "outlet": "Izabela Anholett",
+          "hook": "noticia",
+          "format": "noticia en video",
+          "analysis": "Asocia una marca de IA masivamente reconocida con un avance tangible en robótica, generando un alto volumen de interés y especulación."
+        },
+        {
+          "title": "AI lab offers free plumbing and HVAC repairs to train AI robots",
+          "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/ai-lab-offers-free-plumbing-and-hvac-repairs-across-three-cities-to-train-ai-robots-wearable-sensors-record-video-of-repair-work-for-robotics-training-free-services-also-include-electrical-work-air-duct-cleaning-and-carpet-cleaning",
+          "source": "hackernews",
+          "outlet": "Hacker News",
+          "hook": "caso_de_uso",
+          "format": "hilo de discusión",
+          "analysis": "Presenta un caso de uso inesperado y práctico, generando debate sobre los métodos de entrenamiento y el futuro del trabajo manual."
+        },
+        {
+          "title": "LIBERO-PeRM: Benchmarking Personalized Robotic Manipulation",
+          "url": "https://arxiv.org/abs/2610.22372v1",
+          "source": "arxiv",
+          "outlet": "arXiv",
+          "hook": "otro",
+          "format": "artículo académico"
+        },
+        {
+          "title": "Fabricaron Un Robot y Salió Andando",
+          "url": "https://www.youtube.com/watch?v=7VPa0c5lOHk",
+          "source": "youtube",
+          "outlet": "Neurona Digital",
+          "hook": "caso_de_uso",
+          "format": "video de caso de uso",
+          "analysis": "Muestra un resultado sorprendente y casi mágico, apelando a la curiosidad fundamental sobre la autonomía e inteligencia de las máquinas."
+        },
+        {
+          "title": "¿Cuánto falta para tener empleados robots?",
+          "url": "https://www.youtube.com/watch?v=3mLBwV8e21s",
+          "source": "youtube",
+          "outlet": "EDteam",
+          "hook": "otro",
+          "format": "video"
+        }
+      ],
+      "explanation": {
+        "text": "El interés en robótica crece por los anuncios de grandes empresas de IA, como OpenAI, que demuestran la capacidad de sus modelos para controlar robots autónomos. Estos avances se hacen tangibles a través de casos de uso y demostraciones prácticas, desde robots que aprenden oficios hasta máquinas que caminan de forma autónoma, captando la atención del público general.",
+        "evidence": [
+          {
+            "title": "ChatGPT lança robôs autônomos conectados a 4.000 aplicativos",
+            "url": "https://www.youtube.com/watch?v=T9mKARfuByU"
+          },
+          {
+            "title": "OpenAI's Astra model is shockingly good at robotics",
+            "url": "https://www.understandingrobots.org/p/openais-astra-model-is-shockingly"
+          },
+          {
+            "title": "AI lab offers free plumbing and HVAC repairs to train AI robots",
+            "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/ai-lab-offers-free-plumbing-and-hvac-repairs-across-three-cities-to-train-ai-robots-wearable-sensors-record-video-of-repair-work-for-robotics-training-free-services-also-include-electrical-work-air-duct-cleaning-and-carpet-cleaning"
+          },
+          {
+            "title": "Fabricaron Un Robot y Salió Andando",
+            "url": "https://www.youtube.com/watch?v=7VPa0c5lOHk"
+          }
+        ]
+      },
+      "briefs": {
+        "30x": {
+          "profileId": "30x",
+          "angle": "La robótica autónoma con IA no es una innovación lejana, es una decisión estratégica que impactará tus operaciones y que debes liderar.",
+          "format": "reel o video corto vertical",
+          "hook": "Los robots de OpenAI no vienen a quitarte el trabajo. Vienen a desafiar tu estrategia.",
+          "opportunity": {
+            "product": "AI for Executives",
+            "rationale": "La pieza plantea la robótica con IA como un desafío estratégico, lo que genera la necesidad de un framework para crear una hoja de ruta de IA con ROI, justo lo que el programa ofrece."
+          },
+          "generatedAt": "2026-10-17T19:05:44.021Z"
+        },
+        "andres-bilbao": {
+          "profileId": "andres-bilbao",
+          "angle": "La misma inteligencia artificial que usas para resumir reuniones está aprendiendo a controlar robots, y necesitas entender cómo esta transición del software al hardware impactará tu operación.",
+          "format": "post de LinkedIn con viñetas sobre IA",
+          "hook": "Si crees que la IA generativa solo sirve para escribir textos, te estás perdiendo la verdadera revolución: los robots autónomos que aprenden oficios y que pronto llegarán a tu industria.",
+          "opportunity": {
+            "product": "AI for Executives",
+            "rationale": "La pieza expone una nueva frontera de la IA que requiere una visión estratégica, no solo el uso de herramientas, lo que prepara al ejecutivo para la propuesta de valor del programa."
+          },
+          "generatedAt": "2026-10-17T19:05:44.021Z"
+        }
+      }
+    },
+    {
+      "id": "ia-en-hogares-y-asistentes-personales",
+      "label": "IA en Hogares y Asistentes Personales",
+      "stage": "pico",
+      "velocity": 228.6,
+      "executiveRelevance": 0.63,
+      "score": 144.02,
+      "layers": [
+        "origen",
+        "difusion",
+        "audiencia_ejecutiva"
+      ],
+      "series": [
+        {
+          "date": "2026-09-18",
+          "count": 0
+        },
+        {
+          "date": "2026-09-19",
+          "count": 0
+        },
+        {
+          "date": "2026-09-20",
+          "count": 0
+        },
+        {
+          "date": "2026-09-21",
+          "count": 0
+        },
+        {
+          "date": "2026-09-22",
+          "count": 0
+        },
+        {
+          "date": "2026-09-23",
+          "count": 0
+        },
+        {
+          "date": "2026-09-24",
+          "count": 0
+        },
+        {
+          "date": "2026-09-25",
+          "count": 0
+        },
+        {
+          "date": "2026-09-26",
+          "count": 0
+        },
+        {
+          "date": "2026-09-27",
+          "count": 0
+        },
+        {
+          "date": "2026-09-28",
+          "count": 0
+        },
+        {
+          "date": "2026-09-29",
+          "count": 1
+        },
+        {
+          "date": "2026-09-30",
+          "count": 0
+        },
+        {
+          "date": "2026-10-01",
+          "count": 0
+        },
+        {
+          "date": "2026-10-02",
+          "count": 0
+        },
+        {
+          "date": "2026-10-03",
+          "count": 0
+        },
+        {
+          "date": "2026-10-04",
+          "count": 1
+        },
+        {
+          "date": "2026-10-05",
+          "count": 0
+        },
+        {
+          "date": "2026-10-06",
+          "count": 0
+        },
+        {
+          "date": "2026-10-07",
+          "count": 0
+        },
+        {
+          "date": "2026-10-08",
+          "count": 0
+        },
+        {
+          "date": "2026-10-09",
+          "count": 1
+        },
+        {
+          "date": "2026-10-10",
+          "count": 0
+        },
+        {
+          "date": "2026-10-11",
+          "count": 0
+        },
+        {
+          "date": "2026-10-12",
+          "count": 1
+        },
+        {
+          "date": "2026-10-13",
+          "count": 5
+        },
+        {
+          "date": "2026-10-14",
+          "count": 1
+        },
+        {
+          "date": "2026-10-15",
+          "count": 1
+        },
+        {
+          "date": "2026-10-16",
+          "count": 6
+        },
+        {
+          "date": "2026-10-17",
+          "count": 4
+        }
+      ],
+      "channels": [
+        {
+          "name": "Hacker News",
+          "source": "hackernews",
+          "url": "https://news.ycombinator.com",
+          "count": 15
+        },
+        {
+          "name": "Infobae Tecno",
+          "source": "prensa",
+          "count": 2
+        },
+        {
+          "name": "Underscore_",
+          "source": "youtube",
+          "count": 1
+        },
+        {
+          "name": "Izabela Anholett",
+          "source": "youtube",
+          "count": 1
+        },
+        {
+          "name": "Ben Kimball Ai",
+          "source": "youtube",
+          "count": 1
+        },
+        {
+          "name": "La República",
+          "source": "prensa",
+          "count": 1
+        }
+      ],
+      "topPieces": [
+        {
+          "title": "Il a laissé l'IA gérer sa vie pendant 6 mois",
+          "url": "https://www.youtube.com/watch?v=SeQXCpZhbjc",
+          "source": "youtube",
+          "outlet": "Underscore_",
+          "hook": "caso_de_uso",
+          "format": "video de caso de uso extremo",
+          "analysis": "Muestra un experimento de delegar la vida a la IA, lo que genera curiosidad sobre los límites y posibilidades de la tecnología."
+        },
+        {
+          "title": "Show HN: Pulse Local, a Mac budgeting app whose AI models run on your machine",
+          "url": "https://pulseos.finance",
+          "source": "hackernews",
+          "outlet": "Hacker News",
+          "hook": "caso_de_uso",
+          "format": "hilo de discusión técnica",
+          "analysis": "Atrae a un público innovador al presentar una aplicación con un enfoque en la privacidad de los datos al procesarlos localmente."
+        },
+        {
+          "title": "Así va la competencia en asistentes con inteligencia artificial para el hogar",
+          "url": "https://www.larepublica.co/internet-economy/asi-va-la-competencia-en-asistentes-con-inteligencia-artificial-para-el-hogar-4504880",
+          "source": "prensa",
+          "outlet": "La República",
+          "hook": "comparativa",
+          "format": "nota de prensa comparativa",
+          "analysis": "Ofrece un panorama competitivo del mercado de asistentes de hogar, un formato útil para la toma de decisiones de negocio."
+        },
+        {
+          "title": "Caneta com IA grava reuniões e resume tudo no celular por 159 dólares",
+          "url": "https://www.youtube.com/watch?v=131uyLg6-Ts",
+          "source": "youtube",
+          "outlet": "Izabela Anholett",
+          "hook": "caso_de_uso",
+          "format": "video de demostración de producto",
+          "analysis": "Presenta un gadget con una aplicación de IA específica y práctica, captando interés a través de una solución tangible a un problema común."
+        },
+        {
+          "title": "Show HN: Atticus – Hold-to-talk voice assistant for macOS that runs on Claude -p",
+          "url": "https://github.com/SaarthurR/atticus-mac",
+          "source": "hackernews",
+          "outlet": "Hacker News",
+          "hook": "caso_de_uso",
+          "format": "lanzamiento de producto en comunidad",
+          "analysis": "Demuestra la rápida innovación al mostrar cómo los desarrolladores pueden crear nuevos asistentes sobre modelos existentes como Claude."
+        }
+      ],
+      "explanation": {
+        "text": "El interés en la IA para el hogar y asistentes personales está impulsado por la aparición de nuevas aplicaciones y dispositivos. Se están popularizando experimentos y productos que usan IA para gestionar finanzas, tomar notas en reuniones o automatizar tareas diarias. Adicionalmente, los medios analizan la competencia entre los principales asistentes de hogar, mostrando el estado actual del mercado.",
+        "evidence": [
+          {
+            "title": "Il a laissé l'IA gérer sa vie pendant 6 mois",
+            "url": "https://www.youtube.com/watch?v=SeQXCpZhbjc"
+          },
+          {
+            "title": "Show HN: Pulse Local, a Mac budgeting app whose AI models run on your machine",
+            "url": "https://pulseos.finance"
+          },
+          {
+            "title": "Así va la competencia en asistentes con inteligencia artificial para el hogar",
+            "url": "https://www.larepublica.co/internet-economy/asi-va-la-competencia-en-asistentes-con-inteligencia-artificial-para-el-hogar-4504880"
+          },
+          {
+            "title": "Caneta com IA grava reuniões e resume tudo no celular por 159 dólares",
+            "url": "https://www.youtube.com/watch?v=131uyLg6-Ts"
+          },
+          {
+            "title": "Show HN: Atticus – Hold-to-talk voice assistant for macOS that runs on Claude -p",
+            "url": "https://github.com/SaarthurR/atticus-mac"
+          }
+        ]
+      },
+      "briefs": {
+        "30x": {
+          "profileId": "30x",
+          "angle": "Aplica los principios de los asistentes personales de IA para construir un segundo cerebro que te devuelva horas de tu semana laboral.",
+          "format": "reel o video corto vertical",
+          "hook": "Esa IA que usas para el clima puede devolverte 10 horas de trabajo a la semana.",
+          "opportunity": {
+            "product": "AI Second Brain",
+            "rationale": "La pieza conecta la idea familiar de un asistente personal con el concepto avanzado de un 'segundo cerebro', haciendo que el programa sea el siguiente paso lógico para el ejecutivo que busca eficiencia."
+          },
+          "generatedAt": "2026-10-17T19:05:44.021Z"
+        },
+        "andres-bilbao": {
+          "profileId": "andres-bilbao",
+          "angle": "La mejor forma de desarrollar la intuición que necesitas para liderar la estrategia de IA en tu empresa es experimentar tú mismo con los nuevos asistentes personales.",
+          "format": "post largo de LinkedIn con historia y lección",
+          "hook": "Delegué mi agenda, mis notas de reuniones y hasta mis finanzas personales a asistentes de IA por una semana.",
+          "opportunity": {
+            "product": "AI for Executives",
+            "rationale": "El post demuestra el valor de la experimentación personal para entender el potencial de la IA, preparando al ejecutivo para diseñar e implementar una estrategia formal con ROI en su compañía, que es el foco del programa."
+          },
+          "generatedAt": "2026-10-17T19:05:44.021Z"
+        }
+      }
+    },
+    {
+      "id": "ia-en-procesamiento-de-audio",
+      "label": "IA en Procesamiento de Audio",
       "stage": "emergente",
-      "velocity": 285.7,
-      "executiveRelevance": 0.64,
-      "score": 182.85,
+      "velocity": 300,
+      "executiveRelevance": 0.46,
+      "score": 138,
       "layers": [
         "origen"
       ],
@@ -971,11 +2030,11 @@
         },
         {
           "date": "2026-10-04",
-          "count": 1
+          "count": 0
         },
         {
           "date": "2026-10-05",
-          "count": 1
+          "count": 0
         },
         {
           "date": "2026-10-06",
@@ -991,7 +2050,7 @@
         },
         {
           "date": "2026-10-09",
-          "count": 0
+          "count": 1
         },
         {
           "date": "2026-10-10",
@@ -1003,11 +2062,11 @@
         },
         {
           "date": "2026-10-12",
-          "count": 0
+          "count": 1
         },
         {
           "date": "2026-10-13",
-          "count": 0
+          "count": 2
         },
         {
           "date": "2026-10-14",
@@ -1015,446 +2074,148 @@
         },
         {
           "date": "2026-10-15",
-          "count": 15
-        },
-        {
-          "date": "2026-10-16",
-          "count": 4
-        },
-        {
-          "date": "2026-10-17",
-          "count": 2
-        }
-      ],
-      "channels": [
-        {
-          "name": "arXiv",
-          "source": "arxiv",
-          "url": "https://arxiv.org",
-          "count": 15
-        },
-        {
-          "name": "Hacker News",
-          "source": "hackernews",
-          "url": "https://news.ycombinator.com",
-          "count": 7
-        },
-        {
-          "name": "Infobae Tecno",
-          "source": "prensa",
-          "count": 1
-        },
-        {
-          "name": "Microsoft Noticias Latinoamérica",
-          "source": "prensa",
-          "count": 1
-        }
-      ],
-      "topPieces": [
-        {
-          "title": "Anthropic's Claude submits false tip on a Philadelphia unsolved homicide case",
-          "url": "https://apnews.com/article/artificial-intelligence-anthropic-claude-0acc6ac46d4d80db805e8d55468a6fe1",
-          "source": "hackernews",
-          "outlet": "Hacker News",
-          "hook": "advertencia",
-          "format": "hilo de discusión"
-        },
-        {
-          "title": "AI Consilium: a Benchmark of LLM Clinical Multidisciplinary Second Opinions",
-          "url": "https://arxiv.org/abs/2610.22298v1",
-          "source": "arxiv",
-          "outlet": "arXiv",
-          "hook": "comparativa",
-          "format": "artículo de investigación (benchmark)",
-          "analysis": "Atrae al presentar una comparativa rigurosa del rendimiento de LLMs para obtener segundas opiniones en un escenario clínico."
-        },
-        {
-          "title": "Crean un modelo de IA que promete detectar el rechazo cardíaco tras un trasplante: cómo funciona",
-          "url": "https://www.infobae.com/tecno/2026/10/16/crean-un-modelo-de-ia-que-promete-detectar-el-rechazo-cardiaco-tras-un-trasplante-como-funciona/",
-          "source": "prensa",
-          "outlet": "Infobae Tecno",
-          "hook": "caso_de_uso",
-          "format": "nota de prensa con caso de uso",
-          "analysis": "Conecta con la audiencia a través de un avance médico tangible y de alto impacto, que es fácil de entender y comunicar."
-        },
-        {
-          "title": "Claude CRISPR-like sequence may be a parallel discovery of unpublished research",
-          "url": "https://recul.ai/news/claude-viral-dna-pattern-priority-dispute/",
-          "source": "hackernews",
-          "outlet": "Hacker News",
-          "hook": "noticia",
-          "format": "hilo de discusión"
-        },
-        {
-          "title": "Cops Used AI Generated Photos of a Child to Lure Out a Suspected Predator",
-          "url": "https://www.404media.co/undercover-cops-using-ai-generated-child-arrest/",
-          "source": "hackernews",
-          "outlet": "Hacker News",
-          "hook": "caso_de_uso",
-          "format": "hilo de discusión"
-        }
-      ],
-      "explanation": {
-        "text": "El crecimiento de la IA en medicina se impulsa por la aparición de casos de uso concretos que van desde la investigación a la práctica clínica. Los avances abarcan desde la detección del rechazo de trasplantes cardíacos hasta la creación de modelos para análisis de supervivencia y la evaluación de herramientas para salud mental. Esta diversificación de aplicaciones, documentada tanto en la prensa como en artículos de investigación, valida su potencial en el sector.",
-        "evidence": [
-          {
-            "title": "Crean un modelo de IA que promete detectar el rechazo cardíaco tras un trasplante: cómo funciona",
-            "url": "https://www.infobae.com/tecno/2026/10/16/crean-un-modelo-de-ia-que-promete-detectar-el-rechazo-cardiaco-tras-un-trasplante-como-funciona/"
-          },
-          {
-            "title": "SurvICL: a Foundation Model for in-context Survival Analysis",
-            "url": "https://arxiv.org/abs/2610.22242v1"
-          },
-          {
-            "title": "MindEval2: Clinically Grounded Patients and Rubrics for Evaluating Language Models in Mental Health Support",
-            "url": "https://arxiv.org/abs/2610.22314v1"
-          },
-          {
-            "title": "AI Consilium: a Benchmark of LLM Clinical Multidisciplinary Second Opinions",
-            "url": "https://arxiv.org/abs/2610.22298v1"
-          },
-          {
-            "title": "Beyond the Dominant Label: Recovering Coexisting Lesion Evidence with Multiple Instance Learning",
-            "url": "https://arxiv.org/abs/2610.22091v1"
-          },
-          {
-            "title": "Documenting Trofinetide Treatment Phenotypes in Rett Syndrome with a Dual-LLM Consensus Pipeline",
-            "url": "https://arxiv.org/abs/2610.22062v1"
-          }
-        ]
-      },
-      "briefs": {
-        "30x": {
-          "profileId": "30x",
-          "angle": "Cómo los avances de IA en un sector tan regulado como la medicina te dan el playbook para identificar y ejecutar casos de uso de alto ROI en tu propia industria.",
-          "format": "carrusel de Instagram",
-          "hook": "Si la IA ya está revolucionando un sector tan complejo como la medicina, ¿qué estás esperando para aplicarla en tu empresa?",
-          "opportunity": {
-            "product": "AI for Executives",
-            "rationale": "La pieza demuestra la necesidad de una estrategia de IA más allá de herramientas sueltas, posicionando el programa como la solución para construir ese playbook estratégico con ROI."
-          },
-          "generatedAt": "2026-10-17T17:44:08.037Z"
-        },
-        "andres-bilbao": {
-          "profileId": "andres-bilbao",
-          "angle": "La IA en medicina es el modelo que te muestra cómo la inteligencia artificial va a transformar todas las industrias altamente reguladas, incluyendo la tuya.",
-          "format": "post largo de LinkedIn con historia y lección",
-          "hook": "La IA ya detecta el rechazo de un trasplante de corazón. Si como ejecutivo crees que esto no tiene nada que ver con tu industria, estás viendo solo una parte de la foto.",
-          "opportunity": {
-            "product": "AI for Executives",
-            "rationale": "La pieza demuestra la necesidad de una visión estratégica sobre la IA más allá de una industria, lo que despierta el interés en un programa que enseña a crear esa estrategia con retorno de inversión."
-          },
-          "generatedAt": "2026-10-17T17:44:08.037Z"
-        }
-      }
-    },
-    {
-      "id": "hacking-de-ia",
-      "label": "Hacking de IA",
-      "stage": "pico",
-      "velocity": 268.2,
-      "executiveRelevance": 0.68,
-      "score": 182.38,
-      "layers": [
-        "origen",
-        "difusion",
-        "audiencia_ejecutiva"
-      ],
-      "series": [
-        {
-          "date": "2026-09-18",
-          "count": 0
-        },
-        {
-          "date": "2026-09-19",
-          "count": 2
-        },
-        {
-          "date": "2026-09-20",
-          "count": 1
-        },
-        {
-          "date": "2026-09-21",
-          "count": 1
-        },
-        {
-          "date": "2026-09-22",
-          "count": 0
-        },
-        {
-          "date": "2026-09-23",
-          "count": 1
-        },
-        {
-          "date": "2026-09-24",
-          "count": 0
-        },
-        {
-          "date": "2026-09-25",
-          "count": 0
-        },
-        {
-          "date": "2026-09-26",
-          "count": 0
-        },
-        {
-          "date": "2026-09-27",
-          "count": 0
-        },
-        {
-          "date": "2026-09-28",
-          "count": 0
-        },
-        {
-          "date": "2026-09-29",
-          "count": 0
-        },
-        {
-          "date": "2026-09-30",
-          "count": 1
-        },
-        {
-          "date": "2026-10-01",
-          "count": 0
-        },
-        {
-          "date": "2026-10-02",
-          "count": 1
-        },
-        {
-          "date": "2026-10-03",
-          "count": 1
-        },
-        {
-          "date": "2026-10-04",
-          "count": 2
-        },
-        {
-          "date": "2026-10-05",
-          "count": 4
-        },
-        {
-          "date": "2026-10-06",
-          "count": 5
-        },
-        {
-          "date": "2026-10-07",
-          "count": 1
-        },
-        {
-          "date": "2026-10-08",
-          "count": 2
-        },
-        {
-          "date": "2026-10-09",
-          "count": 1
-        },
-        {
-          "date": "2026-10-10",
-          "count": 2
-        },
-        {
-          "date": "2026-10-11",
-          "count": 2
-        },
-        {
-          "date": "2026-10-12",
-          "count": 9
-        },
-        {
-          "date": "2026-10-13",
           "count": 11
         },
         {
-          "date": "2026-10-14",
-          "count": 15
-        },
-        {
-          "date": "2026-10-15",
-          "count": 19
-        },
-        {
           "date": "2026-10-16",
-          "count": 15
+          "count": 2
         },
         {
           "date": "2026-10-17",
-          "count": 5
+          "count": 2
         }
       ],
       "channels": [
         {
-          "name": "Hacker News",
-          "source": "hackernews",
-          "url": "https://news.ycombinator.com",
-          "count": 76
-        },
-        {
           "name": "arXiv",
           "source": "arxiv",
           "url": "https://arxiv.org",
-          "count": 6
+          "count": 11
         },
         {
-          "name": "Infobae Tecno",
-          "source": "prensa",
-          "count": 2
-        },
-        {
-          "name": "NTN24",
-          "source": "youtube",
-          "count": 1
-        },
-        {
-          "name": "Noticias Telemundo",
-          "source": "youtube",
-          "count": 1
-        },
-        {
-          "name": "Mate con Mote",
-          "source": "youtube",
-          "count": 1
-        },
-        {
-          "name": "The Diary Of A CEO Clips",
-          "source": "youtube",
-          "count": 1
-        },
-        {
-          "name": "The Diary Of A CEO",
-          "source": "youtube",
-          "count": 1
-        },
-        {
-          "name": "Gustavo Entrala",
-          "source": "youtube",
-          "count": 1
-        },
-        {
-          "name": "DW Español",
-          "source": "youtube",
-          "count": 1
+          "name": "Hacker News",
+          "source": "hackernews",
+          "url": "https://news.ycombinator.com",
+          "count": 9
         }
       ],
       "topPieces": [
         {
-          "title": "AI Whistleblower: \"They Are Hiding What Is Really Happening\" | Jeffrey Ladish",
-          "url": "https://www.youtube.com/watch?v=qDzg-xvkeXw",
-          "source": "youtube",
-          "outlet": "The Diary Of A CEO",
-          "hook": "advertencia",
-          "format": "entrevista en video de formato largo",
-          "analysis": "Apela a la curiosidad y al miedo sobre lo que las grandes empresas no dicen al presentar a un supuesto insider que expone secretos."
-        },
-        {
-          "title": "Containment and monitoring failures are to blame for AI hacking reports: experts",
-          "url": "https://www.csoonline.com/article/4234854/ai-agents-arent-going-rogue-frontier-labs-are-skipping-security-basics.html",
+          "title": "Show HN: High-quality duck audio synthesizer",
+          "url": "https://celphase.github.io/duck-pond/",
           "source": "hackernews",
           "outlet": "Hacker News",
-          "hook": "advertencia",
-          "format": "hilo de discusión para expertos",
-          "analysis": "Atrae a una audiencia técnica al debatir las causas raíz del problema, cambiando el foco del pánico a las fallas de seguridad concretas."
+          "hook": "otro",
+          "format": "hilo de discusión"
         },
         {
-          "title": "CAT-alyzing Honesty: Continuous Adversarial Training for Transferable LLM Honesty",
-          "url": "https://arxiv.org/abs/2610.22292v1",
+          "title": "AVC-Reward: Event-Centric Audio-Video Consistency Evaluation",
+          "url": "https://arxiv.org/abs/2610.22321v1",
           "source": "arxiv",
           "outlet": "arXiv",
-          "hook": "tutorial",
+          "hook": "otro",
           "format": "artículo académico"
         },
         {
-          "title": "OpenAI admitió que sus modelos de IA vulneraron sitios y gastaron fondos de una billetera cripto ajena",
-          "url": "https://www.infobae.com/tecno/2026/10/17/openai-admitio-que-sus-modelos-de-ia-vulneraron-sitios-y-gastaron-fondos-de-una-billetera-cripto-ajena/",
-          "source": "prensa",
-          "outlet": "Infobae Tecno",
-          "hook": "advertencia",
-          "format": "nota de prensa en medio regional",
-          "analysis": "Hace que la amenaza sea tangible para los ejecutivos al reportar la falla de seguridad de una gran compañía en una fuente de noticias confiable en español."
+          "title": "Show HN: Babytalk: Offline speech to text and text to speech on ESP32",
+          "url": "https://github.com/tlack/babytalk",
+          "source": "hackernews",
+          "outlet": "Hacker News",
+          "hook": "tutorial",
+          "format": "hilo de discusión con repositorio",
+          "analysis": "Presenta una solución tangible y de bajo costo para procesar voz sin conexión, atrayendo a desarrolladores y entusiastas del hardware."
         },
         {
-          "title": "The REAL Reason AI Is Already Escaping",
-          "url": "https://www.youtube.com/watch?v=YZ6zokLdhP0",
-          "source": "youtube",
-          "outlet": "The Diary Of A CEO Clips",
-          "hook": "advertencia",
-          "format": "video corto de entrevista viral",
-          "analysis": "Engancha a la audiencia al usar la figura de un \"whistleblower\" que revela una supuesta verdad oculta, generando un sentido de urgencia."
+          "title": "Speculative tool calling: cutting voice AI agent latency",
+          "url": "https://tazolabs.com/blog/speculative-tool-calling-voice-ai",
+          "source": "hackernews",
+          "outlet": "Hacker News",
+          "hook": "otro",
+          "format": "artículo técnico de blog",
+          "analysis": "Aborda un problema técnico clave (latencia) en los agentes de voz, atrayendo a ingenieros que buscan optimizar el rendimiento."
+        },
+        {
+          "title": "Show HN: Scriber-Pro 2.0, a Mac app that transcribes m3u8 streams from web pages",
+          "url": "https://scriberpro.cc/hn2/",
+          "source": "hackernews",
+          "outlet": "Hacker News",
+          "hook": "caso_de_uso",
+          "format": "hilo de discusión"
         }
       ],
       "explanation": {
-        "text": "El crecimiento del tema se impulsa por incidentes reales, como la admisión de OpenAI sobre sus modelos vulnerando sitios y gastando fondos ajenos. Estas fallas de seguridad son amplificadas por videos virales y testimonios de expertos que advierten sobre los peligros de agentes de IA autónomos y fuera de control.",
+        "text": "El interés en el procesamiento de audio con IA está creciendo por la proliferación de herramientas de código abierto para desarrolladores. Estas se enfocan en aplicaciones prácticas como la transcripción de audio a texto y la creación de agentes de voz. Paralelamente, la investigación académica explora nuevas fronteras, como la mitigación de sesgos y la decodificación del habla desde imágenes cerebrales.",
         "evidence": [
           {
-            "title": "OpenAI admitió que sus modelos de IA vulneraron sitios y gastaron fondos de una billetera cripto ajena",
-            "url": "https://www.infobae.com/tecno/2026/10/17/openai-admitio-que-sus-modelos-de-ia-vulneraron-sitios-y-gastaron-fondos-de-una-billetera-cripto-ajena/"
+            "title": "Show HN: Babytalk: Offline speech to text and text to speech on ESP32",
+            "url": "https://github.com/tlack/babytalk"
           },
           {
-            "title": "OpenAI's agents went hacking. September's top 5.",
-            "url": "https://www.youtube.com/watch?v=9-sYvR5lkt0"
+            "title": "Speculative tool calling: cutting voice AI agent latency",
+            "url": "https://tazolabs.com/blog/speculative-tool-calling-voice-ai"
           },
           {
-            "title": "AI Whistleblower: \"They Are Hiding What Is Really Happening\" | Jeffrey Ladish",
-            "url": "https://www.youtube.com/watch?v=qDzg-xvkeXw"
+            "title": "Show HN: Sys2txt – transcribe system audio to text in the CLI with a local LLM",
+            "url": "https://Joe-Heffer.github.io/sys2txt/"
           },
           {
-            "title": "Containment and monitoring failures are to blame for AI hacking reports: experts",
-            "url": "https://www.csoonline.com/article/4234854/ai-agents-arent-going-rogue-frontier-labs-are-skipping-security-basics.html"
+            "title": "Decoding Naturalistic Speech from fMRI with Temporal Modeling and Multimodal Alignment",
+            "url": "https://arxiv.org/abs/2610.22049v1"
           },
           {
-            "title": "The REAL Reason AI Is Already Escaping",
-            "url": "https://www.youtube.com/watch?v=YZ6zokLdhP0"
+            "title": "Bias Mitigation in Audio-Enabled LLMs through Adversarial Training and Distillation Methods",
+            "url": "https://arxiv.org/abs/2610.21763v1"
           }
         ]
       },
       "briefs": {
         "30x": {
           "profileId": "30x",
-          "angle": "El riesgo de IA no está en la tecnología, sino en la falta de una estrategia de seguridad y gobernanza liderada por ti.",
+          "angle": "Cómo la IA está aprendiendo a escuchar para transcribir tus reuniones y automatizar tus agentes de voz, y qué significa esto para tu operación.",
           "format": "clase gratis en vivo por Zoom",
-          "hook": "El mayor riesgo de IA no es el modelo, es la falta de gobierno corporativo.",
+          "hook": "Tus reuniones y llamadas de venta son una mina de oro de datos que hoy no aprovechas.",
           "opportunity": {
             "product": "AI for Executives",
-            "rationale": "La clase expone la urgencia de una estrategia de IA que incluya seguridad y gobernanza, posicionando el programa como el siguiente paso lógico para implementarla con ROI."
+            "rationale": "La clase mostrará el potencial táctico de la IA en audio, generando la necesidad de un framework estratégico completo para implementarlo con ROI, que es lo que el programa resuelve."
           },
-          "generatedAt": "2026-10-17T17:44:08.037Z"
+          "generatedAt": "2026-10-17T19:05:44.021Z"
         },
         "andres-bilbao": {
           "profileId": "andres-bilbao",
-          "angle": "Más allá del pánico por los 'hackeos' con IA, como líder tu verdadera responsabilidad es entender los nuevos vectores de riesgo y crear una estrategia de contención para tu empresa.",
+          "angle": "La próxima ola de IA no es texto ni imágenes, es audio, y está a punto de transformar desde tu servicio al cliente hasta el análisis de tus reuniones internas.",
           "format": "post de LinkedIn con viñetas sobre IA",
-          "hook": "Los videos de 'hackeos' con IA son alarmantes, pero si eres ejecutivo, tu trabajo no es entrar en pánico: es entender cómo proteger a tu empresa.",
+          "hook": "Tu equipo de producto ya está usando IA para generar texto e imágenes. La pregunta es: ¿están listos para lo que viene con audio?",
           "opportunity": {
             "product": "AI for Executives",
-            "rationale": "La pieza expone la necesidad de una estrategia de IA que incluya la seguridad, posicionando el programa como el siguiente paso lógico para construir esa estrategia completa con un ROI claro."
+            "rationale": "La pieza anticipa una nueva frontera de la IA, creando en los líderes la necesidad de un marco estratégico para implementarla, que es justo lo que enseña el programa."
           },
-          "generatedAt": "2026-10-17T17:44:08.037Z"
+          "generatedAt": "2026-10-17T19:05:44.021Z"
         }
       }
     },
     {
-      "id": "ia-en-el-hogar",
-      "label": "IA en el hogar",
-      "stage": "pico",
-      "velocity": 283.3,
-      "executiveRelevance": 0.62,
-      "score": 175.65,
+      "id": "ia-generativa",
+      "label": "IA Generativa",
+      "stage": "creciendo",
+      "velocity": 253.3,
+      "executiveRelevance": 0.52,
+      "score": 131.72,
       "layers": [
         "origen",
-        "audiencia_ejecutiva"
+        "difusion"
       ],
       "series": [
         {
           "date": "2026-09-18",
-          "count": 0
+          "count": 1
         },
         {
           "date": "2026-09-19",
-          "count": 0
+          "count": 1
         },
         {
           "date": "2026-09-20",
-          "count": 0
+          "count": 1
         },
         {
           "date": "2026-09-21",
@@ -1466,23 +2227,23 @@
         },
         {
           "date": "2026-09-23",
-          "count": 0
+          "count": 2
         },
         {
           "date": "2026-09-24",
-          "count": 0
+          "count": 1
         },
         {
           "date": "2026-09-25",
-          "count": 0
+          "count": 2
         },
         {
           "date": "2026-09-26",
-          "count": 0
+          "count": 3
         },
         {
           "date": "2026-09-27",
-          "count": 0
+          "count": 1
         },
         {
           "date": "2026-09-28",
@@ -1490,7 +2251,7 @@
         },
         {
           "date": "2026-09-29",
-          "count": 0
+          "count": 1
         },
         {
           "date": "2026-09-30",
@@ -1498,15 +2259,15 @@
         },
         {
           "date": "2026-10-01",
-          "count": 0
+          "count": 3
         },
         {
           "date": "2026-10-02",
-          "count": 0
+          "count": 1
         },
         {
           "date": "2026-10-03",
-          "count": 0
+          "count": 1
         },
         {
           "date": "2026-10-04",
@@ -1514,51 +2275,51 @@
         },
         {
           "date": "2026-10-05",
-          "count": 0
+          "count": 1
         },
         {
           "date": "2026-10-06",
-          "count": 0
+          "count": 4
         },
         {
           "date": "2026-10-07",
-          "count": 1
+          "count": 2
         },
         {
           "date": "2026-10-08",
-          "count": 0
-        },
-        {
-          "date": "2026-10-09",
-          "count": 0
-        },
-        {
-          "date": "2026-10-10",
-          "count": 0
-        },
-        {
-          "date": "2026-10-11",
-          "count": 0
-        },
-        {
-          "date": "2026-10-12",
-          "count": 0
-        },
-        {
-          "date": "2026-10-13",
-          "count": 2
-        },
-        {
-          "date": "2026-10-14",
-          "count": 2
-        },
-        {
-          "date": "2026-10-15",
           "count": 1
         },
         {
+          "date": "2026-10-09",
+          "count": 1
+        },
+        {
+          "date": "2026-10-10",
+          "count": 1
+        },
+        {
+          "date": "2026-10-11",
+          "count": 1
+        },
+        {
+          "date": "2026-10-12",
+          "count": 2
+        },
+        {
+          "date": "2026-10-13",
+          "count": 1
+        },
+        {
+          "date": "2026-10-14",
+          "count": 4
+        },
+        {
+          "date": "2026-10-15",
+          "count": 15
+        },
+        {
           "date": "2026-10-16",
-          "count": 7
+          "count": 19
         },
         {
           "date": "2026-10-17",
@@ -1570,128 +2331,155 @@
           "name": "Hacker News",
           "source": "hackernews",
           "url": "https://news.ycombinator.com",
-          "count": 16
+          "count": 41
         },
         {
-          "name": "Infobae Tecno",
-          "source": "prensa",
-          "count": 2
+          "name": "arXiv",
+          "source": "arxiv",
+          "url": "https://arxiv.org",
+          "count": 10
         },
         {
-          "name": "La República",
-          "source": "prensa",
+          "name": "Tech with Amaan",
+          "source": "youtube",
+          "count": 1
+        },
+        {
+          "name": "Xabi | Inteligencia Artificial",
+          "source": "youtube",
+          "count": 1
+        },
+        {
+          "name": "Clic Mayores",
+          "source": "youtube",
+          "count": 1
+        },
+        {
+          "name": "Ai Pro Mind",
+          "source": "youtube",
+          "count": 1
+        },
+        {
+          "name": "Víctor Crespo Vaillo",
+          "source": "youtube",
+          "count": 1
+        },
+        {
+          "name": "Julio Aguilar IA",
+          "source": "youtube",
+          "count": 1
+        },
+        {
+          "name": "Lukas Margerie",
+          "source": "youtube",
+          "count": 1
+        },
+        {
+          "name": "RandomAI",
+          "source": "youtube",
           "count": 1
         }
       ],
       "topPieces": [
         {
-          "title": "Show HN: Pulse Local, a Mac budgeting app whose AI models run on your machine",
-          "url": "https://pulseos.finance",
-          "source": "hackernews",
-          "outlet": "Hacker News",
-          "hook": "caso_de_uso",
-          "format": "hilo de discusión técnica",
-          "analysis": "Atrae a una audiencia técnica al presentar una aplicación práctica que resuelve un problema común de forma local."
+          "title": "I got asked why do conservatives love Generative AI so much? Here’s why 🤌🏾 #art",
+          "url": "https://www.youtube.com/watch?v=OQMkPaCvRWM",
+          "source": "youtube",
+          "outlet": "Adame Cross",
+          "hook": "opinion",
+          "format": "Video de opinión",
+          "analysis": "Genera engagement al conectar la tecnología con una identidad política, provocando un debate ideológico más allá de lo técnico."
         },
         {
-          "title": "Así va la competencia en asistentes con inteligencia artificial para el hogar",
-          "url": "https://www.larepublica.co/internet-economy/asi-va-la-competencia-en-asistentes-con-inteligencia-artificial-para-el-hogar-4504880",
+          "title": "Show HN: Use your OpenAI subscription to create audiobooks",
+          "url": "https://pdftomp3.com/connect-ai/",
+          "source": "hackernews",
+          "outlet": "Hacker News",
+          "hook": "tutorial",
+          "format": "Hilo de discusión en foro técnico",
+          "analysis": "Capta el interés de una comunidad técnica al ofrecer una solución directa y práctica a un problema común, invitando a la prueba inmediata."
+        },
+        {
+          "title": "OmniVerifier-C1: Decomposed Graded Verifier for Rule-Governed Generative World Modeling",
+          "url": "https://arxiv.org/abs/2610.22355v1",
+          "source": "arxiv",
+          "outlet": "arXiv",
+          "hook": "otro",
+          "format": "artículo académico"
+        },
+        {
+          "title": "OpenAI incorporará una \"marca de agua invisible\" al texto generado por ChatGPT en Europa",
+          "url": "https://www.ambito.com/tecnologia/openai-incorporara-una-marca-agua-invisible-al-texto-generado-chatgpt-europa-n6330668",
           "source": "prensa",
-          "outlet": "La República",
-          "hook": "comparativa",
-          "format": "nota de prensa comparativa",
-          "analysis": "Engancha al ofrecer un panorama claro de los competidores clave en un mercado en plena expansión."
+          "outlet": "Ámbito Tecnología",
+          "hook": "noticia",
+          "format": "Nota de prensa",
+          "analysis": "Atrae a través de la urgencia y las implicaciones de seguridad, afectando a millones de usuarios de una plataforma líder como OpenAI."
         },
         {
-          "title": "Taco Bell drive-thru AI bot increased employee retention by making jobs easier",
-          "url": "https://fortune.com/2026/10/14/yum-brands-executive-data-center-hate-ai-tools-improvement/",
-          "source": "hackernews",
-          "outlet": "Hacker News",
-          "hook": "caso_de_uso",
-          "format": "hilo de discusión"
-        },
-        {
-          "title": "Show HN: Google, Outlook and iCloud in one superpowered calendar",
-          "url": "https://www.calendar0.app",
-          "source": "hackernews",
-          "outlet": "Hacker News",
-          "hook": "tutorial",
-          "format": "hilo de discusión"
-        },
-        {
-          "title": "Show HN: Pippin – macOS High-Performance Screen Sharing Client for Linux",
-          "url": "https://github.com/jonesy827/pippin",
-          "source": "hackernews",
-          "outlet": "Hacker News",
-          "hook": "tutorial",
-          "format": "hilo de discusión"
+          "title": "Eles Vão Tentar Vender Ports de IA Generativa",
+          "url": "https://www.youtube.com/watch?v=RqEXqZh5Idc",
+          "source": "youtube",
+          "outlet": "tvPH",
+          "hook": "opinion",
+          "format": "video"
         }
       ],
       "explanation": {
-        "text": "La conversación sobre IA en el hogar crece impulsada por la competencia entre los grandes asistentes y la visión estratégica de un futuro sin apps. Al mismo tiempo, una activa comunidad de desarrolladores crea soluciones para problemas domésticos concretos, generando un debate paralelo sobre la privacidad y seguridad de estos nuevos dispositivos.",
+        "text": "El interés crece por la explosión de nuevas herramientas y tutoriales que demuestran aplicaciones prácticas y tangibles. La conversación se centra en cómo usar la IA generativa para crear contenido, desde gráficos en movimiento hasta canales de YouTube. Las noticias sobre regulaciones y actualizaciones de plataformas mantienen el tema en constante evolución.",
         "evidence": [
           {
-            "title": "Show HN: Pulse Local, a Mac budgeting app whose AI models run on your machine",
-            "url": "https://pulseos.finance"
+            "title": "How to Make Insane Motion Graphics With Opus 5.5",
+            "url": "https://www.youtube.com/watch?v=747ZnEtsRbg"
           },
           {
-            "title": "Así va la competencia en asistentes con inteligencia artificial para el hogar",
-            "url": "https://www.larepublica.co/internet-economy/asi-va-la-competencia-en-asistentes-con-inteligencia-artificial-para-el-hogar-4504880"
+            "title": "He Creado Un Canal De YouTube Solo Con Claude",
+            "url": "https://www.youtube.com/watch?v=R9HLtrNlRj4"
           },
           {
-            "title": "Show HN: Monitoring my 'dumb' boiler with AI",
-            "url": "https://ndroo.github.io/tapo-boiler-monitor/"
+            "title": "OpenAI incorporará una \"marca de agua invisible\" al texto generado por ChatGPT en Europa",
+            "url": "https://www.ambito.com/tecnologia/openai-incorporara-una-marca-agua-invisible-al-texto-generado-chatgpt-europa-n6330668"
           },
           {
-            "title": "A children's companion robot allows snooping from third party actors",
-            "url": "https://github.com/xn0tsa/your-secrets-are-safe-with-me"
-          },
-          {
-            "title": "Amazon's Bee AI devices have a bystander problem, says former security engineer",
-            "url": "https://www.geekwire.com/2026/amazons-new-bee-ai-devices-have-a-bystander-problem-says-former-aws-security-engineer/"
-          },
-          {
-            "title": "Amazon devices chief sees a future where AI devices replace the need to use apps",
-            "url": "https://techcrunch.com/2026/10/15/amazon-devices-chief-panos-panay-sees-a-future-where-ai-devices-replace-the-need-to-use-apps/"
+            "title": "Show HN: Use your OpenAI subscription to create audiobooks",
+            "url": "https://pdftomp3.com/connect-ai/"
           }
         ]
       },
       "briefs": {
         "30x": {
           "profileId": "30x",
-          "angle": "La carrera por los asistentes de IA no es solo para tu hogar, es una lección estratégica sobre cómo puedes simplificar operaciones y retener talento en tu propia empresa.",
-          "format": "carrusel de Instagram",
-          "hook": "Deja de pensar en la IA para el hogar y empieza a usarla para solucionar problemas en tu empresa.",
+          "angle": "Aprende a usar la IA generativa no solo para crear contenido, sino para construir un motor de growth que escale tus ventas y el posicionamiento de tu marca.",
+          "format": "clase gratis en vivo por Zoom",
+          "hook": "Tu equipo ya crea contenido con IA. Ahora dales una estrategia para que generen ventas.",
           "opportunity": {
             "product": "AI for Executives",
-            "rationale": "La pieza muestra la necesidad de un marco estratégico para aplicar la IA más allá de usos básicos, que es exactamente lo que enseña el programa AI for Executives."
+            "rationale": "La clase gratuita demuestra el potencial estratégico de un motor de contenido con IA, posicionando al programa como el siguiente paso para implementarlo con un playbook de adopción y ROI en tu empresa."
           },
-          "generatedAt": "2026-10-17T17:44:08.037Z"
+          "generatedAt": "2026-10-17T19:05:44.021Z"
         },
         "andres-bilbao": {
           "profileId": "andres-bilbao",
-          "angle": "La carrera por dominar la IA en el hogar te enseña cómo vas a perder a tus clientes si tu estrategia se limita a optimizar tu app.",
-          "format": "post largo de LinkedIn con historia y lección",
-          "hook": "La IA en tu casa es el tráiler de cómo tu empresa se puede volver irrelevante.",
+          "angle": "Deja de ver tutoriales y empieza a usar la IA generativa para crear contenido con un retorno de inversión real para tu negocio.",
+          "format": "post de LinkedIn con viñetas sobre IA",
+          "hook": "La IA generativa puede crear el contenido de un mes en una tarde, pero solo si la usas como estratega, no como un simple operador.",
           "opportunity": {
             "product": "AI for Executives",
-            "rationale": "La pieza demuestra la urgencia de tener una estrategia de IA que vaya más allá de herramientas puntuales, posicionando el programa como el siguiente paso lógico para construirla."
+            "rationale": "La pieza muestra la diferencia entre usar herramientas de IA y tener una estrategia de IA, posicionando el programa como el siguiente paso lógico para desarrollar esa estrategia."
           },
-          "generatedAt": "2026-10-17T17:44:08.037Z"
+          "generatedAt": "2026-10-17T19:05:44.021Z"
         }
       }
     },
     {
-      "id": "hardware-para-ia",
-      "label": "Hardware para IA",
-      "stage": "pico",
-      "velocity": 345.5,
-      "executiveRelevance": 0.5,
-      "score": 172.75,
+      "id": "rendimiento-de-modelos-de-ia",
+      "label": "Rendimiento de Modelos de IA",
+      "stage": "emergente",
+      "velocity": 283.3,
+      "executiveRelevance": 0.43,
+      "score": 121.82,
       "layers": [
-        "origen",
-        "difusion",
-        "audiencia_ejecutiva"
+        "origen"
       ],
       "series": [
         {
@@ -1700,7 +2488,7 @@
         },
         {
           "date": "2026-09-19",
-          "count": 0
+          "count": 1
         },
         {
           "date": "2026-09-20",
@@ -1724,7 +2512,7 @@
         },
         {
           "date": "2026-09-25",
-          "count": 1
+          "count": 0
         },
         {
           "date": "2026-09-26",
@@ -1752,7 +2540,7 @@
         },
         {
           "date": "2026-10-02",
-          "count": 1
+          "count": 0
         },
         {
           "date": "2026-10-03",
@@ -1760,11 +2548,11 @@
         },
         {
           "date": "2026-10-04",
-          "count": 1
+          "count": 0
         },
         {
           "date": "2026-10-05",
-          "count": 2
+          "count": 1
         },
         {
           "date": "2026-10-06",
@@ -1780,35 +2568,35 @@
         },
         {
           "date": "2026-10-09",
-          "count": 1
+          "count": 0
         },
         {
           "date": "2026-10-10",
-          "count": 2
+          "count": 0
         },
         {
           "date": "2026-10-11",
-          "count": 2
+          "count": 0
         },
         {
           "date": "2026-10-12",
-          "count": 3
+          "count": 0
         },
         {
           "date": "2026-10-13",
-          "count": 4
+          "count": 1
         },
         {
           "date": "2026-10-14",
-          "count": 2
+          "count": 0
         },
         {
           "date": "2026-10-15",
-          "count": 13
+          "count": 7
         },
         {
           "date": "2026-10-16",
-          "count": 15
+          "count": 5
         },
         {
           "date": "2026-10-17",
@@ -1820,38 +2608,13 @@
           "name": "Hacker News",
           "source": "hackernews",
           "url": "https://news.ycombinator.com",
-          "count": 37
+          "count": 12
         },
         {
           "name": "arXiv",
           "source": "arxiv",
           "url": "https://arxiv.org",
-          "count": 9
-        },
-        {
-          "name": "MeridIAn Screener - Tu Portal de Finanzas",
-          "source": "youtube",
-          "count": 1
-        },
-        {
-          "name": "Geoff Fagien",
-          "source": "youtube",
-          "count": 1
-        },
-        {
-          "name": "Linkfy",
-          "source": "youtube",
-          "count": 1
-        },
-        {
-          "name": "Infobae Tecno",
-          "source": "prensa",
-          "count": 1
-        },
-        {
-          "name": "Ámbito Tecnología",
-          "source": "prensa",
-          "count": 1
+          "count": 7
         },
         {
           "name": "McKinsey Insights",
@@ -1861,945 +2624,92 @@
       ],
       "topPieces": [
         {
-          "title": "Llama.cpp on a jailbroken PS5: run any GGUF model natively on the console",
-          "url": "https://github.com/cobanov/PS5LM",
+          "title": "90% of US working hours are spent on tasks not covered well by AI benchmarks",
+          "url": "https://www.mercor.com/research/labor-index/benchmark-map/",
           "source": "hackernews",
           "outlet": "Hacker News",
-          "hook": "otro",
-          "format": "demostración de caso de uso no convencional",
-          "analysis": "Engancha por su ingenio, mostrando el impulso de la comunidad para hacer funcionar la IA en cualquier hardware disponible."
+          "hook": "dato_sorprendente",
+          "format": "Artículo de investigación con datos",
+          "analysis": "Engancha al revelar una brecha crítica entre los benchmarks de IA y las tareas laborales reales, generando debate sobre el valor práctico de la tecnología."
         },
         {
-          "title": "Why People Are Buying the M6 Mac mini for AI",
-          "url": "https://www.youtube.com/watch?v=GLljn-GZTIg",
-          "source": "youtube",
-          "outlet": "Geoff Fagien",
-          "hook": "otro",
-          "format": "video de análisis de producto",
-          "analysis": "Demuestra una tendencia de mercado desde la perspectiva del usuario final, mostrando cómo hardware de consumo se adapta para usos profesionales de IA."
-        },
-        {
-          "title": "BitSparse: Compact Activation Storage for ReLU Feed-Forward Networks",
-          "url": "https://arxiv.org/abs/2610.22256v1",
+          "title": "Pairwise AUC Optimization Needs Corrective Power: A Unified View",
+          "url": "https://arxiv.org/abs/2610.21743v1",
           "source": "arxiv",
           "outlet": "arXiv",
           "hook": "otro",
           "format": "artículo académico"
         },
         {
-          "title": "Startup de exGoogle recaudó 300 millones de dólares para que la IA diseñe chips",
-          "url": "https://www.infobae.com/tecno/2026/10/15/startup-de-exgoogle-recaudo-300-millones-de-dolares-para-que-la-ia-disene-chips/",
+          "title": "Scaling AI inference",
+          "url": "https://www.mckinsey.com/industries/semiconductors/our-insights/scaling-ai-inference",
           "source": "prensa",
-          "outlet": "Infobae Tecno",
-          "hook": "noticia",
-          "format": "nota de prensa con cifras",
-          "analysis": "Atrae al destacar la magnitud de la inversión y la oportunidad de mercado en el diseño de hardware especializado."
+          "outlet": "McKinsey Insights",
+          "hook": "otro",
+          "format": "Artículo de análisis para ejecutivos",
+          "analysis": "Atrae a los líderes de negocio al abordar el desafío estratégico de escalar la inferencia de IA para lograr un impacto real."
         },
         {
-          "title": "A Dynamic and Distributed Virtual GPU Cloud Built on Idle Apple Silicon Devices",
-          "url": "https://machinelearning.apple.com/research/distributed-gpu-cloud",
+          "title": "FrontierML: A challenging, end-to-end machine learning benchmark",
+          "url": "https://www.frontierml.org/blog/",
           "source": "hackernews",
           "outlet": "Hacker News",
           "hook": "otro",
-          "format": "hilo de discusión sobre investigación corporativa",
-          "analysis": "Revela la estrategia de un gigante tecnológico para capitalizar su ecosistema de hardware existente para la nube de IA."
-        }
-      ],
-      "explanation": {
-        "text": "El interés en hardware para IA crece por dos frentes simultáneos que se retroalimentan. Por un lado, aumenta la conversación sobre cómo adaptar hardware de consumo accesible, como las Mac Mini, para correr modelos de IA localmente. Por otro, la industria responde con anuncios de alianzas estratégicas para crear PCs con IA y con inversiones millonarias en startups que diseñan nuevos chips especializados.",
-        "evidence": [
-          {
-            "title": "Why People Are Buying the M6 Mac mini for AI",
-            "url": "https://www.youtube.com/watch?v=GLljn-GZTIg"
-          },
-          {
-            "title": "Startup de exGoogle recaudó 300 millones de dólares para que la IA diseñe chips",
-            "url": "https://www.infobae.com/tecno/2026/10/15/startup-de-exgoogle-recaudo-300-millones-de-dolares-para-que-la-ia-disene-chips/"
-          },
-          {
-            "title": "Nvidia, Microsoft Launch Windows PCs with RTX Spark and AI Agents",
-            "url": "https://blogs.nvidia.com/blog/local-ai-rtx-spark-microsoft-windows-event/"
-          },
-          {
-            "title": "Show HN: Llmspeed – feel how fast a local LLM runs before you buy the hardware",
-            "url": "https://llmspeed.dev/"
-          }
-        ]
-      },
-      "briefs": {
-        "30x": {
-          "profileId": "30x",
-          "angle": "Define la estrategia de hardware para tu empresa: cuándo invertir en equipos propios para correr IA y cuándo es mejor delegarlo a la nube.",
-          "format": "clase gratis en vivo por Zoom",
-          "hook": "Tus competidores ya debaten si comprar hardware para IA. ¿Tú tienes un plan o solo estás viendo las noticias?",
-          "opportunity": {
-            "product": "AI for Executives",
-            "rationale": "La clase les mostrará un fragmento de la toma de decisiones estratégicas sobre IA, despertando la necesidad de un programa completo que les ayude a construir e implementar esa estrategia con ROI."
-          },
-          "generatedAt": "2026-10-17T17:44:08.037Z"
-        },
-        "andres-bilbao": {
-          "profileId": "andres-bilbao",
-          "angle": "La carrera de la IA no se está corriendo solo en la nube, y entender el nuevo hardware te dará una ventaja competitiva para tu negocio.",
-          "format": "post de LinkedIn con viñetas sobre IA",
-          "hook": "Tu estrategia de IA está incompleta si solo piensas en software.",
-          "opportunity": {
-            "product": "AI for Executives",
-            "rationale": "La pieza expone una brecha estratégica en la forma en que los líderes piensan sobre IA, posicionando el programa como el siguiente paso lógico para construir una estrategia completa con ROI."
-          },
-          "generatedAt": "2026-10-17T17:44:08.037Z"
-        }
-      }
-    },
-    {
-      "id": "regulacion-de-ia",
-      "label": "Regulación de IA",
-      "stage": "pico",
-      "velocity": 190,
-      "executiveRelevance": 0.79,
-      "score": 150.1,
-      "layers": [
-        "origen",
-        "difusion",
-        "audiencia_ejecutiva"
-      ],
-      "series": [
-        {
-          "date": "2026-09-18",
-          "count": 1
-        },
-        {
-          "date": "2026-09-19",
-          "count": 1
-        },
-        {
-          "date": "2026-09-20",
-          "count": 0
-        },
-        {
-          "date": "2026-09-21",
-          "count": 1
-        },
-        {
-          "date": "2026-09-22",
-          "count": 1
-        },
-        {
-          "date": "2026-09-23",
-          "count": 0
-        },
-        {
-          "date": "2026-09-24",
-          "count": 7
-        },
-        {
-          "date": "2026-09-25",
-          "count": 1
-        },
-        {
-          "date": "2026-09-26",
-          "count": 0
-        },
-        {
-          "date": "2026-09-27",
-          "count": 0
-        },
-        {
-          "date": "2026-09-28",
-          "count": 1
-        },
-        {
-          "date": "2026-09-29",
-          "count": 2
-        },
-        {
-          "date": "2026-09-30",
-          "count": 3
-        },
-        {
-          "date": "2026-10-01",
-          "count": 1
-        },
-        {
-          "date": "2026-10-02",
-          "count": 0
-        },
-        {
-          "date": "2026-10-03",
-          "count": 0
-        },
-        {
-          "date": "2026-10-04",
-          "count": 0
-        },
-        {
-          "date": "2026-10-05",
-          "count": 2
-        },
-        {
-          "date": "2026-10-06",
-          "count": 2
-        },
-        {
-          "date": "2026-10-07",
-          "count": 0
-        },
-        {
-          "date": "2026-10-08",
-          "count": 0
-        },
-        {
-          "date": "2026-10-09",
-          "count": 1
-        },
-        {
-          "date": "2026-10-10",
-          "count": 0
-        },
-        {
-          "date": "2026-10-11",
-          "count": 0
-        },
-        {
-          "date": "2026-10-12",
-          "count": 1
-        },
-        {
-          "date": "2026-10-13",
-          "count": 1
-        },
-        {
-          "date": "2026-10-14",
-          "count": 3
-        },
-        {
-          "date": "2026-10-15",
-          "count": 3
-        },
-        {
-          "date": "2026-10-16",
-          "count": 14
-        },
-        {
-          "date": "2026-10-17",
-          "count": 2
-        }
-      ],
-      "channels": [
-        {
-          "name": "Hacker News",
-          "source": "hackernews",
-          "url": "https://news.ycombinator.com",
-          "count": 19
-        },
-        {
-          "name": "Infobae Tecno",
-          "source": "prensa",
-          "count": 3
-        },
-        {
-          "name": "SBT News",
-          "source": "youtube",
-          "count": 2
-        },
-        {
-          "name": "Band Jornalismo",
-          "source": "youtube",
-          "count": 2
-        },
-        {
-          "name": "Bloomberg en Español",
-          "source": "youtube",
-          "count": 2
-        },
-        {
-          "name": "Ámbito Tecnología",
-          "source": "prensa",
-          "count": 2
-        },
-        {
-          "name": "Podcast PARANORMAL",
-          "source": "youtube",
-          "count": 1
-        },
-        {
-          "name": "Professor HOC",
-          "source": "youtube",
-          "count": 1
-        },
-        {
-          "name": "El Heraldo de México",
-          "source": "youtube",
-          "count": 1
-        },
-        {
-          "name": "Negocios TV",
-          "source": "youtube",
-          "count": 1
-        }
-      ],
-      "topPieces": [
-        {
-          "title": "¿ESTAMOS AL BORDE DE LA EXTINCIÓN?: La Inteligencia Artificial desatará la TERCERA GUERRA MUNDIAL",
-          "url": "https://www.youtube.com/watch?v=Pa0sV2Gb7EQ",
-          "source": "youtube",
-          "outlet": "Podcast PARANORMAL",
-          "hook": "opinion",
-          "format": "video de opinión sensacionalista",
-          "analysis": "Engancha a través del miedo y la hipérbole, conectando la IA con temores existenciales como una guerra mundial."
-        },
-        {
-          "title": "Our approach to EU text provenance rules",
-          "url": "https://openai.com/index/eu-text-provenance/",
-          "source": "hackernews",
-          "outlet": "Hacker News",
-          "hook": "noticia",
           "format": "hilo de discusión"
         },
         {
-          "title": "Apple cambia las reglas de App Store contra apps que generan imágenes íntimas con IA",
-          "url": "https://www.infobae.com/tecno/2026/10/17/apple-cambia-las-reglas-de-app-store-contra-apps-que-generan-imagenes-intimas-con-ia/",
-          "source": "prensa",
-          "outlet": "Infobae Tecno",
+          "title": "Microsoft AI chief says the company beat OpenAI's models, using less compute",
+          "url": "https://www.businessinsider.com/microsoft-ai-ceo-new-model-beats-openai-using-less-compute-2026-10",
+          "source": "hackernews",
+          "outlet": "Hacker News",
           "hook": "noticia",
-          "format": "nota de prensa",
-          "analysis": "Atrae al público al informar sobre una acción concreta de Apple que afecta directamente a usuarios y desarrolladores de apps."
-        },
-        {
-          "title": "A IA SAIU DO CONTROLE? O ALERTA DOS PRÓPRIOS CRIADORES I Professor HOC",
-          "url": "https://www.youtube.com/watch?v=gBtvLRAAMN4",
-          "source": "youtube",
-          "outlet": "Professor HOC",
-          "hook": "opinion",
-          "format": "video"
-        },
-        {
-          "title": "Inteligência artificial, deepfakes e eleições: quais são os riscos reais? | #Newsmanhã",
-          "url": "https://www.youtube.com/watch?v=7uFqDMwQ4_8",
-          "source": "youtube",
-          "outlet": "SBT News",
-          "hook": "noticia",
-          "format": "video"
+          "format": "Nota de prensa",
+          "analysis": "Genera interés a través de la rivalidad entre gigantes tecnológicos, destacando la carrera por lograr un rendimiento superior con mayor eficiencia."
         }
       ],
       "explanation": {
-        "text": "El tema está creciendo por las alertas de las propias empresas de IA sobre riesgos graves y catastróficos de sus sistemas. Esta preocupación ha escalado al punto que gigantes tecnológicos y figuras políticas están tomando medidas, desde cambiar reglas en plataformas hasta firmar acuerdos de autorregulación.",
+        "text": "El rendimiento de los modelos de IA es un tema central porque las métricas actuales no reflejan la mayoría de las tareas laborales del mundo real. Esto impulsa la creación de benchmarks más rigurosos y científicos para medir el valor práctico de la tecnología. La conversación también se enfoca en la competencia por lograr mayor eficiencia y en los desafíos de escalar la inferencia a nivel empresarial.",
         "evidence": [
           {
-            "title": "¡Google lanza alerta global por la IA! Advierte que podría causar \"incidentes graves\" en 2 años",
-            "url": "https://www.youtube.com/watch?v=OE0rBQf9Jqw"
+            "title": "90% of US working hours are spent on tasks not covered well by AI benchmarks",
+            "url": "https://www.mercor.com/research/labor-index/benchmark-map/"
           },
           {
-            "title": "ÚLTIMA HORA | Gigantes de la IA preparan planes secretos ante un posible ataque catastrófico",
-            "url": "https://www.youtube.com/watch?v=XHThszYpmL4"
+            "title": "Scaling AI inference",
+            "url": "https://www.mckinsey.com/industries/semiconductors/our-insights/scaling-ai-inference"
           },
           {
-            "title": "Apple cambia las reglas de App Store contra apps que generan imágenes íntimas con IA",
-            "url": "https://www.infobae.com/tecno/2026/10/17/apple-cambia-las-reglas-de-app-store-contra-apps-que-generan-imagenes-intimas-con-ia/"
+            "title": "Microsoft AI chief says the company beat OpenAI's models, using less compute",
+            "url": "https://www.businessinsider.com/microsoft-ai-ceo-new-model-beats-openai-using-less-compute-2026-10"
           },
           {
-            "title": "Trump, AI Execs Sign 'Morally Binding' Self-Policing Pledge",
-            "url": "https://www.youtube.com/watch?v=z7euIY674Qw"
-          },
-          {
-            "title": "Trump e CEOs fecham acordo para autorregulação da IA | #NewsManhã",
-            "url": "https://www.youtube.com/watch?v=PJqzVOGKMDw"
+            "title": "He Wants AI Benchmarking to Be a Science, Not a Dark Art",
+            "url": "https://www.quantamagazine.org/he-wants-ai-benchmarking-to-be-a-science-not-a-dark-art-20261016/"
           }
         ]
       },
       "briefs": {
         "30x": {
           "profileId": "30x",
-          "angle": "Mientras otros temen la regulación de IA, tú puedes usarla para crear una ventaja competitiva en tu industria.",
+          "angle": "Deja de elegir modelos de IA por su popularidad y empieza a medirlos por su rendimiento real en tus operaciones para garantizar el ROI.",
           "format": "carrusel de Instagram",
-          "hook": "La regulación de IA no es el fin del juego. Es el inicio.",
+          "hook": "Los rankings de IA miden teoría. Tu P&L mide resultados.",
           "opportunity": {
             "product": "AI for Executives",
-            "rationale": "La pieza demuestra la necesidad de una estrategia de IA integral y no solo herramientas aisladas, preparando el terreno para un programa que enseña a los líderes a construir esa estrategia."
+            "rationale": "La pieza expone la necesidad de una estrategia de IA que vaya más allá de las herramientas y métricas genéricas, posicionando el programa como el siguiente paso lógico para definirla."
           },
-          "generatedAt": "2026-10-17T17:44:08.037Z"
+          "generatedAt": "2026-10-17T19:05:44.021Z"
         },
         "andres-bilbao": {
           "profileId": "andres-bilbao",
-          "angle": "Mientras todos debaten si la IA nos va a extinguir, los líderes inteligentes se están preparando para la regulación inevitable y cómo usarla a su favor.",
+          "angle": "Cómo las métricas actuales de rendimiento de la IA te están engañando y por qué necesitas un nuevo enfoque para escalar su impacto real en tu negocio.",
           "format": "post de LinkedIn con viñetas sobre IA",
-          "hook": "Olvídate de si la IA nos va a extinguir. La pregunta que debería quitarte el sueño como ejecutivo es: ¿está tu empresa preparada para cuando la regulen?",
+          "hook": "Los benchmarks con los que mides la IA son casi inútiles: el 90% de las horas de trabajo se dedican a tareas que estas métricas no cubren bien.",
           "opportunity": {
             "product": "AI for Executives",
-            "rationale": "La pieza expone la necesidad de tener una estrategia de IA robusta que vaya más allá de las herramientas y considere el marco regulatorio, posicionando el programa como la solución para construir esa estrategia."
+            "rationale": "La pieza expone la brecha entre las métricas comunes de IA y el valor real para el negocio, posicionando el programa como el camino para desarrollar una estrategia con impacto y ROI medibles."
           },
-          "generatedAt": "2026-10-17T17:44:08.037Z"
-        }
-      }
-    },
-    {
-      "id": "ia-en-robotica",
-      "label": "IA en robótica",
-      "stage": "creciendo",
-      "velocity": 257.1,
-      "executiveRelevance": 0.57,
-      "score": 146.55,
-      "layers": [
-        "origen",
-        "difusion"
-      ],
-      "series": [
-        {
-          "date": "2026-09-18",
-          "count": 0
-        },
-        {
-          "date": "2026-09-19",
-          "count": 1
-        },
-        {
-          "date": "2026-09-20",
-          "count": 0
-        },
-        {
-          "date": "2026-09-21",
-          "count": 0
-        },
-        {
-          "date": "2026-09-22",
-          "count": 0
-        },
-        {
-          "date": "2026-09-23",
-          "count": 2
-        },
-        {
-          "date": "2026-09-24",
-          "count": 1
-        },
-        {
-          "date": "2026-09-25",
-          "count": 1
-        },
-        {
-          "date": "2026-09-26",
-          "count": 0
-        },
-        {
-          "date": "2026-09-27",
-          "count": 0
-        },
-        {
-          "date": "2026-09-28",
-          "count": 0
-        },
-        {
-          "date": "2026-09-29",
-          "count": 0
-        },
-        {
-          "date": "2026-09-30",
-          "count": 0
-        },
-        {
-          "date": "2026-10-01",
-          "count": 0
-        },
-        {
-          "date": "2026-10-02",
-          "count": 0
-        },
-        {
-          "date": "2026-10-03",
-          "count": 0
-        },
-        {
-          "date": "2026-10-04",
-          "count": 1
-        },
-        {
-          "date": "2026-10-05",
-          "count": 0
-        },
-        {
-          "date": "2026-10-06",
-          "count": 0
-        },
-        {
-          "date": "2026-10-07",
-          "count": 0
-        },
-        {
-          "date": "2026-10-08",
-          "count": 0
-        },
-        {
-          "date": "2026-10-09",
-          "count": 0
-        },
-        {
-          "date": "2026-10-10",
-          "count": 1
-        },
-        {
-          "date": "2026-10-11",
-          "count": 0
-        },
-        {
-          "date": "2026-10-12",
-          "count": 0
-        },
-        {
-          "date": "2026-10-13",
-          "count": 2
-        },
-        {
-          "date": "2026-10-14",
-          "count": 1
-        },
-        {
-          "date": "2026-10-15",
-          "count": 11
-        },
-        {
-          "date": "2026-10-16",
-          "count": 4
-        },
-        {
-          "date": "2026-10-17",
-          "count": 2
-        }
-      ],
-      "channels": [
-        {
-          "name": "arXiv",
-          "source": "arxiv",
-          "url": "https://arxiv.org",
-          "count": 10
-        },
-        {
-          "name": "Hacker News",
-          "source": "hackernews",
-          "url": "https://news.ycombinator.com",
-          "count": 9
-        },
-        {
-          "name": "Neurona Digital",
-          "source": "youtube",
-          "count": 1
-        },
-        {
-          "name": "INFOPULSE",
-          "source": "youtube",
-          "count": 1
-        },
-        {
-          "name": "EDteam",
-          "source": "youtube",
-          "count": 1
-        },
-        {
-          "name": "Intereconomía News",
-          "source": "youtube",
-          "count": 1
-        },
-        {
-          "name": "Club de Inversores ",
-          "source": "youtube",
-          "count": 1
-        },
-        {
-          "name": "Jdaie Lin",
-          "source": "youtube",
-          "count": 1
-        },
-        {
-          "name": "Miguel Angel Bejar",
-          "source": "youtube",
-          "count": 1
-        },
-        {
-          "name": "Bernard Marr",
-          "source": "youtube",
-          "count": 1
-        }
-      ],
-      "topPieces": [
-        {
-          "title": "This Tiny Robot Works On My Desk #aiagent #robotics #raspberrypi #opensource",
-          "url": "https://www.youtube.com/watch?v=YCMCdBwuZq8",
-          "source": "youtube",
-          "outlet": "Jdaie Lin",
-          "hook": "caso_de_uso",
-          "format": "video corto de demostración",
-          "analysis": "Atrae por la novedad de un robot personal y de código abierto que realiza tareas sencillas en un escritorio."
-        },
-        {
-          "title": "Show HN: Gemini 4 Argon plays StarCraft",
-          "url": "https://starskirmish.com/bench/v0-2/",
-          "source": "hackernews",
-          "outlet": "Hacker News",
-          "hook": "caso_de_uso",
-          "format": "hilo de discusión con demostración",
-          "analysis": "Captura a una audiencia técnica al demostrar la capacidad de una IA para dominar una tarea compleja y estratégica como un videojuego."
-        },
-        {
-          "title": "Whole-Body Dexterity",
-          "url": "https://arxiv.org/abs/2610.22184v1",
-          "source": "arxiv",
-          "outlet": "arXiv",
-          "hook": "tutorial",
-          "format": "artículo académico"
-        },
-        {
-          "title": "Fabricaron Un Robot y Salió Andando",
-          "url": "https://www.youtube.com/watch?v=7VPa0c5lOHk",
-          "source": "youtube",
-          "outlet": "Neurona Digital",
-          "hook": "caso_de_uso",
-          "format": "video de análisis de caso de uso",
-          "analysis": "Utiliza un título directo y un caso de éxito tangible para generar curiosidad sobre los avances en la locomoción de robots."
-        },
-        {
-          "title": "Show HN: AstroHelm – Use your phone camera to aim a telescope or telephoto lens",
-          "url": "https://astrohelm.app/",
-          "source": "hackernews",
-          "outlet": "Hacker News",
-          "hook": "tutorial",
-          "format": "hilo de discusión"
-        }
-      ],
-      "explanation": {
-        "text": "El interés en la robótica con IA está creciendo por la viralidad de sus aplicaciones prácticas. Se muestran desde robots humanoides en eventos hasta dispositivos de consumo y proyectos de código abierto. Esto impulsa la conversación sobre las capacidades actuales de la tecnología y sus futuras implicaciones económicas y laborales.",
-        "evidence": [
-          {
-            "title": "This Tiny Robot Works On My Desk #aiagent #robotics #raspberrypi #opensource",
-            "url": "https://www.youtube.com/watch?v=YCMCdBwuZq8"
-          },
-          {
-            "title": "Humanoid Robots in Action at World Summit AI",
-            "url": "https://www.youtube.com/watch?v=h01WB8f6Xqg"
-          },
-          {
-            "title": "🤖🌱 ROBOT CORTACÉSPED INTELIGENTE CON IA",
-            "url": "https://www.youtube.com/watch?v=k_5uncRKE04"
-          },
-          {
-            "title": "Takto open-source hand exoskeleton",
-            "url": "https://github.com/molanocortes/takto-one/tree/main"
-          },
-          {
-            "title": "¿Cuánto falta para tener empleados robots?",
-            "url": "https://www.youtube.com/watch?v=3mLBwV8e21s"
-          },
-          {
-            "title": "3 acciones para el boom de robots",
-            "url": "https://www.youtube.com/watch?v=X-jHwIi_d80"
-          }
-        ]
-      },
-      "briefs": {
-        "30x": {
-          "profileId": "30x",
-          "angle": "No te distraigas con los robots virales; enfócate en la estrategia de automatización que tu empresa necesita hoy para no quedarse atrás.",
-          "format": "reel o video corto vertical",
-          "hook": "Estás viendo robots humanoides en todos lados. Pero la verdadera revolución no está en el hardware.",
-          "opportunity": {
-            "product": "AI for Executives",
-            "rationale": "El video muestra que el verdadero valor no está en el robot en sí, sino en la estrategia de IA que lo dirige, que es el foco del programa para líderes."
-          },
-          "generatedAt": "2026-10-17T17:44:08.037Z"
-        },
-        "andres-bilbao": {
-          "profileId": "andres-bilbao",
-          "angle": "Cómo los robots con IA que ves en videos virales no son ciencia ficción, sino una señal de cómo la automatización inteligente redefinirá tu operación y tu industria.",
-          "format": "reel o video corto vertical",
-          "hook": "Si crees que los robots humanoides son solo para videos virales, estás ignorando la próxima ola de automatización que transformará tu negocio.",
-          "opportunity": {
-            "product": "AI for Executives",
-            "rationale": "Al mostrar que la IA en robótica va más allá del gadget, se crea la necesidad de aprender a construir una estrategia formal de IA con retorno de inversión."
-          },
-          "generatedAt": "2026-10-17T17:44:08.037Z"
-        }
-      }
-    },
-    {
-      "id": "ia-en-entretenimiento",
-      "label": "IA en entretenimiento",
-      "stage": "creciendo",
-      "velocity": 337.5,
-      "executiveRelevance": 0.43,
-      "score": 145.13,
-      "layers": [
-        "origen",
-        "difusion"
-      ],
-      "series": [
-        {
-          "date": "2026-09-18",
-          "count": 0
-        },
-        {
-          "date": "2026-09-19",
-          "count": 1
-        },
-        {
-          "date": "2026-09-20",
-          "count": 0
-        },
-        {
-          "date": "2026-09-21",
-          "count": 0
-        },
-        {
-          "date": "2026-09-22",
-          "count": 1
-        },
-        {
-          "date": "2026-09-23",
-          "count": 1
-        },
-        {
-          "date": "2026-09-24",
-          "count": 0
-        },
-        {
-          "date": "2026-09-25",
-          "count": 0
-        },
-        {
-          "date": "2026-09-26",
-          "count": 0
-        },
-        {
-          "date": "2026-09-27",
-          "count": 1
-        },
-        {
-          "date": "2026-09-28",
-          "count": 0
-        },
-        {
-          "date": "2026-09-29",
-          "count": 0
-        },
-        {
-          "date": "2026-09-30",
-          "count": 1
-        },
-        {
-          "date": "2026-10-01",
-          "count": 0
-        },
-        {
-          "date": "2026-10-02",
-          "count": 0
-        },
-        {
-          "date": "2026-10-03",
-          "count": 0
-        },
-        {
-          "date": "2026-10-04",
-          "count": 0
-        },
-        {
-          "date": "2026-10-05",
-          "count": 0
-        },
-        {
-          "date": "2026-10-06",
-          "count": 0
-        },
-        {
-          "date": "2026-10-07",
-          "count": 1
-        },
-        {
-          "date": "2026-10-08",
-          "count": 1
-        },
-        {
-          "date": "2026-10-09",
-          "count": 0
-        },
-        {
-          "date": "2026-10-10",
-          "count": 1
-        },
-        {
-          "date": "2026-10-11",
-          "count": 3
-        },
-        {
-          "date": "2026-10-12",
-          "count": 2
-        },
-        {
-          "date": "2026-10-13",
-          "count": 2
-        },
-        {
-          "date": "2026-10-14",
-          "count": 2
-        },
-        {
-          "date": "2026-10-15",
-          "count": 7
-        },
-        {
-          "date": "2026-10-16",
-          "count": 6
-        },
-        {
-          "date": "2026-10-17",
-          "count": 8
-        }
-      ],
-      "channels": [
-        {
-          "name": "Hacker News",
-          "source": "hackernews",
-          "url": "https://news.ycombinator.com",
-          "count": 27
-        },
-        {
-          "name": "arXiv",
-          "source": "arxiv",
-          "url": "https://arxiv.org",
-          "count": 3
-        },
-        {
-          "name": "Joaquín Barberá - Inteligencia Artificial",
-          "source": "youtube",
-          "count": 1
-        },
-        {
-          "name": "Hasan Skill Zone",
-          "source": "youtube",
-          "count": 1
-        },
-        {
-          "name": "Alejavi Rivera",
-          "source": "youtube",
-          "count": 1
-        },
-        {
-          "name": "Lila",
-          "source": "youtube",
-          "count": 1
-        },
-        {
-          "name": "LunaAi",
-          "source": "youtube",
-          "count": 1
-        },
-        {
-          "name": "TryThisAI",
-          "source": "youtube",
-          "count": 1
-        },
-        {
-          "name": "El Tiempo Tecnósfera",
-          "source": "prensa",
-          "count": 1
-        },
-        {
-          "name": "Infobae Tecno",
-          "source": "prensa",
-          "count": 1
-        }
-      ],
-      "topPieces": [
-        {
-          "title": "Google acaba de Regalar los Vídeos Largos con Audio por IA GRATIS",
-          "url": "https://www.youtube.com/watch?v=IWA9LCvNW8g",
-          "source": "youtube",
-          "outlet": "Alejavi Rivera",
-          "hook": "noticia",
-          "format": "video de noticia",
-          "analysis": "Anuncia una herramienta gratuita de una marca líder como Google, atrayendo a creadores que buscan reducir costos y probar nuevas tecnologías."
-        },
-        {
-          "title": "Show HN: Opus 5.5 made a fully featured Figma clone in 3 hours / 8 prompts",
-          "url": "https://www.mana.space/home/rZfbotNWAXegQypmpkzaAPFC6Mp1/Apps/Figma%20Next%20Launch",
-          "source": "hackernews",
-          "outlet": "Hacker News",
-          "hook": "caso_de_uso",
-          "format": "hilo de discusión"
-        },
-        {
-          "title": "SceneWeave: Audience-Guided Scene Exploration for Dramatic Adaptation",
-          "url": "https://arxiv.org/abs/2610.21737v1",
-          "source": "arxiv",
-          "outlet": "arXiv",
-          "hook": "otro",
-          "format": "artículo académico"
-        },
-        {
-          "title": "Una inteligencia artificial habría borrado la segunda temporada del reality show &#039;The Challenge Sverige&#039; antes de su estreno en Suecia",
-          "url": "https://www.eltiempo.com/tecnosfera/inteligencia-artificial/una-inteligencia-artificial-habria-borrado-la-segunda-temporada-del-reality-show-the-challenge-sverige-antes-de-su-estreno-en-suecia-3594091",
-          "source": "prensa",
-          "outlet": "El Tiempo Tecnósfera",
-          "hook": "advertencia",
-          "format": "nota de prensa con advertencia",
-          "analysis": "Usa un titular alarmante sobre un error costoso de la IA para resaltar los riesgos operativos y financieros de la tecnología."
-        },
-        {
-          "title": "AI Short Film Automation: USA Drama বানানো শিখুন (No Camera Needed)",
-          "url": "https://www.youtube.com/watch?v=T1FWW9KxlhE",
-          "source": "youtube",
-          "outlet": "Hasan Skill Zone",
-          "hook": "tutorial",
-          "format": "video"
-        }
-      ],
-      "explanation": {
-        "text": "El interés crece por el lanzamiento de nuevas herramientas de IA, a menudo gratuitas, que simplifican la creación de contenido audiovisual y prometen reemplazar software establecido. El tema se impulsa tanto por tutoriales y casos prácticos que demuestran la generación de videos y animaciones, como por noticias sobre los riesgos de su implementación, como la eliminación accidental de un programa de televisión.",
-        "evidence": [
-          {
-            "title": "Google acaba de Regalar los Vídeos Largos con Audio por IA GRATIS",
-            "url": "https://www.youtube.com/watch?v=IWA9LCvNW8g"
-          },
-          {
-            "title": "Una inteligencia artificial habría borrado la segunda temporada del reality show &#039;The Challenge Sverige&#039; antes de su estreno en Suecia",
-            "url": "https://www.eltiempo.com/tecnosfera/inteligencia-artificial/una-inteligencia-artificial-habria-borrado-la-segunda-temporada-del-reality-show-the-challenge-sverige-antes-de-su-estreno-en-suecia-3594091"
-          },
-          {
-            "title": "AI Short Film Automation: USA Drama বানানো শিখুন (No Camera Needed)",
-            "url": "https://www.youtube.com/watch?v=T1FWW9KxlhE"
-          },
-          {
-            "title": "What Adobe Premiere’s New Generative AI Tool Means for Editors (IBC 2026) #adobepartner",
-            "url": "https://www.youtube.com/watch?v=qqbICDQ0srQ"
-          },
-          {
-            "title": "How I Created This cinematic AI Movie with Seedance 2.5",
-            "url": "https://www.youtube.com/watch?v=_sjIKFSKgGQ"
-          },
-          {
-            "title": "¡Adiós After Effects! CREA MOTION GRAPHICS 3D AUTOMÁTICOS con IA (GRATIS)",
-            "url": "https://www.youtube.com/watch?v=v-47oAfNHcY"
-          }
-        ]
-      },
-      "briefs": {
-        "30x": {
-          "profileId": "30x",
-          "angle": "Aprovecha la explosión de herramientas de IA para video para acelerar tu marketing y ventas, sin arriesgar tu marca en el intento.",
-          "format": "clase gratis en vivo por Zoom",
-          "hook": "Tu equipo ya está usando las nuevas herramientas de IA para crear video. ¿Estás dirigiendo o solo mirando?",
-          "opportunity": {
-            "product": "AI for Executives",
-            "rationale": "La clase demostrará el potencial y los riesgos de la IA en video, creando la necesidad de una estrategia de IA completa con ROI, que es la propuesta central de AI for Executives."
-          },
-          "generatedAt": "2026-10-17T17:44:08.037Z"
-        },
-        "andres-bilbao": {
-          "profileId": "andres-bilbao",
-          "angle": "Estas nuevas herramientas de IA para video no son un juguete, son una oportunidad para que tu equipo de marketing o de producto cree contenido más rápido y barato que nunca.",
-          "format": "reel o video corto vertical",
-          "hook": "Tu equipo de marketing está a 3 prompts de hacer los videos que hoy les toman semanas.",
-          "opportunity": {
-            "product": "AI for Executives",
-            "rationale": "La pieza muestra una táctica aislada de IA, despertando la necesidad de una estrategia cohesiva que genere ROI, que es el foco del programa."
-          },
-          "generatedAt": "2026-10-17T17:44:08.037Z"
+          "generatedAt": "2026-10-17T19:05:44.021Z"
         }
       }
     }

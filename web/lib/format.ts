@@ -12,6 +12,21 @@ export function formatDay(iso: string): string {
   return new Intl.DateTimeFormat("es-CO", { day: "numeric", month: "long", timeZone: TZ }).format(new Date(iso));
 }
 
+// Fechas de la serie ("2026-10-17"), que son días sin hora: se leen en UTC para no correrse un día.
+export function formatSeriesDate(ymd: string): string {
+  return new Intl.DateTimeFormat("es-CO", { day: "numeric", month: "long", timeZone: "UTC" }).format(new Date(`${ymd}T00:00:00Z`));
+}
+
+// Separa la palabra que va en serif itálica: la última de al menos 5 letras.
+export function splitSerif(label: string): [string, string, string] {
+  const words = label.split(" ");
+  let i = words.length - 1;
+  while (i > 0 && words[i].replace(/[^\p{L}]/gu, "").length < 5) i--;
+  const before = words.slice(0, i).join(" ");
+  const after = words.slice(i + 1).join(" ");
+  return [before ? `${before} ` : "", words[i], after ? ` ${after}` : ""];
+}
+
 export function formatDateTime(iso: string): string {
   return new Intl.DateTimeFormat("es-CO", { dateStyle: "long", timeStyle: "short", timeZone: TZ }).format(new Date(iso));
 }
@@ -43,11 +58,15 @@ export const STAGE_LABEL: Record<Stage, string> = {
   saturado: "Saturado",
 };
 
+// Qué significa cada etapa para quien va a publicar. Las etapas salen de las capas a las que
+// llegó el tema: origen (foros, expertos, investigación), difusión (YouTube) y prensa de negocios.
 export const STAGE_HINT: Record<Stage, string> = {
-  emergente: "Solo aparece donde nacen los temas (foros de founders, expertos e investigación).",
-  creciendo: "Ya llegó a YouTube: se está difundiendo.",
-  pico: "Ya llegó a la prensa de negocios: todos hablan de él.",
-  saturado: "Está en prensa pero cayendo: llega tarde.",
+  emergente:
+    "solo aparece donde nacen los temas: foros de founders, newsletters de expertos e investigación. Si publicas ahora, llegas primero.",
+  creciendo:
+    "ya pasó de los foros a YouTube y todavía no llega a la prensa de negocios. Buen momento para publicar con un ángulo propio.",
+  pico: "ya llegó a la prensa de negocios y todos hablan de él. Para destacar necesitas un ángulo propio.",
+  saturado: "está en la prensa, pero sus menciones vienen cayendo. Publica solo si tienes algo nuevo que decir.",
 };
 
 export const SOURCE_LABEL: Record<Source, string> = {

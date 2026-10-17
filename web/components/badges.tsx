@@ -12,7 +12,7 @@ export function StageBadge({ stage, className = "" }: { stage: Stage; className?
   return (
     <span
       data-stage={stage}
-      title={STAGE_HINT[stage]}
+      title={`${STAGE_LABEL[stage]}: ${STAGE_HINT[stage]}`}
       className={`inline-flex items-center justify-self-start rounded-full px-3 py-1.5 text-[13px] font-semibold ${STAGE_CLASS[stage]} ${className}`}
     >
       {STAGE_LABEL[stage]}

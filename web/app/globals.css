@@ -89,6 +89,16 @@ body {
   animation: radar-ping 2.4s ease-out infinite;
 }
 
+/* Entrada de la bienvenida: sube desde abajo en celular y aparece en el centro en escritorio. */
+@keyframes welcome-pop {
+  from { opacity: 0; transform: translateY(24px) scale(0.98); }
+  to { opacity: 1; transform: none; }
+}
+
+.welcome-pop {
+  animation: welcome-pop 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -102,6 +112,7 @@ html {
   .sk-light,
   .radar-sweep,
   .radar-ping,
+  .welcome-pop,
   .animate-spin {
     animation: none;
   }

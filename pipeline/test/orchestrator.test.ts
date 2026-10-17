@@ -40,7 +40,7 @@ function pipelineLLM(onCall?: (req: JsonRequest<unknown>) => void) {
         }),
       };
     }
-    if (req.label === "temas-fusion") return { merges: [] };
+    if (req.label === "temas-taxonomia") return { topics: ["Agentes de IA", "Modelos de IA"] };
     if (req.label === "explicacion") {
       const r = refs(req.prompt);
       return { text: "Crece porque aparece en varias fuentes a la vez.", evidenceIds: r.slice(0, 2), pieces: [{ id: r[0], format: "hilo", analysis: "Pregunta directa." }] };

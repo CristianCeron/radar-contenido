@@ -1,12 +1,13 @@
 import { describe, it, expect } from "vitest";
 import { assignTopics, isGenericLabel, labelKey } from "../src/topics.js";
 import type { NormalizedItem } from "../src/schema.js";
+import type { JsonRequest } from "../src/llm/types.js";
 import { fakeLLM } from "./fake-llm.js";
 
-function item(id: string, title: string): NormalizedItem {
+function item(id: string, title: string, source: NormalizedItem["source"] = "hackernews"): NormalizedItem {
   return {
     id,
-    source: "hackernews",
+    source,
     layer: "origen",
     title,
     url: `https://example.com/${id}`,
@@ -24,6 +25,23 @@ const items = [
   item("5", "Best pizza in Naples"),
 ];
 
+const topicList = (req: JsonRequest<unknown>) => req.prompt.split("\n\nPiezas:")[0];
+const ids = (req: JsonRequest<unknown>) => [...req.prompt.matchAll(/"id":"(\w+)"/g)].map((m) => m[1]);
+
+// Taxonomía fija y etiquetado por palabras del título; lo que no encaja queda en null.
+function standardLLM(taxonomy = ["Agentes de IA", "Modelos de video"]) {
+  return fakeLLM((req) => {
+    if (req.label === "temas-taxonomia") return { topics: taxonomy };
+    const titles = new Map(items.map((i) => [i.id, i.title]));
+    return {
+      items: ids(req).map((id) => {
+        const t = titles.get(id) ?? "";
+        return { id, topic: /agent/i.test(t) ? "Agentes de IA" : /video/i.test(t) ? "Modelos de video" : null };
+      }),
+    };
+  });
+}
+
 describe("asignación de temas", () => {
   it("unifica etiquetas casi iguales en una sola clave", () => {
     expect(labelKey("AI agents")).toBe(labelKey("agentes de IA"));
@@ -33,72 +51,81 @@ describe("asignación de temas", () => {
   });
 
   it("agrupa los ítems por tema y descarta los que no son de IA", async () => {
-    const llm = fakeLLM((req) => {
-      if (req.label === "temas-etiquetado") {
-        return {
-          items: [
-            { id: "1", topic: "AI agents" },
-            { id: "2", topic: "Agentes de IA" },
-            { id: "3", topic: "agentes de IA" },
-            { id: "4", topic: "Modelos de video" },
-            { id: "5", topic: null },
-          ],
-        };
-      }
-      return { merges: [] };
-    });
-
-    const groups = await assignTopics(items, llm);
-
+    const groups = await assignTopics(items, standardLLM());
     expect(groups).toHaveLength(2);
-    const agents = groups.find((g) => g.items.length === 3)!;
-    expect(agents.items.map((i) => i.id).sort()).toEqual(["1", "2", "3"]);
-    // La etiqueta visible es la forma más usada.
-    expect(agents.label).toBe("Agentes de IA");
+    const agents = groups.find((g) => g.label === "Agentes de IA")!;
     expect(agents.id).toBe("agentes-de-ia");
+    expect(agents.items.map((i) => i.id).sort()).toEqual(["1", "2", "3"]);
     expect(groups.flatMap((g) => g.items).some((i) => i.id === "5")).toBe(false);
   });
 
-  it("aplica las fusiones de sinónimos que propone el modelo", async () => {
-    const llm = fakeLLM((req) => {
-      if (req.label === "temas-etiquetado") {
-        return {
-          items: [
-            { id: "1", topic: "Agentes de IA" },
-            { id: "2", topic: "Agentes autónomos" },
-            { id: "4", topic: "Modelos de video" },
-          ],
-        };
-      }
-      return { merges: [{ canonical: "Agentes de IA", aliases: ["Agentes autónomos"] }] };
-    });
-    const groups = await assignTopics([items[0], items[1], items[3]], llm);
-    expect(groups).toHaveLength(2);
-    expect(groups.find((g) => g.label === "Agentes de IA")?.items).toHaveLength(2);
+  it("primero propone una lista de temas con una muestra de títulos", async () => {
+    const llm = standardLLM();
+    await assignTopics(items, llm);
+    expect(llm.requests[0].label).toBe("temas-taxonomia");
+    expect(llm.requests[0].prompt).toContain("Show HN: framework for AI agents");
+    expect(llm.requests[0].system).toMatch(/Evita categorías genéricas/);
   });
 
-  it("etiqueta por lotes y pasa las etiquetas ya usadas al siguiente lote", async () => {
-    const llm = fakeLLM((req) => {
-      if (req.label !== "temas-etiquetado") return { merges: [] };
-      const ids = [...req.prompt.matchAll(/"id":"(\w+)"/g)].map((m) => m[1]);
-      return { items: ids.map((id) => ({ id, topic: "Agentes de IA" })) };
-    });
-    await assignTopics(items, llm, { batchSize: 2 });
-    const labeling = llm.requests.filter((r) => r.label === "temas-etiquetado");
-    expect(labeling).toHaveLength(3);
-    expect(labeling[1].prompt).toContain("Agentes de IA");
+  it("etiqueta eligiendo solo de esa lista: una etiqueta inventada hace fallar el lote", async () => {
+    const llm = fakeLLM((req) =>
+      req.label === "temas-taxonomia"
+        ? { topics: ["Agentes de IA"] }
+        : { items: ids(req).map((id) => ({ id, topic: "Tema inventado" })) },
+    );
+    const groups = await assignTopics(items, llm, { log: () => {} });
+    expect(groups).toEqual([]);
+    const labeling = llm.requests.find((r) => r.label === "temas-etiquetado")!;
+    expect(labeling.prompt).toContain("Agentes de IA");
+  });
+
+  it("une temas casi iguales de la lista y quita los genéricos", async () => {
+    const llm = standardLLM(["AI agents", "Agentes de IA", "Uso de IA", "Modelos de video"]);
+    const groups = await assignTopics(items, llm);
+    const labeling = llm.requests.find((r) => r.label === "temas-etiquetado")!;
+    expect(topicList(labeling)).not.toContain("Uso de IA");
+    expect(topicList(labeling).match(/Agentes de IA|AI agents/g)).toHaveLength(1);
+    expect(groups.map((g) => g.label).sort()).toEqual(["Agentes de IA", "Modelos de video"]);
+  });
+
+  it("nunca crea un tema llamado null, ninguno u otro", async () => {
+    const llm = standardLLM(["Agentes de IA", "null", "Ninguno", "Otro"]);
+    await assignTopics(items, llm);
+    const labeling = llm.requests.find((r) => r.label === "temas-etiquetado")!;
+    expect(topicList(labeling)).not.toMatch(/\bnull\b|Ninguno|\bOtro\b/);
+  });
+
+  it("toma una muestra variada y con tope para proponer la lista", async () => {
+    const many = [
+      ...Array.from({ length: 900 }, (_, i) => item(`h${i}`, `HN ${i}`)),
+      ...Array.from({ length: 300 }, (_, i) => item(`a${i}`, `Paper ${i}`, "arxiv")),
+      ...Array.from({ length: 50 }, (_, i) => item(`p${i}`, `Prensa ${i}`, "prensa")),
+    ];
+    const llm = fakeLLM((req) => (req.label === "temas-taxonomia" ? { topics: ["Agentes de IA"] } : { items: [] }));
+    await assignTopics(many, llm, { sampleSize: 300 });
+    const prompt = llm.requests[0].prompt;
+    const lines = prompt.split("\n").filter((l) => l.startsWith("- "));
+    expect(lines.length).toBeLessThanOrEqual(300);
+    expect(prompt).toContain("Prensa 0");
+    expect(prompt).toContain("Paper 0");
   });
 
   it("si un lote de etiquetado falla, sigue con los demás", async () => {
     let n = 0;
+    const base = standardLLM(["Agentes de IA"]);
     const llm = fakeLLM((req) => {
-      if (req.label !== "temas-etiquetado") return { merges: [] };
-      if (n++ === 1) throw new Error("conexión cortada");
-      const ids = [...req.prompt.matchAll(/"id":"(\w+)"/g)].map((m) => m[1]);
-      return { items: ids.map((id) => ({ id, topic: "Agentes de IA" })) };
+      if (req.label === "temas-etiquetado" && n++ === 1) throw new Error("conexión cortada");
+      return base.json(req);
     });
     const groups = await assignTopics(items, llm, { batchSize: 2, log: () => {} });
-    expect(groups[0].items).toHaveLength(3);
+    expect(groups[0].items.length).toBeGreaterThan(0);
+  });
+
+  it("ignora ids que el modelo inventa", async () => {
+    const llm = fakeLLM((req) =>
+      req.label === "temas-taxonomia" ? { topics: ["Agentes de IA"] } : { items: [{ id: "999", topic: "Agentes de IA" }] },
+    );
+    expect(await assignTopics([items[0]], llm)).toEqual([]);
   });
 
   it("reconoce etiquetas genéricas que no sirven como tema", () => {
@@ -108,35 +135,5 @@ describe("asignación de temas", () => {
     for (const ok of ["Agentes de IA", "Regulación de IA", "Seguridad con IA", "Robots con IA", "Modelos de video"]) {
       expect(isGenericLabel(ok)).toBe(false);
     }
-  });
-
-  it("pide temas concretos y no categorías genéricas", async () => {
-    const llm = fakeLLM((req) => (req.label === "temas-etiquetado" ? { items: [] } : { merges: [] }));
-    await assignTopics([items[0]], llm);
-    expect(llm.requests[0].system).toMatch(/Evita categorías genéricas/);
-  });
-
-  it("a la fusión le manda las etiquetas más usadas primero y con un tope", async () => {
-    const many = Array.from({ length: 400 }, (_, i) => item(`m${i}`, `Pieza ${i}`));
-    const llm = fakeLLM((req) => {
-      if (req.label !== "temas-etiquetado") return { merges: [] };
-      const ids = [...req.prompt.matchAll(/"id":"(\w+)"/g)].map((m) => m[1]);
-      // m0..m9 comparten etiqueta; el resto tiene una etiqueta única cada uno.
-      return { items: ids.map((id) => ({ id, topic: Number(id.slice(1)) < 10 ? "Agentes de IA" : `Tema raro ${id}` })) };
-    });
-    await assignTopics(many, llm, { batchSize: 100 });
-    const merge = llm.requests.find((r) => r.label === "temas-fusion")!;
-    const lines = merge.prompt.split("\n").filter(Boolean);
-    expect(lines[0]).toBe("Agentes de IA");
-    expect(lines.length).toBeLessThanOrEqual(250);
-    expect(merge.maxTokens).toBeGreaterThanOrEqual(30000);
-  });
-
-  it("ignora ids que el modelo inventa", async () => {
-    const llm = fakeLLM((req) =>
-      req.label === "temas-etiquetado" ? { items: [{ id: "999", topic: "Agentes de IA" }] } : { merges: [] },
-    );
-    const groups = await assignTopics([items[0]], llm);
-    expect(groups).toEqual([]);
   });
 });

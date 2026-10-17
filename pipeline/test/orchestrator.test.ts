@@ -2,7 +2,7 @@ import { describe, it, expect, beforeEach } from "vitest";
 import { mkdtempSync, readFileSync, writeFileSync, existsSync, mkdirSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { runRadar, type RadarDeps } from "../src/orchestrator.js";
+import { runRadar, stripPrivateLinks, type RadarDeps } from "../src/orchestrator.js";
 import { RadarSchema } from "../src/schema.js";
 import { fetchHackerNews } from "../src/sources/hn.js";
 import { fetchArxiv } from "../src/sources/arxiv.js";
@@ -15,6 +15,7 @@ import { fakeFetch, fixture } from "./helpers.js";
 import { fakeLLM } from "./fake-llm.js";
 
 const now = new Date("2026-10-17T06:00:00Z");
+const fixtureRadar = () => fixture("radar-ejemplo.json");
 
 function ids(prompt: string): string[] {
   return [...prompt.matchAll(/"id":"([^"]+)"/g)].map((m) => m[1]);
@@ -149,6 +150,48 @@ describe("orquestador", () => {
     );
     expect(res.status).toBe("cost_limit");
     expect(readFileSync(join(dir, "radar.json"), "utf8")).toBe('{"anterior":true}');
+  });
+
+  it("los aportes del equipo suman menciones pero sus enlaces nunca llegan al radar.json", async () => {
+    const sensorLinks = [
+      "https://www.linkedin.com/posts/maria-perez_agentes-ia-activity-7381",
+      "https://www.instagram.com/p/DAbc123/",
+    ];
+    const res = await runRadar(
+      deps(dir, {
+        sources: {
+          ...deps(dir).sources,
+          equipo: async () => ({
+            status: "ok",
+            items: sensorLinks.map((url, i) => ({
+              id: `equipo:${i}`,
+              source: "equipo" as const,
+              layer: i === 0 ? ("audiencia_ejecutiva" as const) : ("difusion" as const),
+              title: `Reporte del equipo sobre agentes de IA ${i}`,
+              url,
+              outlet: i === 0 ? "LinkedIn, aportes del equipo" : "Instagram, aportes del equipo",
+              publishedAt: "2026-10-16T12:00:00.000Z",
+              metrics: {},
+            })),
+          }),
+        },
+      }),
+    );
+    expect(res.status).toBe("ok");
+    const raw = readFileSync(join(dir, "radar.json"), "utf8");
+    for (const link of sensorLinks) expect(raw).not.toContain(link);
+    expect(raw).not.toContain("maria-perez");
+    const radar = RadarSchema.parse(JSON.parse(raw));
+    expect(radar.sources.find((s) => s.source === "equipo")).toMatchObject({ status: "ok", items: 2 });
+    const channels = radar.topics.flatMap((t) => t.channels.map((c) => c.name));
+    expect(channels).toContain("LinkedIn, aportes del equipo");
+  });
+
+  it("la barrera final quita enlaces privados aunque se hayan colado", () => {
+    const radar = RadarSchema.parse(JSON.parse(fixtureRadar()));
+    const leaked = radar.topics[0].explanation.evidence[0].url;
+    const cleaned = stripPrivateLinks(radar.topics, new Set([leaked]));
+    expect(JSON.stringify(cleaned)).not.toContain(leaked);
   });
 
   it("guarda en caché el resultado de cada fuente que funcionó", async () => {

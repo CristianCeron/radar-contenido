@@ -45,6 +45,7 @@ export const SOURCE_LABEL: Record<Source, string> = {
   arxiv: "arXiv",
   youtube: "YouTube",
   prensa: "Prensa",
+  equipo: "Aportes del equipo",
 };
 
 export function sourceStatusText(s: SourceStatus): string {

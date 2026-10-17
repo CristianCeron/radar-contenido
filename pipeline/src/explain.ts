@@ -10,6 +10,7 @@ const DEFAULT_FORMAT: Record<Source, string> = {
   hackernews: "hilo de discusión",
   arxiv: "artículo académico",
   prensa: "nota de prensa",
+  equipo: "publicación en redes",
 };
 
 const OUTLET_URL: Record<string, string> = {
@@ -89,7 +90,16 @@ function clean(text: string): string {
 // Redacta el porqué de un tema restringido a la evidencia recolectada.
 // Devuelve null si el modelo no enlaza ninguna evidencia válida: esa explicación no se muestra.
 export async function explainTopic(topic: ExplainInput, opts: ExplainOptions): Promise<ExplainResult | null> {
-  const evidence = rankPieces(topic.items, opts.maxEvidence ?? 15);
+  // Los aportes del equipo no son evidencia enlazable: su enlace puede llevar el nombre de una persona.
+  // Solo entran como contexto, con la descripción que escribió quien lo reportó.
+  const publicItems = topic.items.filter((it) => it.source !== "equipo");
+  const teamNotes = topic.items
+    .filter((it) => it.source === "equipo")
+    .slice(0, 10)
+    .map((it) => `- ${it.title} (${it.outlet})`);
+  if (publicItems.length === 0) return null;
+
+  const evidence = rankPieces(publicItems, opts.maxEvidence ?? 15);
   const byRef = new Map(evidence.map((it, i) => [`e${i + 1}`, it]));
   const lines = [...byRef].map(([ref, it]) =>
     JSON.stringify({
@@ -106,7 +116,15 @@ export async function explainTopic(topic: ExplainInput, opts: ExplainOptions): P
   const result = await opts.llm.json({
     label: "explicacion",
     system: SYSTEM,
-    prompt: `Tema: ${topic.label}\nEtapa: ${topic.stage}\nVelocidad semanal: ${topic.velocity ?? "sin dato"}%\n\nEvidencia:\n${lines.join("\n")}`,
+    prompt: [
+      `Tema: ${topic.label}\nEtapa: ${topic.stage}\nVelocidad semanal: ${topic.velocity ?? "sin dato"}%`,
+      `Evidencia:\n${lines.join("\n")}`,
+      teamNotes.length
+        ? `Publicaciones que el equipo vio en redes (contexto, no son evidencia citable):\n${teamNotes.join("\n")}`
+        : "",
+    ]
+      .filter(Boolean)
+      .join("\n\n"),
     schema: ExplainSchema,
     maxTokens: 8000,
   });

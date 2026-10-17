@@ -90,6 +90,40 @@ describe("explicación con evidencia y análisis de gancho", () => {
   });
 });
 
+describe("aportes del equipo en la explicación", () => {
+  const sensor = item("eq1", {
+    source: "equipo",
+    layer: "audiencia_ejecutiva",
+    title: "Gerente cuenta cómo usa agentes para vender",
+    url: "https://www.linkedin.com/posts/maria-perez_x",
+    outlet: "LinkedIn, aportes del equipo",
+  });
+
+  it("usa la descripción como contexto, sin el enlace, y nunca como evidencia ni pieza", async () => {
+    const llm = fakeLLM((req) => {
+      const refsFound = [...req.prompt.matchAll(/"ref":"(e\d+)"/g)].map((m) => m[1]);
+      return { text: "Crece.", evidenceIds: refsFound, pieces: refsFound.map((id) => ({ id, format: "f", analysis: "a" })) };
+    });
+    const res = await explainTopic({ ...topic, items: [...items, sensor] }, { llm, classifications });
+    const prompt = llm.requests[0].prompt;
+    expect(prompt).toContain("Gerente cuenta cómo usa agentes para vender");
+    expect(prompt).not.toContain("linkedin.com/posts");
+    expect(res!.explanation.evidence.map((e) => e.url)).not.toContain(sensor.url);
+    expect(res!.topPieces.map((p) => p.url)).not.toContain(sensor.url);
+  });
+
+  it("si un tema solo tiene aportes del equipo no hay evidencia enlazable y se descarta", async () => {
+    const llm = fakeLLM(() => ({ text: "Crece.", evidenceIds: ["e1"], pieces: [] }));
+    expect(await explainTopic({ ...topic, items: [sensor] }, { llm, classifications })).toBeNull();
+  });
+
+  it("los canales del equipo no llevan enlace", () => {
+    const ch = buildChannels([sensor]);
+    expect(ch[0]).toMatchObject({ name: "LinkedIn, aportes del equipo", source: "equipo", count: 1 });
+    expect(ch[0].url).toBeUndefined();
+  });
+});
+
 describe("quiénes hablan del tema", () => {
   it("ordena las piezas por interacción y variedad de fuentes", () => {
     const ranked = rankPieces(items, 3);

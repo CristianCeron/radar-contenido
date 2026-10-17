@@ -20,8 +20,8 @@ const LAYER_ORDER: Layer[] = ["origen", "difusion", "audiencia_ejecutiva"];
 export function layerCounts(items: NormalizedItem[]): LayerCounts {
   const counts: LayerCounts = { origen: 0, difusion: 0, audiencia_ejecutiva: 0 };
   for (const item of items) {
-    const mentions = item.mentions?.length ? item.mentions : [{ source: item.source }];
-    for (const m of mentions) counts[LAYER_BY_SOURCE[m.source]]++;
+    const mentions = item.mentions?.length ? item.mentions : [{ source: item.source, layer: item.layer }];
+    for (const m of mentions) counts[m.layer ?? LAYER_BY_SOURCE[m.source]]++;
   }
   return counts;
 }

@@ -8,6 +8,7 @@ import { fetchArxiv } from "./sources/arxiv.js";
 import { fetchHackerNews } from "./sources/hn.js";
 import { fetchPress } from "./sources/rss.js";
 import { fetchYouTube } from "./sources/youtube.js";
+import { fetchSensor } from "./sources/sensor.js";
 
 const ROOT = new URL("../../", import.meta.url);
 
@@ -27,6 +28,8 @@ export async function runPipeline(opts: PipelineOptions = {}) {
       arxiv: () => fetchArxiv({ now, maxResults: 300 }),
       youtube: () => fetchYouTube({ now }),
       prensa: () => fetchPress({ now }),
+      // Sensor humano: solo si hay hoja configurada.
+      ...(process.env.SENSOR_SHEET_CSV_URL ? { equipo: () => fetchSensor({ now }) } : {}),
     },
     cacheDir: opts.cacheDir ?? fileURLToPath(new URL("pipeline/.cache/", ROOT)),
     outputPath: opts.outputPath ?? fileURLToPath(new URL("web/public/data/radar.json", ROOT)),

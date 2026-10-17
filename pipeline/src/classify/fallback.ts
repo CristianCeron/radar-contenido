@@ -35,7 +35,7 @@ export function createLLMClassifier(llm: LLM): Classifier {
         system: SYSTEM,
         prompt: `Piezas (una por línea, en JSON):\n${listing}`,
         schema: BatchSchema,
-        maxTokens: 200 + items.length * 60,
+        maxTokens: 500 + items.length * 120,
       });
       const ids = new Set(items.map((i) => i.id));
       const out = new Map<string, RawClassification>();

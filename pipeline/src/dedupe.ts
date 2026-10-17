@@ -40,7 +40,7 @@ function jaccard(a: Set<string>, b: Set<string>): number {
 const TITLE_SIMILARITY = 0.85;
 
 function mentionOf(item: NormalizedItem): Mention {
-  return { source: item.source, url: item.url, outlet: item.outlet };
+  return { source: item.source, url: item.url, outlet: item.outlet, layer: item.layer };
 }
 
 function mergeMentions(a: Mention[], b: Mention[]): Mention[] {

@@ -16,11 +16,12 @@ import type { SourceResult } from "./sources/types.js";
 import { errorMessage, windowStart } from "./sources/types.js";
 import { buildSeries, recentMentions, velocity } from "./velocity.js";
 
-const SOURCES: Source[] = ["hackernews", "arxiv", "youtube", "prensa"];
+const SOURCES: Source[] = ["hackernews", "arxiv", "youtube", "prensa", "equipo"];
 
 export interface RadarDeps {
   now: Date;
-  sources: Record<Source, () => Promise<SourceResult>>;
+  // "equipo" (sensor humano) es opcional: si no hay hoja configurada, no se incluye.
+  sources: Partial<Record<Source, () => Promise<SourceResult>>>;
   cacheDir: string;
   outputPath: string;
   makeLLMs: (sink: CostSink) => { fast: LLM; writer: LLM };
@@ -40,10 +41,10 @@ interface Collected {
 // Lee cada fuente; si falla, recurre al último resultado guardado y lo indica con su fecha.
 async function collect(deps: RadarDeps, log: (m: string) => void): Promise<Collected> {
   const results = await Promise.all(
-    SOURCES.map(async (source) => {
+    SOURCES.filter((s) => deps.sources[s]).map(async (source) => {
       let res: SourceResult;
       try {
-        res = await deps.sources[source]();
+        res = await deps.sources[source]!();
       } catch (err) {
         res = { status: "error", items: [], error: errorMessage(err) };
       }
@@ -159,8 +160,32 @@ async function buildRadar(deps: RadarDeps, sink: CostSink): Promise<Omit<Radar, 
     windowDays: 30,
     sources: statuses,
     profiles: deps.profiles.map((p) => ({ id: p.id, nombre: p.nombre })),
-    topics,
+    topics: stripPrivateLinks(topics, privateLinks(items)),
   };
+}
+
+// Enlaces del sensor humano: pueden llevar el nombre de una persona y nunca se publican.
+function privateLinks(items: NormalizedItem[]): Set<string> {
+  const links = new Set<string>();
+  for (const it of items) {
+    if (it.source === "equipo") links.add(it.url);
+    for (const m of it.mentions ?? []) if (m.source === "equipo") links.add(m.url);
+  }
+  return links;
+}
+
+// Última barrera antes de escribir: quita cualquier enlace privado que se haya colado en piezas,
+// evidencia o canales. Un tema que se queda sin evidencia pública se descarta.
+export function stripPrivateLinks(topics: Topic[], links: Set<string>): Topic[] {
+  if (links.size === 0) return topics;
+  return topics
+    .map((t) => ({
+      ...t,
+      topPieces: t.topPieces.filter((p) => !links.has(p.url)),
+      explanation: { ...t.explanation, evidence: t.explanation.evidence.filter((e) => !links.has(e.url)) },
+      channels: t.channels.map((c) => (c.url && links.has(c.url) ? { ...c, url: undefined } : c)),
+    }))
+    .filter((t) => t.explanation.evidence.length > 0);
 }
 
 // Corrida completa: recolecta, clasifica, agrupa, rankea, explica, genera briefs y escribe radar.json.

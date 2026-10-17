@@ -4,7 +4,8 @@ import { z } from "zod";
 export const LayerSchema = z.enum(["origen", "difusion", "audiencia_ejecutiva"]);
 export type Layer = z.infer<typeof LayerSchema>;
 
-export const SourceSchema = z.enum(["hackernews", "arxiv", "youtube", "prensa"]);
+// "equipo" es el sensor humano: publicaciones de redes que el equipo reporta a mano.
+export const SourceSchema = z.enum(["hackernews", "arxiv", "youtube", "prensa", "equipo"]);
 export type Source = z.infer<typeof SourceSchema>;
 
 export const LAYER_BY_SOURCE: Record<Source, Layer> = {
@@ -12,6 +13,8 @@ export const LAYER_BY_SOURCE: Record<Source, Layer> = {
   arxiv: "origen",
   youtube: "difusion",
   prensa: "audiencia_ejecutiva",
+  // Valor por defecto; cada reporte del equipo trae la capa de su plataforma.
+  equipo: "difusion",
 };
 
 export const StageSchema = z.enum(["emergente", "creciendo", "pico", "saturado"]);
@@ -24,6 +27,7 @@ export const MentionSchema = z.object({
   source: SourceSchema,
   url: Url,
   outlet: z.string(),
+  layer: LayerSchema.optional(),
 });
 export type Mention = z.infer<typeof MentionSchema>;
 

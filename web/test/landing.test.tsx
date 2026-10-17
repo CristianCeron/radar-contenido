@@ -5,7 +5,7 @@ import { RadarSchema } from "pipeline/schema";
 import { Landing } from "../components/Landing";
 import { calloutPosition, latamDots, radarBlips, highlightTopics } from "../lib/landing";
 import { PILARES } from "../lib/pilares";
-import { SOURCE_LABEL, formatUsd, formatVelocity } from "../lib/format";
+import { SOURCE_LABEL, formatUpdated, formatUsd, formatVelocity } from "../lib/format";
 
 const radar = RadarSchema.parse(JSON.parse(readFileSync(new URL("./fixtures/radar-real.json", import.meta.url), "utf8")));
 const html = renderToStaticMarkup(<Landing radar={radar} />);
@@ -24,7 +24,7 @@ describe("landing", () => {
   });
 
   it("usa la fecha y el costo reales de la corrida", () => {
-    expect(html).toMatch(/Datos del \d{1,2} de \w+/);
+    expect(html).toContain(`Actualizado el ${formatUpdated(radar.generatedAt)}`);
     expect(html).toContain(formatUsd(radar.cost.totalUsd));
   });
 

@@ -3,7 +3,7 @@ import { readFileSync } from "node:fs";
 import { renderToStaticMarkup } from "react-dom/server";
 import { RadarSchema } from "pipeline/schema";
 import { RadarMarket } from "../components/RadarMarket";
-import { isStale, formatUsd, formatVelocity, mentions14 } from "../lib/format";
+import { isStale, formatUpdated, formatUsd, formatVelocity, mentions14 } from "../lib/format";
 
 const radar = RadarSchema.parse(JSON.parse(readFileSync(new URL("./fixtures/radar-real.json", import.meta.url), "utf8")));
 const fresh = new Date(new Date(radar.generatedAt).getTime() + 2 * 3600_000);
@@ -32,9 +32,9 @@ describe("página del radar", () => {
     expect(html).toContain(`${mentions14(t.series)} menciones`);
   });
 
-  it("muestra la fecha de los datos y el costo de la última corrida", () => {
+  it("muestra la fecha y hora de la última actualización y el costo de la corrida", () => {
     const html = render(fresh);
-    expect(html).toMatch(/Datos del \d{1,2} de \w+/);
+    expect(html).toContain(`Actualizado el ${formatUpdated(radar.generatedAt)}`);
     expect(html).toContain(formatUsd(radar.cost.totalUsd));
   });
 

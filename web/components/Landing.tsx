@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Radar, Stage } from "pipeline/schema";
 import { PILARES } from "../lib/pilares";
-import { SOURCE_LABEL, STAGE_LABEL, formatDay, formatUsd, formatVelocity } from "../lib/format";
+import { SOURCE_LABEL, STAGE_LABEL, formatUpdated, formatUsd, formatVelocity } from "../lib/format";
 import { calloutPosition, highlightTopics, latamDots, noiseBars, radarBlips } from "../lib/landing";
 
 const SENSOR_FORM = "https://docs.google.com/forms/d/e/1FAIpQLSehFGUxekxuljgYgcL7jlAKifhhVffUJs7zl6C-zHaR2vw0Bw/viewform";
@@ -121,7 +121,7 @@ function Hero({ radar }: { radar: Radar }) {
         <div className="flex min-w-0 flex-[1_1_520px] flex-col gap-[22px] sm:gap-7">
           <span className="inline-flex items-center gap-2.5 self-start rounded-full border border-accent/35 bg-accent/12 px-3 py-[7px] text-xs font-medium text-accent sm:px-3.5 sm:py-2 sm:text-sm">
             <span className="radar-ping h-[7px] w-[7px] rounded-full bg-accent" />
-            Datos del {formatDay(radar.generatedAt)} · Costo de la corrida: {formatUsd(radar.cost.totalUsd)}
+            Actualizado el {formatUpdated(radar.generatedAt)} · Costo de la corrida: {formatUsd(radar.cost.totalUsd)}
           </span>
           <h1 className="m-0 text-[44px] leading-none font-semibold tracking-[-0.035em] sm:text-[clamp(48px,5.6vw,84px)] sm:leading-[0.98]">
             <span className="block">

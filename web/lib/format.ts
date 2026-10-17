@@ -27,6 +27,13 @@ export function splitSerif(label: string): [string, string, string] {
   return [before ? `${before} ` : "", words[i], after ? ` ${after}` : ""];
 }
 
+// "17 de octubre a las 4:02 p. m.": cuándo corrió la última actualización, en hora de Colombia.
+export function formatUpdated(iso: string): string {
+  return new Intl.DateTimeFormat("es-CO", { day: "numeric", month: "long", hour: "numeric", minute: "2-digit", timeZone: TZ }).format(
+    new Date(iso),
+  );
+}
+
 export function formatDateTime(iso: string): string {
   return new Intl.DateTimeFormat("es-CO", { dateStyle: "long", timeStyle: "short", timeZone: TZ }).format(new Date(iso));
 }

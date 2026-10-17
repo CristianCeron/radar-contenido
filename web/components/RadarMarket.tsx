@@ -3,7 +3,7 @@ import { SourceChips } from "./badges";
 import { BrandPicker } from "./BrandPicker";
 import { RadarList } from "./RadarList";
 import { StaleWarning } from "./notices";
-import { formatDay, formatUsd, isStale } from "../lib/format";
+import { formatUpdated, formatUsd, isStale } from "../lib/format";
 
 interface RadarMarketProps {
   radar: Radar;
@@ -22,7 +22,7 @@ export function RadarMarket({ radar, now, initialPilar }: RadarMarketProps) {
           <div className="flex flex-wrap items-end justify-between gap-6">
             <div className="flex flex-col gap-4">
               <span className="self-start rounded-full border border-accent/35 bg-accent/12 px-3 py-1.5 text-[13px] font-medium text-accent">
-                Datos del {formatDay(radar.generatedAt)} · Costo de la corrida: {formatUsd(radar.cost.totalUsd)}
+                Actualizado el {formatUpdated(radar.generatedAt)} · Costo de la corrida: {formatUsd(radar.cost.totalUsd)}
               </span>
               <h1 className="text-[40px] leading-none font-semibold tracking-[-0.035em] sm:text-[56px]">
                 Los {radar.topics.length} temas <span className="serif text-accent">de la semana</span>

@@ -5,9 +5,17 @@ import { StageBadge, VelocityBadge, RelevanceBar, SourceChips } from "../compone
 import { Sparkline } from "../components/Sparkline";
 import { BrandToggle } from "../components/BrandToggle";
 import { PILARES } from "../lib/pilares";
-import { mentions14 } from "../lib/format";
+import { formatUpdated, mentions14 } from "../lib/format";
 
 const html = (el: React.ReactElement) => renderToStaticMarkup(el);
+
+describe("fecha de actualización", () => {
+  it("dice día y hora en la hora de Colombia, aunque el servidor esté en UTC", () => {
+    const out = formatUpdated("2026-10-17T21:02:44.652Z").replace(/\s/g, " ");
+    expect(out).toBe("17 de octubre a las 4:02 p. m.");
+    expect(formatUpdated("2026-10-18T10:12:00Z").replace(/\s/g, " ")).toBe("18 de octubre a las 5:12 a. m.");
+  });
+});
 
 describe("etiqueta de etapa", () => {
   it("muestra el nombre de la etapa con su color", () => {

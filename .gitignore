@@ -10,3 +10,5 @@ coverage/
 pipeline/.cache/
 *.tsbuildinfo
 next-env.d.ts
+# Radares de temas alternativos (RADAR_TEMA): se prueban en local y no se publican.
+web/public/data/radar-*.json

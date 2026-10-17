@@ -1,0 +1,12 @@
+{
+  "name": "radar-contenido",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": ["pipeline", "web"],
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "test": "npm run test --workspaces --if-present",
+    "pipeline": "npm run start -w pipeline",
+    "dev": "npm run dev -w web"
+  }
+}

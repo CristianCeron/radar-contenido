@@ -36,7 +36,7 @@ function pipelineLLM(onCall?: (req: JsonRequest<unknown>) => void) {
       return {
         items: lines.map((l) => {
           const { id, titulo } = JSON.parse(l);
-          return { id, topic: /agent/i.test(titulo) ? "Agentes de IA" : "Modelos de IA" };
+          return { id, topic: /agent/i.test(titulo) ? 1 : 2 };
         }),
       };
     }
@@ -192,6 +192,20 @@ describe("orquestador", () => {
     const leaked = radar.topics[0].explanation.evidence[0].url;
     const cleaned = stripPrivateLinks(radar.topics, new Set([leaked]));
     expect(JSON.stringify(cleaned)).not.toContain(leaked);
+  });
+
+  it("si la corrida no encuentra temas no publica nada y conserva el radar anterior", async () => {
+    writeFileSync(join(dir, "radar.json"), '{"anterior":true}');
+    const llm = pipelineLLM();
+    const empty = {
+      ...llm,
+      json: async <T,>(req: JsonRequest<T>) =>
+        req.label === "temas-etiquetado"
+          ? (req.schema.parse({ items: [] }) as T)
+          : llm.json(req),
+    };
+    await expect(runRadar(deps(dir, { makeLLMs: () => ({ fast: empty, writer: empty }) }))).rejects.toThrow(/sin temas/);
+    expect(readFileSync(join(dir, "radar.json"), "utf8")).toBe('{"anterior":true}');
   });
 
   it("guarda en caché el resultado de cada fuente que funcionó", async () => {

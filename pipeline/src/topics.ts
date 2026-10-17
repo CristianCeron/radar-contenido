@@ -84,9 +84,9 @@ Propón entre 25 y 40 temas que agrupen esas piezas, pensando en un equipo de co
 - Evita categorías genéricas que sirven para cualquier pieza, como "Experiencias con IA", "Fundamentos de IA", "Noticias de IA", "Profesionales de IA" o "IA en general".
 - No repitas el mismo tema con otras palabras.`;
 
-const LABEL_SYSTEM = `Asignas a cada pieza de contenido uno de los temas de la lista recibida.
-- Elige el tema que mejor la describa, copiado exactamente como aparece en la lista.
-- Si la pieza no trata de inteligencia artificial o no encaja en ningún tema, devuelve topic: null.
+const LABEL_SYSTEM = `Asignas a cada pieza de contenido uno de los temas de la lista numerada recibida.
+- En topic devuelve el número del tema que mejor la describa.
+- Si la pieza no trata de inteligencia artificial o no encaja en ningún tema, devuelve topic: 0.
 - Usa exactamente el id recibido y clasifica todas las piezas.`;
 
 export interface AssignOptions {
@@ -156,10 +156,9 @@ export async function assignTopics(items: NormalizedItem[], llm: LLM, opts: Assi
   const taxonomy = cleanTaxonomy(proposed.topics);
   if (taxonomy.length === 0) throw new Error("El modelo no propuso temas utilizables");
 
-  const LabelSchema = z.object({
-    items: z.array(z.object({ id: z.string(), topic: z.enum(taxonomy as [string, ...string[]]).nullable() })),
-  });
-  const list = taxonomy.map((t) => `- ${t}`).join("\n");
+  // El modelo responde el número del tema: es corto y robusto. Un número fuera de la lista se descarta.
+  const LabelSchema = z.object({ items: z.array(z.object({ id: z.string(), topic: z.number().int() })) });
+  const list = taxonomy.map((t, i) => `${i + 1}. ${t}`).join("\n");
   const byId = new Map(items.map((i) => [i.id, i]));
   const groups = new Map<string, NormalizedItem[]>();
 
@@ -176,8 +175,9 @@ export async function assignTopics(items: NormalizedItem[], llm: LLM, opts: Assi
         schema: LabelSchema,
         maxTokens: 500 + batch.length * 40,
       });
-      for (const { id, topic } of result.items) {
+      for (const { id, topic: n } of result.items) {
         const item = byId.get(id);
+        const topic = taxonomy[n - 1];
         if (!topic || !item) continue;
         groups.set(topic, [...(groups.get(topic) ?? []), item]);
       }

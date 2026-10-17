@@ -155,12 +155,16 @@ async function buildRadar(deps: RadarDeps, sink: CostSink): Promise<Omit<Radar, 
     };
   });
 
+  const published = stripPrivateLinks(topics, privateLinks(items));
+  // Un radar vacío es una corrida fallida: se aborta para conservar el radar anterior.
+  if (published.length === 0) throw new Error("La corrida terminó sin temas con evidencia; se conserva el radar anterior");
+
   return {
     generatedAt: deps.now.toISOString(),
     windowDays: 30,
     sources: statuses,
     profiles: deps.profiles.map((p) => ({ id: p.id, nombre: p.nombre })),
-    topics: stripPrivateLinks(topics, privateLinks(items)),
+    topics: published,
   };
 }
 

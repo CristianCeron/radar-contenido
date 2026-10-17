@@ -28,7 +28,13 @@ const items = [
 const topicList = (req: JsonRequest<unknown>) => req.prompt.split("\n\nPiezas:")[0];
 const ids = (req: JsonRequest<unknown>) => [...req.prompt.matchAll(/"id":"(\w+)"/g)].map((m) => m[1]);
 
-// Taxonomía fija y etiquetado por palabras del título; lo que no encaja queda en null.
+// Número de un tema en la lista numerada del pedido ("1. Agentes de IA"); 0 si no está.
+function numberOf(req: JsonRequest<unknown>, label: string): number {
+  const m = topicList(req).match(new RegExp(`(\\d+)\\. ${label}`));
+  return m ? Number(m[1]) : 0;
+}
+
+// Taxonomía fija y etiquetado por palabras del título; lo que no encaja queda en 0 (ninguno).
 function standardLLM(taxonomy = ["Agentes de IA", "Modelos de video"]) {
   return fakeLLM((req) => {
     if (req.label === "temas-taxonomia") return { topics: taxonomy };
@@ -36,7 +42,7 @@ function standardLLM(taxonomy = ["Agentes de IA", "Modelos de video"]) {
     return {
       items: ids(req).map((id) => {
         const t = titles.get(id) ?? "";
-        return { id, topic: /agent/i.test(t) ? "Agentes de IA" : /video/i.test(t) ? "Modelos de video" : null };
+        return { id, topic: /agent/i.test(t) ? numberOf(req, "Agentes de IA") : /video/i.test(t) ? numberOf(req, "Modelos de video") : 0 };
       }),
     };
   });
@@ -67,11 +73,9 @@ describe("asignación de temas", () => {
     expect(llm.requests[0].system).toMatch(/Evita categorías genéricas/);
   });
 
-  it("etiqueta eligiendo solo de esa lista: una etiqueta inventada hace fallar el lote", async () => {
+  it("etiqueta eligiendo solo de esa lista: un número fuera de la lista se descarta", async () => {
     const llm = fakeLLM((req) =>
-      req.label === "temas-taxonomia"
-        ? { topics: ["Agentes de IA"] }
-        : { items: ids(req).map((id) => ({ id, topic: "Tema inventado" })) },
+      req.label === "temas-taxonomia" ? { topics: ["Agentes de IA"] } : { items: ids(req).map((id) => ({ id, topic: 7 })) },
     );
     const groups = await assignTopics(items, llm, { log: () => {} });
     expect(groups).toEqual([]);
@@ -123,7 +127,7 @@ describe("asignación de temas", () => {
 
   it("ignora ids que el modelo inventa", async () => {
     const llm = fakeLLM((req) =>
-      req.label === "temas-taxonomia" ? { topics: ["Agentes de IA"] } : { items: [{ id: "999", topic: "Agentes de IA" }] },
+      req.label === "temas-taxonomia" ? { topics: ["Agentes de IA"] } : { items: [{ id: "999", topic: 1 }] },
     );
     expect(await assignTopics([items[0]], llm)).toEqual([]);
   });

@@ -47,6 +47,12 @@ describe("fuente YouTube", () => {
     expect(res.items).toEqual([]);
   });
 
+  it("un 429 de YouTube también cuenta como cupo agotado", async () => {
+    const f = fakeFetch(() => ({ status: 429, body: '{"error":{"code":429,"status":"RESOURCE_EXHAUSTED"}}' }));
+    const res = await fetchYouTube({ fetch: f, now, apiKey: "test", queries: ["agentes de IA"] });
+    expect(res.status).toBe("cupo_agotado");
+  });
+
   it("conserva lo ya leído si el cupo se agota a mitad de la corrida", async () => {
     let n = 0;
     const f = fakeFetch((url) => {

@@ -37,7 +37,7 @@ async function getJson<T>(doFetch: typeof fetch, url: string): Promise<T> {
   const res = await doFetch(url);
   if (!res.ok) {
     const body = await res.text();
-    if (res.status === 403 && /quotaExceeded|rateLimitExceeded|dailyLimitExceeded/.test(body)) {
+    if (res.status === 429 || (res.status === 403 && /quotaExceeded|rateLimitExceeded|dailyLimitExceeded/.test(body))) {
       throw new QuotaExceeded("Cupo de YouTube agotado");
     }
     throw new Error(`YouTube respondió ${res.status}`);

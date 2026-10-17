@@ -1,7 +1,7 @@
-import { RadarMarket } from "../components/RadarMarket";
+import { Landing } from "../components/Landing";
 import { loadRadar } from "../lib/radar";
 
-// La portada lee el radar.json que escribe el pipeline cada madrugada.
+// La landing cuenta qué hace el radar con las cifras de la última corrida y lleva a /radar.
 export default function Home() {
-  return <RadarMarket radar={loadRadar()} now={new Date()} />;
+  return <Landing radar={loadRadar()} />;
 }

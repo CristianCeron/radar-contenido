@@ -1,0 +1,17 @@
+{
+  "_nota": "Feeds públicos de prensa de negocios y consultoras. Verificados el 2026-10-16. Solo se toman las notas que hablan de IA.",
+  "feeds": [
+    { "outlet": "Portafolio", "url": "https://www.portafolio.co/rss/tecnologia.xml", "pais": "CO" },
+    { "outlet": "La República", "url": "https://www.larepublica.co/rss/", "pais": "CO" },
+    { "outlet": "El Tiempo Tecnósfera", "url": "https://www.eltiempo.com/rss/tecnosfera.xml", "pais": "CO" },
+    { "outlet": "Semana Tecnología", "url": "https://www.semana.com/arc/outboundfeeds/rss/category/tecnologia/", "pais": "CO" },
+    { "outlet": "Infobae Tecno", "url": "https://www.infobae.com/arc/outboundfeeds/rss/category/tecno/", "pais": "LATAM" },
+    { "outlet": "Ámbito Tecnología", "url": "https://www.ambito.com/rss/pages/tecnologia.xml", "pais": "AR" },
+    { "outlet": "América Retail", "url": "https://www.america-retail.com/feed/", "pais": "LATAM" },
+    { "outlet": "Expansión Economía Digital", "url": "https://www.expansion.com/rss/economia-digital.xml", "pais": "ES" },
+    { "outlet": "MIT Technology Review en español", "url": "https://www.technologyreview.es/feed", "pais": "ES" },
+    { "outlet": "Xataka", "url": "https://www.xataka.com/feedburner.xml", "pais": "ES" },
+    { "outlet": "Microsoft Noticias Latinoamérica", "url": "https://news.microsoft.com/source/latam/feed/", "pais": "LATAM" },
+    { "outlet": "McKinsey Insights", "url": "https://www.mckinsey.com/insights/rss", "pais": "GLOBAL" }
+  ]
+}

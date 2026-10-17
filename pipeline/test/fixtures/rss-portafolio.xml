@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" version="2.0">
+    <channel>
+        <title>PORTAFOLIO.CO -Tecnología</title>
+        <description>Noticias de Tecnologìa</description>
+        <image>
+                <url>https://www.portafolio.co/images/compartir.jpg</url>
+            <title>PORTAFOLIO.CO -Tecnología</title>
+            <link>https://www.portafolio.co</link>
+        </image>
+        <pubDate>Fri, 16 Oct 2026 22:32:23 -0500</pubDate>
+        <lastBuildDate>Fri, 16 Oct 2026 22:32:23 -0500</lastBuildDate>
+        <generator>Wf Feed Generator (https://www.portafolio.co)</generator>
+        <link>https://www.portafolio.co</link>
+                    <category>Tecnología</category>
+                <atom:link rel="self" type="application/rss+xml" href="https://www.portafolio.co/rss/tecnologia.xml"/>
+        
+                                                
+            <item>
+                <title>Crédito para IA se encarece: bonos del sector exigen diferenciales de 115 puntos básicos en EE. UU.</title>
+                <pubDate>2026-10-16T15:06:24-05:00</pubDate>
+                <link>https://www.portafolio.co/tecnologia/credito-para-ia-se-encarece-bonos-del-sector-exigen-diferenciales-de-115-puntos-basicos-en-ee-uu-504604</link>
+                <guid>https://www.portafolio.co/tecnologia/credito-para-ia-se-encarece-bonos-del-sector-exigen-diferenciales-de-115-puntos-basicos-en-ee-uu-504604</guid>
+                                    <enclosure type="image/png" length="" url="https://imagenes.portafolio.co/files/og_thumbnail/files/fp/uploads/2026/10/16/6ad281b96fd90.r_d.853-367-0.png"/>
+                                <category>Tecnología</category>
+                <description>Los emisores ligados a IA registran diferenciales de 115 puntos básicos, frente a 78 del mercado corporativo.</description>
+                                <slash:comments>0</slash:comments>
+            </item>
+<item>
+                <title>iPhone Duo inicia preventa hoy en Colombia: este es el precio del primer celular plegable de Apple</title>
+                <pubDate>2026-10-16T07:33:25-05:00</pubDate>
+                <link>https://www.portafolio.co/tecnologia/iphone-duo-inicia-preventa-hoy-en-colombia-este-es-el-precio-del-primer-celular-plegable-de-apple-504565</link>
+                <guid>https://www.portafolio.co/tecnologia/iphone-duo-inicia-preventa-hoy-en-colombia-este-es-el-precio-del-primer-celular-plegable-de-apple-504565</guid>
+                                    <enclosure type="image/png" length="" url="https://imagenes.portafolio.co/files/og_thumbnail/files/fp/uploads/2026/10/16/6ad21186babda.r_d.1015-472-0.png"/>
+                                <category>Tecnología</category>
+                <description>Mac Center anunció que el dispositivo estará disponible desde $9.199.000, en su versión de 256 GB.</description>
+                                <slash:comments>0</slash:comments>
+            </item>
+<item>
+                <title>Netflix despedirá a 1.000 empleados en su mayor recorte de personal desde 2022</title>
+                <pubDate>2026-10-15T12:50:42-05:00</pubDate>
+                <link>https://www.portafolio.co/tecnologia/netflix-despedira-a-1-000-empleados-en-su-mayor-recorte-de-personal-desde-504525</link>
+                <guid>https://www.portafolio.co/tecnologia/netflix-despedira-a-1-000-empleados-en-su-mayor-recorte-de-personal-desde-504525</guid>
+                                    <enclosure type="image/png" length="" url="https://imagenes.portafolio.co/files/og_thumbnail/uploads/2025/12/06/693447f2c1785.png"/>
+                                <category>Tecnología</category>
+                <description>La compañía reducirá cerca del 6 % de su plantilla global, en un momento en el que sus acciones acumulan una caída.</description>
+                                <slash:comments>0</slash:comments>
+            </item>
+<item>
+                <title>Meta presenta nuevos modelos de inteligencia artificial para competir con OpenAI y Anthropic</title>
+                <pubDate>2026-10-12T15:47:48-05:00</pubDate>
+                <link>https://www.portafolio.co/tecnologia/meta-presenta-nuevos-modelos-de-inteligencia-artificial-para-competir-con-openai-y-anthropic-504335</link>
+                <guid>https://www.portafolio.co/tecnologia/meta-presenta-nuevos-modelos-de-inteligencia-artificial-para-competir-con-openai-y-anthropic-504335</guid>
+                                    <enclosure type="image/jpeg" length="" url="https://imagenes.portafolio.co/files/og_thumbnail/uploads/2025/12/04/6932534255c2a.jpeg"/>
+                                <category>Tecnología</category>
+                <description>La compañía de Mark Zuckerberg anunció Muse Wonder y Muse Wonder Full, modelos que ofrecerían &quot;mejor&quot; rendimiento.</description>
+                                <slash:comments>0</slash:comments>
+            </item>
+    </channel>
+</rss>

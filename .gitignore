@@ -8,3 +8,5 @@ coverage/
 *.log
 .vercel/
 pipeline/.cache/
+*.tsbuildinfo
+next-env.d.ts

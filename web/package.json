@@ -10,9 +10,10 @@
   },
   "dependencies": {
     "next": "^16.4.2",
+    "pipeline": "*",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
-    "pipeline": "*"
+    "recharts": "^3.10.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.3.3",

@@ -1,4 +1,4 @@
-import type { Source, SourceStatus, Stage } from "pipeline/schema";
+import type { HookType, Source, SourceStatus, Stage } from "pipeline/schema";
 
 const TZ = "America/Bogota";
 const STALE_HOURS = 36;
@@ -60,3 +60,14 @@ export function sourceStatusText(s: SourceStatus): string {
       return "sin datos hoy";
   }
 }
+
+export const HOOK_LABEL: Record<HookType, string> = {
+  dato_sorprendente: "dato sorprendente",
+  tutorial: "tutorial",
+  noticia: "noticia",
+  opinion: "opinión",
+  caso_de_uso: "caso de uso",
+  comparativa: "comparativa",
+  advertencia: "advertencia",
+  otro: "otro",
+};

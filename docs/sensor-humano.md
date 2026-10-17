@@ -7,7 +7,10 @@ la página: solo cuenta el reporte y usa la descripción.
 ## Crear el formulario (una sola vez, 5 minutos)
 
 1. Entra a https://forms.google.com con la cuenta del equipo y crea un formulario en blanco.
-   Título sugerido: "Radar 30X: ¿qué viste en redes?".
+   Título sugerido: "Radar 30X: ¿qué viste en redes?". Descripción sugerida: "Pega el enlace de
+   una publicación sobre crecimiento de empresas (mentalidad, growth, equipos, ventas, marketing,
+   expansión, fundraising o IA aplicada) que viste en LinkedIn, Instagram, TikTok, Facebook o
+   YouTube. Suma al radar de contenido."
 2. Pregunta 1: **Enlace de la publicación**, tipo "Respuesta corta", obligatoria.
 3. Pregunta 2: **¿De qué trata? (una línea)**, tipo "Respuesta corta", opcional.
 4. En la pestaña **Respuestas**, haz clic en **Vincular a Hojas de cálculo** y crea una hoja nueva.

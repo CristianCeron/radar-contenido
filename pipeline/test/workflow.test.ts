@@ -36,6 +36,11 @@ describe("actualización diaria automática", () => {
     expect(workflow).toContain("git push");
   });
 
+  it("trae los cambios nuevos de la rama antes de subir el radar", () => {
+    expect(workflow.indexOf("git pull --rebase")).toBeGreaterThan(-1);
+    expect(workflow.indexOf("git pull --rebase")).toBeLessThan(workflow.lastIndexOf("git push"));
+  });
+
   it("conserva la caché de fuentes entre corridas para el último resultado guardado", () => {
     expect(workflow).toContain("pipeline/.cache");
     expect(workflow).toContain("actions/cache");

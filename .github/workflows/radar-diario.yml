@@ -62,4 +62,9 @@ jobs:
           git config user.email "radar-bot@users.noreply.github.com"
           git add web/public/data/radar.json
           git commit -m "chore: radar diario $(date -u +%Y-%m-%d)"
-          git push
+          # La rama pudo avanzar mientras corría el radar: se traen esos cambios antes de subir.
+          for intento in 1 2 3; do
+            git pull --rebase origin main && git push && exit 0
+            sleep 10
+          done
+          exit 1

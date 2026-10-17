@@ -103,7 +103,7 @@ export async function generateBrief(topic: BriefTopic, profile: Profile, opts: B
     system: SYSTEM,
     prompt: buildPrompt(topic, profile),
     schema,
-    maxTokens: 1500,
+    maxTokens: 6000,
   });
 
   const clean = (s: string) => s.replace(/\s*—\s*/g, ", ").trim();

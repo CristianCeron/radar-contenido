@@ -108,7 +108,7 @@ export async function explainTopic(topic: ExplainInput, opts: ExplainOptions): P
     system: SYSTEM,
     prompt: `Tema: ${topic.label}\nEtapa: ${topic.stage}\nVelocidad semanal: ${topic.velocity ?? "sin dato"}%\n\nEvidencia:\n${lines.join("\n")}`,
     schema: ExplainSchema,
-    maxTokens: 2000,
+    maxTokens: 8000,
   });
 
   const linked = [...new Set(result.evidenceIds)].map((ref) => byRef.get(ref)).filter((it): it is NormalizedItem => !!it);

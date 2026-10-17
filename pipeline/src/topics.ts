@@ -1,6 +1,7 @@
 import { z } from "zod";
 import type { NormalizedItem } from "./schema.js";
 import type { LLM } from "./llm/types.js";
+import { mapPool } from "./pool.js";
 
 export interface TopicGroup {
   id: string;
@@ -68,6 +69,7 @@ const MERGE_SYSTEM = `Recibes etiquetas de temas de IA. Agrupa solo las que son 
 Para cada grupo devuelve la etiqueta canónica en español y sus alias. Si no hay sinónimos, devuelve merges vacío.`;
 
 export interface AssignOptions {
+  concurrency?: number;
   batchSize?: number;
 }
 
@@ -90,16 +92,19 @@ export async function assignTopics(items: NormalizedItem[], llm: LLM, opts: Assi
   const labelOf = new Map<string, string>();
   const known = new Set<string>();
 
-  for (let i = 0; i < items.length; i += batchSize) {
-    const batch = items.slice(i, i + batchSize);
+  const batches: NormalizedItem[][] = [];
+  for (let i = 0; i < items.length; i += batchSize) batches.push(items.slice(i, i + batchSize));
+
+  async function label(batch: NormalizedItem[]) {
     const listing = batch.map((it) => JSON.stringify({ id: it.id, titulo: it.title })).join("\n");
-    const existing = known.size ? `Etiquetas ya usadas: ${[...known].join(" | ")}\n\n` : "";
+    const shown = [...known].slice(-200);
+    const existing = shown.length ? `Etiquetas ya usadas: ${shown.join(" | ")}\n\n` : "";
     const result = await llm.json({
       label: "temas-etiquetado",
       system: LABEL_SYSTEM,
       prompt: `${existing}Piezas:\n${listing}`,
       schema: LabelSchema,
-      maxTokens: 200 + batch.length * 40,
+      maxTokens: 400 + batch.length * 40,
     });
     for (const { id, topic } of result.items) {
       if (!topic || !byId.has(id)) continue;
@@ -107,6 +112,10 @@ export async function assignTopics(items: NormalizedItem[], llm: LLM, opts: Assi
       known.add(topic.trim());
     }
   }
+
+  // El primer lote va solo para sembrar etiquetas; el resto puede ir en paralelo reutilizándolas.
+  if (batches.length) await label(batches[0]);
+  await mapPool(batches.slice(1), opts.concurrency ?? 1, label);
 
   // Fusión de sinónimos que la clave determinista no alcanza a unir.
   const canonicalByKey = new Map<string, { key: string; label: string }>();
@@ -117,7 +126,7 @@ export async function assignTopics(items: NormalizedItem[], llm: LLM, opts: Assi
       system: MERGE_SYSTEM,
       prompt: [...known].join("\n"),
       schema: MergeSchema,
-      maxTokens: 2000,
+      maxTokens: 8000,
     });
     for (const m of merges) {
       const target = { key: labelKey(m.canonical), label: m.canonical };

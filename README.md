@@ -6,7 +6,8 @@ explica por qué con evidencia enlazada y los convierte en
 briefs de contenido para una marca concreta. Prototipo para el reto "Radar de contenido" del
 Hackathon 30X, con dos perfiles: 30X y Andrés Bilbao.
 
-**Demo:** https://radar-contenido-kappa.vercel.app
+- **Demo:** https://radar-contenido-kappa.vercel.app
+- **Video del pitch (2:45):** https://youtu.be/zv9kBdsJgSs
 
 Hoy los equipos de media pagan servicios de scraping que traen datos pero no explican por qué algo
 funcionó ni si encaja con su audiencia. El radar usa solo fuentes oficiales y públicas, muestra la
@@ -28,7 +29,7 @@ evidencia de cada afirmación y entrega un brief listo para producir.
   evidencia enlazada no se muestra.
 - **Genera briefs** por marca (ángulo, formato, gancho y oportunidad ligada a un producto) y uno
   nuevo en vivo cuando se cambia de perfil en la página.
-- Muestra en la página la **fecha de los datos y el costo** de la última corrida.
+- Muestra en la página el **día y la hora de la última actualización** y el costo de esa corrida.
 
 ## Decisiones de producto
 
@@ -95,6 +96,7 @@ radar publicado.
 |---|---|
 | Costo por corrida | Entre USD 0,67 y 0,84 (70 a 120 llamadas a Gemini, 9 a 18 minutos) |
 | Costo mensual con una corrida diaria | Unos USD 20 a 25, más centavos por los briefs en vivo |
+| Costo mensual con una corrida semanal | Unos USD 3 a 4 (se cambia el horario en `.github/workflows/radar-diario.yml`) |
 | Tope de costo por corrida | USD 1,50 (`RUN_COST_LIMIT_USD`); si se supera, no se publica nada y queda el radar anterior |
 | Fuentes sin costo | Hacker News, arXiv, RSS y YouTube (cupo gratis de 10.000 unidades al día; una corrida usa unas 800) |
 | Infraestructura | GitHub Actions (corrida diaria) y Vercel Hobby (página); ambos gratis |
@@ -109,7 +111,7 @@ radar publicado.
   equipo de 30X confirme datos.
 - **Límites conocidos:** el ranking mide crecimiento en las fuentes que lee, no el desempeño real de
   las publicaciones; LinkedIn, Instagram y TikTok solo entran por el sensor humano; el brief en vivo
-  tarda entre 10 y 13 segundos.
+  tarda entre 10 y 15 segundos, y si pasa de 15 la página muestra el brief de la mañana y lo indica.
 
 ## Pruebas
 
@@ -120,9 +122,33 @@ npm test
 Corre las pruebas del pipeline y de la web con vitest (246 en total). No llaman a ningún servicio
 real: usan respuestas grabadas en `pipeline/test/fixtures`.
 
+## Siguientes pasos
+
+- **Aprender de lo que funciona:** conectar el radar con las métricas de las cuentas propias de 30X
+  (APIs oficiales) para medir cómo rinden los temas publicados y ajustar el ranking con esos datos.
+- **Histórico en la página:** cada corrida ya queda guardada en el repositorio; mostrar día por día
+  cómo se mueve cada tema.
+- **Alertas** cuando un tema pasa de emergente a creciendo, que es el mejor momento para publicar.
+- **Más fuentes oficiales:** Reddit (API oficial) y podcasts por RSS.
+- **Activar JEV** (Eden AI) como clasificador principal y bajar la latencia del brief en vivo.
+
 ## Documentos
 
 - [Spec](spec-radar-contenido.md)
 - [Verificación contra la spec](docs/verificacion-spec.md)
 - [Cómo obtener las claves](docs/claves.md)
 - [Sensor humano](docs/sensor-humano.md)
+
+## Autor y contacto
+
+Construido por **Cristian Cerón**, product manager y product builder, para el Hackathon 30X.
+
+- LinkedIn: https://www.linkedin.com/in/cristianceronb/
+
+## Licencia
+
+[MIT](LICENSE): cualquiera puede usar, copiar y modificar el código, citando al autor.
+
+## Agradecimientos
+
+Al equipo de 30X por plantear el reto "Radar de contenido" y por la charla de pitch del hackathon.

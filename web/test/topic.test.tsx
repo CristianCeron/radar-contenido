@@ -3,7 +3,7 @@ import { readFileSync } from "node:fs";
 import { renderToStaticMarkup } from "react-dom/server";
 import { RadarSchema, type Topic } from "pipeline/schema";
 import { TopicDetail } from "../components/TopicDetail";
-import { AreaChart, areaPaths } from "../components/AreaChart";
+import { AreaChart, areaPaths, nearestIndex, pointLabel } from "../components/AreaChart";
 import { mentions14, splitSerif } from "../lib/format";
 
 const radar = RadarSchema.parse(JSON.parse(readFileSync(new URL("./fixtures/radar-real.json", import.meta.url), "utf8")));
@@ -91,6 +91,41 @@ describe("gráfico de área", () => {
     const out = renderToStaticMarkup(<AreaChart series={series} />);
     expect(out).toContain("1 de septiembre");
     expect(out).toContain("17 de octubre");
+  });
+
+  it("al pasar el mouse toma el día más cercano, sin salirse de la serie", () => {
+    expect(nearestIndex(0, 30)).toBe(0);
+    expect(nearestIndex(1, 30)).toBe(29);
+    expect(nearestIndex(0.5, 30)).toBe(15);
+    expect(nearestIndex(0.51, 3)).toBe(1);
+    expect(nearestIndex(-0.2, 30)).toBe(0);
+    expect(nearestIndex(1.3, 30)).toBe(29);
+  });
+
+  it("la etiqueta dice el día y cuántas menciones tuvo, en singular cuando es una", () => {
+    expect(pointLabel({ date: "2026-10-12", count: 21 })).toBe("12 de octubre · 21 menciones");
+    expect(pointLabel({ date: "2026-10-12", count: 1 })).toBe("12 de octubre · 1 mención");
+    expect(pointLabel({ date: "2026-10-12", count: 0 })).toBe("12 de octubre · 0 menciones");
+  });
+
+  it("muestra la etiqueta, la línea y el punto del día activo", () => {
+    const series = [
+      { date: "2026-10-10", count: 2 },
+      { date: "2026-10-11", count: 21 },
+      { date: "2026-10-12", count: 3 },
+    ];
+    const sin = renderToStaticMarkup(<AreaChart series={series} />);
+    expect(sin).not.toContain('data-testid="chart-tooltip"');
+    const con = renderToStaticMarkup(<AreaChart series={series} activoInicial={1} />);
+    expect(con).toContain('data-testid="chart-tooltip"');
+    expect(con).toContain("11 de octubre · 21 menciones");
+    expect(con).toContain('data-testid="chart-cursor"');
+  });
+
+  it("se puede recorrer con el teclado y anuncia el día", () => {
+    const out = renderToStaticMarkup(<AreaChart series={[{ date: "2026-10-10", count: 2 }]} />);
+    expect(out).toContain('tabindex="0"');
+    expect(out).toContain('aria-live="polite"');
   });
 });
 

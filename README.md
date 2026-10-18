@@ -144,6 +144,7 @@ real: usan respuestas grabadas en `pipeline/test/fixtures`.
 Construido por **Cristian Cerón**, product manager y product builder, para el Hackathon 30X.
 
 - LinkedIn: https://www.linkedin.com/in/cristianceronb/
+- Correo: [cristian.ceronb@gmail.com](mailto:cristian.ceronb@gmail.com)
 
 ## Licencia
 

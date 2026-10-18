@@ -107,8 +107,8 @@ radar publicado.
 - **Si una fuente falla o agota su cupo**, el radar usa su último resultado guardado y la página lo
   indica con su fecha.
 - **Mantenimiento:** los feeds RSS pueden cambiar de dirección; están en el archivo de tema y se
-  reemplazan sin tocar código. Los perfiles de marca tienen una lista `porValidar` para que el
-  equipo de 30X confirme datos.
+  reemplazan sin tocar código. Los perfiles de marca se arman con información pública y conviene que
+  el equipo de cada marca los revise antes de usar el radar en serio.
 - **Límites conocidos:** el ranking mide crecimiento en las fuentes que lee, no el desempeño real de
   las publicaciones; LinkedIn, Instagram y TikTok solo entran por el sensor humano; el brief en vivo
   tarda entre 10 y 15 segundos, y si pasa de 15 la página muestra el brief de la mañana y lo indica.

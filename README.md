@@ -117,7 +117,7 @@ radar publicado.
 npm test
 ```
 
-Corre las pruebas del pipeline y de la web con vitest (175 en total). No llaman a ningún servicio
+Corre las pruebas del pipeline y de la web con vitest (246 en total). No llaman a ningún servicio
 real: usan respuestas grabadas en `pipeline/test/fixtures`.
 
 ## Documentos

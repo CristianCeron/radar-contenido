@@ -21,24 +21,20 @@ export function Logo() {
 interface NavItem {
   href: string;
   label: string;
-  current?: boolean;
 }
 
-// En la landing el menú sigue la historia de la página. En el resto, primero cómo funciona y
-// después el radar.
+// El mismo menú en todas las páginas, siguiendo la historia de la landing. En la landing baja a la
+// sección; desde otra página vuelve a la landing en esa sección.
 export function navFor(path: string): NavItem[] {
-  if (path === "/") {
-    return [
-      { href: "#historia", label: "El problema" },
-      { href: "#como-funciona", label: "Cómo funciona" },
-      { href: "#impacto", label: "Impacto" },
-    ];
-  }
+  const base = path === "/" ? "" : "/";
   return [
-    { href: "/#como-funciona", label: "Cómo funciona" },
-    { href: "/radar", label: "El radar", current: path === "/radar" || path.startsWith("/tema") },
+    { href: `${base}#historia`, label: "El problema" },
+    { href: `${base}#como-funciona`, label: "Cómo funciona" },
+    { href: `${base}#impacto`, label: "Impacto" },
   ];
 }
+
+const enRadar = (path: string) => path === "/radar" || path.startsWith("/tema");
 
 const circle =
   "inline-flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center rounded-full border border-[#3a3934] bg-transparent text-white transition-colors hover:border-accent";
@@ -54,19 +50,14 @@ interface HeaderViewProps {
 // Lo que se ve del encabezado. Va separado del estado para poder probarlo sin navegador.
 export function HeaderView({ path, menuOpen, onToggleMenu, onHelp, onNavigate }: HeaderViewProps) {
   const nav = navFor(path);
-  const landing = path === "/";
+  const actual = enRadar(path) ? ("page" as const) : undefined;
   return (
-    <header className="relative z-40 border-b border-[#1f1f1d] bg-ink">
+    <header className="sticky top-0 z-40 border-b border-[#1f1f1d] bg-ink">
       <div className="mx-auto flex max-w-[1280px] items-center justify-between gap-6 px-5 py-3.5 sm:px-8 sm:py-[18px]">
         <Logo />
         <nav aria-label="Principal" className="hidden gap-7 text-[15px] md:flex">
           {nav.map((n) => (
-            <Link
-              key={n.href}
-              href={n.href}
-              aria-current={n.current ? "page" : undefined}
-              className={n.current ? "text-white" : "text-soft transition-colors hover:text-white"}
-            >
+            <Link key={n.href} href={n.href} className="text-soft transition-colors hover:text-white">
               {n.label}
             </Link>
           ))}
@@ -79,14 +70,13 @@ export function HeaderView({ path, menuOpen, onToggleMenu, onHelp, onNavigate }:
               <circle cx="12" cy="17" r=".6" fill="currentColor" />
             </svg>
           </button>
-          {landing && (
-            <Link
-              href="/radar"
-              className="hidden rounded-full bg-accent px-[22px] py-3 text-[15px] font-semibold text-ink transition-colors hover:bg-accent-hover md:inline-flex"
-            >
-              Ver el radar
-            </Link>
-          )}
+          <Link
+            href="/radar"
+            aria-current={actual}
+            className="hidden rounded-full bg-accent px-[22px] py-3 text-[15px] font-semibold text-ink transition-colors hover:bg-accent-hover md:inline-flex"
+          >
+            Ver el radar
+          </Link>
           <button
             type="button"
             onClick={onToggleMenu}
@@ -113,23 +103,19 @@ export function HeaderView({ path, menuOpen, onToggleMenu, onHelp, onNavigate }:
               key={n.href}
               href={n.href}
               onClick={onNavigate}
-              aria-current={n.current ? "page" : undefined}
-              className={`flex min-h-12 items-center border-b border-ink-line-2 text-xl font-semibold tracking-[-0.02em] ${
-                n.current ? "text-accent" : "text-white"
-              }`}
+              className="flex min-h-12 items-center border-b border-ink-line-2 text-xl font-semibold tracking-[-0.02em] text-white"
             >
               {n.label}
             </Link>
           ))}
-          {landing && (
-            <Link
-              href="/radar"
-              onClick={onNavigate}
-              className="mt-4 rounded-full bg-accent p-4 text-center text-[17px] font-semibold text-ink"
-            >
-              Ver el radar
-            </Link>
-          )}
+          <Link
+            href="/radar"
+            onClick={onNavigate}
+            aria-current={actual}
+            className="mt-4 rounded-full bg-accent p-4 text-center text-[17px] font-semibold text-ink"
+          >
+            Ver el radar
+          </Link>
         </nav>
       )}
     </header>

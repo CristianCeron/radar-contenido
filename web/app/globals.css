@@ -119,8 +119,10 @@ body {
   animation: menu-in 0.2s ease-out;
 }
 
+/* El encabezado queda fijo arriba: los saltos a una sección dejan su altura libre. */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
 
 @media (prefers-reduced-motion: reduce) {

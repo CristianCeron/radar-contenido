@@ -7,27 +7,31 @@ const render = (path: string, menuOpen = false) =>
   renderToStaticMarkup(<HeaderView path={path} menuOpen={menuOpen} onToggleMenu={noop} onHelp={noop} onNavigate={noop} />);
 
 describe("navegación del encabezado", () => {
-  it("en la landing sigue la historia del diseño: el problema, cómo funciona e impacto", () => {
-    expect(navFor("/").map((n) => n.label)).toEqual(["El problema", "Cómo funciona", "Impacto"]);
-    expect(navFor("/").map((n) => n.href)).toEqual(["#historia", "#como-funciona", "#impacto"]);
-  });
-
-  it("en las demás páginas cómo funciona va antes que el radar", () => {
-    for (const path of ["/radar", "/tema/x", "/tema/x/brief"]) {
-      expect(navFor(path).map((n) => n.label)).toEqual(["Cómo funciona", "El radar"]);
+  it("es el mismo menú en todas las páginas: el problema, cómo funciona e impacto", () => {
+    for (const path of ["/", "/radar", "/tema/x", "/tema/x/brief"]) {
+      expect(navFor(path).map((n) => n.label)).toEqual(["El problema", "Cómo funciona", "Impacto"]);
     }
-    expect(navFor("/radar")[0].href).toBe("/#como-funciona");
   });
 
-  it("en la landing tiene el botón para ver el radar", () => {
-    expect(render("/")).toContain('href="/radar"');
-    expect(render("/")).toContain("Ver el radar");
-    expect(render("/radar")).not.toContain("Ver el radar");
+  it("en la landing baja a la sección; desde otra página vuelve a la landing en esa sección", () => {
+    expect(navFor("/").map((n) => n.href)).toEqual(["#historia", "#como-funciona", "#impacto"]);
+    expect(navFor("/radar").map((n) => n.href)).toEqual(["/#historia", "/#como-funciona", "/#impacto"]);
   });
 
-  it("marca la página actual", () => {
-    expect(render("/radar")).toMatch(/aria-current="page"[^>]*>El radar/);
-    expect(render("/tema/x")).toMatch(/aria-current="page"[^>]*>El radar/);
+  it("siempre tiene el botón para ver el radar", () => {
+    for (const path of ["/", "/radar", "/tema/x"]) {
+      expect(render(path)).toMatch(/href="\/radar"[^>]*>Ver el radar/);
+    }
+  });
+
+  it("marca el radar como página actual dentro del radar y de un tema", () => {
+    expect(render("/radar")).toMatch(/aria-current="page"[^>]*>Ver el radar/);
+    expect(render("/tema/x")).toMatch(/aria-current="page"[^>]*>Ver el radar/);
+    expect(render("/")).not.toContain('aria-current="page"');
+  });
+
+  it("queda fijo arriba al bajar por la página", () => {
+    expect(render("/radar")).toMatch(/<header[^>]*class="[^"]*sticky top-0/);
   });
 
   it("en celular tiene un botón de menú que abre la misma navegación", () => {

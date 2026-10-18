@@ -29,7 +29,20 @@ describe("página del radar", () => {
   it("muestra las menciones de 14 días de cada tema", () => {
     const html = render(fresh);
     const t = radar.topics[4];
-    expect(html).toContain(`${mentions14(t.series)} menciones`);
+    expect(html).toContain(`${mentions14(t.series)} menciones en 14 días`);
+  });
+
+  it("cada columna dice qué mide, sin abreviaturas", () => {
+    const html = render(fresh);
+    for (const [titulo, detalle] of [
+      ["Semana", "frente a la anterior"],
+      ["30 días", "menciones por día"],
+      ["Menciones", "últimos 14 días"],
+      ["Relevancia", "para founders, 0 a 100"],
+    ]) {
+      expect(html).toMatch(new RegExp(`>${titulo}<[^]*?>${detalle}<`));
+    }
+    expect(html).not.toContain("14 d<");
   });
 
   it("muestra la fecha y hora de la última actualización y el costo de la corrida", () => {

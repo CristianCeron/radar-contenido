@@ -23,7 +23,7 @@ describe("detalle de tema", () => {
   });
 
   it("muestra semana, menciones de 14 días y relevancia", () => {
-    expect(html).toContain("Menciones 14 d");
+    expect(html).toContain("Menciones en 14 días");
     expect(html).toContain(`>${mentions14(topic.series)}<`);
     expect(html).toContain(`>${Math.round(topic.executiveRelevance * 100)}<`);
   });

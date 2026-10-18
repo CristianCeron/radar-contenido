@@ -31,9 +31,9 @@ function Row({ topic, pos }: { topic: Topic; pos: number }) {
         </span>
         <VelocityBadge velocity={topic.velocity} className="self-start [grid-area:vel] lg:self-center" />
         <Sparkline values={topic.series.map((p) => p.count)} rising={rising} className="h-10 w-full [grid-area:spark] lg:h-9 lg:w-[140px]" />
-        <span className="flex items-center justify-between gap-2.5 text-[13px] text-[#5c574d] [grid-area:meta] lg:contents">
+        <span className="flex flex-wrap items-center justify-between gap-x-2.5 gap-y-2 text-[13px] text-[#5c574d] [grid-area:meta] lg:contents">
           <StageBadge stage={topic.stage} className="lg:[grid-area:stage]" />
-          <span className="lg:hidden">{`${m14} menciones`}</span>
+          <span className="order-last basis-full whitespace-nowrap lg:hidden">{`${m14} menciones en 14 días`}</span>
           <span className="hidden text-[17px] font-semibold text-ink lg:block lg:[grid-area:m14]">{m14}</span>
           <span className="inline-flex items-center gap-1.5 lg:hidden">
             Relevancia <b className="text-[15px] text-ink">{Math.round(topic.executiveRelevance * 100)}</b>
@@ -49,6 +49,16 @@ function Row({ topic, pos }: { topic: Topic; pos: number }) {
         </span>
       </Link>
     </li>
+  );
+}
+
+// Título de columna con una línea corta que dice qué mide, para no depender de abreviaturas.
+function Columna({ titulo, detalle }: { titulo: string; detalle: string }) {
+  return (
+    <span className="flex flex-col gap-0.5">
+      <span>{titulo}</span>
+      <span className="text-[11px] leading-tight font-normal tracking-normal text-muted normal-case">{detalle}</span>
+    </span>
   );
 }
 
@@ -84,15 +94,15 @@ export function RadarList({ topics, initialPilar = ALL }: { topics: Topic[]; ini
           <div className="lg:min-w-[980px]">
             <div
               aria-hidden
-              className="hidden grid-cols-[48px_minmax(0,3fr)_120px_110px_140px_100px_140px_48px] items-center gap-4 border-b border-line px-6 py-4 text-xs font-semibold uppercase tracking-[.06em] text-muted-2 lg:grid"
+              className="hidden grid-cols-[48px_minmax(0,3fr)_120px_110px_140px_100px_140px_48px] items-end gap-4 border-b border-line px-6 py-4 text-xs font-semibold uppercase tracking-[.06em] text-muted-2 lg:grid"
             >
               <span>#</span>
               <span>Tema</span>
               <span>Etapa</span>
-              <span>Semana</span>
-              <span>30 días</span>
-              <span>Menciones 14 d</span>
-              <span>Relevancia</span>
+              <Columna titulo="Semana" detalle="frente a la anterior" />
+              <Columna titulo="30 días" detalle="menciones por día" />
+              <Columna titulo="Menciones" detalle="últimos 14 días" />
+              <Columna titulo="Relevancia" detalle="para founders, 0 a 100" />
               <span />
             </div>
             <ol className="flex flex-col gap-3 lg:block">

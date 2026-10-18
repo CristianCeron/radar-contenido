@@ -74,7 +74,7 @@ export function TopicDetail({ topic, radar }: { topic: Topic; radar: Radar }) {
                 {topic.velocity === null ? "sin dato" : `${up ? "▲" : "▼"} ${formatVelocity(topic.velocity)}`}
               </span>
             </Stat>
-            <Stat label="Menciones 14 d">
+            <Stat label="Menciones en 14 días">
               <span>{mentions14(topic.series)}</span>
             </Stat>
             <Stat label="Relevancia">

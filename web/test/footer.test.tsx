@@ -25,10 +25,11 @@ describe("pie de página", () => {
     expect(html).toContain("brief de la mañana");
   });
 
-  it("mantiene los enlaces a la metodología, el repositorio y el formulario del sensor", () => {
-    expect(html).toContain("github.com/CristianCeron/radar-contenido");
-    expect(html).toContain("spec-radar-contenido.md");
-    expect(html).toContain("docs.google.com/forms");
+  it("no muestra los enlaces a la metodología, el repositorio ni el formulario del sensor", () => {
+    expect(html).not.toContain("Metodología");
+    expect(html).not.toContain("Repositorio");
+    expect(html).not.toContain("Formulario del sensor");
+    expect(html).not.toContain("spec-radar-contenido.md");
   });
 
   it("no usa la raya larga", () => {

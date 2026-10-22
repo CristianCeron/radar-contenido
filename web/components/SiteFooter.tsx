@@ -1,17 +1,9 @@
 const LINKEDIN = "https://www.linkedin.com/in/cristianceronb/";
-const REPO = "https://github.com/CristianCeron/radar-contenido";
-const SENSOR_FORM = "https://docs.google.com/forms/d/e/1FAIpQLSehFGUxekxuljgYgcL7jlAKifhhVffUJs7zl6C-zHaR2vw0Bw/viewform";
 
 const external = { target: "_blank", rel: "noopener noreferrer" } as const;
 
-const LINKS = [
-  { href: `${REPO}/blob/main/spec-radar-contenido.md`, label: "Metodología" },
-  { href: REPO, label: "Repositorio" },
-  { href: SENSOR_FORM, label: "Formulario del sensor" },
-];
-
-// Pie común: quién construyó el radar, cómo contactarlo, enlaces del proyecto y un aviso sobre el
-// brief en vivo, que depende de créditos de prueba.
+// Pie común: quién construyó el radar, cómo contactarlo y un aviso sobre el brief en vivo, que
+// depende de créditos de prueba.
 export function SiteFooter() {
   return (
     <footer className="border-t border-[#1f1f1d] bg-ink text-soft">
@@ -38,20 +30,13 @@ export function SiteFooter() {
           </a>
         </div>
 
-        <div className="flex flex-col gap-4 border-t border-ink-line-2 pt-6 md:flex-row md:items-center md:justify-between">
+        <div className="border-t border-ink-line-2 pt-6">
           <span className="text-sm">
             <span className="font-semibold text-white">
               Radar <span className="text-accent">30X</span>
             </span>{" "}
             · Hackathon 30X
           </span>
-          <nav aria-label="Pie de página" className="flex flex-wrap gap-x-6 text-sm">
-            {LINKS.map((l) => (
-              <a key={l.label} href={l.href} {...external} className="inline-flex min-h-11 items-center text-soft transition-colors hover:text-white">
-                {l.label}
-              </a>
-            ))}
-          </nav>
         </div>
 
         <p className="m-0 text-center text-[13px] leading-[1.5] text-muted">

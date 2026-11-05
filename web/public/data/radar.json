@@ -1,46 +1,46 @@
 {
-  "generatedAt": "2026-11-04T17:43:35.999Z",
+  "generatedAt": "2026-11-05T17:49:34.537Z",
   "windowDays": 30,
   "cost": {
-    "totalUsd": 0.62177,
+    "totalUsd": 0.575325,
     "limitUsd": 1.5,
-    "calls": 61
+    "calls": 63
   },
   "sources": [
     {
       "source": "hackernews",
       "status": "ok",
-      "fetchedAt": "2026-11-04T17:43:35.999Z",
-      "items": 359
+      "fetchedAt": "2026-11-05T17:49:34.537Z",
+      "items": 459
     },
     {
       "source": "arxiv",
       "status": "ok",
-      "fetchedAt": "2026-11-04T17:43:35.999Z",
+      "fetchedAt": "2026-11-05T17:49:34.537Z",
       "items": 80
     },
     {
       "source": "expertos",
       "status": "ok",
-      "fetchedAt": "2026-11-04T17:43:35.999Z",
+      "fetchedAt": "2026-11-05T17:49:34.537Z",
       "items": 75
     },
     {
       "source": "youtube",
       "status": "ok",
-      "fetchedAt": "2026-11-04T17:43:35.999Z",
-      "items": 248
+      "fetchedAt": "2026-11-05T17:49:34.537Z",
+      "items": 245
     },
     {
       "source": "prensa",
       "status": "ok",
-      "fetchedAt": "2026-11-04T17:43:35.999Z",
-      "items": 125
+      "fetchedAt": "2026-11-05T17:49:34.537Z",
+      "items": 124
     },
     {
       "source": "equipo",
       "status": "ok",
-      "fetchedAt": "2026-11-04T17:43:35.999Z",
+      "fetchedAt": "2026-11-05T17:49:34.537Z",
       "items": 3
     }
   ],
@@ -56,13 +56,13 @@
   ],
   "topics": [
     {
-      "id": "agentes-de-ia-autonomos",
-      "label": "Agentes de IA autónomos",
+      "id": "agentes-de-ia",
+      "label": "Agentes de IA",
       "stage": "pico",
       "pilar": "IA aplicada al negocio",
-      "velocity": 344.4,
-      "executiveRelevance": 0.68,
-      "score": 234.19,
+      "velocity": 166.7,
+      "executiveRelevance": 0.71,
+      "score": 118.36,
       "layers": [
         "origen",
         "difusion",
@@ -70,16 +70,12 @@
       ],
       "series": [
         {
-          "date": "2026-10-06",
-          "count": 0
-        },
-        {
           "date": "2026-10-07",
           "count": 1
         },
         {
           "date": "2026-10-08",
-          "count": 3
+          "count": 2
         },
         {
           "date": "2026-10-09",
@@ -95,7 +91,7 @@
         },
         {
           "date": "2026-10-12",
-          "count": 0
+          "count": 2
         },
         {
           "date": "2026-10-13",
@@ -111,7 +107,7 @@
         },
         {
           "date": "2026-10-16",
-          "count": 0
+          "count": 1
         },
         {
           "date": "2026-10-17",
@@ -119,11 +115,11 @@
         },
         {
           "date": "2026-10-18",
-          "count": 0
+          "count": 1
         },
         {
           "date": "2026-10-19",
-          "count": 1
+          "count": 0
         },
         {
           "date": "2026-10-20",
@@ -131,7 +127,7 @@
         },
         {
           "date": "2026-10-21",
-          "count": 3
+          "count": 1
         },
         {
           "date": "2026-10-22",
@@ -143,7 +139,7 @@
         },
         {
           "date": "2026-10-24",
-          "count": 2
+          "count": 0
         },
         {
           "date": "2026-10-25",
@@ -151,7 +147,7 @@
         },
         {
           "date": "2026-10-26",
-          "count": 0
+          "count": 3
         },
         {
           "date": "2026-10-27",
@@ -171,7 +167,7 @@
         },
         {
           "date": "2026-10-31",
-          "count": 0
+          "count": 1
         },
         {
           "date": "2026-11-01",
@@ -179,14 +175,18 @@
         },
         {
           "date": "2026-11-02",
-          "count": 2
+          "count": 4
         },
         {
           "date": "2026-11-03",
-          "count": 24
+          "count": 4
         },
         {
           "date": "2026-11-04",
+          "count": 11
+        },
+        {
+          "date": "2026-11-05",
           "count": 4
         }
       ],
@@ -195,18 +195,33 @@
           "name": "Hacker News",
           "source": "hackernews",
           "url": "https://news.ycombinator.com",
-          "count": 24
+          "count": 27
         },
         {
           "name": "arXiv",
           "source": "arxiv",
           "url": "https://arxiv.org",
-          "count": 21
+          "count": 7
         },
         {
           "name": "McKinsey Insights",
           "source": "prensa",
-          "count": 3
+          "count": 6
+        },
+        {
+          "name": "pleyadesoft",
+          "source": "youtube",
+          "count": 1
+        },
+        {
+          "name": "Luis Fernando Caceres / Marketing",
+          "source": "youtube",
+          "count": 1
+        },
+        {
+          "name": "NYXN",
+          "source": "youtube",
+          "count": 1
         },
         {
           "name": "Alejavi Rivera",
@@ -229,16 +244,6 @@
           "count": 1
         },
         {
-          "name": "Búscate la vida",
-          "source": "youtube",
-          "count": 1
-        },
-        {
-          "name": "Josema Fernández | IA",
-          "source": "youtube",
-          "count": 1
-        },
-        {
           "name": "YouTube, aportes del equipo",
           "source": "equipo",
           "count": 1
@@ -246,60 +251,63 @@
       ],
       "topPieces": [
         {
-          "title": "Launch HN: Momentic (YC W24) – Agents that catch bugs by using your app",
-          "url": "https://momentic.ai/",
+          "title": "Ask HN: What's your current AI agentic setup?",
+          "url": "https://news.ycombinator.com/item?id=50366117",
           "source": "hackernews",
           "outlet": "Hacker News",
-          "hook": "caso_de_uso",
-          "format": "lanzamiento de startup en foro",
-          "analysis": "Resuelve un problema técnico, común y costoso para equipos de desarrollo, como es la detección automática de errores."
+          "hook": "otro",
+          "format": "hilo de discusión técnica",
+          "analysis": "Involucra a un público técnico al abrir un espacio para compartir conocimientos prácticos y configuraciones personales entre pares."
         },
         {
           "title": "DeepSeek acaba de lanzar su APP de Agente IA: Hace TODO GRATIS 🔥",
           "url": "https://www.youtube.com/watch?v=TCTV0ggcQCI",
           "source": "youtube",
           "outlet": "Alejavi Rivera",
-          "hook": "tutorial",
-          "format": "video tutorial de producto",
-          "analysis": "Promete una herramienta gratuita y omnipotente, generando un fuerte sentido de oportunidad y valor inmediato para el usuario."
+          "hook": "noticia",
+          "format": "video de noticia/lanzamiento",
+          "analysis": "Atrae a una audiencia masiva al anunciar una herramienta potente y gratuita, lo que genera un alto interés por su accesibilidad."
         },
         {
-          "title": "ScamWorld: An Interactive Environment for Evaluating Web Agents Against Online Fraud",
-          "url": "https://arxiv.org/abs/2611.04879v1",
+          "title": "Tools Need Not Speak in Text: Latent Context Compression for Agents",
+          "url": "https://arxiv.org/abs/2611.06500v1",
           "source": "arxiv",
           "outlet": "arXiv",
-          "hook": "caso_de_uso",
+          "hook": "otro",
           "format": "artículo académico"
         },
         {
-          "title": "Waniwani’s CEO on the agentic future of insurance distribution",
-          "url": "https://www.mckinsey.com/industries/financial-services/our-insights/waniwanis-ceo-on-the-agentic-future-of-insurance-distribution",
+          "title": "Getting real about AI: How AI agents are changing the economics of software engineering",
+          "url": "https://www.mckinsey.com/uk/our-insights/getting-real-about-ai-how-ai-agents-are-changing-the-economics-of-software-engineering",
           "source": "prensa",
           "outlet": "McKinsey Insights",
-          "hook": "caso_de_uso",
-          "format": "entrevista a ejecutivo",
-          "analysis": "Atrae a líderes de negocio al presentar una visión estratégica sobre la transformación de una industria tradicional mediante agentes de IA."
+          "hook": "otro",
+          "format": "artículo de análisis de negocios",
+          "analysis": "Engancha a los ejecutivos al enmarcar la tecnología en términos de impacto económico y ventaja estratégica con la autoridad de una consultora reconocida."
         },
         {
-          "title": "Last night an AI agent performed brain surgery on a mouse",
-          "url": "https://twitter.com/OcanaSantero/status/2115442964574908902",
+          "title": "Launch HN: Momentic (YC W24) – Agents that catch bugs by using your app",
+          "url": "https://momentic.ai/",
           "source": "hackernews",
           "outlet": "Hacker News",
-          "hook": "dato_sorprendente",
-          "format": "hilo de discusión",
-          "analysis": "Genera asombro al vincular la IA con una tarea de alta complejidad como la neurocirugía, demostrando su potencial disruptivo."
+          "hook": "noticia",
+          "format": "hilo de discusión"
         }
       ],
       "explanation": {
-        "text": "El interés en los agentes de IA autónomos crece por la combinación de casos de uso prácticos y la aparición de herramientas accesibles. La conversación está impulsada por lanzamientos de startups que resuelven problemas concretos, como la detección de bugs, y por aplicaciones sorprendentes como su uso en neurocirugía. Además, los tutoriales que permiten crear agentes sin necesidad de programar están democratizando su acceso.",
+        "text": "El interés por los agentes de IA crece por la convergencia de discusiones técnicas sobre su implementación y el análisis de su impacto económico en los negocios. La conversación pasó de lo teórico a lo práctico, con lanzamientos de productos accesibles y una alta demanda de tutoriales que muestran cómo crear y utilizar estos agentes.",
         "evidence": [
           {
-            "title": "Launch HN: Momentic (YC W24) – Agents that catch bugs by using your app",
-            "url": "https://momentic.ai/"
+            "title": "Ask HN: What's your current AI agentic setup?",
+            "url": "https://news.ycombinator.com/item?id=50366117"
           },
           {
-            "title": "Last night an AI agent performed brain surgery on a mouse",
-            "url": "https://twitter.com/OcanaSantero/status/2115442964574908902"
+            "title": "Getting real about AI: How AI agents are changing the economics of software engineering",
+            "url": "https://www.mckinsey.com/uk/our-insights/getting-real-about-ai-how-ai-agents-are-changing-the-economics-of-software-engineering"
+          },
+          {
+            "title": "DeepSeek acaba de lanzar su APP de Agente IA: Hace TODO GRATIS 🔥",
+            "url": "https://www.youtube.com/watch?v=TCTV0ggcQCI"
           },
           {
             "title": "Crea tu primer AGENTE de IA en 4 pasos (sin programar)",
@@ -310,52 +318,49 @@
       "briefs": {
         "30x": {
           "profileId": "30x",
-          "angle": "Los agentes de IA autónomos no son solo herramientas para automatizar tareas, sino una nueva clase de empleados digitales que debes aprender a contratar, dirigir y medir para escalar tu operación.",
-          "format": "carrusel de Instagram",
-          "hook": "Deja de ver demos de agentes de IA. Empieza a construir tu equipo de empleados digitales.",
+          "angle": "Deja de coleccionar herramientas de IA sueltas y empieza a construir un equipo de agentes autónomos que generen ROI para tu negocio.",
+          "format": "clase gratis en vivo por Zoom",
+          "hook": "Deja de jugar con apps de IA. Es hora de construir tu primer equipo de agentes autónomos.",
           "opportunity": {
             "product": "AI for Executives",
-            "rationale": "El carrusel introduce el framework de 'empleados digitales', posicionando a los agentes de IA como un recurso estratégico que necesita dirección, lo cual conecta directamente con la promesa de AI for Executives de crear una estrategia de IA con ROI y adopción en la empresa."
+            "rationale": "La clase mostrará el potencial estratégico de los agentes y despertará la necesidad de un framework, posicionando el programa AI for Executives como la solución para pasar de la idea a una implementación con ROI."
           },
-          "generatedAt": "2026-11-04T17:43:35.999Z"
+          "generatedAt": "2026-11-05T17:49:34.537Z"
         },
         "andres-bilbao": {
           "profileId": "andres-bilbao",
-          "angle": "En lugar de solo ver demos, los líderes deben entender cómo integrar agentes de IA en sus operaciones para construir una ventaja competitiva real y no quedarse atrás.",
+          "angle": "Los agentes de IA no son solo otra herramienta, son la próxima capa del sistema operativo de tu empresa y necesitas una estrategia para integrarlos más allá de los prompts.",
           "format": "post de LinkedIn con viñetas sobre IA",
-          "hook": "Si eres C-level y sigues viendo los agentes de IA como un juguete, ya vas tarde.",
+          "hook": "Si como líder sigues pensando en 'prompts', ya vas tarde. La conversación ahora es sobre agentes de IA.",
           "opportunity": {
             "product": "AI for Executives",
-            "rationale": "El post presenta a los agentes de IA como un imperativo estratégico, llevando al lector a buscar cómo construir esa estrategia en su propia empresa."
+            "rationale": "La pieza introduce un concepto avanzado de IA y la necesidad de un plan estratégico, posicionando el programa como el siguiente paso para los líderes que quieren pasar de la teoría a una implementación con ROI."
           },
-          "generatedAt": "2026-11-04T17:43:35.999Z"
+          "generatedAt": "2026-11-05T17:49:34.537Z"
         }
       }
     },
     {
-      "id": "aplicaciones-de-llms",
-      "label": "Aplicaciones de LLMs",
-      "stage": "creciendo",
+      "id": "ia-para-gestion-de-producto",
+      "label": "IA para gestión de producto",
+      "stage": "pico",
       "pilar": "IA aplicada al negocio",
-      "velocity": 345.5,
-      "executiveRelevance": 0.66,
-      "score": 228.03,
+      "velocity": 100,
+      "executiveRelevance": 0.73,
+      "score": 73,
       "layers": [
         "origen",
-        "difusion"
+        "difusion",
+        "audiencia_ejecutiva"
       ],
       "series": [
         {
-          "date": "2026-10-06",
-          "count": 0
-        },
-        {
           "date": "2026-10-07",
-          "count": 0
+          "count": 1
         },
         {
           "date": "2026-10-08",
-          "count": 1
+          "count": 2
         },
         {
           "date": "2026-10-09",
@@ -367,11 +372,11 @@
         },
         {
           "date": "2026-10-11",
-          "count": 2
+          "count": 0
         },
         {
           "date": "2026-10-12",
-          "count": 3
+          "count": 1
         },
         {
           "date": "2026-10-13",
@@ -379,7 +384,530 @@
         },
         {
           "date": "2026-10-14",
+          "count": 2
+        },
+        {
+          "date": "2026-10-15",
+          "count": 0
+        },
+        {
+          "date": "2026-10-16",
+          "count": 0
+        },
+        {
+          "date": "2026-10-17",
+          "count": 0
+        },
+        {
+          "date": "2026-10-18",
+          "count": 1
+        },
+        {
+          "date": "2026-10-19",
+          "count": 0
+        },
+        {
+          "date": "2026-10-20",
+          "count": 0
+        },
+        {
+          "date": "2026-10-21",
+          "count": 0
+        },
+        {
+          "date": "2026-10-22",
+          "count": 0
+        },
+        {
+          "date": "2026-10-23",
+          "count": 0
+        },
+        {
+          "date": "2026-10-24",
+          "count": 0
+        },
+        {
+          "date": "2026-10-25",
+          "count": 0
+        },
+        {
+          "date": "2026-10-26",
+          "count": 0
+        },
+        {
+          "date": "2026-10-27",
+          "count": 0
+        },
+        {
+          "date": "2026-10-28",
+          "count": 0
+        },
+        {
+          "date": "2026-10-29",
           "count": 3
+        },
+        {
+          "date": "2026-10-30",
+          "count": 0
+        },
+        {
+          "date": "2026-10-31",
+          "count": 0
+        },
+        {
+          "date": "2026-11-01",
+          "count": 0
+        },
+        {
+          "date": "2026-11-02",
+          "count": 1
+        },
+        {
+          "date": "2026-11-03",
+          "count": 1
+        },
+        {
+          "date": "2026-11-04",
+          "count": 6
+        },
+        {
+          "date": "2026-11-05",
+          "count": 3
+        }
+      ],
+      "channels": [
+        {
+          "name": "Hacker News",
+          "source": "hackernews",
+          "url": "https://news.ycombinator.com",
+          "count": 11
+        },
+        {
+          "name": "Contxto",
+          "source": "prensa",
+          "count": 3
+        },
+        {
+          "name": "McKinsey Insights",
+          "source": "prensa",
+          "count": 3
+        },
+        {
+          "name": "Jason Greenwood",
+          "source": "youtube",
+          "count": 2
+        },
+        {
+          "name": "Anselmo Filho",
+          "source": "youtube",
+          "count": 1
+        },
+        {
+          "name": "ScaleupVentas",
+          "source": "youtube",
+          "count": 1
+        },
+        {
+          "name": "Búscate la vida",
+          "source": "youtube",
+          "count": 1
+        },
+        {
+          "name": "Jose Elías",
+          "source": "youtube",
+          "count": 1
+        }
+      ],
+      "topPieces": [
+        {
+          "title": "Launch HN: Kino AI (YC S23) – AI media manager and video editor",
+          "url": "https://news.ycombinator.com/item?id=50368804",
+          "source": "hackernews",
+          "outlet": "Hacker News",
+          "hook": "noticia",
+          "format": "hilo de discusión de lanzamiento",
+          "analysis": "Presenta un producto de IA concreto y genera debate en una comunidad técnica, validando el interés por nuevas soluciones."
+        },
+        {
+          "title": "IA para Empresarios – Día 1 – Cómo implementar la IA en tu negocio",
+          "url": "https://www.youtube.com/watch?v=fdyMQED5tLg",
+          "source": "youtube",
+          "outlet": "Búscate la vida",
+          "hook": "tutorial",
+          "format": "video tutorial largo",
+          "analysis": "Responde a una necesidad fundamental de los empresarios con un tutorial práctico y accionable, generando alto interés por su aplicabilidad directa."
+        },
+        {
+          "title": "Nebula Medical, la startup colombiana que plantea sumar tiempo de atención a los pacientes",
+          "url": "https://contxto.com/es/healtech/nebula-medical-la-startup-colombiana-que-plantea-sumar-tiempo-de-atencion-a-los-pacientes/",
+          "source": "prensa",
+          "outlet": "Contxto",
+          "hook": "caso_de_uso",
+          "format": "nota de prensa con caso de uso",
+          "analysis": "Muestra un caso de éxito regional y tangible, inspirando a otros fundadores a través de un ejemplo cercano."
+        },
+        {
+          "title": "Show HN: Overtone – Transcribe, correct and cut captions for any screen shape",
+          "url": "https://github.com/lonthq/overtone-captions",
+          "source": "hackernews",
+          "outlet": "Hacker News",
+          "hook": "otro",
+          "format": "hilo de discusión"
+        },
+        {
+          "title": "Ask HN: Are you building an AI company brain?",
+          "url": "https://news.ycombinator.com/item?id=50379710",
+          "source": "hackernews",
+          "outlet": "Hacker News",
+          "hook": "otro",
+          "format": "hilo de discusión",
+          "analysis": "Plantea una pregunta estratégica sobre la construcción de herramientas internas de IA, invitando a los líderes a compartir sus visiones y experiencias."
+        }
+      ],
+      "explanation": {
+        "text": "El tema crece por el lanzamiento de nuevos productos de IA y la búsqueda de aplicaciones prácticas para la gestión. Fundadores y ejecutivos están explorando cómo usarla para crear nuevas soluciones, analizar feedback de usuarios a escala y optimizar procesos de negocio. La conversación se centra en la implementación real, desde tutoriales hasta casos de uso específicos.",
+        "evidence": [
+          {
+            "title": "Launch HN: Kino AI (YC S23) – AI media manager and video editor",
+            "url": "https://news.ycombinator.com/item?id=50368804"
+          },
+          {
+            "title": "IA para Empresarios – Día 1 – Cómo implementar la IA en tu negocio",
+            "url": "https://www.youtube.com/watch?v=fdyMQED5tLg"
+          },
+          {
+            "title": "Nebula Medical, la startup colombiana que plantea sumar tiempo de atención a los pacientes",
+            "url": "https://contxto.com/es/healtech/nebula-medical-la-startup-colombiana-que-plantea-sumar-tiempo-de-atencion-a-los-pacientes/"
+          },
+          {
+            "title": "Show HN: I paid Claude US$1,070 to read the worst reviews of 30k places to stay",
+            "url": "https://okstays.com"
+          },
+          {
+            "title": "Ask HN: Are you building an AI company brain?",
+            "url": "https://news.ycombinator.com/item?id=50379710"
+          }
+        ]
+      },
+      "briefs": {
+        "30x": {
+          "profileId": "30x",
+          "angle": "En lugar de solo optimizar procesos, usa la IA para crear una ventaja competitiva en tu producto que tus rivales no puedan replicar.",
+          "format": "carrusel de Instagram",
+          "hook": "Tu equipo de producto usa IA, pero ¿está creando valor real o solo ruido en el roadmap?",
+          "opportunity": {
+            "product": "AI for Executives",
+            "rationale": "La pieza destaca la necesidad de una visión estratégica para la IA en producto, lo que naturalmente conduce a los líderes a buscar un programa que les enseñe a construir esa estrategia con ROI."
+          },
+          "generatedAt": "2026-11-05T17:49:34.537Z"
+        },
+        "andres-bilbao": {
+          "profileId": "andres-bilbao",
+          "angle": "En lugar de usar IA solo para analizar feedback o escribir user stories, debes usarla para redefinir el rol del Product Manager y que se enfoque en las decisiones estratégicas que realmente mueven la aguja del negocio.",
+          "format": "post largo de LinkedIn con historia y lección",
+          "hook": "Tu equipo de producto está usando la IA para ser más eficiente en las tareas equivocadas.",
+          "opportunity": {
+            "product": "AI for Executives",
+            "rationale": "El post resalta la diferencia entre usar herramientas de IA y tener una estrategia de IA, posicionando el programa como el siguiente paso lógico para los líderes que buscan un impacto real en el negocio."
+          },
+          "generatedAt": "2026-11-05T17:49:34.537Z"
+        }
+      }
+    },
+    {
+      "id": "contratacion-de-equipo-fundador",
+      "label": "Contratación de equipo fundador",
+      "stage": "emergente",
+      "pilar": "Equipos y talento",
+      "velocity": 75,
+      "executiveRelevance": 0.96,
+      "score": 72,
+      "layers": [
+        "origen"
+      ],
+      "series": [
+        {
+          "date": "2026-10-07",
+          "count": 1
+        },
+        {
+          "date": "2026-10-08",
+          "count": 0
+        },
+        {
+          "date": "2026-10-09",
+          "count": 0
+        },
+        {
+          "date": "2026-10-10",
+          "count": 0
+        },
+        {
+          "date": "2026-10-11",
+          "count": 0
+        },
+        {
+          "date": "2026-10-12",
+          "count": 0
+        },
+        {
+          "date": "2026-10-13",
+          "count": 0
+        },
+        {
+          "date": "2026-10-14",
+          "count": 0
+        },
+        {
+          "date": "2026-10-15",
+          "count": 0
+        },
+        {
+          "date": "2026-10-16",
+          "count": 0
+        },
+        {
+          "date": "2026-10-17",
+          "count": 0
+        },
+        {
+          "date": "2026-10-18",
+          "count": 0
+        },
+        {
+          "date": "2026-10-19",
+          "count": 1
+        },
+        {
+          "date": "2026-10-20",
+          "count": 0
+        },
+        {
+          "date": "2026-10-21",
+          "count": 0
+        },
+        {
+          "date": "2026-10-22",
+          "count": 0
+        },
+        {
+          "date": "2026-10-23",
+          "count": 0
+        },
+        {
+          "date": "2026-10-24",
+          "count": 0
+        },
+        {
+          "date": "2026-10-25",
+          "count": 0
+        },
+        {
+          "date": "2026-10-26",
+          "count": 0
+        },
+        {
+          "date": "2026-10-27",
+          "count": 0
+        },
+        {
+          "date": "2026-10-28",
+          "count": 1
+        },
+        {
+          "date": "2026-10-29",
+          "count": 2
+        },
+        {
+          "date": "2026-10-30",
+          "count": 8
+        },
+        {
+          "date": "2026-10-31",
+          "count": 1
+        },
+        {
+          "date": "2026-11-01",
+          "count": 0
+        },
+        {
+          "date": "2026-11-02",
+          "count": 0
+        },
+        {
+          "date": "2026-11-03",
+          "count": 0
+        },
+        {
+          "date": "2026-11-04",
+          "count": 0
+        },
+        {
+          "date": "2026-11-05",
+          "count": 0
+        }
+      ],
+      "channels": [
+        {
+          "name": "Y Combinator",
+          "source": "expertos",
+          "count": 10
+        },
+        {
+          "name": "Hacker News",
+          "source": "hackernews",
+          "url": "https://news.ycombinator.com",
+          "count": 2
+        },
+        {
+          "name": "Gestão Sem Roteiro",
+          "source": "youtube",
+          "count": 1
+        },
+        {
+          "name": "McKinsey Insights",
+          "source": "prensa",
+          "count": 1
+        }
+      ],
+      "topPieces": [
+        {
+          "title": "Trouble finding a motivated co-founder",
+          "url": "https://news.ycombinator.com/item?id=50313212",
+          "source": "hackernews",
+          "outlet": "Hacker News",
+          "hook": "otro",
+          "format": "Hilo de discusión",
+          "analysis": "Genera empatía al mostrar un problema real y común que enfrentan otros fundadores en la comunidad."
+        },
+        {
+          "title": "Empreender, liderar e contratar: o que Anderson Buzzi aprendeu escalando times de 8 para 80+ pessoas",
+          "url": "https://www.youtube.com/watch?v=8a1jMbePE3U",
+          "source": "youtube",
+          "outlet": "Gestão Sem Roteiro",
+          "hook": "caso_de_uso",
+          "format": "Entrevista en video con un fundador",
+          "analysis": "Presenta lecciones aprendidas de un líder de la región en un formato audiovisual fácil de consumir."
+        },
+        {
+          "title": "How Harsh Vardhan Goenka became founding engineer #1 at Kalpa Labs",
+          "url": "https://www.ycombinator.com/blog/how-harsh-vardhan-goenka-became-founding-engineer-1-at-kalpa-labs/",
+          "source": "expertos",
+          "outlet": "Y Combinator",
+          "hook": "caso_de_uso",
+          "format": "Caso de estudio de trayectoria profesional",
+          "analysis": "Detalla la historia personal de un ingeniero fundador para inspirar y ofrecer un modelo a seguir para futuros talentos."
+        },
+        {
+          "title": "The algorithm isn’t the advantage–the team is",
+          "url": "https://www.mckinsey.com/industries/financial-services/our-insights/the-algorithm-isnt-the-advantage-the-team-is",
+          "source": "prensa",
+          "outlet": "McKinsey Insights",
+          "hook": "opinion",
+          "format": "Artículo de opinión de expertos",
+          "analysis": "Ofrece una perspectiva estratégica de una fuente de prestigio, validando la importancia del tema para ejecutivos."
+        },
+        {
+          "title": "Show HN: Makr – find nearby co-founders",
+          "url": "https://makr.breadbowl.ai/",
+          "source": "hackernews",
+          "outlet": "Hacker News",
+          "hook": "otro",
+          "format": "Demostración de herramienta",
+          "analysis": "Atrae a la audiencia al ofrecer una solución práctica y tangible a un problema reconocido por la comunidad."
+        }
+      ],
+      "explanation": {
+        "text": "El interés en la contratación del equipo fundador está impulsado por autoridades del ecosistema como Y Combinator, que publica una serie de casos de estudio sobre los primeros empleados. Consultoras como McKinsey también refuerzan que el equipo es la ventaja competitiva, mientras los founders discuten sus dificultades y crean herramientas para encontrar talento.",
+        "evidence": [
+          {
+            "title": "How Harsh Vardhan Goenka became founding engineer #1 at Kalpa Labs",
+            "url": "https://www.ycombinator.com/blog/how-harsh-vardhan-goenka-became-founding-engineer-1-at-kalpa-labs/"
+          },
+          {
+            "title": "The algorithm isn’t the advantage–the team is",
+            "url": "https://www.mckinsey.com/industries/financial-services/our-insights/the-algorithm-isnt-the-advantage-the-team-is"
+          },
+          {
+            "title": "Trouble finding a motivated co-founder",
+            "url": "https://news.ycombinator.com/item?id=50313212"
+          },
+          {
+            "title": "Show HN: Makr – find nearby co-founders",
+            "url": "https://makr.breadbowl.ai/"
+          }
+        ]
+      },
+      "briefs": {
+        "30x": {
+          "profileId": "30x",
+          "angle": "Tu equipo fundador es tu ventaja competitiva más importante, y necesitas un playbook estratégico para reclutarlo.",
+          "format": "publicación en colaboración con un mentor",
+          "hook": "Deja de buscar un co-founder motivado. Empieza a reclutar a tu equipo fundador.",
+          "opportunity": {
+            "product": "Inmersión Ejecutiva Presencial",
+            "rationale": "La publicación posiciona al equipo como una ventaja estratégica, y la Inmersión es el espacio donde los founders obtienen el playbook y el network para construirlo."
+          },
+          "generatedAt": "2026-11-05T17:49:34.537Z"
+        },
+        "andres-bilbao": {
+          "profileId": "andres-bilbao",
+          "angle": "Tus primeras contrataciones no son empleados, son la base de tu cultura y tu principal ventaja competitiva para escalar.",
+          "format": "post largo de LinkedIn con historia y lección",
+          "hook": "A tus primeros 5 empleados no los contratas, los reclutas como si fueran cofundadores.",
+          "opportunity": {
+            "product": "Inmersión Ejecutiva 30X",
+            "rationale": "El post aborda una de las decisiones clave para escalar, que es uno de los pilares que se profundizan con mentores y otros líderes en el programa."
+          },
+          "generatedAt": "2026-11-05T17:49:34.537Z"
+        }
+      }
+    },
+    {
+      "id": "impacto-de-ia-en-roles",
+      "label": "Impacto de IA en roles",
+      "stage": "pico",
+      "pilar": "Equipos y talento",
+      "velocity": 90,
+      "executiveRelevance": 0.76,
+      "score": 68.4,
+      "layers": [
+        "origen",
+        "difusion",
+        "audiencia_ejecutiva"
+      ],
+      "series": [
+        {
+          "date": "2026-10-07",
+          "count": 0
+        },
+        {
+          "date": "2026-10-08",
+          "count": 2
+        },
+        {
+          "date": "2026-10-09",
+          "count": 1
+        },
+        {
+          "date": "2026-10-10",
+          "count": 0
+        },
+        {
+          "date": "2026-10-11",
+          "count": 0
+        },
+        {
+          "date": "2026-10-12",
+          "count": 0
+        },
+        {
+          "date": "2026-10-13",
+          "count": 0
+        },
+        {
+          "date": "2026-10-14",
+          "count": 2
         },
         {
           "date": "2026-10-15",
@@ -395,23 +923,23 @@
         },
         {
           "date": "2026-10-18",
-          "count": 1
+          "count": 0
         },
         {
           "date": "2026-10-19",
-          "count": 3
+          "count": 2
         },
         {
           "date": "2026-10-20",
-          "count": 2
+          "count": 0
         },
         {
           "date": "2026-10-21",
-          "count": 2
+          "count": 1
         },
         {
           "date": "2026-10-22",
-          "count": 0
+          "count": 1
         },
         {
           "date": "2026-10-23",
@@ -431,7 +959,7 @@
         },
         {
           "date": "2026-10-27",
-          "count": 2
+          "count": 0
         },
         {
           "date": "2026-10-28",
@@ -439,19 +967,19 @@
         },
         {
           "date": "2026-10-29",
-          "count": 0
+          "count": 1
         },
         {
           "date": "2026-10-30",
-          "count": 0
-        },
-        {
-          "date": "2026-10-31",
           "count": 2
         },
         {
+          "date": "2026-10-31",
+          "count": 1
+        },
+        {
           "date": "2026-11-01",
-          "count": 0
+          "count": 1
         },
         {
           "date": "2026-11-02",
@@ -459,79 +987,98 @@
         },
         {
           "date": "2026-11-03",
-          "count": 30
+          "count": 1
         },
         {
           "date": "2026-11-04",
-          "count": 9
+          "count": 2
+        },
+        {
+          "date": "2026-11-05",
+          "count": 4
         }
       ],
       "channels": [
         {
-          "name": "arXiv",
-          "source": "arxiv",
-          "url": "https://arxiv.org",
-          "count": 28
-        },
-        {
           "name": "Hacker News",
           "source": "hackernews",
           "url": "https://news.ycombinator.com",
-          "count": 25
+          "count": 15
         },
         {
           "name": "Lenny's Newsletter",
           "source": "expertos",
-          "count": 11
+          "count": 6
         },
         {
-          "name": "Inteligencia Artificial",
-          "source": "youtube",
-          "count": 2
+          "name": "arXiv",
+          "source": "arxiv",
+          "url": "https://arxiv.org",
+          "count": 1
         },
         {
-          "name": "Manuel Murcia",
+          "name": "Sifted",
+          "source": "expertos",
+          "count": 1
+        },
+        {
+          "name": "DW Tecnología y mundo digital",
           "source": "youtube",
           "count": 1
         },
         {
-          "name": "FREDY ORTEGON",
+          "name": "Talent Match",
           "source": "youtube",
           "count": 1
         },
         {
-          "name": "Karine Lago",
+          "name": "MoureDev by Brais Moure",
           "source": "youtube",
+          "count": 1
+        },
+        {
+          "name": "Semana Economía",
+          "source": "prensa",
+          "count": 1
+        },
+        {
+          "name": "Infobae Economía",
+          "source": "prensa",
           "count": 1
         },
         {
           "name": "Contxto",
           "source": "prensa",
           "count": 1
+        },
+        {
+          "name": "YouTube, aportes del equipo",
+          "source": "equipo",
+          "count": 1
         }
       ],
       "topPieces": [
         {
-          "title": "Ask HN: How to deal with shipping AI-written code you don't understand?",
-          "url": "https://news.ycombinator.com/item?id=50151036",
+          "title": "La generación que compite contra algoritmos",
+          "url": "https://www.youtube.com/watch?v=op9QhB-CMLo",
+          "source": "youtube",
+          "outlet": "DW Tecnología y mundo digital",
+          "hook": "opinion",
+          "format": "video de opinión con alto alcance",
+          "analysis": "Atrae con un título que personifica a la IA como un competidor directo, conectando con la ansiedad laboral de la audiencia."
+        },
+        {
+          "title": "I let an AI run my startup for a week",
+          "url": "https://daily.tinyprojects.dev/221",
           "source": "hackernews",
           "outlet": "Hacker News",
-          "hook": "advertencia",
-          "format": "hilo de discusión",
-          "analysis": "Atrae a una audiencia técnica al plantear una pregunta directa sobre un riesgo real y común que enfrentan al usar IA en el desarrollo."
+          "hook": "caso_de_uso",
+          "format": "caso de uso narrativo",
+          "analysis": "Captura el interés a través de un experimento personal, prometiendo una visión de primera mano sobre la viabilidad de una startup dirigida por IA."
         },
         {
-          "title": "NOTICIAS IA: La nueva IA de META es una BESTIA",
-          "url": "https://www.youtube.com/watch?v=aN0D-Obj_C0",
-          "source": "youtube",
-          "outlet": "Inteligencia Artificial",
-          "hook": "noticia",
-          "format": "video de noticias",
-          "analysis": "Utiliza un título hiperbólico para comunicar un anuncio clave de Meta, generando expectación sobre las capacidades de su nuevo modelo."
-        },
-        {
-          "title": "DGC-Net: Cross-Modal Dynamic Routing with Global-Guided Compensation in Multimodal Sentiment Analysis",
-          "url": "https://arxiv.org/abs/2611.04841v1",
+          "title": "Dull, Dirty, Dangerous? Working Conditions and the Limits of Occupational AI Exposure",
+          "url": "https://arxiv.org/abs/2611.06888v1",
           "source": "arxiv",
           "outlet": "arXiv",
           "hook": "otro",
@@ -542,91 +1089,79 @@
           "url": "https://www.lennysnewsletter.com/p/how-i-ai-grok-vs-dot-vs-muse-vs-duet",
           "source": "expertos",
           "outlet": "Lenny's Newsletter",
-          "hook": "otro",
-          "format": "newsletter de experto"
+          "hook": "comparativa",
+          "format": "análisis comparativo de experto",
+          "analysis": "Ofrece valor al mostrar cómo un equipo de producto de alto rendimiento (Figma) ya integra la IA, proveyendo un modelo práctico a seguir."
         },
         {
-          "title": "Anthropic apuesta por las healthtech con Claude y amplía su red de socios",
-          "url": "https://contxto.com/es/healtech/anthropic-apuesta-por-las-healthtech-con-claude-y-amplia-su-red-de-socios/",
+          "title": "Popular plataforma de diseño anuncia cambios para 22% de sus empleados por avance de la IA: impacta a más de 1.200",
+          "url": "https://www.semana.com/economia/empresas/articulo/popular-plataforma-de-diseno-anuncia-cambios-para-22-de-sus-empleados-por-avance-de-la-ia-impacta-a-mas-de-1200/202653/",
           "source": "prensa",
-          "outlet": "Contxto",
-          "hook": "noticia",
-          "format": "nota de prensa",
-          "analysis": "Informa sobre una aplicación de alto valor en una industria específica (healthtech), atrayendo a fundadores e inversores de ese sector."
+          "outlet": "Semana Economía",
+          "hook": "dato_sorprendente",
+          "format": "nota de prensa con cifras",
+          "analysis": "Engancha al presentar un dato duro y alarmante, el 22% de empleados afectados, que hace tangible el impacto de la IA en una empresa conocida."
         }
       ],
       "explanation": {
-        "text": "El interés crece por los anuncios de grandes jugadores como OpenAI y Meta, que compiten en el terreno de la productividad, y la expansión de modelos como Claude a nuevos sectores. Al mismo tiempo, aumenta la demanda de tutoriales prácticos para crear aplicaciones y servicios con IA sin necesidad de programar, junto a discusiones sobre los riesgos técnicos de su implementación.",
+        "text": "El tema crece por noticias concretas sobre cambios en la estructura de las empresas a causa de la IA, como los que afectaron a más de 1.200 empleados en una plataforma de diseño. Esto genera una doble búsqueda: entender el impacto real en los roles y equipos, y explorar casos de uso prácticos sobre cómo líderes y profesionales están adaptando la tecnología para ser más productivos.",
         "evidence": [
           {
-            "title": "NOTICIAS IA: La nueva IA de META es una BESTIA",
-            "url": "https://www.youtube.com/watch?v=aN0D-Obj_C0"
+            "title": "Popular plataforma de diseño anuncia cambios para 22% de sus empleados por avance de la IA: impacta a más de 1.200",
+            "url": "https://www.semana.com/economia/empresas/articulo/popular-plataforma-de-diseno-anuncia-cambios-para-22-de-sus-empleados-por-avance-de-la-ia-impacta-a-mas-de-1200/202653/"
           },
           {
-            "title": "NOTICIAS IA: OpenAI apunta a Microsoft Office con las novedades de ChatGPT",
-            "url": "https://www.youtube.com/watch?v=CCUZ_r5u_ek"
+            "title": "La generación que compite contra algoritmos",
+            "url": "https://www.youtube.com/watch?v=op9QhB-CMLo"
           },
           {
-            "title": "Anthropic apuesta por las healthtech con Claude y amplía su red de socios",
-            "url": "https://contxto.com/es/healtech/anthropic-apuesta-por-las-healthtech-con-claude-y-amplia-su-red-de-socios/"
+            "title": "I let an AI run my startup for a week",
+            "url": "https://daily.tinyprojects.dev/221"
           },
           {
-            "title": "Crea una APP para tu negocio con IA (gratis y sin programar)",
-            "url": "https://www.youtube.com/watch?v=-POKxR75Zv4"
-          },
-          {
-            "title": "Crea servicios de IA y para Vender hoy mismo (Fácil) 🚀",
-            "url": "https://www.youtube.com/watch?v=3HzF5VJG9pQ"
-          },
-          {
-            "title": "Ask HN: How to deal with shipping AI-written code you don't understand?",
-            "url": "https://news.ycombinator.com/item?id=50151036"
+            "title": "🎙️ How I AI: Grok vs. Dot vs. Muse vs. Duet + How Figma’s PMs actually use AI every day",
+            "url": "https://www.lennysnewsletter.com/p/how-i-ai-grok-vs-dot-vs-muse-vs-duet"
           }
         ]
       },
       "briefs": {
         "30x": {
           "profileId": "30x",
-          "angle": "Aprovecha la competencia entre OpenAI, Meta y Claude para construir tus propias soluciones con LLMs sin saber programar y con ROI claro.",
-          "format": "clase gratis en vivo por Zoom",
-          "hook": "Deja de solo leer noticias sobre IA: aprende a crear tus propias soluciones con LLMs sin código y con retorno de inversión.",
+          "angle": "En lugar de reaccionar a los despidos por IA, aprende a liderar la reestructuración de tu equipo para multiplicar su productividad y ganar una ventaja competitiva.",
+          "format": "carrusel de Instagram",
+          "hook": "Despedir gente por la IA es la salida fácil. Reestructurar tu equipo es la jugada estratégica.",
           "opportunity": {
             "product": "AI for Executives",
-            "rationale": "La clase gratuita muestra el potencial práctico de los LLMs; AI for Executives es el siguiente paso para que el líder diseñe una estrategia integral de IA en su empresa con adopción y ROI, y no se quede en herramientas sueltas."
+            "rationale": "El carrusel plantea la necesidad estratégica de rediseñar equipos, y AI for Executives ofrece el playbook para que un líder ejecute esa transformación con un plan de adopción y ROI definidos."
           },
-          "generatedAt": "2026-11-04T17:43:35.999Z"
+          "generatedAt": "2026-11-05T17:49:34.537Z"
         },
         "andres-bilbao": {
           "profileId": "andres-bilbao",
-          "angle": "En lugar de solo hablar del hype de los LLMs, enfócate en estas aplicaciones concretas y de bajo riesgo que puedes implementar en tu empresa esta semana para ver resultados reales.",
-          "format": "post de LinkedIn con viñetas sobre IA",
-          "hook": "Si tu equipo de liderazgo todavía no está usando LLMs para automatizar estas 3 tareas, estás dejando que tu competencia te saque ventaja.",
+          "angle": "Más que eliminar roles, la IA está creando una nueva capa de 'superhumanos' en tu equipo, y es tu trabajo como líder identificar y potenciar a esos perfiles.",
+          "format": "post largo de LinkedIn con historia y lección",
+          "hook": "Mientras todos debaten si la IA eliminará o no a tu equipo, la pregunta incorrecta te está distrayendo de la verdadera oportunidad.",
           "opportunity": {
             "product": "AI for Executives",
-            "rationale": "El post ofrece tácticas inmediatas de IA, posicionando el programa como el siguiente paso lógico para construir una estrategia integral y con ROI, en lugar de solo usar herramientas aisladas."
+            "rationale": "El post abre la conversación estratégica sobre el talento y la IA, y el programa es el siguiente paso para que los líderes transformen esa visión en una estrategia de implementación con ROI para toda la empresa."
           },
-          "generatedAt": "2026-11-04T17:43:35.999Z"
+          "generatedAt": "2026-11-05T17:49:34.537Z"
         }
       }
     },
     {
-      "id": "rondas-de-inversion",
-      "label": "Rondas de inversión",
-      "stage": "pico",
+      "id": "inversion-y-burbuja-de-ia",
+      "label": "Inversión y burbuja de IA",
+      "stage": "creciendo",
       "pilar": "Fundraising",
-      "velocity": 185.7,
-      "executiveRelevance": 0.7,
-      "score": 129.99,
+      "velocity": 25,
+      "executiveRelevance": 0.75,
+      "score": 18.75,
       "layers": [
         "origen",
-        "difusion",
-        "audiencia_ejecutiva"
+        "difusion"
       ],
       "series": [
-        {
-          "date": "2026-10-06",
-          "count": 0
-        },
         {
           "date": "2026-10-07",
           "count": 0
@@ -649,19 +1184,19 @@
         },
         {
           "date": "2026-10-12",
-          "count": 0
+          "count": 1
         },
         {
           "date": "2026-10-13",
-          "count": 0
+          "count": 1
         },
         {
           "date": "2026-10-14",
-          "count": 1
+          "count": 0
         },
         {
           "date": "2026-10-15",
-          "count": 1
+          "count": 0
         },
         {
           "date": "2026-10-16",
@@ -673,11 +1208,11 @@
         },
         {
           "date": "2026-10-18",
-          "count": 0
+          "count": 1
         },
         {
           "date": "2026-10-19",
-          "count": 1
+          "count": 0
         },
         {
           "date": "2026-10-20",
@@ -717,11 +1252,11 @@
         },
         {
           "date": "2026-10-29",
-          "count": 2
+          "count": 1
         },
         {
           "date": "2026-10-30",
-          "count": 2
+          "count": 1
         },
         {
           "date": "2026-10-31",
@@ -733,37 +1268,36 @@
         },
         {
           "date": "2026-11-02",
-          "count": 2
+          "count": 1
         },
         {
           "date": "2026-11-03",
-          "count": 2
+          "count": 0
         },
         {
           "date": "2026-11-04",
-          "count": 7
+          "count": 2
+        },
+        {
+          "date": "2026-11-05",
+          "count": 1
         }
       ],
       "channels": [
         {
-          "name": "Sifted",
-          "source": "expertos",
-          "count": 6
-        },
-        {
           "name": "Hacker News",
           "source": "hackernews",
           "url": "https://news.ycombinator.com",
-          "count": 5
+          "count": 2
         },
         {
-          "name": "Semana Economía",
+          "name": "Infobae Economía",
           "source": "prensa",
           "count": 2
         },
         {
-          "name": "Academia del Éxito",
-          "source": "youtube",
+          "name": "Sifted",
+          "source": "expertos",
           "count": 1
         },
         {
@@ -772,1008 +1306,147 @@
           "count": 1
         },
         {
-          "name": "Portafolio Negocios",
-          "source": "prensa",
+          "name": "VisualEconomik",
+          "source": "youtube",
           "count": 1
         },
         {
-          "name": "Portafolio Economía",
-          "source": "prensa",
+          "name": "midudev",
+          "source": "youtube",
           "count": 1
         },
         {
-          "name": "Expansión Empresas",
-          "source": "prensa",
+          "name": "Arte de invertir",
+          "source": "youtube",
           "count": 1
         },
         {
-          "name": "LatamList",
-          "source": "prensa",
+          "name": "Finanzas para todos",
+          "source": "youtube",
           "count": 1
         },
         {
-          "name": "Contxto",
-          "source": "prensa",
+          "name": "Max02",
+          "source": "youtube",
           "count": 1
         }
       ],
       "topPieces": [
         {
-          "title": "Cómo levantar capital para tu startup: la visión del inversionista",
-          "url": "https://www.youtube.com/watch?v=e2q5jSjmse8",
+          "title": "Se confirma lo peor de la Burbuja de la IA",
+          "url": "https://www.youtube.com/watch?v=nsGJ5v45Jq4",
           "source": "youtube",
-          "outlet": "Academia del Éxito",
-          "hook": "tutorial",
-          "format": "video tutorial explicativo",
-          "analysis": "Ofrece una perspectiva valiosa y directa desde el lado del inversionista para ayudar a los fundadores a preparar su estrategia."
+          "outlet": "midudev",
+          "hook": "opinion",
+          "format": "Video de opinión de un influencer técnico",
+          "analysis": "El título \"Se confirma lo peor\" apela al sesgo de confirmación de una audiencia escéptica y genera urgencia para entender las implicaciones."
         },
         {
-          "title": "OpenAI seeks to accelerate fundraising ahead of Anthropic IPO, sources say",
-          "url": "https://www.reuters.com/world/openai-seeks-accelerate-fundraising-ahead-anthropic-ipo-sources-say-2026-10-19/",
+          "title": "Banks are now trying to offload the AI data center debt they just underwrote",
+          "url": "https://startupfortune.com/banks-are-now-trying-to-offload-the-ai-data-center-debt-they-just-underwrote/",
           "source": "hackernews",
           "outlet": "Hacker News",
-          "hook": "noticia",
+          "hook": "advertencia",
           "format": "hilo de discusión"
         },
         {
-          "title": "Sequoia to close London office, cut Europe team",
-          "url": "https://sifted.eu/articles/sequoia-closes-london-office/",
+          "title": "Lovable backer Creandum raises $750m for largest-ever fund to back AI boom",
+          "url": "https://sifted.eu/articles/creandum-750-largest-vc-fund-back-ai-san-francisco/",
           "source": "expertos",
           "outlet": "Sifted",
           "hook": "noticia",
-          "format": "newsletter de experto"
+          "format": "Nota de prensa de la industria de VC",
+          "analysis": "Genera interés en founders y ejecutivos al anunciar una masiva oportunidad de financiamiento que contrasta directamente con la narrativa del colapso."
         },
         {
-          "title": "Pymes y empresas tendrán más de $18 billones en cupos de crédito de Bancolombia",
-          "url": "https://www.portafolio.co/negocios/pymes-y-empresas-tendran-mas-de-18-billones-en-cupos-de-credito-de-bancolombia-505690",
+          "title": "Se derrumba 4% el índice tecnológico de Wall Street por la fuerte caída de acciones vinculadas a la IA",
+          "url": "https://www.infobae.com/economia/2026/11/05/se-derrumba-5-el-indice-tecnologico-de-wall-street-por-la-fuerte-caida-de-acciones-vinculadas-a-la-ia/",
           "source": "prensa",
-          "outlet": "Portafolio Negocios",
-          "hook": "noticia",
-          "format": "nota de prensa"
+          "outlet": "Infobae Economía",
+          "hook": "dato_sorprendente",
+          "format": "Nota de prensa con datos de mercado",
+          "analysis": "Engancha al presentar un dato financiero concreto y alarmante (\"se derrumba 4%\") que impacta directamente en las decisiones de los ejecutivos."
         },
         {
-          "title": "S.Korea AI chip startup raises $620M at a $2.9B valuation",
-          "url": "https://www.bloomberg.com/news/articles/2026-10-28/furiosaai-quadruples-valuation-to-2-9-billion-in-nvidia-chase",
-          "source": "hackernews",
-          "outlet": "Hacker News",
-          "hook": "noticia",
-          "format": "nota de prensa sobre financiación",
-          "analysis": "Genera aspiración al mostrar la valoración multimillonaria que alcanzó una startup de IA en una ronda de financiación reciente."
+          "title": "La BURBUJA de la IA ya ha ESTALLADO… en CHINA @VisualEconomik",
+          "url": "https://www.youtube.com/watch?v=hd1kyFrchBw",
+          "source": "youtube",
+          "outlet": "VisualEconomik",
+          "hook": "opinion",
+          "format": "Análisis de economía en video animado",
+          "analysis": "Utiliza un título declarativo y un caso de estudio (China) para hacer digerible y contundente un tema económico complejo."
         }
       ],
       "explanation": {
-        "text": "El interés en rondas de inversión es impulsado por el auge de la inteligencia artificial, que motiva la creación de grandes fondos y rondas millonarias. Este contexto dinámico genera movimientos en el ecosistema de Venture Capital y una alta actividad de los fundadores, quienes buscan guías y playbooks para levantar capital.",
+        "text": "La conversación sobre una burbuja de IA está creciendo debido a señales contradictorias en el mercado. Por un lado, se reportan caídas en las acciones de empresas de IA y nerviosismo en el sector financiero, lo que alimenta la narrativa de una burbuja a punto de estallar. Por otro lado, los fondos de capital de riesgo continúan levantando montos récord para invertir en el sector, generando un debate sobre la sostenibilidad y las verdaderas oportunidades.",
         "evidence": [
           {
-            "title": "Cómo levantar capital para tu startup: la visión del inversionista",
-            "url": "https://www.youtube.com/watch?v=e2q5jSjmse8"
+            "title": "Se confirma lo peor de la Burbuja de la IA",
+            "url": "https://www.youtube.com/watch?v=nsGJ5v45Jq4"
           },
           {
-            "title": "OpenAI seeks to accelerate fundraising ahead of Anthropic IPO, sources say",
-            "url": "https://www.reuters.com/world/openai-seeks-accelerate-fundraising-ahead-anthropic-ipo-sources-say-2026-10-19/"
-          },
-          {
-            "title": "S.Korea AI chip startup raises $620M at a $2.9B valuation",
-            "url": "https://www.bloomberg.com/news/articles/2026-10-28/furiosaai-quadruples-valuation-to-2-9-billion-in-nvidia-chase"
-          },
-          {
-            "title": "I got $300K in startup credits for my AI company at 18: the playbook",
-            "url": "https://devanshranjan.medium.com/im-18-and-got-300k-in-free-startup-credits-for-my-ai-company-here-s-the-exact-playbook-0603a44abcea"
-          },
-          {
-            "title": "Ex-Hummingbird investor plots new VC firm, sources say",
-            "url": "https://sifted.eu/articles/ex-hummingbird-new-vc-firm/"
+            "title": "Banks are now trying to offload the AI data center debt they just underwrote",
+            "url": "https://startupfortune.com/banks-are-now-trying-to-offload-the-ai-data-center-debt-they-just-underwrote/"
           },
           {
             "title": "Lovable backer Creandum raises $750m for largest-ever fund to back AI boom",
             "url": "https://sifted.eu/articles/creandum-750-largest-vc-fund-back-ai-san-francisco/"
           },
           {
-            "title": "Why Creandum and USV co-led a $40m seed into Machenta, a robotics lab with no product",
-            "url": "https://sifted.eu/articles/creandum-usv-40m-seed-uk-robotics-lab-no-product/"
+            "title": "Se derrumba 4% el índice tecnológico de Wall Street por la fuerte caída de acciones vinculadas a la IA",
+            "url": "https://www.infobae.com/economia/2026/11/05/se-derrumba-5-el-indice-tecnologico-de-wall-street-por-la-fuerte-caida-de-acciones-vinculadas-a-la-ia/"
+          },
+          {
+            "title": "La BURBUJA de la IA ya ha ESTALLADO… en CHINA @VisualEconomik",
+            "url": "https://www.youtube.com/watch?v=hd1kyFrchBw"
           }
         ]
       },
       "briefs": {
         "30x": {
           "profileId": "30x",
-          "angle": "Para levantar capital en la era de la IA, necesitas más que un buen pitch: necesitas un playbook de fundraising que responda a las nuevas reglas del venture capital.",
-          "format": "clase gratis en vivo por Zoom",
-          "hook": "Deja de coleccionar 'no' de inversionistas. Construye el caso de negocio que te consigue un 'sí'.",
+          "angle": "Mientras todos debaten si la IA es una burbuja, aprende a posicionar tu startup para levantar capital sin importar las condiciones del mercado.",
+          "format": "carrusel de Instagram",
+          "hook": "Deja de debatir sobre la burbuja de IA y enfócate en lo único que importa: cómo levantar tu próxima ronda.",
           "opportunity": {
             "product": "Fundraising Fundamentals",
-            "rationale": "La clase presenta el 'qué' y el 'porqué' de un playbook de fundraising, posicionando el programa como el 'cómo' para construir tus entregables y cerrar tu ronda."
+            "rationale": "El carrusel expone el desafío de levantar capital en el entorno actual de IA, y el programa te da el playbook y los entregables para superarlo."
           },
-          "generatedAt": "2026-11-04T17:43:35.999Z"
+          "generatedAt": "2026-11-05T17:49:34.537Z"
         },
         "andres-bilbao": {
           "profileId": "andres-bilbao",
-          "angle": "Más que un buen pitch, lo que te consigue una ronda de inversión en un mercado saturado es entender la psicología del inversionista.",
+          "angle": "Mientras todos debaten si hay una burbuja de IA, los VCs más grandes siguen levantando fondos millonarios para invertir; te explico cómo posicionar tu startup para capturar esa inversión.",
           "format": "post largo de LinkedIn con historia y lección",
-          "hook": "Cuando levantamos capital para Rappi, creía que todo se trataba de tener el pitch perfecto. Estaba equivocado.",
+          "hook": "Unos gritan 'burbuja', otros firman cheques de 750 millones de dólares para startups de IA.",
           "opportunity": {
             "product": "Fundraising Fundamentals",
-            "rationale": "El post demuestra con una lección de alto valor la mentalidad de operador que se enseña a profundidad en el programa para founders en etapa temprana."
+            "rationale": "El post explica la oportunidad actual de fundraising en IA, y el programa entrega las herramientas y fundamentos para que un founder pueda ejecutar esa oportunidad con éxito."
           },
-          "generatedAt": "2026-11-04T17:43:35.999Z"
+          "generatedAt": "2026-11-05T17:49:34.537Z"
         }
       }
     },
     {
-      "id": "motores-de-crecimiento",
-      "label": "Motores de crecimiento",
-      "stage": "pico",
-      "pilar": "Growth",
-      "velocity": 71.4,
-      "executiveRelevance": 0.71,
-      "score": 50.69,
-      "layers": [
-        "origen",
-        "difusion",
-        "audiencia_ejecutiva"
-      ],
-      "series": [
-        {
-          "date": "2026-10-06",
-          "count": 2
-        },
-        {
-          "date": "2026-10-07",
-          "count": 4
-        },
-        {
-          "date": "2026-10-08",
-          "count": 5
-        },
-        {
-          "date": "2026-10-09",
-          "count": 2
-        },
-        {
-          "date": "2026-10-10",
-          "count": 2
-        },
-        {
-          "date": "2026-10-11",
-          "count": 3
-        },
-        {
-          "date": "2026-10-12",
-          "count": 1
-        },
-        {
-          "date": "2026-10-13",
-          "count": 7
-        },
-        {
-          "date": "2026-10-14",
-          "count": 4
-        },
-        {
-          "date": "2026-10-15",
-          "count": 4
-        },
-        {
-          "date": "2026-10-16",
-          "count": 1
-        },
-        {
-          "date": "2026-10-17",
-          "count": 4
-        },
-        {
-          "date": "2026-10-18",
-          "count": 1
-        },
-        {
-          "date": "2026-10-19",
-          "count": 2
-        },
-        {
-          "date": "2026-10-20",
-          "count": 3
-        },
-        {
-          "date": "2026-10-21",
-          "count": 2
-        },
-        {
-          "date": "2026-10-22",
-          "count": 6
-        },
-        {
-          "date": "2026-10-23",
-          "count": 2
-        },
-        {
-          "date": "2026-10-24",
-          "count": 3
-        },
-        {
-          "date": "2026-10-25",
-          "count": 5
-        },
-        {
-          "date": "2026-10-26",
-          "count": 1
-        },
-        {
-          "date": "2026-10-27",
-          "count": 3
-        },
-        {
-          "date": "2026-10-28",
-          "count": 3
-        },
-        {
-          "date": "2026-10-29",
-          "count": 4
-        },
-        {
-          "date": "2026-10-30",
-          "count": 9
-        },
-        {
-          "date": "2026-10-31",
-          "count": 1
-        },
-        {
-          "date": "2026-11-01",
-          "count": 4
-        },
-        {
-          "date": "2026-11-02",
-          "count": 2
-        },
-        {
-          "date": "2026-11-03",
-          "count": 12
-        },
-        {
-          "date": "2026-11-04",
-          "count": 11
-        }
-      ],
-      "channels": [
-        {
-          "name": "La República Empresas",
-          "source": "prensa",
-          "count": 15
-        },
-        {
-          "name": "Hacker News",
-          "source": "hackernews",
-          "url": "https://news.ycombinator.com",
-          "count": 10
-        },
-        {
-          "name": "Expansión Empresas",
-          "source": "prensa",
-          "count": 9
-        },
-        {
-          "name": "Impulso Estrategias 360",
-          "source": "youtube",
-          "count": 7
-        },
-        {
-          "name": "Actualexam practice",
-          "source": "youtube",
-          "count": 4
-        },
-        {
-          "name": "Infobae Economía",
-          "source": "prensa",
-          "count": 4
-        },
-        {
-          "name": "McKinsey Insights",
-          "source": "prensa",
-          "count": 3
-        },
-        {
-          "name": "Leaders In Strategy Podcast",
-          "source": "youtube",
-          "count": 2
-        },
-        {
-          "name": "Colectivo23",
-          "source": "youtube",
-          "count": 2
-        },
-        {
-          "name": "Búscate la vida",
-          "source": "youtube",
-          "count": 2
-        }
-      ],
-      "topPieces": [
-        {
-          "title": "La Gente Se Está Haciendo Millonaria Con Higgsfield (Así Lo Hacen)",
-          "url": "https://www.youtube.com/watch?v=fJzUnSEnKNs",
-          "source": "youtube",
-          "outlet": "Adrián Sáenz",
-          "hook": "caso_de_uso",
-          "format": "video de caso de estudio",
-          "analysis": "Engancha al mostrar una historia de éxito monetario con una nueva tecnología, prometiendo a la audiencia un camino replicable."
-        },
-        {
-          "title": "Nvidia in talks to acquire US 'open' model startup Reflection AI",
-          "url": "https://www.ft.com/content/052610c5-22b4-4dd4-932e-b7f9f0628b6a",
-          "source": "hackernews",
-          "outlet": "Hacker News",
-          "hook": "noticia",
-          "format": "hilo de discusión"
-        },
-        {
-          "title": "Enterprise customers want to see AI’s ROI. Here’s how startups can show it",
-          "url": "https://sifted.eu/articles/enterprise-customers-want-to-see-ais-roi-heres-how-startups-can-show-it/",
-          "source": "expertos",
-          "outlet": "Sifted",
-          "hook": "tutorial",
-          "format": "artículo para expertos",
-          "analysis": "Atrae a los fundadores al ofrecer una solución directa a un problema crítico: demostrar el ROI de la IA a clientes empresariales."
-        },
-        {
-          "title": "Desde noviembre, centros comerciales &#039;prenden&#039; la Navidad para que sus ventas no aflojen",
-          "url": "https://www.portafolio.co/negocios/empresas/centros-comerciales-hacen-inversiones-y-buscan-impulsar-el-trafico-con-sus-apuestas-para-navidad-505681",
-          "source": "prensa",
-          "outlet": "Portafolio Negocios",
-          "hook": "noticia",
-          "format": "nota de prensa"
-        },
-        {
-          "title": "Como Ganar Dinero con IA Usando Solo tu Celular (NUEVO MÉTODO 2026)",
-          "url": "https://www.youtube.com/watch?v=bFtUCq1pi_E",
-          "source": "youtube",
-          "outlet": "Jhonier Gomez",
-          "hook": "tutorial",
-          "format": "video tutorial de monetización",
-          "analysis": "Genera interés al prometer un método accesible y de baja barrera de entrada para ganar dinero con IA usando solo un celular."
-        }
-      ],
-      "explanation": {
-        "text": "El interés en motores de crecimiento está impulsado por el uso de la inteligencia artificial para generar ingresos y mejorar el retorno de inversión. La conversación se centra en la implementación práctica de la IA en los negocios y en casos de éxito que demuestran su potencial.",
-        "evidence": [
-          {
-            "title": "La Gente Se Está Haciendo Millonaria Con Higgsfield (Así Lo Hacen)",
-            "url": "https://www.youtube.com/watch?v=fJzUnSEnKNs"
-          },
-          {
-            "title": "Enterprise customers want to see AI’s ROI. Here’s how startups can show it",
-            "url": "https://sifted.eu/articles/enterprise-customers-want-to-see-ais-roi-heres-how-startups-can-show-it/"
-          },
-          {
-            "title": "A nova era das empresas enxutas acaba de começar l ROI Hunters 369",
-            "url": "https://www.youtube.com/watch?v=oxMvuJ0hOtY"
-          },
-          {
-            "title": "IA para Empresarios – Día 1 – Cómo implementar la IA en tu negocio",
-            "url": "https://www.youtube.com/watch?v=fdyMQED5tLg"
-          }
-        ]
-      },
-      "briefs": {
-        "30x": {
-          "profileId": "30x",
-          "angle": "Un motor de growth no es una colección de herramientas de IA, sino una estrategia integral que genera revenue y demuestra ROI.",
-          "format": "carrusel de Instagram",
-          "hook": "Tu equipo usa 10+ apps de IA. ¿Cuántas te generan revenue?",
-          "opportunity": {
-            "product": "AI for Executives",
-            "rationale": "El carrusel diagnostica el problema de usar herramientas de IA aisladas sin un plan, creando la necesidad de una estrategia que el programa enseña a construir y dirigir."
-          },
-          "generatedAt": "2026-11-04T17:43:35.999Z"
-        },
-        "andres-bilbao": {
-          "profileId": "andres-bilbao",
-          "angle": "Para que la IA sea un verdadero motor de crecimiento, debes poder demostrar su ROI, y la mayoría de los líderes no saben cómo hacerlo.",
-          "format": "post de LinkedIn con viñetas sobre IA",
-          "hook": "Tus clientes no quieren tu IA, quieren el ROI de tu IA.",
-          "opportunity": {
-            "product": "AI for Executives",
-            "rationale": "La pieza establece la necesidad de una estrategia de IA con ROI medible, posicionando el programa como el siguiente paso lógico para los líderes que quieran implementarla."
-          },
-          "generatedAt": "2026-11-04T17:43:35.999Z"
-        }
-      }
-    },
-    {
-      "id": "contratacion-de-roles-clave",
-      "label": "Contratación de roles clave",
-      "stage": "pico",
-      "pilar": "Equipos y talento",
-      "velocity": 70.6,
-      "executiveRelevance": 0.69,
-      "score": 48.71,
-      "layers": [
-        "origen",
-        "difusion",
-        "audiencia_ejecutiva"
-      ],
-      "series": [
-        {
-          "date": "2026-10-06",
-          "count": 0
-        },
-        {
-          "date": "2026-10-07",
-          "count": 1
-        },
-        {
-          "date": "2026-10-08",
-          "count": 2
-        },
-        {
-          "date": "2026-10-09",
-          "count": 1
-        },
-        {
-          "date": "2026-10-10",
-          "count": 1
-        },
-        {
-          "date": "2026-10-11",
-          "count": 1
-        },
-        {
-          "date": "2026-10-12",
-          "count": 1
-        },
-        {
-          "date": "2026-10-13",
-          "count": 1
-        },
-        {
-          "date": "2026-10-14",
-          "count": 2
-        },
-        {
-          "date": "2026-10-15",
-          "count": 1
-        },
-        {
-          "date": "2026-10-16",
-          "count": 5
-        },
-        {
-          "date": "2026-10-17",
-          "count": 0
-        },
-        {
-          "date": "2026-10-18",
-          "count": 0
-        },
-        {
-          "date": "2026-10-19",
-          "count": 2
-        },
-        {
-          "date": "2026-10-20",
-          "count": 2
-        },
-        {
-          "date": "2026-10-21",
-          "count": 0
-        },
-        {
-          "date": "2026-10-22",
-          "count": 4
-        },
-        {
-          "date": "2026-10-23",
-          "count": 1
-        },
-        {
-          "date": "2026-10-24",
-          "count": 1
-        },
-        {
-          "date": "2026-10-25",
-          "count": 0
-        },
-        {
-          "date": "2026-10-26",
-          "count": 1
-        },
-        {
-          "date": "2026-10-27",
-          "count": 2
-        },
-        {
-          "date": "2026-10-28",
-          "count": 3
-        },
-        {
-          "date": "2026-10-29",
-          "count": 1
-        },
-        {
-          "date": "2026-10-30",
-          "count": 12
-        },
-        {
-          "date": "2026-10-31",
-          "count": 0
-        },
-        {
-          "date": "2026-11-01",
-          "count": 0
-        },
-        {
-          "date": "2026-11-02",
-          "count": 3
-        },
-        {
-          "date": "2026-11-03",
-          "count": 6
-        },
-        {
-          "date": "2026-11-04",
-          "count": 2
-        }
-      ],
-      "channels": [
-        {
-          "name": "Hacker News",
-          "source": "hackernews",
-          "url": "https://news.ycombinator.com",
-          "count": 35
-        },
-        {
-          "name": "Y Combinator",
-          "source": "expertos",
-          "count": 10
-        },
-        {
-          "name": "Expansión Empresas",
-          "source": "prensa",
-          "count": 3
-        },
-        {
-          "name": "McKinsey Insights",
-          "source": "prensa",
-          "count": 2
-        },
-        {
-          "name": "Sifted",
-          "source": "expertos",
-          "count": 1
-        },
-        {
-          "name": "Gestão Sem Roteiro",
-          "source": "youtube",
-          "count": 1
-        },
-        {
-          "name": "Bernard Marr",
-          "source": "youtube",
-          "count": 1
-        },
-        {
-          "name": "Semana Economía",
-          "source": "prensa",
-          "count": 1
-        },
-        {
-          "name": "Marcus Chan",
-          "source": "youtube",
-          "count": 1
-        },
-        {
-          "name": "Juanjo Matias I Love MLM",
-          "source": "youtube",
-          "count": 1
-        }
-      ],
-      "topPieces": [
-        {
-          "title": "Ask HN: Who is hiring? (November 2026)",
-          "url": "https://news.ycombinator.com/item?id=50338728",
-          "source": "hackernews",
-          "outlet": "Hacker News",
-          "hook": "otro",
-          "format": "hilo de discusión recurrente",
-          "analysis": "Conecta directamente a empresas que contratan con talento en búsqueda activa, creando un mercado de alta intención."
-        },
-        {
-          "title": "Microsoft's Blueprint for the AI Workforce",
-          "url": "https://www.youtube.com/watch?v=JpSY8LpgYPo",
-          "source": "youtube",
-          "outlet": "Bernard Marr",
-          "hook": "otro",
-          "format": "video de análisis estratégico",
-          "analysis": "Utiliza la autoridad de una empresa líder como Microsoft para ofrecer una visión clara sobre un tema complejo como la fuerza laboral de IA."
-        },
-        {
-          "title": "How Harsh Vardhan Goenka became founding engineer #1 at Kalpa Labs",
-          "url": "https://www.ycombinator.com/blog/how-harsh-vardhan-goenka-became-founding-engineer-1-at-kalpa-labs/",
-          "source": "expertos",
-          "outlet": "Y Combinator",
-          "hook": "caso_de_uso",
-          "format": "historia de origen de un rol clave",
-          "analysis": "Atrae a través de una narrativa personal y aspiracional sobre el proceso de conseguir un puesto fundamental en una startup."
-        },
-        {
-          "title": "Bipi nombra a Louis Baptiste nuevo CEO de la compañía",
-          "url": "https://www.expansion.com/empresas/motor/2026/11/03/bipi-nombra-louis-baptiste-nuevo-ceo-compania.html",
-          "source": "prensa",
-          "outlet": "Expansión Empresas",
-          "hook": "noticia",
-          "format": "nota de prensa",
-          "analysis": "Engancha al comunicar un cambio estratégico importante en una compañía, generando interés en el mercado y la competencia."
-        },
-        {
-          "title": "Ask HN: Thoughts on hiring junior engineers in 2026?",
-          "url": "https://news.ycombinator.com/item?id=50118474",
-          "source": "hackernews",
-          "outlet": "Hacker News",
-          "hook": "tutorial",
-          "format": "hilo de discusión",
-          "analysis": "Plantea una pregunta táctica y común para muchos líderes, invitando al intercambio de experiencias y consejos prácticos."
-        }
-      ],
-      "explanation": {
-        "text": "El interés en la contratación de roles clave está impulsado por la necesidad de definir la fuerza laboral del futuro, sobre todo en IA, y asegurar puestos estratégicos como CEOs o los primeros ingenieros. Al mismo tiempo, la conversación se centra en las fricciones y nuevos desafíos del proceso de reclutamiento, tanto para empresas como para candidatos.",
-        "evidence": [
-          {
-            "title": "Ask HN: Who is hiring? (November 2026)",
-            "url": "https://news.ycombinator.com/item?id=50338728"
-          },
-          {
-            "title": "Microsoft's Blueprint for the AI Workforce",
-            "url": "https://www.youtube.com/watch?v=JpSY8LpgYPo"
-          },
-          {
-            "title": "How Harsh Vardhan Goenka became founding engineer #1 at Kalpa Labs",
-            "url": "https://www.ycombinator.com/blog/how-harsh-vardhan-goenka-became-founding-engineer-1-at-kalpa-labs/"
-          },
-          {
-            "title": "Bipi nombra a Louis Baptiste nuevo CEO de la compañía",
-            "url": "https://www.expansion.com/empresas/motor/2026/11/03/bipi-nombra-louis-baptiste-nuevo-ceo-compania.html"
-          },
-          {
-            "title": "Looking for a tech job is a helpless data-entry nightmare",
-            "url": "https://news.ycombinator.com/item?id=50254873"
-          },
-          {
-            "title": "Tell HN: Don't mass spam employers with LLM generated emails",
-            "url": "https://news.ycombinator.com/item?id=50095323"
-          }
-        ]
-      },
-      "briefs": {
-        "30x": {
-          "profileId": "30x",
-          "angle": "Tus descripciones de roles directivos quedaron obsoletas: aprende a rediseñarlas para una era de IA y contratar C-Levels que multipliquen resultados con tecnología.",
-          "format": "carrusel de Instagram",
-          "hook": "Deja de contratar para los roles de ayer.",
-          "opportunity": {
-            "product": "AI for Executives",
-            "rationale": "El carrusel muestra la urgencia de redefinir roles para la era de IA, y el programa da el framework estratégico para que los líderes ejecuten esa transformación en sus equipos."
-          },
-          "generatedAt": "2026-11-04T17:43:35.999Z"
-        },
-        "andres-bilbao": {
-          "profileId": "andres-bilbao",
-          "angle": "Te cuento la historia de cómo contratamos a uno de los primeros roles clave en Rappi y la lección que me dejó sobre buscar potencial en lugar de solo experiencia.",
-          "format": "post largo de LinkedIn con historia y lección",
-          "hook": "Tuve que entrevistar a más de 100 personas para encontrar a nuestro primer líder de operaciones. Aquí está el error que cometí en las primeras 99 entrevistas.",
-          "opportunity": {
-            "product": "Inmersión Ejecutiva 30X",
-            "rationale": "La pieza narra un desafío de liderazgo y escalamiento de alto nivel, posicionando el programa como el espacio donde los ejecutivos resuelven este tipo de problemas complejos junto a mentores que ya los vivieron."
-          },
-          "generatedAt": "2026-11-04T17:43:35.999Z"
-        }
-      }
-    },
-    {
-      "id": "liderazgo-en-crisis",
-      "label": "Liderazgo en crisis",
-      "stage": "pico",
-      "pilar": "Liderazgo y mentalidad",
-      "velocity": 58.3,
-      "executiveRelevance": 0.7,
-      "score": 40.81,
-      "layers": [
-        "origen",
-        "difusion",
-        "audiencia_ejecutiva"
-      ],
-      "series": [
-        {
-          "date": "2026-10-06",
-          "count": 1
-        },
-        {
-          "date": "2026-10-07",
-          "count": 2
-        },
-        {
-          "date": "2026-10-08",
-          "count": 0
-        },
-        {
-          "date": "2026-10-09",
-          "count": 1
-        },
-        {
-          "date": "2026-10-10",
-          "count": 0
-        },
-        {
-          "date": "2026-10-11",
-          "count": 1
-        },
-        {
-          "date": "2026-10-12",
-          "count": 2
-        },
-        {
-          "date": "2026-10-13",
-          "count": 1
-        },
-        {
-          "date": "2026-10-14",
-          "count": 4
-        },
-        {
-          "date": "2026-10-15",
-          "count": 2
-        },
-        {
-          "date": "2026-10-16",
-          "count": 0
-        },
-        {
-          "date": "2026-10-17",
-          "count": 2
-        },
-        {
-          "date": "2026-10-18",
-          "count": 0
-        },
-        {
-          "date": "2026-10-19",
-          "count": 0
-        },
-        {
-          "date": "2026-10-20",
-          "count": 1
-        },
-        {
-          "date": "2026-10-21",
-          "count": 1
-        },
-        {
-          "date": "2026-10-22",
-          "count": 0
-        },
-        {
-          "date": "2026-10-23",
-          "count": 1
-        },
-        {
-          "date": "2026-10-24",
-          "count": 1
-        },
-        {
-          "date": "2026-10-25",
-          "count": 1
-        },
-        {
-          "date": "2026-10-26",
-          "count": 1
-        },
-        {
-          "date": "2026-10-27",
-          "count": 1
-        },
-        {
-          "date": "2026-10-28",
-          "count": 2
-        },
-        {
-          "date": "2026-10-29",
-          "count": 5
-        },
-        {
-          "date": "2026-10-30",
-          "count": 1
-        },
-        {
-          "date": "2026-10-31",
-          "count": 1
-        },
-        {
-          "date": "2026-11-01",
-          "count": 2
-        },
-        {
-          "date": "2026-11-02",
-          "count": 2
-        },
-        {
-          "date": "2026-11-03",
-          "count": 0
-        },
-        {
-          "date": "2026-11-04",
-          "count": 3
-        }
-      ],
-      "channels": [
-        {
-          "name": "McKinsey Insights",
-          "source": "prensa",
-          "count": 6
-        },
-        {
-          "name": "MIT Sloan Management Review",
-          "source": "expertos",
-          "count": 2
-        },
-        {
-          "name": "ORLANDO SAUCEDO-VACA Podcast",
-          "source": "youtube",
-          "count": 2
-        },
-        {
-          "name": "Jessie Galindo",
-          "source": "youtube",
-          "count": 2
-        },
-        {
-          "name": "Hacker News",
-          "source": "hackernews",
-          "url": "https://news.ycombinator.com",
-          "count": 1
-        },
-        {
-          "name": "Sifted",
-          "source": "expertos",
-          "count": 1
-        },
-        {
-          "name": "Business Class Podcast",
-          "source": "youtube",
-          "count": 1
-        },
-        {
-          "name": "Talent Match",
-          "source": "youtube",
-          "count": 1
-        },
-        {
-          "name": "Janeth Camacho",
-          "source": "youtube",
-          "count": 1
-        },
-        {
-          "name": "Jordi Alemany ",
-          "source": "youtube",
-          "count": 1
-        }
-      ],
-      "topPieces": [
-        {
-          "title": "La CRUDA REALIDAD de la CRISIS de la IA en España",
-          "url": "https://www.youtube.com/watch?v=GH9PKpJ5SAc",
-          "source": "youtube",
-          "outlet": "Talent Match",
-          "hook": "noticia",
-          "format": "video de opinión con noticia",
-          "analysis": "Usa un titular alarmista sobre una crisis de IA para captar la atención sobre la necesidad de nuevo talento y liderazgo."
-        },
-        {
-          "title": "We're Living in the Age of the Imperial CEO",
-          "url": "https://www.wsj.com/tech/ai/anthropic-ipo-dual-class-stock-founder-control-4c43a56d",
-          "source": "hackernews",
-          "outlet": "Hacker News",
-          "hook": "opinion",
-          "format": "hilo de discusión"
-        },
-        {
-          "title": "When Cultures Collide in Crisis",
-          "url": "https://sloanreview.mit.edu/article/when-cultures-collide-in-crisis/",
-          "source": "expertos",
-          "outlet": "MIT Sloan Management Review",
-          "hook": "opinion",
-          "format": "análisis de expertos",
-          "analysis": "Atrae a ejecutivos al ofrecer un marco de análisis de una fuente prestigiosa para un problema complejo de gestión de crisis."
-        },
-        {
-          "title": "Por qué el estrés del liderazgo va en aumento — y cómo combatirlo",
-          "url": "https://spanish.entrepreneur.com/consultoria/por-que-el-estres-del-liderazgo-va-en-aumento-y-como/489532",
-          "source": "prensa",
-          "outlet": "Entrepreneur en Español",
-          "hook": "tutorial",
-          "format": "artículo con consejos prácticos",
-          "analysis": "Conecta con el lector al validar un problema personal y creciente como el estrés, ofreciendo soluciones para combatirlo."
-        },
-        {
-          "title": "Experto en Liderazgo: Cómo Dirigir Equipos y Hacer Crecer su Negocio",
-          "url": "https://www.youtube.com/watch?v=nxJwOIJGfv4",
-          "source": "youtube",
-          "outlet": "Janeth Camacho",
-          "hook": "otro",
-          "format": "video"
-        }
-      ],
-      "explanation": {
-        "text": "El tema crece por el interés en cómo liderar ante nuevos desafíos como la inteligencia artificial, la cual es presentada como una crisis inminente. Además, existe una mayor conciencia sobre el impacto directo del liderazgo en el estrés de los ejecutivos, el rendimiento del equipo y la rentabilidad de la empresa.",
-        "evidence": [
-          {
-            "title": "La CRUDA REALIDAD de la CRISIS de la IA en España",
-            "url": "https://www.youtube.com/watch?v=GH9PKpJ5SAc"
-          },
-          {
-            "title": "Por qué el estrés del liderazgo va en aumento — y cómo combatirlo",
-            "url": "https://spanish.entrepreneur.com/consultoria/por-que-el-estres-del-liderazgo-va-en-aumento-y-como/489532"
-          },
-          {
-            "title": "¿Por qué ascender a tu mejor empleado arruina a tu equipo? #liderazgo #principiodepeter",
-            "url": "https://www.youtube.com/watch?v=o6ZXWgfnFoE"
-          },
-          {
-            "title": "El impacto del liderazgo en la rentabilidad | Lo que todo empresario debe comprender",
-            "url": "https://www.youtube.com/watch?v=g2nBeTvbsxQ"
-          },
-          {
-            "title": "El ERROR #1 al implementar I.A. en tu empresa (y cómo evitarlo) 🚀",
-            "url": "https://www.youtube.com/watch?v=GNtV3jSk5xM"
-          }
-        ]
-      },
-      "briefs": {
-        "30x": {
-          "profileId": "30x",
-          "angle": "La crisis de la IA no es una amenaza tecnológica, es un test de liderazgo que define si tu empresa sobrevive o se vuelve irrelevante.",
-          "format": "clase gratis en vivo por Zoom",
-          "hook": "Tu equipo ve la IA como una crisis. Es tu trabajo como líder convertirla en una estrategia con ROI.",
-          "opportunity": {
-            "product": "AI for Executives",
-            "rationale": "La clase gratis demuestra la urgencia de tener un plan de IA y presenta el programa como el playbook para ejecutar ese plan con adopción y retorno de inversión."
-          },
-          "generatedAt": "2026-11-04T17:43:35.999Z"
-        },
-        "andres-bilbao": {
-          "profileId": "andres-bilbao",
-          "angle": "Más que una crisis tecnológica, la IA presenta una crisis de liderazgo que te obliga a tomar decisiones difíciles hoy mismo.",
-          "format": "post largo de LinkedIn con historia y lección",
-          "hook": "La inteligencia artificial no va a destruir tu empresa. La falta de liderazgo para implementarla, sí.",
-          "opportunity": {
-            "product": "AI for Executives",
-            "rationale": "La pieza posiciona la adopción de IA como un desafío de liderazgo estratégico, para el cual el programa ofrece el framework y las herramientas para ejecutarlo."
-          },
-          "generatedAt": "2026-11-04T17:43:35.999Z"
-        }
-      }
-    },
-    {
-      "id": "sistemas-de-ventas-b2b",
-      "label": "Sistemas de ventas B2B",
+      "id": "productividad-organizacional",
+      "label": "Productividad organizacional",
       "stage": "creciendo",
-      "pilar": "Ventas",
-      "velocity": 33.3,
-      "executiveRelevance": 0.78,
-      "score": 25.97,
+      "pilar": "Liderazgo y mentalidad",
+      "velocity": 23.1,
+      "executiveRelevance": 0.71,
+      "score": 16.4,
       "layers": [
         "origen",
         "difusion"
       ],
       "series": [
         {
-          "date": "2026-10-06",
+          "date": "2026-10-07",
           "count": 2
         },
         {
-          "date": "2026-10-07",
-          "count": 0
-        },
-        {
           "date": "2026-10-08",
-          "count": 1
+          "count": 3
         },
         {
           "date": "2026-10-09",
@@ -1785,7 +1458,7 @@
         },
         {
           "date": "2026-10-11",
-          "count": 1
+          "count": 0
         },
         {
           "date": "2026-10-12",
@@ -1793,11 +1466,11 @@
         },
         {
           "date": "2026-10-13",
-          "count": 3
+          "count": 4
         },
         {
           "date": "2026-10-14",
-          "count": 3
+          "count": 2
         },
         {
           "date": "2026-10-15",
@@ -1805,7 +1478,7 @@
         },
         {
           "date": "2026-10-16",
-          "count": 2
+          "count": 1
         },
         {
           "date": "2026-10-17",
@@ -1817,15 +1490,15 @@
         },
         {
           "date": "2026-10-19",
-          "count": 2
+          "count": 4
         },
         {
           "date": "2026-10-20",
-          "count": 0
+          "count": 1
         },
         {
           "date": "2026-10-21",
-          "count": 1
+          "count": 4
         },
         {
           "date": "2026-10-22",
@@ -1833,11 +1506,11 @@
         },
         {
           "date": "2026-10-23",
-          "count": 1
+          "count": 2
         },
         {
           "date": "2026-10-24",
-          "count": 0
+          "count": 1
         },
         {
           "date": "2026-10-25",
@@ -1845,11 +1518,11 @@
         },
         {
           "date": "2026-10-26",
-          "count": 0
+          "count": 2
         },
         {
           "date": "2026-10-27",
-          "count": 0
+          "count": 2
         },
         {
           "date": "2026-10-28",
@@ -1857,23 +1530,23 @@
         },
         {
           "date": "2026-10-29",
-          "count": 0
+          "count": 1
         },
         {
           "date": "2026-10-30",
-          "count": 2
-        },
-        {
-          "date": "2026-10-31",
           "count": 0
         },
         {
-          "date": "2026-11-01",
+          "date": "2026-10-31",
           "count": 1
         },
         {
+          "date": "2026-11-01",
+          "count": 2
+        },
+        {
           "date": "2026-11-02",
-          "count": 1
+          "count": 4
         },
         {
           "date": "2026-11-03",
@@ -1882,288 +1555,10 @@
         {
           "date": "2026-11-04",
           "count": 1
-        }
-      ],
-      "channels": [
-        {
-          "name": "Marcus Chan",
-          "source": "youtube",
-          "count": 4
         },
         {
-          "name": "Hacker News",
-          "source": "hackernews",
-          "url": "https://news.ycombinator.com",
-          "count": 2
-        },
-        {
-          "name": "Daniel Barba",
-          "source": "youtube",
-          "count": 2
-        },
-        {
-          "name": "Jason Greenwood",
-          "source": "youtube",
-          "count": 2
-        },
-        {
-          "name": "Gino Fracchiolla | True Pay 4 Performance",
-          "source": "youtube",
+          "date": "2026-11-05",
           "count": 1
-        },
-        {
-          "name": "Se Vende Humo Podcast",
-          "source": "youtube",
-          "count": 1
-        },
-        {
-          "name": "Sales Scripter",
-          "source": "youtube",
-          "count": 1
-        },
-        {
-          "name": "Localization Fireside Chat",
-          "source": "youtube",
-          "count": 1
-        },
-        {
-          "name": "B2B School",
-          "source": "youtube",
-          "count": 1
-        },
-        {
-          "name": "AJ Cassata",
-          "source": "youtube",
-          "count": 1
-        }
-      ],
-      "topPieces": [
-        {
-          "title": "Your B2B Website Is a Brochure. It Should Be a Sales System",
-          "url": "https://www.youtube.com/watch?v=amL6MUta3Pg",
-          "source": "youtube",
-          "outlet": "Gino Fracchiolla | True Pay 4 Performance",
-          "hook": "tutorial",
-          "format": "Video tutorial con enfoque de sistema",
-          "analysis": "Atrae al proponer que un sitio web no es un folleto, sino un sistema activo de ventas."
-        },
-        {
-          "title": "Spent 5 months on an enterprise deal, only to lose the deal to the CPO's buddy",
-          "url": "https://news.ycombinator.com/item?id=50336389",
-          "source": "hackernews",
-          "outlet": "Hacker News",
-          "hook": "caso_de_uso",
-          "format": "Hilo de discusión sobre un fracaso",
-          "analysis": "Conecta con la audiencia a través de una experiencia negativa y frustrante que es común en ventas B2B."
-        },
-        {
-          "title": "Analysis of a Real B2B Cold Call Example",
-          "url": "https://www.youtube.com/watch?v=2mgXLzjXWdM",
-          "source": "youtube",
-          "outlet": "Sales Scripter",
-          "hook": "caso_de_uso",
-          "format": "video"
-        },
-        {
-          "title": "I Generated $1B in B2B Sales and Learned This",
-          "url": "https://www.youtube.com/watch?v=2rZBFJKZXtE",
-          "source": "youtube",
-          "outlet": "Marcus Chan",
-          "hook": "opinion",
-          "format": "video"
-        },
-        {
-          "title": "Best Cold Email Strategy for B2B SaaS in 2026 (1000s of leads generated)",
-          "url": "https://www.youtube.com/watch?v=q-0NKpcWGyk",
-          "source": "youtube",
-          "outlet": "AJ Cassata",
-          "hook": "tutorial",
-          "format": "video"
-        }
-      ],
-      "explanation": {
-        "text": "El interés en sistemas de ventas B2B está creciendo porque los líderes buscan transformar sus procesos de ventas de caóticos a predecibles. La conversación se enfoca en implementar marcos integrales o 'sistemas operativos' de ventas, así como en tácticas específicas para generar leads de manera consistente.",
-        "evidence": [
-          {
-            "title": "Your B2B Website Is a Brochure. It Should Be a Sales System",
-            "url": "https://www.youtube.com/watch?v=amL6MUta3Pg"
-          },
-          {
-            "title": "Ventas como un sistema, no como caos #podcast #venderdiferentepodcast #negocios",
-            "url": "https://www.youtube.com/watch?v=55_oStm5YRs"
-          },
-          {
-            "title": "Spent 5 months on an enterprise deal, only to lose the deal to the CPO's buddy",
-            "url": "https://news.ycombinator.com/item?id=50336389"
-          },
-          {
-            "title": "Jon Webb: The Sales Operating System That Changes Everything",
-            "url": "https://www.youtube.com/watch?v=R80zVX4_C0A"
-          },
-          {
-            "title": "How We Get 100+ Leads Every Single Week",
-            "url": "https://www.youtube.com/watch?v=TCQBOdXgd2M"
-          }
-        ]
-      },
-      "briefs": {
-        "30x": {
-          "profileId": "30x",
-          "angle": "Deja de depender de la suerte en ventas B2B y construye un sistema predecible que genere leads calificados de forma consistente.",
-          "format": "carrusel de Instagram",
-          "hook": "Si tus ventas B2B dependen de 'echarle ganas', no tienes un negocio. Tienes un hobby caro.",
-          "opportunity": {
-            "product": "Programas online de ventas y growth",
-            "rationale": "El carrusel presenta el 'qué' y el 'porqué' de un sistema de ventas, posicionando los programas como el 'cómo' para implementarlo con un playbook probado por operadores."
-          },
-          "generatedAt": "2026-11-04T17:43:35.999Z"
-        },
-        "andres-bilbao": {
-          "profileId": "andres-bilbao",
-          "angle": "Para escalar en B2B, necesitas dejar de vender de forma artesanal y empezar a construir un sistema de ventas predecible que funcione sin ti.",
-          "format": "post largo de LinkedIn con historia y lección",
-          "hook": "Pasamos meses negociando un deal enterprise, para que al final se lo dieran al amigo del CPO.",
-          "opportunity": {
-            "product": "Inmersión Ejecutiva 30X",
-            "rationale": "La pieza demuestra un problema de escalamiento (ventas caóticas) que se resuelve en profundidad con los mentores y el framework del programa presencial."
-          },
-          "generatedAt": "2026-11-04T17:43:35.999Z"
-        }
-      }
-    },
-    {
-      "id": "mentalidad-del-fundador",
-      "label": "Mentalidad del fundador",
-      "stage": "pico",
-      "pilar": "Liderazgo y mentalidad",
-      "velocity": 27.8,
-      "executiveRelevance": 0.73,
-      "score": 20.29,
-      "layers": [
-        "origen",
-        "difusion",
-        "audiencia_ejecutiva"
-      ],
-      "series": [
-        {
-          "date": "2026-10-06",
-          "count": 1
-        },
-        {
-          "date": "2026-10-07",
-          "count": 0
-        },
-        {
-          "date": "2026-10-08",
-          "count": 3
-        },
-        {
-          "date": "2026-10-09",
-          "count": 1
-        },
-        {
-          "date": "2026-10-10",
-          "count": 4
-        },
-        {
-          "date": "2026-10-11",
-          "count": 2
-        },
-        {
-          "date": "2026-10-12",
-          "count": 1
-        },
-        {
-          "date": "2026-10-13",
-          "count": 1
-        },
-        {
-          "date": "2026-10-14",
-          "count": 1
-        },
-        {
-          "date": "2026-10-15",
-          "count": 0
-        },
-        {
-          "date": "2026-10-16",
-          "count": 3
-        },
-        {
-          "date": "2026-10-17",
-          "count": 1
-        },
-        {
-          "date": "2026-10-18",
-          "count": 1
-        },
-        {
-          "date": "2026-10-19",
-          "count": 1
-        },
-        {
-          "date": "2026-10-20",
-          "count": 2
-        },
-        {
-          "date": "2026-10-21",
-          "count": 0
-        },
-        {
-          "date": "2026-10-22",
-          "count": 2
-        },
-        {
-          "date": "2026-10-23",
-          "count": 3
-        },
-        {
-          "date": "2026-10-24",
-          "count": 0
-        },
-        {
-          "date": "2026-10-25",
-          "count": 0
-        },
-        {
-          "date": "2026-10-26",
-          "count": 4
-        },
-        {
-          "date": "2026-10-27",
-          "count": 2
-        },
-        {
-          "date": "2026-10-28",
-          "count": 2
-        },
-        {
-          "date": "2026-10-29",
-          "count": 5
-        },
-        {
-          "date": "2026-10-30",
-          "count": 2
-        },
-        {
-          "date": "2026-10-31",
-          "count": 2
-        },
-        {
-          "date": "2026-11-01",
-          "count": 0
-        },
-        {
-          "date": "2026-11-02",
-          "count": 3
-        },
-        {
-          "date": "2026-11-03",
-          "count": 4
-        },
-        {
-          "date": "2026-11-04",
-          "count": 2
         }
       ],
       "channels": [
@@ -2171,295 +1566,16 @@
           "name": "Hacker News",
           "source": "hackernews",
           "url": "https://news.ycombinator.com",
-          "count": 43
+          "count": 10
         },
         {
-          "name": "Entrepreneur en Español",
-          "source": "prensa",
-          "count": 5
-        },
-        {
-          "name": "SAS CONSULTORA",
-          "source": "youtube",
-          "count": 2
-        },
-        {
-          "name": "Y Combinator",
+          "name": "MIT Sloan Management Review",
           "source": "expertos",
           "count": 1
         },
         {
           "name": "Sifted",
           "source": "expertos",
-          "count": 1
-        },
-        {
-          "name": "WMYT? What Makes You Tick - Tech Leaders Careers",
-          "source": "youtube",
-          "count": 1
-        },
-        {
-          "name": "Ryan Blair Daily",
-          "source": "youtube",
-          "count": 1
-        }
-      ],
-      "topPieces": [
-        {
-          "title": "Show HN: I built a task system to handle the drudgery so I could focus on tasks",
-          "url": "https://3anddoneapp.com/try",
-          "source": "hackernews",
-          "outlet": "Hacker News",
-          "hook": "tutorial",
-          "format": "Demostración de una herramienta",
-          "analysis": "Ofrece una solución tangible a la sobrecarga de trabajo del fundador, permitiéndole enfocarse en tareas de mayor impacto."
-        },
-        {
-          "title": "¿Cuándo fue la última vez que tu empresa funcionó un día entero sin vos? | Dueños de PyME",
-          "url": "https://www.youtube.com/watch?v=Rs_Pyyr6Uws",
-          "source": "youtube",
-          "outlet": "SAS CONSULTORA",
-          "hook": "advertencia",
-          "format": "Video con advertencia directa",
-          "analysis": "Engancha al confrontar a los dueños de pymes con una pregunta directa sobre su indispensabilidad, tocando un punto de dolor común."
-        },
-        {
-          "title": "How Vin Bui became engineer #1 at Nowadays — and started treating it like his own company",
-          "url": "https://www.ycombinator.com/blog/how-vin-bui-became-engineer-1-at-nowadays-and-started-treating-it-like-his-own-company/",
-          "source": "expertos",
-          "outlet": "Y Combinator",
-          "hook": "caso_de_uso",
-          "format": "Caso de estudio de Y Combinator",
-          "analysis": "Atrae al mostrar cómo un empleado puede adoptar una mentalidad de dueño, ofreciendo una solución aspiracional al desafío de escalar un equipo."
-        },
-        {
-          "title": "7 errores que cometen fundadores y CEO al hablar con los medios (y cómo evitarlos)",
-          "url": "https://spanish.entrepreneur.com/emprendedores/7-errores-que-cometen-fundadores-y-ceo-al-hablar-con-los-medios-y-como-evitarlos",
-          "source": "prensa",
-          "outlet": "Entrepreneur en Español",
-          "hook": "tutorial",
-          "format": "Guía de errores y soluciones",
-          "analysis": "Captura la atención al enlistar errores comunes que los fundadores cometen, generando el deseo de evitar equivocaciones costosas."
-        },
-        {
-          "title": "I am so tired of startups doing worse than me",
-          "url": "https://news.ycombinator.com/item?id=50036791",
-          "source": "hackernews",
-          "outlet": "Hacker News",
-          "hook": "opinion",
-          "format": "hilo de discusión"
-        }
-      ],
-      "explanation": {
-        "text": "El interés en este tema crece por la necesidad de los fundadores de superar desafíos prácticos como la delegación de tareas y la búsqueda de cofundadores. Además, existe una conversación activa sobre el lado emocional del rol, abordando la gestión de la frustración, el agotamiento y la identidad personal ligada a la empresa.",
-        "evidence": [
-          {
-            "title": "¿Cuándo fue la última vez que tu empresa funcionó un día entero sin vos? | Dueños de PyME",
-            "url": "https://www.youtube.com/watch?v=Rs_Pyyr6Uws"
-          },
-          {
-            "title": "Trouble finding a motivated co-founder",
-            "url": "https://news.ycombinator.com/item?id=50313212"
-          },
-          {
-            "title": "Particle was me and I was it: On leaving the company I founded",
-            "url": "https://www.atomsandbits.io/p/moving-on"
-          },
-          {
-            "title": "Ask HN: Help My Sanity",
-            "url": "https://news.ycombinator.com/item?id=50287623"
-          }
-        ]
-      },
-      "briefs": {
-        "30x": {
-          "profileId": "30x",
-          "angle": "Tu mentalidad de fundador no escala, pero la de tu equipo sí puede hacerlo si dejas de ser el cuello de botella y construyes un sistema que funcione sin ti.",
-          "format": "publicación en colaboración con un mentor",
-          "hook": "Si te vas una semana de vacaciones, ¿tu empresa crece o se incendia?",
-          "opportunity": {
-            "product": "Multipliers",
-            "rationale": "La pieza ayuda al founder a diagnosticar si es el cuello de botella, y Multipliers es el programa para quienes deciden escalar su liderazgo y dejar de serlo."
-          },
-          "generatedAt": "2026-11-04T17:43:35.999Z"
-        },
-        "andres-bilbao": {
-          "profileId": "andres-bilbao",
-          "angle": "El objetivo de un founder no es ser indispensable, sino construir un equipo con mentalidad de dueño que pueda operar e incluso crecer sin ti.",
-          "format": "post largo de LinkedIn con historia y lección",
-          "hook": "Tu rol como founder no es ser el héroe que lo hace todo, es volverte innecesario lo más rápido posible.",
-          "opportunity": {
-            "product": "Inmersión Ejecutiva 30X",
-            "rationale": "La pieza aborda el desafío de delegar y escalar más allá de ti mismo, que es un dolor central para los líderes que ayudamos en la inmersión a pasar de operadores a estrategas."
-          },
-          "generatedAt": "2026-11-04T17:43:35.999Z"
-        }
-      }
-    },
-    {
-      "id": "estrategias-de-escalamiento",
-      "label": "Estrategias de escalamiento",
-      "stage": "saturado",
-      "pilar": "Growth",
-      "velocity": -23.8,
-      "executiveRelevance": 0.8,
-      "score": -19.04,
-      "layers": [
-        "origen",
-        "difusion",
-        "audiencia_ejecutiva"
-      ],
-      "series": [
-        {
-          "date": "2026-10-06",
-          "count": 3
-        },
-        {
-          "date": "2026-10-07",
-          "count": 4
-        },
-        {
-          "date": "2026-10-08",
-          "count": 3
-        },
-        {
-          "date": "2026-10-09",
-          "count": 5
-        },
-        {
-          "date": "2026-10-10",
-          "count": 1
-        },
-        {
-          "date": "2026-10-11",
-          "count": 0
-        },
-        {
-          "date": "2026-10-12",
-          "count": 3
-        },
-        {
-          "date": "2026-10-13",
-          "count": 3
-        },
-        {
-          "date": "2026-10-14",
-          "count": 2
-        },
-        {
-          "date": "2026-10-15",
-          "count": 0
-        },
-        {
-          "date": "2026-10-16",
-          "count": 2
-        },
-        {
-          "date": "2026-10-17",
-          "count": 1
-        },
-        {
-          "date": "2026-10-18",
-          "count": 3
-        },
-        {
-          "date": "2026-10-19",
-          "count": 3
-        },
-        {
-          "date": "2026-10-20",
-          "count": 1
-        },
-        {
-          "date": "2026-10-21",
-          "count": 6
-        },
-        {
-          "date": "2026-10-22",
-          "count": 5
-        },
-        {
-          "date": "2026-10-23",
-          "count": 3
-        },
-        {
-          "date": "2026-10-24",
-          "count": 2
-        },
-        {
-          "date": "2026-10-25",
-          "count": 0
-        },
-        {
-          "date": "2026-10-26",
-          "count": 1
-        },
-        {
-          "date": "2026-10-27",
-          "count": 4
-        },
-        {
-          "date": "2026-10-28",
-          "count": 1
-        },
-        {
-          "date": "2026-10-29",
-          "count": 1
-        },
-        {
-          "date": "2026-10-30",
-          "count": 1
-        },
-        {
-          "date": "2026-10-31",
-          "count": 0
-        },
-        {
-          "date": "2026-11-01",
-          "count": 3
-        },
-        {
-          "date": "2026-11-02",
-          "count": 4
-        },
-        {
-          "date": "2026-11-03",
-          "count": 1
-        },
-        {
-          "date": "2026-11-04",
-          "count": 1
-        }
-      ],
-      "channels": [
-        {
-          "name": "Sifted",
-          "source": "expertos",
-          "count": 6
-        },
-        {
-          "name": "Contxto",
-          "source": "prensa",
-          "count": 5
-        },
-        {
-          "name": "Lenny's Newsletter",
-          "source": "expertos",
-          "count": 2
-        },
-        {
-          "name": "Ximena Delgado",
-          "source": "youtube",
-          "count": 2
-        },
-        {
-          "name": "Empresa Independente",
-          "source": "youtube",
-          "count": 2
-        },
-        {
-          "name": "Brando Angulo",
-          "source": "youtube",
           "count": 1
         },
         {
@@ -2481,34 +1597,31 @@
           "name": "Pedro Nuñez Bautista | De Bancarrota a Millones",
           "source": "youtube",
           "count": 1
+        },
+        {
+          "name": "Daniel Marcos",
+          "source": "youtube",
+          "count": 1
+        },
+        {
+          "name": "Karla Zorola Corral",
+          "source": "youtube",
+          "count": 1
+        },
+        {
+          "name": "Do Meio para o Topo",
+          "source": "youtube",
+          "count": 1
         }
       ],
       "topPieces": [
         {
-          "title": "Por qué tu NEGOCIO no crece y CÓMO SOLUCIONARLO 🤯 | #E162: Daniel Marcos",
-          "url": "https://www.youtube.com/watch?v=PPevSRmWAq8",
-          "source": "youtube",
-          "outlet": "Brando Angulo",
-          "hook": "tutorial",
-          "format": "Entrevista-tutorial en video",
-          "analysis": "Atrae a la audiencia al diagnosticar un problema común ('tu negocio no crece') y prometer una solución directa y accionable."
-        },
-        {
-          "title": "How a 19-year-old intern built the growth engine behind this $2B AI company | Hector Serrano",
-          "url": "https://www.lennysnewsletter.com/p/how-a-19-year-old-intern-built-the",
-          "source": "expertos",
-          "outlet": "Lenny's Newsletter",
-          "hook": "caso_de_uso",
-          "format": "Caso de estudio en newsletter",
-          "analysis": "Engancha a través de una historia aspiracional y sorprendente que revela las tácticas detrás del éxito de una gran empresa de IA."
-        },
-        {
-          "title": "Mariana Camino, CEO de Abeceb, advirtió sobre el riesgo de esperar para invertir: “Puede ser caro para una empresa”",
-          "url": "https://www.infobae.com/economia/2026/11/03/mariana-camino-ceo-de-abeceb-advirtio-sobre-el-riesgo-de-esperar-para-invertir-puede-ser-caro-para-una-empresa/",
-          "source": "prensa",
-          "outlet": "Infobae Economía",
-          "hook": "opinion",
-          "format": "nota de prensa"
+          "title": "Postgres 19 is late because so many more bugs are being found now",
+          "url": "http://rhaas.blogspot.com/2026/10/postgres-19-is-late-and-its-ais-fault.html",
+          "source": "hackernews",
+          "outlet": "Hacker News",
+          "hook": "otro",
+          "format": "hilo de discusión"
         },
         {
           "title": "Cómo Escalar Rápido Cualquier Negocio, Explicado en 14 Minutos",
@@ -2516,64 +1629,652 @@
           "source": "youtube",
           "outlet": "David Marchante",
           "hook": "tutorial",
-          "format": "video"
+          "format": "video tutorial corto",
+          "analysis": "Atrae con la promesa de una explicación rápida y completa sobre un tema complejo como es el escalamiento de un negocio."
         },
         {
-          "title": "Cómo crear y escalar un negocio de productos digitales con IA",
-          "url": "https://www.youtube.com/watch?v=cEIjpAen4tg",
-          "source": "youtube",
-          "outlet": "Claudio Conde",
-          "hook": "tutorial",
-          "format": "video"
+          "title": "What Interruptions Say About Your Organizational Culture",
+          "url": "https://sloanreview.mit.edu/article/what-interruptions-say-about-your-organizational-culture/",
+          "source": "expertos",
+          "outlet": "MIT Sloan Management Review",
+          "hook": "opinion",
+          "format": "artículo de opinión de experto",
+          "analysis": "Conecta un problema cotidiano y universal como las interrupciones con un tema estratégico mayor como la cultura organizacional."
+        },
+        {
+          "title": "The UK’s regional talent trap and how it restricts regional growth: UK Productivity Series, part 2",
+          "url": "https://www.mckinsey.com/uk/our-insights/the-uks-regional-talent-trap-and-how-it-restricts-regional-growth-uk-productivity-series-part-2",
+          "source": "prensa",
+          "outlet": "McKinsey Insights",
+          "hook": "otro",
+          "format": "nota de prensa"
+        },
+        {
+          "title": "We halved DNS build delay and cut memory use by 85%",
+          "url": "https://blog.cloudflare.com/dns-targeted-zone-builds/",
+          "source": "hackernews",
+          "outlet": "Hacker News",
+          "hook": "caso_de_uso",
+          "format": "estudio de caso técnico",
+          "analysis": "Engancha a una audiencia técnica al presentar un problema específico y cuantificar la mejora con métricas impresionantes."
         }
       ],
       "explanation": {
-        "text": "El interés en estrategias de escalamiento se enfoca en la aplicación práctica, con una alta producción de tutoriales y guías paso a paso. Los creadores abordan el tema desde múltiples ángulos como el crecimiento de empresas de servicios, el uso de IA en productos digitales o tácticas específicas de pauta publicitaria. Los casos de estudio sobre el crecimiento de grandes empresas también generan tracción, mostrando el camino a seguir.",
+        "text": "El interés en la productividad organizacional se enfoca en cómo escalar un negocio de manera rápida y eficiente. La conversación se divide en estrategias de crecimiento para empresas, especialmente de servicios, y en la optimización de procesos y herramientas para equipos técnicos.",
         "evidence": [
           {
-            "title": "Por qué tu NEGOCIO no crece y CÓMO SOLUCIONARLO 🤯 | #E162: Daniel Marcos",
-            "url": "https://www.youtube.com/watch?v=PPevSRmWAq8"
-          },
-          {
-            "title": "Cómo crear y escalar un negocio de productos digitales con IA",
-            "url": "https://www.youtube.com/watch?v=cEIjpAen4tg"
+            "title": "Cómo Escalar Rápido Cualquier Negocio, Explicado en 14 Minutos",
+            "url": "https://www.youtube.com/watch?v=3q1nEi0sAQ8"
           },
           {
             "title": "Como escalar na prática uma empresa de serviços",
             "url": "https://www.youtube.com/watch?v=KIQZb3DoECI"
           },
           {
-            "title": "How a 19-year-old intern built the growth engine behind this $2B AI company | Hector Serrano",
-            "url": "https://www.lennysnewsletter.com/p/how-a-19-year-old-intern-built-the"
+            "title": "We halved DNS build delay and cut memory use by 85%",
+            "url": "https://blog.cloudflare.com/dns-targeted-zone-builds/"
           },
           {
-            "title": "ABO vs CBO en Meta Ads 2026: ¿Cuál Usar para Escalar tu E-commerce?",
-            "url": "https://www.youtube.com/watch?v=z0jWDkir5NA"
+            "title": "Ask HN: How do small teams pragmatically manage Dependabot fatigue?",
+            "url": "https://news.ycombinator.com/item?id=50377668"
+          },
+          {
+            "title": "What Interruptions Say About Your Organizational Culture",
+            "url": "https://sloanreview.mit.edu/article/what-interruptions-say-about-your-organizational-culture/"
           }
         ]
       },
       "briefs": {
         "30x": {
           "profileId": "30x",
-          "angle": "Antes de aplicar el último hack de growth, asegura que tu estrategia, equipo y operaciones estén listos para escalar de verdad.",
+          "angle": "Las interrupciones constantes en tu equipo no son un problema de gestión del tiempo, sino un síntoma de una cultura y sistemas que frenan tu capacidad de escalar.",
           "format": "carrusel de Instagram",
-          "hook": "Tu problema no es el growth. Es la dirección.",
+          "hook": "Tu equipo no necesita otro curso de time management.",
           "opportunity": {
             "product": "Inmersión Ejecutiva Presencial",
-            "rationale": "La pieza expone que el escalamiento depende de pilares estratégicos como dirección y equipos, que son los temas centrales de la inmersión presencial."
+            "rationale": "La pieza diagnostica un problema de cultura y sistemas, presentando la Inmersión como el espacio ejecutivo para resolver los retos de dirección, equipos y growth que impiden escalar."
           },
-          "generatedAt": "2026-11-04T17:43:35.999Z"
+          "generatedAt": "2026-11-05T17:49:34.537Z"
         },
         "andres-bilbao": {
           "profileId": "andres-bilbao",
-          "angle": "Para de buscar el último 'hack' de growth y enfócate en construir la única cosa que de verdad te permitirá escalar tu negocio de forma sostenible.",
+          "angle": "Las interrupciones constantes en tu equipo no son un problema de herramientas, sino un síntoma de la cultura que como líder has creado y que te impide escalar.",
           "format": "post largo de LinkedIn con historia y lección",
-          "hook": "Tu obsesión con el 'growth' es lo que te impide escalar.",
+          "hook": "Si tu equipo vive interrumpido, el problema no son las notificaciones. El problema es la cultura que tú permites.",
           "opportunity": {
             "product": "Inmersión Ejecutiva 30X",
-            "rationale": "La pieza demuestra que escalar requiere una estrategia integral y no tácticas aisladas, preparando el terreno para una inmersión profunda donde pueden construir esa estrategia."
+            "rationale": "La pieza diagnostica un problema de cultura y liderazgo que frena el escalamiento, presentando la inmersión como el lugar para obtener los frameworks y la mentalidad para solucionarlo."
           },
-          "generatedAt": "2026-11-04T17:43:35.999Z"
+          "generatedAt": "2026-11-05T17:49:34.537Z"
+        }
+      }
+    },
+    {
+      "id": "liderazgo-en-crisis",
+      "label": "Liderazgo en crisis",
+      "stage": "pico",
+      "pilar": "Liderazgo y mentalidad",
+      "velocity": 0,
+      "executiveRelevance": 0.77,
+      "score": 0,
+      "layers": [
+        "origen",
+        "difusion",
+        "audiencia_ejecutiva"
+      ],
+      "series": [
+        {
+          "date": "2026-10-07",
+          "count": 2
+        },
+        {
+          "date": "2026-10-08",
+          "count": 1
+        },
+        {
+          "date": "2026-10-09",
+          "count": 1
+        },
+        {
+          "date": "2026-10-10",
+          "count": 0
+        },
+        {
+          "date": "2026-10-11",
+          "count": 2
+        },
+        {
+          "date": "2026-10-12",
+          "count": 2
+        },
+        {
+          "date": "2026-10-13",
+          "count": 2
+        },
+        {
+          "date": "2026-10-14",
+          "count": 4
+        },
+        {
+          "date": "2026-10-15",
+          "count": 1
+        },
+        {
+          "date": "2026-10-16",
+          "count": 2
+        },
+        {
+          "date": "2026-10-17",
+          "count": 2
+        },
+        {
+          "date": "2026-10-18",
+          "count": 0
+        },
+        {
+          "date": "2026-10-19",
+          "count": 1
+        },
+        {
+          "date": "2026-10-20",
+          "count": 2
+        },
+        {
+          "date": "2026-10-21",
+          "count": 4
+        },
+        {
+          "date": "2026-10-22",
+          "count": 0
+        },
+        {
+          "date": "2026-10-23",
+          "count": 1
+        },
+        {
+          "date": "2026-10-24",
+          "count": 0
+        },
+        {
+          "date": "2026-10-25",
+          "count": 1
+        },
+        {
+          "date": "2026-10-26",
+          "count": 0
+        },
+        {
+          "date": "2026-10-27",
+          "count": 3
+        },
+        {
+          "date": "2026-10-28",
+          "count": 3
+        },
+        {
+          "date": "2026-10-29",
+          "count": 2
+        },
+        {
+          "date": "2026-10-30",
+          "count": 1
+        },
+        {
+          "date": "2026-10-31",
+          "count": 1
+        },
+        {
+          "date": "2026-11-01",
+          "count": 1
+        },
+        {
+          "date": "2026-11-02",
+          "count": 2
+        },
+        {
+          "date": "2026-11-03",
+          "count": 0
+        },
+        {
+          "date": "2026-11-04",
+          "count": 5
+        },
+        {
+          "date": "2026-11-05",
+          "count": 0
+        }
+      ],
+      "channels": [
+        {
+          "name": "McKinsey Insights",
+          "source": "prensa",
+          "count": 4
+        },
+        {
+          "name": "MIT Sloan Management Review",
+          "source": "expertos",
+          "count": 2
+        },
+        {
+          "name": "ORLANDO SAUCEDO-VACA Podcast",
+          "source": "youtube",
+          "count": 2
+        },
+        {
+          "name": "Xavier Miguel",
+          "source": "youtube",
+          "count": 2
+        },
+        {
+          "name": "Jessie Galindo",
+          "source": "youtube",
+          "count": 2
+        },
+        {
+          "name": "Sifted",
+          "source": "expertos",
+          "count": 1
+        },
+        {
+          "name": "Growth Institute en Español",
+          "source": "youtube",
+          "count": 1
+        },
+        {
+          "name": "Janeth Camacho",
+          "source": "youtube",
+          "count": 1
+        },
+        {
+          "name": "Soy Jackson Rozo",
+          "source": "youtube",
+          "count": 1
+        },
+        {
+          "name": "Jordi Alemany ",
+          "source": "youtube",
+          "count": 1
+        }
+      ],
+      "topPieces": [
+        {
+          "title": "Experto en Liderazgo: Cómo Dirigir Equipos y Hacer Crecer su Negocio",
+          "url": "https://www.youtube.com/watch?v=nxJwOIJGfv4",
+          "source": "youtube",
+          "outlet": "Janeth Camacho",
+          "hook": "tutorial",
+          "format": "video tutorial largo",
+          "analysis": "Conecta las habilidades de liderazgo directamente con el crecimiento del negocio, una promesa de resultado tangible para los ejecutivos."
+        },
+        {
+          "title": "When Cultures Collide in Crisis",
+          "url": "https://sloanreview.mit.edu/article/when-cultures-collide-in-crisis/",
+          "source": "expertos",
+          "outlet": "MIT Sloan Management Review",
+          "hook": "opinion",
+          "format": "análisis de expertos",
+          "analysis": "Atrae a líderes de equipos multiculturales al abordar un problema complejo y relevante en un entorno empresarial globalizado."
+        },
+        {
+          "title": "Por qué el estrés del liderazgo va en aumento — y cómo combatirlo",
+          "url": "https://spanish.entrepreneur.com/consultoria/por-que-el-estres-del-liderazgo-va-en-aumento-y-como/489532",
+          "source": "prensa",
+          "outlet": "Entrepreneur en Español",
+          "hook": "tutorial",
+          "format": "artículo de análisis y consejos",
+          "analysis": "Engancha al validar un sentimiento común de agobio y ofrecer soluciones concretas para el estrés creciente del liderazgo."
+        },
+        {
+          "title": "Los 5 errores de liderazgo comunes que te convierten en un jefe tóxico",
+          "url": "https://www.youtube.com/watch?v=W9vzUEHRUuI",
+          "source": "youtube",
+          "outlet": "Jordi Alemany ",
+          "hook": "advertencia",
+          "format": "video con formato de lista de errores",
+          "analysis": "Utiliza el gancho de advertencia y el miedo a ser un 'jefe tóxico' para motivar la autoevaluación y la corrección de conductas."
+        },
+        {
+          "title": "¿Por qué ascender a tu mejor empleado arruina a tu equipo? #liderazgo #principiodepeter",
+          "url": "https://www.youtube.com/watch?v=o6ZXWgfnFoE",
+          "source": "youtube",
+          "outlet": "Edwin Rod",
+          "hook": "advertencia",
+          "format": "video"
+        }
+      ],
+      "explanation": {
+        "text": "El interés en el liderazgo en crisis se enfoca en la prevención y el manejo del estrés continuo. La conversación se centra en cómo evitar errores que conducen a crisis internas, como la toxicidad del equipo, el estancamiento del negocio o las pérdidas financieras.",
+        "evidence": [
+          {
+            "title": "When Cultures Collide in Crisis",
+            "url": "https://sloanreview.mit.edu/article/when-cultures-collide-in-crisis/"
+          },
+          {
+            "title": "Por qué el estrés del liderazgo va en aumento — y cómo combatirlo",
+            "url": "https://spanish.entrepreneur.com/consultoria/por-que-el-estres-del-liderazgo-va-en-aumento-y-como/489532"
+          },
+          {
+            "title": "Los 5 errores de liderazgo comunes que te convierten en un jefe tóxico",
+            "url": "https://www.youtube.com/watch?v=W9vzUEHRUuI"
+          },
+          {
+            "title": "El error de liderazgo que estanca tu empresa",
+            "url": "https://www.youtube.com/watch?v=DvKSEnj83eQ"
+          },
+          {
+            "title": "Tener a cargo un equipo sin habilidades de liderazgo cuesta mucho dinero.",
+            "url": "https://www.youtube.com/watch?v=glQtY11GnTQ"
+          },
+          {
+            "title": "Sua empresa vive apagando incêndios ou desenvolvendo líderes preparados para preveni-los?",
+            "url": "https://www.youtube.com/watch?v=TcsoFcJa5PM"
+          }
+        ]
+      },
+      "briefs": {
+        "30x": {
+          "profileId": "30x",
+          "angle": "La mayoría de las 'crisis' en tu empresa no son eventos inesperados, sino el resultado directo de tu estancamiento como líder.",
+          "format": "carrusel de Instagram",
+          "hook": "Tu equipo no es tóxico. Tu cultura no está rota. El cuello de botella eres tú.",
+          "opportunity": {
+            "product": "Inmersión Ejecutiva Presencial",
+            "rationale": "El carrusel expone cómo el estancamiento de un líder crea crisis internas, posicionando la Inmersión como el espacio para romper ese ciclo y rediseñar la estrategia de la empresa."
+          },
+          "generatedAt": "2026-11-05T17:49:34.537Z"
+        },
+        "andres-bilbao": {
+          "profileId": "andres-bilbao",
+          "angle": "Las crisis más grandes de tu empresa no llegan de repente, se construyen con las pequeñas decisiones y la cultura que permites en el día a día.",
+          "format": "post largo de LinkedIn con historia y lección",
+          "hook": "Cuando Rappi casi se rompe, no fue por un competidor. Fue por nosotros mismos.",
+          "opportunity": {
+            "product": "Inmersión Ejecutiva 30X",
+            "rationale": "La pieza comparte una lección de liderazgo aprendida en una crisis, posicionando el programa como el espacio para adquirir de forma proactiva las herramientas que previenen estos errores."
+          },
+          "generatedAt": "2026-11-05T17:49:34.537Z"
+        }
+      }
+    },
+    {
+      "id": "marketing-de-productos-digitales",
+      "label": "Marketing de productos digitales",
+      "stage": "creciendo",
+      "pilar": "Marketing",
+      "velocity": -12.5,
+      "executiveRelevance": 0.78,
+      "score": -9.75,
+      "layers": [
+        "origen",
+        "difusion"
+      ],
+      "series": [
+        {
+          "date": "2026-10-07",
+          "count": 3
+        },
+        {
+          "date": "2026-10-08",
+          "count": 3
+        },
+        {
+          "date": "2026-10-09",
+          "count": 1
+        },
+        {
+          "date": "2026-10-10",
+          "count": 0
+        },
+        {
+          "date": "2026-10-11",
+          "count": 0
+        },
+        {
+          "date": "2026-10-12",
+          "count": 1
+        },
+        {
+          "date": "2026-10-13",
+          "count": 1
+        },
+        {
+          "date": "2026-10-14",
+          "count": 2
+        },
+        {
+          "date": "2026-10-15",
+          "count": 1
+        },
+        {
+          "date": "2026-10-16",
+          "count": 1
+        },
+        {
+          "date": "2026-10-17",
+          "count": 4
+        },
+        {
+          "date": "2026-10-18",
+          "count": 1
+        },
+        {
+          "date": "2026-10-19",
+          "count": 0
+        },
+        {
+          "date": "2026-10-20",
+          "count": 1
+        },
+        {
+          "date": "2026-10-21",
+          "count": 2
+        },
+        {
+          "date": "2026-10-22",
+          "count": 7
+        },
+        {
+          "date": "2026-10-23",
+          "count": 1
+        },
+        {
+          "date": "2026-10-24",
+          "count": 1
+        },
+        {
+          "date": "2026-10-25",
+          "count": 3
+        },
+        {
+          "date": "2026-10-26",
+          "count": 1
+        },
+        {
+          "date": "2026-10-27",
+          "count": 3
+        },
+        {
+          "date": "2026-10-28",
+          "count": 1
+        },
+        {
+          "date": "2026-10-29",
+          "count": 1
+        },
+        {
+          "date": "2026-10-30",
+          "count": 1
+        },
+        {
+          "date": "2026-10-31",
+          "count": 0
+        },
+        {
+          "date": "2026-11-01",
+          "count": 1
+        },
+        {
+          "date": "2026-11-02",
+          "count": 0
+        },
+        {
+          "date": "2026-11-03",
+          "count": 2
+        },
+        {
+          "date": "2026-11-04",
+          "count": 4
+        },
+        {
+          "date": "2026-11-05",
+          "count": 1
+        }
+      ],
+      "channels": [
+        {
+          "name": "Impulso Estrategias 360",
+          "source": "youtube",
+          "count": 7
+        },
+        {
+          "name": "Actualexam practice",
+          "source": "youtube",
+          "count": 4
+        },
+        {
+          "name": "Colectivo23",
+          "source": "youtube",
+          "count": 2
+        },
+        {
+          "name": "Entrepreneur en Español",
+          "source": "prensa",
+          "count": 2
+        },
+        {
+          "name": "Hacker News",
+          "source": "hackernews",
+          "url": "https://news.ycombinator.com",
+          "count": 1
+        },
+        {
+          "name": "Epifanía Podcast",
+          "source": "youtube",
+          "count": 1
+        },
+        {
+          "name": "Pablo Daniel López - B2B Growth Marketing y Ventas",
+          "source": "youtube",
+          "count": 1
+        },
+        {
+          "name": "RUNNINGDIGITAL",
+          "source": "youtube",
+          "count": 1
+        },
+        {
+          "name": "Extraordinary America",
+          "source": "youtube",
+          "count": 1
+        },
+        {
+          "name": "Zipchat AI | AI Agent for Ecommerce",
+          "source": "youtube",
+          "count": 1
+        }
+      ],
+      "topPieces": [
+        {
+          "title": "Ask HN: Where should I start to do marketing?",
+          "url": "https://news.ycombinator.com/item?id=50375196",
+          "source": "hackernews",
+          "outlet": "Hacker News",
+          "hook": "tutorial",
+          "format": "hilo de discusión"
+        },
+        {
+          "title": "Is This the Best Supplement Marketing Strategy? #muscle  #marketing",
+          "url": "https://www.youtube.com/watch?v=ozpDfL0FT5I",
+          "source": "youtube",
+          "outlet": "Zipchat AI | AI Agent for Ecommerce",
+          "hook": "caso_de_uso",
+          "format": "video"
+        },
+        {
+          "title": "Tu experiencia vale más de lo que crees: conviértela en contenido para impulsar tu marca",
+          "url": "https://spanish.entrepreneur.com/emprendedores/tu-experiencia-vale-mas-de-lo-que-crees-conviertela-en-contenido-para-impulsar-tu-marca",
+          "source": "prensa",
+          "outlet": "Entrepreneur en Español",
+          "hook": "tutorial",
+          "format": "Artículo de opinión estratégico",
+          "analysis": "Empodera a los fundadores al proponer que su propia experiencia es un activo de marketing valioso, lo que resuena con su identidad."
+        },
+        {
+          "title": "Omnichannel, Growth e 500 Lojas: a estratégia de Thibério Menezes (Petz Cobasi) | StartEcom Podcast",
+          "url": "https://www.youtube.com/watch?v=aKzx-QbHXPc",
+          "source": "youtube",
+          "outlet": "StartEcom [Podcast]",
+          "hook": "caso_de_uso",
+          "format": "Podcast con caso de estudio",
+          "analysis": "Detalla la estrategia omnicanal de una gran cadena, capturando el interés con cifras de escala y la experiencia de un líder del sector."
+        },
+        {
+          "title": "Marketing de entretenimento: rebranding, experiência e como a Ingresse deixou de ser só tiqueteira",
+          "url": "https://www.youtube.com/watch?v=eudmngYSF28",
+          "source": "youtube",
+          "outlet": "RUNNINGDIGITAL",
+          "hook": "caso_de_uso",
+          "format": "Video de caso de estudio",
+          "analysis": "Analiza el rebranding de una empresa, ofreciendo lecciones aplicables sobre cómo evolucionar una marca más allá de su producto inicial."
+        }
+      ],
+      "explanation": {
+        "text": "El interés en el tema se debe a la búsqueda de estrategias concretas para escalar negocios digitales. La conversación abarca desde tácticas específicas para canales como WhatsApp y email, hasta casos de estudio sobre rebranding y growth.",
+        "evidence": [
+          {
+            "title": "La estrategia digital de Briones para escalar negocios",
+            "url": "https://www.youtube.com/watch?v=Plry94dWFtw"
+          },
+          {
+            "title": "WhatsApp Business Marketing: Estrategias Probadas | Podcast",
+            "url": "https://www.youtube.com/watch?v=7jZ5PwFcTUk"
+          },
+          {
+            "title": "Email Marketing vs SMS: Cuál Convierte Más (Datos y Estrategia 2026) #negocios",
+            "url": "https://www.youtube.com/watch?v=Tl36uDhLNDo"
+          },
+          {
+            "title": "Marketing de entretenimento: rebranding, experiência e como a Ingresse deixou de ser só tiqueteira",
+            "url": "https://www.youtube.com/watch?v=eudmngYSF28"
+          },
+          {
+            "title": "Omnichannel, Growth e 500 Lojas: a estratégia de Thibério Menezes (Petz Cobasi) | StartEcom Podcast",
+            "url": "https://www.youtube.com/watch?v=aKzx-QbHXPc"
+          }
+        ]
+      },
+      "briefs": {
+        "30x": {
+          "profileId": "30x",
+          "angle": "Deja de improvisar con tácticas de marketing aisladas y empieza a construir un sistema de growth predecible para tus productos digitales.",
+          "format": "carrusel de Instagram",
+          "hook": "¿Tu marketing es una lista de tareas o un sistema de growth?",
+          "opportunity": {
+            "product": "Programas online de ventas y growth",
+            "rationale": "La pieza establece la necesidad de un sistema de growth en lugar de tácticas aisladas, y los programas de growth ofrecen el playbook exacto para construir e implementar ese sistema."
+          },
+          "generatedAt": "2026-11-05T17:49:34.537Z"
+        },
+        "andres-bilbao": {
+          "profileId": "andres-bilbao",
+          "angle": "Usa la experiencia de tus primeros clientes para crear un producto tan bueno que el marketing se vuelva una tarea mucho más sencilla.",
+          "format": "post largo de LinkedIn con historia y lección",
+          "hook": "En Rappi aprendí que la mejor estrategia de marketing es tener un producto que apenas lo necesite.",
+          "opportunity": {
+            "product": "Inmersión Ejecutiva 30X",
+            "rationale": "La pieza comparte una lección estratégica de alto nivel sobre escalamiento, y la Inmersión Ejecutiva 30X es el espacio para profundizar en este tipo de estrategias directamente con mentores que ya lo han hecho."
+          },
+          "generatedAt": "2026-11-05T17:49:34.537Z"
         }
       }
     }
